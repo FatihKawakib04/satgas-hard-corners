@@ -1,0 +1,18 @@
+# Build output — nginx serves dist/ directly; never commit it.
+dist/
+
+# Dependencies
+node_modules/
+
+# Astro / Vite caches
+.astro/
+
+# CodeGraph index
+.codegraph/
+
+# Local env / tooling
+.taste-skill/
+.env
+.env.*
+.DS_Store
+*.log

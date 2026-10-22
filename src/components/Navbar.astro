@@ -1,0 +1,83 @@
+---
+import { nav } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<header class="sticky top-0 z-50 border-b-[3px] border-ink bg-cream">
+  <div class="shell flex items-center justify-between gap-4 py-3">
+    <a href="#top" class="flex items-center gap-3 no-underline">
+      <span class="badge">SG</span>
+      <span class="font-display text-xl font-black tracking-[-0.03em]">SATGAS</span>
+      <span class="tag hidden text-ink/60 sm:inline">est. {year - 2}</span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="tag border-[3px] border-transparent px-3 py-2 no-underline transition-colors hover:border-ink hover:bg-lime"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="#contact" class="btn hidden sm:inline-flex">Assemble</a>
+      <button
+        type="button"
+        id="nav-toggle"
+        class="chip md:hidden"
+        aria-expanded="false"
+        aria-controls="nav-mobile"
+      >
+        Menu
+      </button>
+    </div>
+  </div>
+
+  <div id="nav-mobile" class="hidden border-t-[3px] border-ink bg-paper md:hidden">
+    <nav class="shell flex flex-col py-2" aria-label="Mobile navigation">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="tag border-b-[3px] border-ink/15 px-1 py-4 no-underline last:border-b-0"
+            data-nav-link
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a href="#contact" class="btn my-4 self-start" data-nav-link>Assemble</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const panel = document.getElementById("nav-mobile");
+
+  if (toggle && panel) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute("aria-expanded", String(open));
+      panel.classList.toggle("hidden", !open);
+      toggle.textContent = open ? "Close" : "Menu";
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    panel.querySelectorAll("[data-nav-link]").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setOpen(false);
+    });
+  }
+</script>

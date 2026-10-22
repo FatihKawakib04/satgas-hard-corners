@@ -1,0 +1,49 @@
+---
+import { crew } from "../data/site";
+---
+
+<section id="team" class="border-b-[3px] border-ink bg-cream py-16 sm:py-24">
+  <div class="shell">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="max-w-[16ch] font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] font-black">
+        Seven people, no layers
+      </h2>
+      <p class="max-w-[38ch] text-base leading-snug text-ink/80">
+        Every mission is taken on by the people named on this list. No manager stands
+        between your brief and whoever does the work.
+      </p>
+    </div>
+
+    <ul class="mt-12 list-none border-[3px] border-ink p-0">
+      {
+        crew.map((person, index) => (
+          <li
+            class:list={[
+              "reveal grid items-center gap-4 px-5 py-6 sm:grid-cols-[1fr_auto] sm:gap-8",
+              index % 2 === 1 ? "bg-cream-2" : "bg-paper",
+              index > 0 && "border-t-[3px] border-ink",
+              "transition-colors hover:bg-lime",
+            ]}
+            style={`--reveal-delay: ${Math.min(index, 6) * 60}ms;`}
+          >
+            <div class="sm:flex sm:items-baseline sm:gap-4 sm:max-lg:flex-col">
+              <h3 class="font-display text-[clamp(1.5rem,3.4vw,2.5rem)] leading-[1] font-black tracking-[-0.025em]">
+                {person.name}
+              </h3>
+              <p class="text-base text-ink/75 max-lg:mt-1">{person.role}</p>
+            </div>
+            <ul class="flex list-none flex-wrap gap-2 p-0">
+              {person.tags.map((tag) => (
+                <li class="tag border-[3px] border-ink bg-paper px-2 py-1">{tag}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-6 text-base text-ink/60">
+      The @ handles are internal workspace handles, not public social media accounts.
+    </p>
+  </div>
+</section>

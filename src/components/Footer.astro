@@ -1,0 +1,81 @@
+---
+import { crew, office, nav, services } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t-[3px] border-ink bg-zinc-deep pt-14 pb-10 text-cream">
+  <div class="shell">
+    <div class="grid gap-10 border-b-[3px] border-cream/25 pb-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="tag text-lime">HQ</p>
+        <p class="mt-3 text-base leading-relaxed text-cream/85">
+          {office.building}<br />
+          {office.street}<br />
+          {office.hours}
+        </p>
+      </div>
+
+      <div>
+        <p class="tag text-lime">Pages</p>
+        <ul class="mt-3 list-none space-y-2 p-0 text-base">
+          {
+            nav.map((item) => (
+              <li>
+                <a class="text-cream/85 underline decoration-cream/40 hover:text-lime" href={item.href}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <p class="tag text-lime">Capabilities</p>
+        <ul class="mt-3 list-none space-y-2 p-0 text-base">
+          {services.slice(0, 4).map((service) => <li class="text-cream/85">{service.title}</li>)}
+        </ul>
+      </div>
+
+      <div>
+        <p class="tag text-lime">Contact</p>
+        <ul class="mt-3 list-none space-y-2 p-0 text-base">
+          <li>
+            <a class="text-cream/85 underline decoration-cream/40 hover:text-lime" href={`mailto:${office.email}`}>
+              {office.email}
+            </a>
+          </li>
+          <li>
+            <a class="text-cream/85 underline decoration-cream/40 hover:text-lime" href={office.phoneHref}>
+              {office.phone}
+            </a>
+          </li>
+          <li class="text-cream/85">{crew.length} permanent crew</li>
+        </ul>
+      </div>
+    </div>
+
+    <svg class="mt-12 block w-full" viewBox="0 0 760 122" aria-hidden="true" width="100%">
+      <text
+        x="0"
+        y="104"
+        textLength="760"
+        lengthAdjust="spacingAndGlyphs"
+        fill="var(--color-lime)"
+        font-family="var(--font-display)"
+        font-weight="900"
+        font-size="118"
+        letter-spacing="-4"
+      >
+        SATGAS
+      </text>
+    </svg>
+
+    <p class="mt-6 max-w-[62ch] text-base leading-relaxed text-cream/70">
+      © {year} SATGAS. Third-party photographs: Olivetti Lettera 82 by Suyash Dwivedi (CC BY-SA 4.0);
+      Jakarta Kota Station by hiroo (CC BY-SA 2.0); coffee, audio console, sparkler, spruce shoot,
+      and camera from Unsplash. All show the world around SATGAS, not client work.
+    </p>
+  </div>
+</footer>

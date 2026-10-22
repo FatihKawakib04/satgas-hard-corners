@@ -1,0 +1,90 @@
+---
+import { facts, marquee } from "../data/site";
+
+const ticker = [...marquee, ...marquee];
+---
+
+<section id="top" class="border-b-[3px] border-ink bg-zinc-deep text-cream">
+  <div class="shell pt-12 pb-10 sm:pt-16 lg:pt-20">
+    <div class="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-end">
+      <h1 class="font-display text-[clamp(3.5rem,15vw,11rem)] leading-[0.82] font-black tracking-[-0.045em]">
+        <span class="block overflow-hidden">
+          <span class="block text-cream" data-hero-line>SAT</span>
+        </span>
+        <span class="block overflow-hidden">
+          <span class="block text-lime" data-hero-line style="animation-delay:110ms">GAS</span>
+        </span>
+      </h1>
+
+      <figure class="reveal overflow-hidden border-[3px] border-cream" style="--reveal-delay: 200ms;">
+        <img
+          src="assets/olivetti-lettera-82-portable-mechanical-typewriter.jpg"
+          alt="An Olivetti Lettera 82 typewriter, the working tool for writing a brief"
+          width="1600"
+          height="1200"
+          class="hero-drift aspect-[4/3] w-full object-cover"
+          fetchpriority="high"
+        />
+      </figure>
+    </div>
+
+    <div class="mt-10 grid gap-8 border-t-[3px] border-cream/25 pt-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+      <p class="reveal max-w-[42ch] text-lg leading-snug text-cream/90 sm:text-xl" style="--reveal-delay: 80ms;">
+        A creative unit assembled for one mission: making your brand impossible to
+        ignore. Brief in, unit assembled, mission executed, then the task force is disbanded.
+      </p>
+
+      <div class="reveal flex flex-wrap gap-4 lg:justify-end" style="--reveal-delay: 160ms;">
+        <a href="#contact" class="btn">Assemble your task force</a>
+        <a href="#missions" class="btn btn--ghost">See completed missions</a>
+      </div>
+    </div>
+
+    <dl class="reveal mt-12 grid grid-cols-2 gap-px border-[3px] border-cream/25 bg-cream/25 lg:grid-cols-4" style="--reveal-delay: 240ms;">
+      {
+        facts.map((fact) => (
+          <div class="bg-zinc-deep px-5 py-4">
+            <dt class="tag text-cream/60">{fact.label}</dt>
+            <dd class="mt-1 font-display text-xl font-bold text-lime">{fact.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+
+  <div class="ticker border-b-0">
+    <div class="ticker__track" aria-hidden="true">
+      {
+        ticker.map((item) => (
+          <span class="ticker__item">
+            {item}
+            <span class="ml-10 text-orange">◆</span>
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  [data-hero-line] {
+    animation: hero-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* The one moving picture: a slow drift on the hero photograph. */
+  .hero-drift {
+    animation: hero-drift 18s ease-in-out infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-hero-line],
+    .hero-drift {
+      animation: none;
+    }
+  }
+
+  @keyframes hero-drift {
+    from { transform: scale(1); }
+    to   { transform: scale(1.06); }
+  }
+</style>

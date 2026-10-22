@@ -1,0 +1,345 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   SATGAS — Neo-brutalist token layer (Tailwind v4 @theme)
+   Brand constraints (disclosed): 3px structural borders, hard corners,
+   flat surfaces (shadows only on real overlays), one accent lime with a
+   single orange state pop.
+   ========================================================================== */
+
+@theme {
+  /* Ground + ink — bone ground, kept neutral rather than yellow */
+  --color-cream: #eeebe4;
+  --color-cream-2: #e3dfd6;
+  --color-zinc-deep: #14120f;
+  --color-zinc-mid: #24211c;
+  --color-ink: #0a0908;
+  --color-paper: #fffdf8;
+
+  /* Accent pops */
+  --color-lime: #c8f436;
+  --color-lime-ink: #0a0908;
+  --color-orange: #ff5c1a;
+
+  /* Type */
+  --font-display: "Archivo", "Arial Black", system-ui, sans-serif;
+
+  /* Structural */
+  --border-w: 3px;
+
+  /* Fluid display steps */
+  --text-mega: clamp(3.25rem, 13vw, 12rem);
+  --text-giga: clamp(2.25rem, 7vw, 5.5rem);
+  --text-huge: clamp(1.75rem, 4.5vw, 3.25rem);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 0.92;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  img, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  :focus-visible {
+    outline: var(--border-w) solid var(--color-ink);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-lime-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* --- Reusable brutalist primitives -------------------------------- */
+
+  .shell {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 3.5rem);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: var(--border-w) solid var(--color-ink);
+    background: var(--color-lime);
+    color: var(--color-lime-ink);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.4rem 0.75rem;
+    line-height: 1;
+  }
+
+  .badge--ghost {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  .badge--live::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    background: var(--color-orange);
+    border: 2px solid var(--color-ink);
+    flex: none;
+    animation: pulse-dot 1.6s steps(2, end) infinite;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 48px;
+    padding: 0.75rem 1.35rem;
+    border: var(--border-w) solid var(--color-ink);
+    background: var(--color-lime);
+    color: var(--color-lime-ink);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+
+  .btn:hover {
+    background: var(--color-ink);
+    color: var(--color-lime);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn--dark {
+    background: var(--color-ink);
+    color: var(--color-cream);
+  }
+
+  .btn--dark:hover {
+    background: var(--color-lime);
+    color: var(--color-lime-ink);
+  }
+
+  .btn--ghost {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  .btn--ghost:hover {
+    background: var(--color-ink);
+    color: var(--color-lime);
+  }
+
+  .tag {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+
+  /* --- Marquee ticker ------------------------------------------------ */
+
+  .ticker {
+    overflow: hidden;
+    border-block: var(--border-w) solid var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-lime);
+  }
+
+  .ticker__track {
+    display: flex;
+    width: max-content;
+    gap: 2.5rem;
+    padding-block: 0.6rem;
+    animation: ticker-slide 26s linear infinite;
+  }
+
+  .ticker__item {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* --- Cases, chips, form fields, dialog ----------------------------- */
+
+  .card {
+    border: var(--border-w) solid var(--color-ink);
+    background: var(--color-paper);
+    transition: background-color 140ms ease;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    background: var(--color-cream-2);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.55rem 0.9rem;
+    border: var(--border-w) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+
+  .chip:hover {
+    background: var(--color-ink);
+    color: var(--color-cream);
+  }
+
+  .chip[aria-pressed="true"] {
+    background: var(--color-lime);
+    color: var(--color-lime-ink);
+  }
+
+  .field {
+    display: block;
+    width: 100%;
+    border: var(--border-w) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    padding: 0.85rem 1rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .field:focus-visible {
+    outline: var(--border-w) solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  .field[aria-invalid="true"] {
+    border-color: var(--color-orange);
+    background: #fff2ec;
+  }
+
+  .field-error {
+    margin-top: 0.4rem;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #a82d00;
+  }
+
+  .dialog {
+    border: var(--border-w) solid var(--color-ink);
+    background: var(--color-paper);
+    box-shadow: 8px 8px 0 0 var(--color-ink); /* taste-skill-ignore: dialog is a real overlay */
+    padding: 0;
+    width: min(64rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    color: var(--color-ink);
+  }
+
+  .dialog::backdrop {
+    background: rgba(10, 9, 8, 0.74);
+  }
+
+  /* --- Reveal-on-scroll (JS toggles .is-in) -------------------------- */
+
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .js .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@keyframes ticker-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes hero-rise {
+  from { transform: translateY(102%); }
+  to   { transform: translateY(0); }
+}

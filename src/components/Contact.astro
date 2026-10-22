@@ -1,0 +1,192 @@
+---
+import { budgets, disciplines, office } from "../data/site";
+---
+
+<section id="contact" class="bg-cream py-16 sm:py-24">
+  <div class="shell">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="max-w-[18ch] font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] font-black">
+        Assemble your task force
+      </h2>
+      <p class="max-w-[38ch] text-base leading-snug text-ink/80">
+        Fill in these six things and we will reply within one business day with the unit
+        we recommend, plus one question you have not answered yet.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-[1.35fr_1fr] lg:items-start">
+      <form class="reveal border-[3px] border-ink bg-paper p-6" id="inquiry" novalidate>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div>
+            <label class="tag" for="name">Name</label>
+            <input class="field mt-2" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" />
+            <p class="field-error" id="name-error" hidden>Please enter your name.</p>
+          </div>
+
+          <div>
+            <label class="tag" for="organization">Organization</label>
+            <input class="field mt-2" id="organization" name="organization" type="text" autocomplete="organization" required aria-describedby="organization-error" />
+            <p class="field-error" id="organization-error" hidden>Please enter your organization.</p>
+          </div>
+
+          <div>
+            <label class="tag" for="email">Email</label>
+            <input class="field mt-2" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" />
+            <p class="field-error" id="email-error" hidden>That email address does not look right.</p>
+          </div>
+
+          <div>
+            <label class="tag" for="budget">Budget</label>
+            <select class="field mt-2" id="budget" name="budget">
+              {budgets.map((budget) => <option value={budget}>{budget}</option>)}
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="mt-8 border-t-[3px] border-ink pt-6">
+          <legend class="tag">Disciplines you need</legend>
+          <div class="mt-4 flex flex-wrap gap-3">
+            {
+              disciplines.map((item) => (
+                <label class="chip cursor-pointer">
+                  <input class="sr-only" type="checkbox" name="discipline" value={item} data-discipline />
+                  <span>{item}</span>
+                </label>
+              ))
+            }
+          </div>
+          <p class="field-error" id="discipline-error" hidden>Pick at least one discipline.</p>
+        </fieldset>
+
+        <div class="mt-8">
+          <label class="tag" for="brief">Short brief</label>
+          <textarea class="field mt-2" id="brief" name="brief" rows="5" required minlength="20" aria-describedby="brief-error"></textarea>
+          <p class="field-error" id="brief-error" hidden>Write at least twenty characters: what you sell, for whom, and when you need it.</p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <button class="btn" type="submit">Send brief</button>
+          <p class="tag text-ink/60" id="form-status" role="status" aria-live="polite">
+            No files are uploaded. The brief is sent from your own email client.
+          </p>
+        </div>
+      </form>
+
+      <aside class="reveal border-[3px] border-ink bg-zinc-deep p-6 text-cream" style="--reveal-delay: 120ms;">
+        <h3 class="tag text-lime">Unit assembled</h3>
+        <div id="unit" class="mt-4 min-h-[7rem] border-[3px] border-dashed border-cream/40 p-4">
+          <p class="text-base text-cream/75" data-unit-empty>
+            Tick one discipline, and your unit starts assembling here.
+          </p>
+          <ul class="mt-3 list-none space-y-2 p-0" data-unit-list></ul>
+        </div>
+
+        <dl class="mt-6 space-y-4 border-t-[3px] border-cream/25 pt-6">
+          <div>
+            <dt class="tag text-cream/55">HQ</dt>
+            <dd class="mt-1 text-base">
+              <a class="text-lime underline" href={office.maps} rel="noopener">{office.building}</a><br />
+              <a class="text-lime underline" href={office.maps} rel="noopener">{office.street}</a>
+            </dd>
+          </div>
+          <div>
+            <dt class="tag text-cream/55">Hours</dt>
+            <dd class="mt-1 text-base">{office.hours}</dd>
+          </div>
+          <div>
+            <dt class="tag text-cream/55">Email &amp; phone</dt>
+            <dd class="mt-1 text-base">
+              <a class="text-lime underline" href={`mailto:${office.email}`}>{office.email}</a><br />
+              <a class="text-lime underline" href={office.phoneHref}>{office.phone}</a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("inquiry") as HTMLFormElement | null;
+  if (form) {
+    const status = document.getElementById("form-status");
+    const list = form.querySelector("[data-unit-list]");
+    const empty = form.querySelector("[data-unit-empty]");
+    const checks = Array.from(form.querySelectorAll<HTMLInputElement>("[data-discipline]"));
+    const email = "halo@satgas.ai.id";
+
+    const selected = () => checks.filter((check) => check.checked).map((check) => check.value);
+
+    const paintUnit = () => {
+      const units = selected();
+      checks.forEach((check) => {
+        check.closest(".chip")?.setAttribute("aria-pressed", String(check.checked));
+      });
+
+      if (!list || !empty) return;
+      empty.toggleAttribute("hidden", units.length > 0);
+      list.replaceChildren(
+        ...units.map((unit, index) => {
+          const li = document.createElement("li");
+          li.className = "flex items-baseline gap-3";
+          li.innerHTML = `<span aria-hidden="true" class="text-orange">▪</span><span class="font-display text-lg font-bold">${unit}</span>`;
+          return li;
+        }),
+      );
+    };
+
+    checks.forEach((check) => check.addEventListener("change", paintUnit));
+    paintUnit();
+
+    const showError = (id: string, on: boolean) => {
+      const field = document.getElementById(id);
+      const error = document.getElementById(`${id}-error`);
+      field?.setAttribute("aria-invalid", String(on));
+      error?.toggleAttribute("hidden", !on);
+    };
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = form.querySelector<HTMLInputElement>("#name");
+      const organization = form.querySelector<HTMLInputElement>("#organization");
+      const mail = form.querySelector<HTMLInputElement>("#email");
+      const brief = form.querySelector<HTMLTextAreaElement>("#brief");
+      const units = selected();
+
+      const problems: Array<[string, boolean]> = [
+        ["name", !name?.value.trim()],
+        ["organization", !organization?.value.trim()],
+        ["email", !mail || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail.value)],
+        ["brief", !brief || brief.value.trim().length < 20],
+      ];
+      problems.forEach(([id, invalid]) => showError(id, invalid));
+
+      const disciplineError = document.getElementById("discipline-error");
+      disciplineError?.toggleAttribute("hidden", units.length > 0);
+
+      if (problems.some(([, invalid]) => invalid) || units.length === 0) {
+        status!.textContent = "Some fields still need attention. Check the marks next to each field.";
+        form.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus();
+        return;
+      }
+
+      const subject = `New mission: ${organization?.value.trim()} — ${units.join(" + ")}`;
+      const body = [
+        `Name: ${name?.value.trim()}`,
+        `Organization: ${organization?.value.trim()}`,
+        `Email: ${mail?.value.trim()}`,
+        `Budget: ${form.querySelector<HTMLSelectElement>("#budget")?.value ?? "Not yet decided"}`,
+        `Disciplines: ${units.join(", ")}`,
+        "",
+        "Brief:",
+        brief?.value.trim() ?? "",
+        "",
+        "Sent from satgas.ai.id",
+      ].join("\r\n");
+
+      status!.textContent = "Unit ready. Your email client is opening so you can send it.";
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
+</script>

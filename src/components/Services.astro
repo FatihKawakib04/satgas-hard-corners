@@ -1,0 +1,56 @@
+---
+import { services } from "../data/site";
+---
+
+<section id="services" class="border-b-[3px] border-ink bg-zinc-deep py-16 text-cream sm:py-24">
+  <div class="shell">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="max-w-[16ch] font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] font-black">
+        What we do ourselves
+      </h2>
+      <p class="reveal max-w-[38ch] text-base leading-snug text-cream/80">
+        Six disciplines, one unit. No subcontracting for core work: whoever writes the
+        brief also does the work.
+      </p>
+    </div>
+
+    <ul class="mt-12 list-none p-0">
+      {
+        services.map((service, index) => (
+          <li
+            class:list={[
+              "reveal grid gap-4 border-t-[3px] py-8 sm:grid-cols-[1fr_1.4fr] sm:gap-10",
+              index === services.length - 1 && "border-b-[3px]",
+              index === 0 && "border-cream",
+            ]}
+            style={`--reveal-delay: ${Math.min(index, 5) * 60}ms;`}
+          >
+            <div>
+              <h3 class="font-display text-3xl leading-[1] font-black tracking-[-0.02em] sm:text-4xl">
+                {service.title}
+              </h3>
+            </div>
+            <div>
+              <p class="text-lg leading-snug text-cream/90">{service.desc}</p>
+              <ul class="mt-5 flex list-none flex-wrap gap-x-8 gap-y-2 p-0">
+                {service.items.map((item) => (
+                  <li class="flex gap-3 text-base text-cream/90">
+                    <span aria-hidden="true" class="text-orange">▪</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="reveal mt-12 flex flex-wrap items-center justify-between gap-6 border-[3px] border-cream bg-lime px-6 py-6 text-ink">
+      <p class="max-w-[40ch] font-display text-xl leading-tight font-bold">
+        Not sure which discipline you need? Send a one-paragraph brief; we will assemble the unit.
+      </p>
+      <a href="#contact" class="btn btn--dark">Send a brief</a>
+    </div>
+  </div>
+</section>

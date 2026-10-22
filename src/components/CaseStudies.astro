@@ -1,0 +1,185 @@
+---
+import { categories, projects } from "../data/site";
+---
+
+<section id="missions" class="border-b-[3px] border-ink bg-cream py-16 sm:py-24">
+  <div class="shell">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="max-w-[18ch] font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] font-black">
+        Missions already executed
+      </h2>
+      <p class="max-w-[38ch] text-base leading-snug text-ink/80">
+        The last six operations. Each card opens a mission summary: what was done,
+        and the result left behind.
+      </p>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-3" role="group" aria-label="Filter missions by discipline">
+      {
+        categories.map((category, index) => (
+          <button
+            type="button"
+            class="chip"
+            data-filter={category}
+            aria-pressed={index === 0 ? "true" : "false"}
+          >
+            {category}
+          </button>
+        ))
+      }
+    </div>
+
+    <p class="tag mt-6 text-ink/60" id="mission-status" role="status" aria-live="polite">
+      Showing {projects.length} of {projects.length} missions.
+    </p>
+
+    <ul class="mt-8 grid list-none grid-cols-1 gap-8 p-0 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((project, index) => (
+          <li
+            class:list={[
+              "card flex flex-col",
+              index === 0 && "sm:col-span-2",
+              "reveal",
+            ]}
+            style={`--reveal-delay: ${Math.min(index, 5) * 70}ms;`}
+            data-project={project.id}
+            data-category={project.category}
+          >
+            <img
+              src={project.image}
+              width="1600"
+              height="1000"
+              alt={project.alt}
+              loading="lazy"
+              decoding="async"
+              class:list={[
+                "w-full border-b-[3px] border-ink object-cover",
+                index === 0 ? "aspect-[16/9] sm:aspect-[21/9]" : "aspect-[4/3]",
+              ]}
+            />
+
+            <div class:list={["flex flex-1 flex-col p-5", index === 0 && "sm:max-w-[36ch]"]}>
+              <h3 class:list={["font-display leading-[0.98] font-black tracking-[-0.02em]", index === 0 ? "text-3xl sm:text-4xl" : "text-2xl"]}>
+                {project.title}
+              </h3>
+              <div class="mt-3 flex items-center gap-3">
+                <span class="tag bg-lime px-2 py-1">{project.category}</span>
+                <span class="tag text-ink/60">{project.year}</span>
+              </div>
+              <p class="mt-3 flex-1 text-base leading-snug text-ink/85">{project.blurb}</p>
+
+              <button
+                type="button"
+                class="btn btn--ghost mt-6 self-start"
+                data-open={project.id}
+                aria-label={`Open mission summary for ${project.title}`}
+              >
+                Open summary
+              </button>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-10 border-[3px] border-dashed border-ink/40 bg-cream-2 px-4 py-3 text-base text-ink/70">
+      Empty board? Filter back to "All".
+    </p>
+  </div>
+
+  <dialog class="dialog" id="project-dialog" aria-labelledby="dialog-title">
+    <article>
+      <div class="flex items-start justify-between gap-4 border-b-[3px] border-ink bg-lime px-5 py-4">
+        <div>
+          <p class="tag" id="dialog-meta">—</p>
+          <h3 class="mt-1 font-display text-[clamp(1.75rem,4vw,3rem)] leading-[0.95] font-black" id="dialog-title">
+            —
+          </h3>
+        </div>
+        <button type="button" class="chip" data-close aria-label="Close summary">Close</button>
+      </div>
+
+      <div class="grid gap-0 md:grid-cols-[1.1fr_1fr]">
+        <img id="dialog-image" src="" alt="" width="1600" height="1000" class="h-full w-full border-b-[3px] border-ink object-cover md:border-b-0 md:border-r-[3px]" />
+        <div class="p-5">
+          <p class="text-base leading-snug text-ink/85" id="dialog-blurb">—</p>
+          <h4 class="tag mt-6">What was delivered</h4>
+          <ul class="mt-3 list-none space-y-2 p-0 text-base" id="dialog-delivered"></ul>
+          <h4 class="tag mt-6">Result</h4>
+          <p class="mt-2 border-[3px] border-ink bg-cream-2 px-4 py-3 text-base" id="dialog-result">—</p>
+          <a class="btn mt-6" href="#contact" data-close>Discuss a similar mission</a>
+        </div>
+      </div>
+    </article>
+  </dialog>
+</section>
+
+<script>
+  const projects = JSON.parse(document.getElementById("project-data")?.textContent ?? "null") ?? [];
+
+  const dialog = document.getElementById("project-dialog") as HTMLDialogElement | null;
+  const title = document.getElementById("dialog-title");
+  const meta = document.getElementById("dialog-meta");
+  const image = document.getElementById("dialog-image") as HTMLImageElement | null;
+  const blurb = document.getElementById("dialog-blurb");
+  const result = document.getElementById("dialog-result");
+  const delivered = document.getElementById("dialog-delivered");
+
+  const fill = (id: string) => {
+    const project = projects.find((item: { id: string }) => item.id === id);
+    if (!project || !dialog) return;
+
+    if (title) title.textContent = project.title;
+    if (meta) meta.textContent = `${project.category} · ${project.year}`;
+    if (blurb) blurb.textContent = project.blurb;
+    if (result) result.textContent = project.result;
+    if (image) {
+      image.src = project.image;
+      image.alt = project.alt;
+    }
+    if (delivered) {
+      delivered.replaceChildren(
+        ...project.delivered.map((line: string) => {
+          const li = document.createElement("li");
+          li.textContent = line;
+          li.className = "border-l-[3px] border-lime pl-3";
+          return li;
+        }),
+      );
+    }
+
+    dialog.showModal();
+  };
+
+  document.querySelectorAll("[data-open]").forEach((button) => {
+    button.addEventListener("click", () => fill(button.getAttribute("data-open") ?? ""));
+  });
+
+  dialog?.addEventListener("click", (event) => {
+    if (event.target === dialog || (event.target as HTMLElement).hasAttribute("data-close")) {
+      dialog.close();
+    }
+  });
+
+  const status = document.getElementById("mission-status");
+  const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-project]"));
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-filter]"));
+
+  const applyFilter = (category: string) => {
+    let shown = 0;
+    cards.forEach((card) => {
+      const match = category === "All" || card.dataset.category === category;
+      card.hidden = !match;
+      if (match) shown += 1;
+    });
+    if (status) status.textContent = `Showing ${shown} of ${cards.length} missions.`;
+    chips.forEach((chip) => chip.setAttribute("aria-pressed", String(chip.dataset.filter === category)));
+  };
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => applyFilter(chip.dataset.filter ?? "All"));
+  });
+</script>
+
+<script type="application/json" id="project-data" set:html={JSON.stringify(projects)} />
