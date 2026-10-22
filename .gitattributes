@@ -1,0 +1,8 @@
+# Force GitHub Linguist to count the languages that make up this project.
+*.astro linguist-detectable=true
+*.ts    linguist-detectable=true
+*.css   linguist-detectable=true
+*.mjs   linguist-detectable=true
+
+# Lockfiles are generated — keep them out of the language bar.
+package-lock.json linguist-generated=true
