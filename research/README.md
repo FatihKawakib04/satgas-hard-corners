@@ -16,6 +16,17 @@ research/
 ├── hipotesis.py   uji hipotesis riset -> hipotesis.html dan metode.html
 ├── alert.py       watcher ambang signifikan (diam kalau tidak ada apa-apa)
 ├── svg.py         grafik SVG tanpa dependensi
+├── lab/           mesin uji strategi dan peluang ekonomi
+│   ├── engine.py       backtest: posisi t+1, biaya fee+slippage, metrik risiko
+│   ├── strategies.py   katalog strategi + grid parameter
+│   ├── experiments.py  walk-forward 4 blok, pemilihan parameter, gerbang lolos
+│   ├── uji_null.py     block bootstrap: apakah unggul dari keberuntungan pencarian
+│   ├── paper.py        paper trading simulasi, maksimal 2 strategi
+│   ├── cycle.py        satu siklus otonom (dipanggil cron tiap 6 jam)
+│   ├── peluang.py      halaman peluang pendapatan non-trading
+│   ├── evaluasi.py     kelayakan hari ke-30 dan ke-60
+│   └── config.json     biaya, gerbang kelayakan, batas paper trading
+├── health.py      pemeriksaan kesehatan sistem (diam kalau sehat)
 ├── db/            research.db (SQLite, tidak masuk git)
 ├── out/           fakta.json, hipotesis.json, cache lokal
 └── reports/       hasil terbit: HTML, Markdown, index, data/fakta.json, data/harga.csv
@@ -60,6 +71,11 @@ FRED, BLS) sengaja tidak dipakai.
 | 06:30 | laporan harian + ringkasan | kirim ke Telegram |
 | Minggu 09:00 | tinjauan mingguan | kirim ke Telegram |
 | tanggal 1, 10:00 | tinjauan hipotesis | kirim ke Telegram |
+| tiap 6 jam | siklus lab: satu eksperimen | lapor hanya kalau ada temuan |
+| 07:45 | paper trading harian | diam kecuali strategi dihentikan |
+| 11:00 | cek kesehatan sistem | diam kalau sehat |
+| 23 Nov 2026 | evaluasi kelayakan hari ke-30 | kirim + minta keputusan |
+| 23 Des 2026 | evaluasi kelayakan hari ke-60 | kirim + minta keputusan |
 
 ## Catatan git
 

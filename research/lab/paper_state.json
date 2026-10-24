@@ -32,6 +32,23 @@
     }
    ],
    "dihentikan": false
+  },
+  "E10:ma_cross": {
+   "mulai": "2026-10-25",
+   "ekuitas": 10000.0,
+   "posisi": {},
+   "params": {
+    "fast": 8,
+    "slow": 40
+   },
+   "riwayat": [
+    {
+     "t": "2026-10-25",
+     "eq": 10000.0,
+     "pos": {}
+    }
+   ],
+   "dihentikan": false
   }
  }
 }

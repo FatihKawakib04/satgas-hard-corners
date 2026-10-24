@@ -1,0 +1,103 @@
+{
+ "riwayat": [
+  {
+   "waktu": "2026-10-25T06:19:26.914493+07:00",
+   "exp": "E01",
+   "strategi": "tsmom",
+   "verdict": "gagal",
+   "oos": 47.93,
+   "sharpe": 0.42,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:19:27.356968+07:00",
+   "exp": "E04",
+   "strategi": "vol_target",
+   "verdict": "gagal",
+   "oos": 81.35,
+   "sharpe": 0.7,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:19:27.560103+07:00",
+   "exp": "E05",
+   "strategi": "rotasi_eth",
+   "verdict": "gagal",
+   "oos": -12.42,
+   "sharpe": 0.13,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:19:27.871209+07:00",
+   "exp": "E07",
+   "strategi": "dd_buy",
+   "verdict": "gagal",
+   "oos": 19.85,
+   "sharpe": 0.29,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:19:28.599179+07:00",
+   "exp": "E08",
+   "strategi": "xs_mom",
+   "verdict": "gagal",
+   "oos": 17.69,
+   "sharpe": 0.4,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:22:22.157928+07:00",
+   "exp": "E09",
+   "strategi": "rotasi_eth",
+   "verdict": "gagal",
+   "oos": 25.71,
+   "sharpe": 0.34,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:23:30.947543+07:00",
+   "exp": "E10",
+   "strategi": "ma_cross",
+   "verdict": "kandidat",
+   "oos": 142.49,
+   "sharpe": 0.75,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:24:49.460322+07:00",
+   "exp": "E11",
+   "strategi": "mom_vol",
+   "verdict": "gagal",
+   "oos": 39.79,
+   "sharpe": 0.4,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:25:03.225214+07:00",
+   "exp": "E12",
+   "strategi": "breakout_stop",
+   "verdict": "kandidat",
+   "oos": 107.17,
+   "sharpe": 0.87,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:25:11.362482+07:00",
+   "exp": "E14",
+   "strategi": "vol_target",
+   "verdict": "gagal",
+   "oos": 33.51,
+   "sharpe": 0.39,
+   "bench": 93.26
+  }
+ ],
+ "terakhir": {
+  "waktu": "2026-10-25T06:25:11.362482+07:00",
+  "exp": "E14",
+  "strategi": "vol_target",
+  "verdict": "gagal",
+  "oos": 33.51,
+  "sharpe": 0.39,
+  "bench": 93.26
+ }
+}

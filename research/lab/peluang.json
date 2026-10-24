@@ -1,0 +1,108 @@
+[
+ {
+  "id": "P1",
+  "judul": "Bounty dan kompetisi data/crypto (Superteam Earn, hackathon)",
+  "kategori": "Jasa sekali kerja",
+  "tebakan": "$100 - $2.000 per bounty, tergantung skala",
+  "waktu": "1 sampai 3 minggu untuk pembayaran pertama",
+  "peluang": "sedang",
+  "kenapa": "Platform bounty Solana mencatat total nilai yang dibayarkan sekitar $11,5 juta dan menyediakan hadiah pengembangan di atas $319 ribu pada satu periode. Pekerjaan cocok dengan kemampuan kita: dashboard data, skrip analisis, dan laporan riset otomatis.",
+  "risiko": "Kompetisi terbuka, penilaian subjektif, dan pembayaran bisa lambat. Sebagian bounty butuh keahlian Solana yang belum kita punya.",
+  "langkah": "Daftar akun, saring bounty bertema data/analitik dengan hadiah $200-1.000, kirim 2 submission pertama memakai pipeline riset ini sebagai bukti kerja.",
+  "bukti": [
+   [
+    "Superteam Earn, daftar bounty dan total pembayaran",
+    "https://superteam.fun/earn/bounties/"
+   ],
+   [
+    "Superteam Earn, ringkasan nilai yang dibayarkan",
+    "https://www.check-superteam.com/"
+   ]
+  ],
+  "status": "belum-dimulai"
+ },
+ {
+  "id": "P2",
+  "judul": "Freelance data engineering dan dashboard",
+  "kategori": "Jasa berulang",
+  "tebakan": "$25 - $60 per jam pada tahap awal, naik setelah ada portofolio publik",
+  "waktu": "2 sampai 6 minggu untuk klien pertama",
+  "peluang": "tinggi",
+  "kenapa": "Tarif data engineer lepas di pasar global berkisar $60 per jam untuk profil mapan, sementara panduan Upwork menyebut rentang $10-20 untuk level awal dan $100+ untuk spesialis. Kita sudah punya bukti kerja nyata: pipeline data, backtest, dan situs statis yang jalan di VPS.",
+  "risiko": "Butuh waktu mencari klien dan berkomunikasi. Pendapatan tidak stabil, dan klien bisa menuntut lingkup kerja yang melebar.",
+  "langkah": "Susun satu halaman portofolio berisi tiga studi kasus (dashboard crypto, pipeline riset ini, proyek KodeMaverick), lalu kirim 10 penawaran kecil.",
+  "bukti": [
+   [
+    "Upwork, panduan tarif per jam 2026",
+    "https://www.upwork.com/resources/upwork-hourly-rates"
+   ],
+   [
+    "Upwork, contoh profil data engineer dengan tarif $60/jam",
+    "https://www.upwork.com/hire/data-engineers/us/"
+   ]
+  ],
+  "status": "belum-dimulai"
+ },
+ {
+  "id": "P3",
+  "judul": "Jasa audit dan backtest strategi (produk terpaket)",
+  "kategori": "Jasa niche",
+  "tebakan": "$150 - $600 per laporan audit",
+  "waktu": "3 sampai 8 minggu",
+  "peluang": "sedang",
+  "kenapa": "Banyak trader membeli indikator dan strategi tanpa uji biaya transaksi atau walk-forward. Kita sudah punya mesin yang bisa menguji klaim mereka dengan biaya, slippage, dan uji acak. Ini jasa yang sulit ditiru pemula karena butuh metode, bukan opini.",
+  "risiko": "Pasar kecil dan butuh kepercayaan. Harus tegas menolak klaim profit yang tidak lolos uji, yang bisa membuat calon klien kabur.",
+  "langkah": "Buat satu contoh audit publik (strategi populer, misalnya MA cross) memakai format lab ini, jadikan sampel gratis, lalu tawarkan versi berbayar.",
+  "bukti": [
+   [
+    "Contoh pasar indikator berbayar di TradingView, termasuk biaya teknologi untuk kreator",
+    "https://desktested.com/posts/tradingview-invite-only-marketplace/"
+   ],
+   [
+    "Halaman harga TradingView (konteks pasar alat trading)",
+    "https://www.tradingview.com/pricing/"
+   ]
+  ],
+  "status": "belum-dimulai"
+ },
+ {
+  "id": "P4",
+  "judul": "Riset berlangganan (newsletter/Substack) tentang crypto dan makro",
+  "kategori": "Produk konten",
+  "tebakan": "$0 - $300 per bulan dalam 6 bulan pertama",
+  "waktu": "3 sampai 12 bulan, sangat bergantung audiens",
+  "peluang": "rendah",
+  "kenapa": "Gaji analis riset crypto di pasar kerja berkisar $80 ribu sampai $175 ribu per tahun, tanda ada permintaan atas analisis. Tapi produk berlangganan butuh audiens lebih dulu, dan itu tidak dibeli dengan kualitas saja.",
+  "risiko": "Pendapatan mendekati nol untuk waktu lama. Berisiko mengalihkan waktu dari pekerjaan berbayar dan menambah biaya platform.",
+  "langkah": "Publikasikan laporan lab ini terbuka dulu selama 8 minggu, ukur jumlah pembaca. Baru pertimbangkan monetisasi kalau ada minimal 200 pembaca rutin.",
+  "bukti": [
+   [
+    "Indeed, sebaran gaji analis riset crypto",
+    "https://www.indeed.com/career/crypto-research-analyst/salaries"
+   ],
+   [
+    "Wellfound, lowongan analis crypto remote",
+    "https://wellfound.com/role/r/crypto-analyst"
+   ]
+  ],
+  "status": "belum-dimulai"
+ },
+ {
+  "id": "P5",
+  "judul": "Grant untuk tooling riset terbuka",
+  "kategori": "Pendanaan proyek",
+  "tebakan": "$1.000 - $10.000 per grant, proses 1 sampai 3 bulan",
+  "waktu": "1 sampai 3 bulan",
+  "peluang": "rendah-sedang",
+  "kenapa": "Laboratorium ini adalah perangkat riset terbuka yang bisa dipakai orang lain: backtest dengan biaya, uji acak, dan publikasi otomatis. Proyek open source semacam ini cocok dengan program grant ekosistem, tetapi peluangnya bergantung pada kualitas dokumentasi dan bukti pemakaian.",
+  "risiko": "Proses seleksi panjang dan sering tanpa alasan penolakan. Jangan menghitung grant sebagai pendapatan sampai dana masuk.",
+  "langkah": "Rapikan repo jadi paket yang bisa dipakai ulang (dokumentasi, lisensi, contoh), kumpulkan 4 minggu riwayat commit, baru ajukan ke satu program grant.",
+  "bukti": [
+   [
+    "Superteam Earn juga menyalurkan grant dan pekerjaan lepas",
+    "https://solanacompass.com/projects/superteam"
+   ]
+  ],
+  "status": "belum-dimulai"
+ }
+]

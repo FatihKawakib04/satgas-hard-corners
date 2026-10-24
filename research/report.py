@@ -552,7 +552,8 @@ def build_html(f: dict, n: dict, berita: list[dict], jenis: str, slug: str) -> s
 <meta name="description" content="{esc((n.get('ringkasan') or [''])[0])}">
 <style>{CSS}</style></head><body><div class="wrap">
 <div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Semua laporan</a> · <a href="hipotesis.html">Hipotesis</a> ·
+<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
+<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a> ·
 <a href="metode.html">Metode</a> · <span>{now:%d %b %Y %H:%M} WIB</span></div></div>
 <h1>{esc(n.get('judul','Laporan riset pasar crypto'))}</h1>
 <div class="meta"><span class="badge {esc(rez.get('label','netral'))}">rezim: {esc(rez.get('label','netral'))}</span>
@@ -650,7 +651,8 @@ ul.reports{{list-style:none;padding:0}}ul.reports li{{background:var(--panel);
 border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}}
 ul.reports li .meta{{margin-top:4px;font-size:13px}}</style></head><body><div class="wrap">
 <div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="../">Dashboard</a> · <a href="hipotesis.html">Hipotesis</a> ·
+<div class="meta"><a href="../">Dashboard</a> · <a href="lab.html">Lab</a> ·
+<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a> ·
 <a href="metode.html">Metode</a> · <a href="data/fakta.json">data</a></div></div>
 <h1>Laporan riset crypto dan ekonomi global</h1>
 <p class="lead">Analisis berkelanjutan atas pasar crypto, makroekonomi, kebijakan bank sentral,

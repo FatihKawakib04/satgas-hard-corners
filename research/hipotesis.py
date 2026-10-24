@@ -312,7 +312,8 @@ def render_hipotesis(rows: list[dict]) -> str:
 .badge.warn{{color:#e5c76b;border-color:rgba(201,162,39,.45);background:rgba(201,162,39,.10)}}</style></head>
 <body><div class="wrap">
 <div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Semua laporan</a> · <a href="metode.html">Metode</a></div></div>
+<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
+<a href="peluang.html">Peluang</a> · <a href="metode.html">Metode</a></div></div>
 <h1>Catatan hipotesis</h1>
 <p class="lead">Riset yang berguna harus punya klaim yang bisa salah. Halaman ini mencatat
 hipotesis yang sedang diuji, kriteria lulusnya, dan bukti terukur dari basis data sendiri.
@@ -378,7 +379,8 @@ def render_metode() -> str:
 <title>Metode riset · satgas.ai.id</title><style>{css}</style></head>
 <body><div class="wrap">
 <div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Semua laporan</a> · <a href="hipotesis.html">Hipotesis</a></div></div>
+<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
+<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a></div></div>
 <h1>Metode dan batasan</h1>
 <p class="lead">Semua angka dalam laporan dihitung kode dari sumber primer, disimpan di basis data
 SQLite lokal, dan bisa ditelusuri ulang. Model bahasa hanya menulis narasi dari angka itu.</p>

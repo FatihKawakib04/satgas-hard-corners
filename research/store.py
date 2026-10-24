@@ -52,6 +52,27 @@ CREATE TABLE IF NOT EXISTS etf (
 CREATE TABLE IF NOT EXISTS onchain (
     d TEXT PRIMARY KEY, fees_usd REAL, tx_24h REAL, mempool_tx REAL, mempool_mb REAL
 );
+CREATE TABLE IF NOT EXISTS lab_exp (
+    id TEXT PRIMARY KEY, strategi TEXT, keluarga TEXT, catatan TEXT, status TEXT,
+    dibuat TEXT, dijalankan TEXT, keputusan TEXT, ringkas TEXT
+);
+CREATE TABLE IF NOT EXISTS lab_runs (
+    exp_id TEXT, strategi TEXT, params TEXT, periode TEXT, is_sharpe REAL,
+    oos_return_pct REAL, oos_sharpe REAL, oos_maxdd_pct REAL, oos_trades INTEGER,
+    penuh_return_pct REAL, penuh_sharpe REAL, penuh_maxdd_pct REAL,
+    PRIMARY KEY (exp_id, strategi, params, periode)
+);
+CREATE TABLE IF NOT EXISTS lab_paper (
+    tanggal TEXT, strategi TEXT, ekuitas REAL, posisi TEXT, harga REAL, catatan TEXT,
+    PRIMARY KEY (tanggal, strategi)
+);
+CREATE TABLE IF NOT EXISTS lab_pendapatan (
+    tanggal TEXT, sumber TEXT, usd REAL, bukti TEXT, catatan TEXT,
+    PRIMARY KEY (tanggal, sumber)
+);
+CREATE TABLE IF NOT EXISTS lab_biaya (
+    item TEXT PRIMARY KEY, usd_per_bulan REAL, catatan TEXT
+);
 CREATE TABLE IF NOT EXISTS cgid (
     sym TEXT PRIMARY KEY, cg_id TEXT, name TEXT
 );
@@ -70,6 +91,15 @@ def connect(path: str = DB_PATH) -> sqlite3.Connection:
     con.row_factory = sqlite3.Row
     con.execute("PRAGMA journal_mode=WAL")
     con.executescript(SCHEMA)
+    # migrasi ringan: kolom tambahan yang mungkin belum ada di DB lama
+    for ddl in ("ALTER TABLE lab_exp ADD COLUMN konfigurasi TEXT",
+                "ALTER TABLE lab_exp ADD COLUMN wf_return REAL",
+                "ALTER TABLE lab_exp ADD COLUMN wf_sharpe REAL",
+                "ALTER TABLE lab_exp ADD COLUMN wf_maxdd REAL"):
+        try:
+            con.execute(ddl)
+        except sqlite3.OperationalError:
+            pass
     return con
 
 
@@ -105,6 +135,7 @@ def series(con: sqlite3.Connection, table: str, key: str, val: str, where: str =
 if __name__ == "__main__":
     with db() as con:
         for t in ("daily", "snap", "glob", "fng", "funding", "deriv", "macro",
-                  "stables", "tvl", "news", "reports"):
+                  "stables", "tvl", "news", "reports", "lab_exp", "lab_runs",
+                  "lab_paper"):
             n = con.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
             print(f"{t:<10} {n:>7} baris")

@@ -1,0 +1,30 @@
+{
+  "_catatan": "Parameter biaya dan gerbang kelayakan. Ubah di sini, bukan di kode.",
+  "modal_uji_usd": 10000,
+  "biaya": {
+    "fee_bps_spot": 10,
+    "slippage_bps": 5,
+    "fee_bps_perp": 5,
+    "funding_dibayar_8j": true
+  },
+  "gerbang": {
+    "min_hari_data": 700,
+    "min_trade_per_tahun": 3,
+    "oos_sharpe_min": 0.5,
+    "oos_return_min_pct": 0,
+    "max_drawdown_pct": -45,
+    "dd_relatif_benchmark": 0.8,
+    "maks_penurunan_is_ke_oos_pct": 50
+  },
+  "biaya_operasional": {
+    "vps_usd_per_bulan": null,
+    "domain_usd_per_tahun": null,
+    "api_usd_per_bulan": 0,
+    "catatan": "vps_usd_per_bulan belum diisi Fatih. Isi angka sebenarnya supaya evaluasi hari ke-30 dan ke-60 bisa menghitung laba bersih."
+  },
+  "paper": {
+    "modal_usd": 10000,
+    "maks_strategi": 2,
+    "maks_drawdown_hentikan_pct": -25
+  }
+}
