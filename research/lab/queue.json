@@ -244,5 +244,35 @@
   "ringkas": "Return OOS +135.1%, Sharpe 0.80, DD -31.4%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.94 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.508 (median Sharpe dunia sintetis +0.78). Tidak menonjol dibanding hasil pencarian parameter acak.",
   "keputusan": "kandidat",
   "selesai": "2026-10-25 06:36"
+ },
+ {
+  "id": "E17",
+  "strategi": "carry_funding",
+  "catatan": "Uji carry funding delta-netral: apakah yield funding cukup menutupi risiko",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +3.3% (CAGR +0.7%), Sharpe 2.30, DD -0.6%, ambang terbaik 0.005% per 8 jam. Uji null p=1.000. CAGR OOS +0.7% di bawah ambang 5%, tidak sepadan dengan risiko operasional posisi perpeta; tidak menonjol pada uji null funding.",
+  "keputusan": "kandidat",
+  "selesai": "2026-10-25 06:48"
+ },
+ {
+  "id": "E18",
+  "strategi": "ma_filter_breakout",
+  "catatan": "Breakout dengan filter MA200",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +126.2%, Sharpe 0.84, DD -25.4%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.69 mengalahkan 198 dari 200 sinyal acak. Uji null: p=0.426 (median Sharpe dunia sintetis +0.66). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-10-25 06:48"
+ },
+ {
+  "id": "E19",
+  "strategi": "pair_zscore",
+  "catatan": "Relative value ETH/BTC berbasis z-score",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS -54.1%, Sharpe -0.13, DD -63.3%, BTC +93.3% (DD -62.0%). return OOS -54.1% tidak positif; Sharpe OOS -0.13 di bawah 0.5; drawdown -63.3% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+93.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-25 06:48"
  }
 ]

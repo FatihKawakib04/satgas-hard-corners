@@ -109,7 +109,11 @@ def siklus(notify: bool = True) -> tuple[int, str]:
         return 0, ""
 
     try:
-        res = X.run_experiment(exp)
+        if exp["strategi"] == "carry_funding":
+            import carry
+            res = carry.jalankan(exp)
+        else:
+            res = X.run_experiment(exp)
     except Exception:
         tb = traceback.format_exc().strip().splitlines()[-3:]
         X.mark(exp["id"], "error", "eksekusi gagal")
@@ -123,7 +127,7 @@ def siklus(notify: bool = True) -> tuple[int, str]:
         return 1, f"Eksperimen {exp['id']} gagal: {res.get('error')}"
 
     # kalau lolos gerbang, uji null dulu: apakah unggul dari pencarian parameter?
-    if res["verdict"] == "lolos":
+    if res["verdict"] == "lolos" and res["strategi"] != "carry_funding":
         try:
             meta = S.KATALOG[res["strategi"]]
             n_sim = 40 if len(meta["grid"]) * len(meta["syms"]) > 100 else 60

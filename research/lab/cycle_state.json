@@ -107,15 +107,42 @@
    "oos": 135.07,
    "sharpe": 0.8,
    "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:48:19.762867+07:00",
+   "exp": "E17",
+   "strategi": "carry_funding",
+   "verdict": "kandidat",
+   "oos": 3.25,
+   "sharpe": 2.3,
+   "bench": 0.0
+  },
+  {
+   "waktu": "2026-10-25T06:48:30.608976+07:00",
+   "exp": "E18",
+   "strategi": "ma_filter_breakout",
+   "verdict": "kandidat",
+   "oos": 126.16,
+   "sharpe": 0.84,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:48:31.212374+07:00",
+   "exp": "E19",
+   "strategi": "pair_zscore",
+   "verdict": "gagal",
+   "oos": -54.09,
+   "sharpe": -0.13,
+   "bench": 93.26
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-25T06:36:31.235916+07:00",
-  "exp": "E16",
-  "strategi": "donchian",
-  "verdict": "kandidat",
-  "oos": 135.07,
-  "sharpe": 0.8,
+  "waktu": "2026-10-25T06:48:31.212374+07:00",
+  "exp": "E19",
+  "strategi": "pair_zscore",
+  "verdict": "gagal",
+  "oos": -54.09,
+  "sharpe": -0.13,
   "bench": 93.26
  }
 }

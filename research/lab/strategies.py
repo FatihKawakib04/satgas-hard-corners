@@ -235,6 +235,57 @@ def breakout_stop(ctx, p):
     return out
 
 
+def ma_filter_breakout(ctx, p):
+    """Breakout hanya saat harga di atas MA200: uji apakah filter rezim menambah nilai."""
+    xs = ctx.prices["BTC"]
+    entry_n = p["entry"]
+    out, pos = [], 0.0
+    for i in range(len(xs)):
+        ma = sma(xs, 200, i)
+        h = max_prev(xs, entry_n, i)
+        l = min_prev(xs, entry_n // 2, i)
+        if ma is None or h is None or l is None:
+            out.append({})
+            continue
+        if pos == 0 and xs[i] > ma and xs[i] > h:
+            pos = 1.0
+        elif pos > 0 and (xs[i] < l or xs[i] < ma):
+            pos = 0.0
+        out.append({"BTC": pos} if pos else {})
+    return out
+
+
+def pair_zscore(ctx, p):
+    """Relative value ETH/BTC: beli aset yang tertinggal saat rasio menyimpang.
+
+    Z-score rasio ETH/BTC terhadap rata-rata `window` hari. Jika z < -ambang,
+    ETH dianggap murah relatif BTC sehingga dipegang ETH; jika z > +ambang,
+    dipegang BTC; selain itu kas.
+    """
+    b, e = ctx.prices["BTC"], ctx.prices["ETH"]
+    win, ambang = p["window"], p["z"]
+    ratio = [e[i] / b[i] if b[i] else 0.0 for i in range(len(b))]
+    out = []
+    for i in range(len(ratio)):
+        if i < win:
+            out.append({})
+            continue
+        w = ratio[i - win:i]
+        m = sum(w) / len(w)
+        sd = (sum((x - m) ** 2 for x in w) / (len(w) - 1)) ** 0.5
+        if not sd:
+            out.append({})
+            continue
+        z = (ratio[i] - m) / sd
+        if z <= -ambang:
+            out.append({"ETH": 1.0})
+        elif z >= ambang:
+            out.append({"BTC": 1.0})
+        else:
+            out.append({})
+    return out
+
+
 # name -> metadata + grid parameter
 KATALOG = {
     "tsmom": {
@@ -297,6 +348,18 @@ KATALOG = {
         "deskripsi": "Breakout dengan trailing stop berbasis rata-rata rentang harian.",
         "grid": [{"entry": e, "k": k} for e in (55, 100) for k in (2.0, 3.0, 5.0)],
         "builder": breakout_stop, "syms": ["BTC"],
+    },
+    "ma_filter_breakout": {
+        "keluarga": "breakout + rezim",
+        "deskripsi": "Breakout hanya di atas MA200, keluar bila di bawah MA200 atau terendah.",
+        "grid": [{"entry": e} for e in (20, 55, 100, 200)],
+        "builder": ma_filter_breakout, "syms": ["BTC"],
+    },
+    "pair_zscore": {
+        "keluarga": "relative value",
+        "deskripsi": "Rotasi ETH/BTC berdasarkan z-score rasio, bukan momentum.",
+        "grid": [{"window": w, "z": z} for w in (30, 60, 120) for z in (1.0, 1.5, 2.0)],
+        "builder": pair_zscore, "syms": ["BTC", "ETH"],
     },
     "ma_cross_eth": {
         "keluarga": "trend",
