@@ -1,0 +1,9 @@
+[Unit]
+Description=Jaring pengaman riset crypto saat scheduler Hermes tidak berdenyut
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/crypto-fallback.sh
+Nice=15
+IOSchedulingClass=idle

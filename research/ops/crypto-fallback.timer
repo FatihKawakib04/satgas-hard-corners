@@ -1,0 +1,11 @@
+[Unit]
+Description=Jalankan jaring pengaman riset tiap 15 menit
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=15min
+AccuracySec=60s
+Unit=crypto-fallback.service
+
+[Install]
+WantedBy=timers.target

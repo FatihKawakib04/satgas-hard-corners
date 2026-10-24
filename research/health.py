@@ -87,9 +87,36 @@ def cek_data(masalah: list[str]) -> None:
         masalah.append(f"tabel snap tidak terbaca: {type(e).__name__}")
 
 
+def cek_lab(masalah: list[str]) -> None:
+    """Deteksi lab macet: siklus terakhir terlalu tua atau antrean menumpuk."""
+    state = os.path.join(BASE, "lab", "cycle_state.json")
+    try:
+        with open(state) as f:
+            t = datetime.fromisoformat(json.load(f)["terakhir"]["waktu"])
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=timezone.utc)
+        umur = (datetime.now(timezone.utc) - t).total_seconds() / 3600
+        if umur > 5:
+            masalah.append(f"siklus lab terakhir {umur:.1f} jam lalu (harusnya <= 3 jam)")
+    except (OSError, KeyError, ValueError):
+        masalah.append("riwayat siklus lab tidak terbaca")
+    try:
+        con = sqlite3.connect(DB, timeout=10)
+        n = con.execute("SELECT COUNT(*) FROM lab_exp").fetchone()[0]
+        lolos = con.execute("SELECT COUNT(*) FROM lab_exp WHERE keputusan='lolos'").fetchone()[0]
+        con.close()
+        if n == 0:
+            masalah.append("belum ada eksperimen tersimpan di lab_exp")
+        elif lolos == 0:
+            pass  # normal: bisa jadi semua strategi gagal, bukan kesalahan sistem
+    except Exception as e:
+        masalah.append(f"tabel lab tidak terbaca: {type(e).__name__}")
+
+
 def main() -> int:
     masalah: list[str] = []
     cek_cron(masalah)
+    cek_lab(masalah)
     cek_db(masalah)
     cek_halaman(masalah)
     cek_disk(masalah)
