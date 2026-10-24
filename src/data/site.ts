@@ -216,8 +216,8 @@ export const budgets = ["Not yet decided", "Under 50 million", "50 to 150 millio
 
 export const office = {
   email: "halo@satgas.ai.id",
-  phone: "+62 21 5087 5610",
-  phoneHref: "tel:+622150875610",
+  phone: "+62 895-3230-81143",
+  phoneHref: "tel:+62895323081143",
   building: "Antara Building, 3rd floor",
   street: "8 Antara Street, Central Jakarta 10310",
   hours: "Monday to Friday, 09:00 to 18:00 WIB",
