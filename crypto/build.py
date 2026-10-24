@@ -445,6 +445,7 @@ def render(coins, glob, fng_v, fng_c, sent, now):
     <nav class="main-nav" aria-label="Navigasi">
       <a href="#pasar">Pasar</a>
       <a href="#sentimen">Sentimen</a>
+      <a href="/crypto/riset/">Riset</a>
       <a href="https://satgas.ai.id/">Beranda</a>
     </nav>
     <span class="chip chip--live">{now:%H:%M} WIB</span>

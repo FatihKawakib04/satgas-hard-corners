@@ -11,6 +11,7 @@ import argparse
 import json
 import sys
 import os
+import time
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
@@ -78,8 +79,13 @@ def _sparkline(symbol, points=168):
         return []
 
 
+CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".last_markets.json")
+
+
 def fetch_markets(top, ids=None):
     # Binance tidak punya market cap; kembalikan bentuk yang kompatibel dengan build.py.
+    # Kalau Binance gagal (limit/geo), pakai cache lokal terakhir supaya dashboard
+    # tidak kosong; build.py menandai umur cache di stderr.
     syms = [s.upper() for s in (ids or TOP_SYMBOLS[:top])]
     try:
         allt = _bn_get("/api/v3/ticker/24hr")
@@ -105,6 +111,22 @@ def fetch_markets(top, ids=None):
             "total_volume": float(t.get("quoteVolume") or 0),
             "sparkline_in_7d": {"price": closes},
         })
+    if out:
+        try:
+            with open(CACHE, "w") as f:
+                json.dump({"ts": int(time.time()), "rows": out}, f)
+        except OSError:
+            pass
+        return out
+    try:  # Binance gagal: pakai snapshot terakhir, maksimal 6 jam
+        with open(CACHE) as f:
+            cached = json.load(f)
+        age = (time.time() - cached.get("ts", 0)) / 3600
+        if age <= 6:
+            print(f"peringatan: harga dari cache {age:.1f} jam lalu", file=sys.stderr)
+            return cached["rows"]
+    except (OSError, json.JSONDecodeError, KeyError):
+        pass
     return out
 
 

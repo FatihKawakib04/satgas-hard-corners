@@ -1,67 +1,46 @@
 {
- "mood": "risk-off",
- "score": -1,
+ "mood": "risk-on",
+ "score": 1,
  "tema": [
   "Bitcoin",
-  "Likuidasi",
-  "Institusi",
-  "Regulasi",
-  "Geopolitik"
+  "target bullish",
+  "memecoin",
+  "mining dan AI",
+  "regulasi",
+  "keamanan data"
  ],
  "poin": [
   {
-   "teks": "Bitcoin turun di bawah $80.000 setelah bertahan di atas level itu lebih dari 30 hari.",
-   "sumber": "@coingecko"
-  },
-  {
-   "teks": "$186 juta likuidasi dalam satu jam setelah Bitcoin jatuh di bawah $80K; total 24 jam mencapai $838 juta.",
+   "teks": "Fidelity’s Zack Wainwright bilang BTC bisa capai $200K lebih cepat setelah bertahan dekat $60K dan naik hampir 50% dari Juni.",
    "sumber": "@Cointelegraph"
   },
   {
-   "teks": "Whale ETH dengan 93.184 ETH senilai $214 juta berisiko likuidasi di $2.256,45 dan $2.226,53 jika pasar terus turun.",
-   "sumber": "@lookonchain"
-  },
-  {
-   "teks": "Machi dilikuidasi lima kali dalam satu jam dan hanya menyisakan sekitar $5K di akunnya.",
-   "sumber": "@lookonchain"
-  },
-  {
-   "teks": "Realized cap Bitcoin naik, tanda modal baru masuk dan historis sinyal awal bull market.",
-   "sumber": "@BitcoinMagazine"
-  },
-  {
-   "teks": "CMCC Global berencana meluncurkan dua dana Bitcoin tokenized senilai $500 juta, termasuk target return 8% sampai 12% dalam BTC.",
-   "sumber": "@BitcoinMagazine"
-  },
-  {
-   "teks": "IRS menurunkan penalti pajak kripto, menyediakan resolusi 120 hari dan cicilan sebelum Desember.",
+   "teks": "@jvisserlabs menilai BTC bertahan di sekitar $60K meski ada hack cold wallet, peluang CLARITY Act turun, dan tekanan MicroStrategy.",
    "sumber": "@Cointelegraph"
   },
   {
-   "teks": "FCA Inggris menyatakan label decentralized tidak membebaskan proyek DeFi dari regulasi.",
+   "teks": "Pump fun menghasilkan $1,98 juta dalam 24 jam, sedikit di atas Hyperliquid $1,96 juta, indikasi aktivitas memecoin kembali meningkat.",
    "sumber": "@Cointelegraph"
   },
   {
-   "teks": "Macro investor menyebut bull market kripto sudah mulai dan berada di fase awal pematangan.",
+   "teks": "Tether mendapat dukungan 15 penambang Bitcoin besar termasuk Bitmain, MicroBT, Foundry untuk kit mining open-source yang diarahkan ke agen AI.",
    "sumber": "@Cointelegraph"
   },
   {
-   "teks": "Laporan menyebut AS bersiap memulai lagi operasi militer terhadap Iran, menambah risiko geopolitik.",
-   "sumber": "@WSJ"
+   "teks": "Bank sentral Israel menolak rencana Netanyahu memakai crypto untuk menghindari sanksi, sinyal risiko regulasi dan kepatuhan.",
+   "sumber": "@FT"
   },
   {
-   "teks": "Prancis mengerahkan 70.000 polisi di Paris saat protes biaya hidup meningkatkan kekhawatiran kekerasan.",
-   "sumber": "@Reuters"
+   "teks": "Keystone mengonfirmasi data pelanggan terekspos setelah akses tidak sah ke situs resmi, insiden terdeteksi 20 Oktober.",
+   "sumber": "@WuBlockchain"
   }
  ],
  "risiko": [
-  "Bitcoin di bawah $80K dapat memicu likuidasi berantai dan memperparah tekanan harga.",
-  "Posisi long ETH senilai $214 juta berisiko likuidasi jika ETH mendekati $2.256 atau $2.226.",
-  "Eskalasi konflik Iran dan protes di Prancis dapat menekan selera risiko pasar global.",
-  "Ketidakpastian regulasi DeFi Inggris dan pajak kripto AS dapat membatasi sentimen.",
-  "Aksi jual token seperti ENA oleh Arthur Hayes dapat menambah tekanan pada altcoin."
+  "Regulasi crypto bisa diperketat jika narasi penghindaran sanksi menguat.",
+  "Kebocoran data vendor hardware wallet dapat menekan kepercayaan pengguna.",
+  "Unrest sosial dan geopolitik global dapat memicu volatilitas risk-off jangka pendek."
  ],
- "dibuat_ms": 1792857487368,
- "jumlah_tweet": 84,
- "jumlah_akun": 12
+ "dibuat_ms": 1792881085939,
+ "jumlah_tweet": 48,
+ "jumlah_akun": 9
 }
