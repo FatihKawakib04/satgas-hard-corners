@@ -188,5 +188,61 @@
   "ringkas": "Return OOS +33.5%, Sharpe 0.39, DD -35.7%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.39 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).",
   "keputusan": "gagal",
   "selesai": "2026-10-25 06:25"
+ },
+ {
+  "id": "E15",
+  "strategi": "breakout_stop",
+  "catatan": "Turunan dari E12: parameter di sekitar {'entry': 55, 'k': 3.0}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "grid": [
+   {
+    "entry": 33,
+    "k": 1.8
+   },
+   {
+    "entry": 44,
+    "k": 2.4
+   },
+   {
+    "entry": 69,
+    "k": 3.75
+   },
+   {
+    "entry": 88,
+    "k": 4.8
+   }
+  ],
+  "ringkas": "Return OOS +61.5%, Sharpe 0.58, DD -22.4%, BTC +93.3% (DD -62.0%). kalah dari beli-dan-tahan BTC (+93.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-25 06:34"
+ },
+ {
+  "id": "E16",
+  "strategi": "donchian",
+  "catatan": "Turunan dari E03: parameter di sekitar {'entry': 20, 'exit': 10}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "grid": [
+   {
+    "entry": 12,
+    "exit": 6
+   },
+   {
+    "entry": 16,
+    "exit": 8
+   },
+   {
+    "entry": 25,
+    "exit": 12
+   },
+   {
+    "entry": 32,
+    "exit": 16
+   }
+  ],
+  "ringkas": "Return OOS +135.1%, Sharpe 0.80, DD -31.4%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.94 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.508 (median Sharpe dunia sintetis +0.78). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-10-25 06:36"
  }
 ]

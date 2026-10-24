@@ -89,15 +89,33 @@
    "oos": 33.51,
    "sharpe": 0.39,
    "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:34:54.214973+07:00",
+   "exp": "E15",
+   "strategi": "breakout_stop",
+   "verdict": "gagal",
+   "oos": 61.47,
+   "sharpe": 0.58,
+   "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-25T06:36:31.235916+07:00",
+   "exp": "E16",
+   "strategi": "donchian",
+   "verdict": "kandidat",
+   "oos": 135.07,
+   "sharpe": 0.8,
+   "bench": 93.26
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-25T06:25:11.362482+07:00",
-  "exp": "E14",
-  "strategi": "vol_target",
-  "verdict": "gagal",
-  "oos": 33.51,
-  "sharpe": 0.39,
+  "waktu": "2026-10-25T06:36:31.235916+07:00",
+  "exp": "E16",
+  "strategi": "donchian",
+  "verdict": "kandidat",
+  "oos": 135.07,
+  "sharpe": 0.8,
   "bench": 93.26
  }
 }
