@@ -1,0 +1,106 @@
+[
+ {
+  "id": "E01",
+  "strategi": "tsmom",
+  "catatan": "Uji dasar: apakah momentum time-series BTC bertahan setelah biaya.",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +47.9%, Sharpe 0.42, DD -44.5%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.42 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-25 06:19"
+ },
+ {
+  "id": "E02",
+  "strategi": "ma_cross",
+  "catatan": "Pembanding klasik: MA cross vs momentum.",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +145.9%, Sharpe 0.77, DD -40.0%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.87 berada di persentil 100 dari 200 sinyal acak.",
+  "keputusan": "lolos",
+  "selesai": "2026-10-25 06:16"
+ },
+ {
+  "id": "E03",
+  "strategi": "donchian",
+  "catatan": "Breakout ala turtle pada BTC.",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +100.7%, Sharpe 0.70, DD -37.4%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.76 berada di persentil 100 dari 200 sinyal acak.",
+  "keputusan": "lolos",
+  "selesai": "2026-10-25 06:16"
+ },
+ {
+  "id": "E04",
+  "strategi": "vol_target",
+  "catatan": "Apakah sizing volatilitas memperbaiki Sharpe.",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +81.4%, Sharpe 0.70, DD -29.9%, BTC +93.3% (DD -62.0%). kalah dari beli-dan-tahan BTC (+93.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-25 06:19"
+ },
+ {
+  "id": "E05",
+  "strategi": "rotasi_eth",
+  "catatan": "Rotasi ETH/BTC, uji apakah altcoin mengalahkan BTC.",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS -12.4%, Sharpe 0.13, DD -44.0%, BTC +93.3% (DD -62.0%). return OOS -12.4% tidak positif; Sharpe OOS 0.13 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-25 06:19"
+ },
+ {
+  "id": "E06",
+  "strategi": "basket_mom",
+  "catatan": "Momentum keranjang BTC/ETH/SOL.",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +311.6%, Sharpe 0.99, DD -40.9%, BTC +93.3% (DD -62.0%). Sharpe penuh 1.63 berada di persentil 100 dari 200 sinyal acak.",
+  "keputusan": "lolos",
+  "selesai": "2026-10-25 06:16"
+ },
+ {
+  "id": "E07",
+  "strategi": "dd_buy",
+  "catatan": "Mean reversion: beli koreksi dalam tren naik.",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +19.8%, Sharpe 0.29, DD -31.8%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.29 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-25 06:19"
+ },
+ {
+  "id": "E08",
+  "strategi": "xs_mom",
+  "catatan": "Momentum lintas altcoin, uji klaim altseason.",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "ringkas": "Return OOS +17.7%, Sharpe 0.40, DD -78.3%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.40 di bawah 0.5; drawdown -78.3% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+93.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-25 06:19"
+ },
+ {
+  "id": "E09",
+  "strategi": "rotasi_eth",
+  "catatan": "Turunan dari E05 (parameter di sekitar {'lookback': 30})",
+  "status": "selesai",
+  "dibuat": "2026-10-25",
+  "grid": [
+   {
+    "lookback": 18
+   },
+   {
+    "lookback": 24
+   },
+   {
+    "lookback": 38
+   },
+   {
+    "lookback": 48
+   }
+  ],
+  "ringkas": "Return OOS +25.7%, Sharpe 0.34, DD -63.8%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.34 di bawah 0.5; drawdown -63.8% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+93.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-25 06:22"
+ }
+]

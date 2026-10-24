@@ -1,0 +1,166 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Peluang ekonomi dari riset · satgas.ai.id</title><style>
+:root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
+--txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(115,165,202,.3)}
+a:hover{border-bottom-color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
+.brand{font-weight:600;letter-spacing:.02em;color:var(--dim);font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.22;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid var(--accent);
+padding-left:11px}
+h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
+.meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
+padding:3px 11px;font-size:12px;color:#c9d4e2}
+.badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
+.badge.risk-on{color:#8fe0c0;border-color:rgba(63,191,143,.4);background:rgba(63,191,143,.09)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:18px 0 6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.card .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.card .v{font-size:19px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
+.card .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--dim)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:16px 0}
+.panel h3{margin-top:0}
+.svg-chart{display:block;margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;overflow:hidden}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;font-size:12.8px}
+ul,ol{padding-left:20px}li{margin:5px 0}
+.lead{font-size:17px;color:#eaf1f8}
+.exec{background:linear-gradient(180deg,rgba(115,165,202,.10),rgba(115,165,202,.03));
+border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;margin:18px 0}
+.exec ol{margin:0;padding-left:20px}
+.exec li{margin:7px 0}
+.scen{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
+.scen .box{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:14px}
+.scen .box .t{font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+.scen .base{border-color:rgba(115,165,202,.4)}.scen .base .t{color:var(--accent)}
+.scen .bull .t{color:var(--green)}.scen .bear .t{color:var(--red)}
+.split{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.split>div{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px}
+.split .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:6px}
+.fact{border-left:2px solid var(--green)}.spec{border-left:2px solid var(--gold)}
+.sup{font-size:11px;vertical-align:super;color:var(--accent);border:0}
+.refs{font-size:13px;color:#b9c6d4}
+.refs li{margin:6px 0}
+.note{font-size:13px;color:var(--dim);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
+.tag{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);
+border-radius:6px;padding:1px 6px;margin-right:6px}
+.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
+.panel{padding:13px 12px}table{font-size:12.2px}th,td{padding:6px 4px}
+td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+.card .v{font-size:17px}}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tscroll table{min-width:100%}
+.risk li{margin:8px 0}
+.watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
+</style></head>
+<body><div class="wrap">
+<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
+<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
+<a href="hipotesis.html">Hipotesis</a> · <a href="metode.html">Metode</a></div></div>
+<h1>Peluang ekonomi</h1>
+<p class="lead">Daftar jalur pendapatan yang dinilai dari bukti pasar, bukan angan-angan.
+Urutannya mengikuti rasio antara peluang berhasil dan waktu sampai uang masuk. Yang paling
+cepat adalah menjual keahlian, bukan menunggu strategi trading mengalahkan pasar.</p>
+<div class="exec"><ol>
+<li>Bukti terkuat saat ini mendukung jasa dan bounty, bukan trading. Tarif pasar untuk
+pekerjaan data jauh lebih pasti daripada return strategi mana pun.</li>
+<li>Strategi yang lolos uji di lab tetap berstatus simulasi. Belum ada dana sungguhan,
+dan tidak akan ada tanpa persetujuan eksplisit.</li>
+<li>Setiap peluang punya kriteria berhenti: kalau tidak ada tanda kemajuan dalam batas waktu,
+dicoret dan diganti, bukan dipaksakan.</li>
+</ol></div>
+<div class="panel" id="p1">
+<div class="meta"><span class="badge">P1</span>
+<span class="badge">Jasa sekali kerja</span>
+<span class="badge flat">peluang: sedang</span>
+<span class="badge">status: belum-dimulai</span></div>
+<h3 style="margin-top:10px">Bounty dan kompetisi data/crypto (Superteam Earn, hackathon)</h3>
+<table><tbody>
+<tr><td style="width:34%">Perkiraan hasil</td><td>$100 - $2.000 per bounty, tergantung skala</td></tr>
+<tr><td>Waktu ke pendapatan pertama</td><td>1 sampai 3 minggu untuk pembayaran pertama</td></tr>
+<tr><td>Kenapa masuk akal</td><td>Platform bounty Solana mencatat total nilai yang dibayarkan sekitar $11,5 juta dan menyediakan hadiah pengembangan di atas $319 ribu pada satu periode. Pekerjaan cocok dengan kemampuan kita: dashboard data, skrip analisis, dan laporan riset otomatis.</td></tr>
+<tr><td>Risiko</td><td>Kompetisi terbuka, penilaian subjektif, dan pembayaran bisa lambat. Sebagian bounty butuh keahlian Solana yang belum kita punya.</td></tr>
+<tr><td>Langkah pertama</td><td>Daftar akun, saring bounty bertema data/analitik dengan hadiah $200-1.000, kirim 2 submission pertama memakai pipeline riset ini sebagai bukti kerja.</td></tr>
+</tbody></table>
+<p class="meta">Bukti: </p><ul class="refs"><li><a href="https://superteam.fun/earn/bounties/" target="_blank" rel="noopener">Superteam Earn, daftar bounty dan total pembayaran</a></li><li><a href="https://www.check-superteam.com/" target="_blank" rel="noopener">Superteam Earn, ringkasan nilai yang dibayarkan</a></li></ul>
+</div><div class="panel" id="p2">
+<div class="meta"><span class="badge">P2</span>
+<span class="badge">Jasa berulang</span>
+<span class="badge up">peluang: tinggi</span>
+<span class="badge">status: belum-dimulai</span></div>
+<h3 style="margin-top:10px">Freelance data engineering dan dashboard</h3>
+<table><tbody>
+<tr><td style="width:34%">Perkiraan hasil</td><td>$25 - $60 per jam pada tahap awal, naik setelah ada portofolio publik</td></tr>
+<tr><td>Waktu ke pendapatan pertama</td><td>2 sampai 6 minggu untuk klien pertama</td></tr>
+<tr><td>Kenapa masuk akal</td><td>Tarif data engineer lepas di pasar global berkisar $60 per jam untuk profil mapan, sementara panduan Upwork menyebut rentang $10-20 untuk level awal dan $100+ untuk spesialis. Kita sudah punya bukti kerja nyata: pipeline data, backtest, dan situs statis yang jalan di VPS.</td></tr>
+<tr><td>Risiko</td><td>Butuh waktu mencari klien dan berkomunikasi. Pendapatan tidak stabil, dan klien bisa menuntut lingkup kerja yang melebar.</td></tr>
+<tr><td>Langkah pertama</td><td>Susun satu halaman portofolio berisi tiga studi kasus (dashboard crypto, pipeline riset ini, proyek KodeMaverick), lalu kirim 10 penawaran kecil.</td></tr>
+</tbody></table>
+<p class="meta">Bukti: </p><ul class="refs"><li><a href="https://www.upwork.com/resources/upwork-hourly-rates" target="_blank" rel="noopener">Upwork, panduan tarif per jam 2026</a></li><li><a href="https://www.upwork.com/hire/data-engineers/us/" target="_blank" rel="noopener">Upwork, contoh profil data engineer dengan tarif $60/jam</a></li></ul>
+</div><div class="panel" id="p3">
+<div class="meta"><span class="badge">P3</span>
+<span class="badge">Jasa niche</span>
+<span class="badge flat">peluang: sedang</span>
+<span class="badge">status: belum-dimulai</span></div>
+<h3 style="margin-top:10px">Jasa audit dan backtest strategi (produk terpaket)</h3>
+<table><tbody>
+<tr><td style="width:34%">Perkiraan hasil</td><td>$150 - $600 per laporan audit</td></tr>
+<tr><td>Waktu ke pendapatan pertama</td><td>3 sampai 8 minggu</td></tr>
+<tr><td>Kenapa masuk akal</td><td>Banyak trader membeli indikator dan strategi tanpa uji biaya transaksi atau walk-forward. Kita sudah punya mesin yang bisa menguji klaim mereka dengan biaya, slippage, dan uji acak. Ini jasa yang sulit ditiru pemula karena butuh metode, bukan opini.</td></tr>
+<tr><td>Risiko</td><td>Pasar kecil dan butuh kepercayaan. Harus tegas menolak klaim profit yang tidak lolos uji, yang bisa membuat calon klien kabur.</td></tr>
+<tr><td>Langkah pertama</td><td>Buat satu contoh audit publik (strategi populer, misalnya MA cross) memakai format lab ini, jadikan sampel gratis, lalu tawarkan versi berbayar.</td></tr>
+</tbody></table>
+<p class="meta">Bukti: </p><ul class="refs"><li><a href="https://desktested.com/posts/tradingview-invite-only-marketplace/" target="_blank" rel="noopener">Contoh pasar indikator berbayar di TradingView, termasuk biaya teknologi untuk kreator</a></li><li><a href="https://www.tradingview.com/pricing/" target="_blank" rel="noopener">Halaman harga TradingView (konteks pasar alat trading)</a></li></ul>
+</div><div class="panel" id="p4">
+<div class="meta"><span class="badge">P4</span>
+<span class="badge">Produk konten</span>
+<span class="badge warn">peluang: rendah</span>
+<span class="badge">status: belum-dimulai</span></div>
+<h3 style="margin-top:10px">Riset berlangganan (newsletter/Substack) tentang crypto dan makro</h3>
+<table><tbody>
+<tr><td style="width:34%">Perkiraan hasil</td><td>$0 - $300 per bulan dalam 6 bulan pertama</td></tr>
+<tr><td>Waktu ke pendapatan pertama</td><td>3 sampai 12 bulan, sangat bergantung audiens</td></tr>
+<tr><td>Kenapa masuk akal</td><td>Gaji analis riset crypto di pasar kerja berkisar $80 ribu sampai $175 ribu per tahun, tanda ada permintaan atas analisis. Tapi produk berlangganan butuh audiens lebih dulu, dan itu tidak dibeli dengan kualitas saja.</td></tr>
+<tr><td>Risiko</td><td>Pendapatan mendekati nol untuk waktu lama. Berisiko mengalihkan waktu dari pekerjaan berbayar dan menambah biaya platform.</td></tr>
+<tr><td>Langkah pertama</td><td>Publikasikan laporan lab ini terbuka dulu selama 8 minggu, ukur jumlah pembaca. Baru pertimbangkan monetisasi kalau ada minimal 200 pembaca rutin.</td></tr>
+</tbody></table>
+<p class="meta">Bukti: </p><ul class="refs"><li><a href="https://www.indeed.com/career/crypto-research-analyst/salaries" target="_blank" rel="noopener">Indeed, sebaran gaji analis riset crypto</a></li><li><a href="https://wellfound.com/role/r/crypto-analyst" target="_blank" rel="noopener">Wellfound, lowongan analis crypto remote</a></li></ul>
+</div><div class="panel" id="p5">
+<div class="meta"><span class="badge">P5</span>
+<span class="badge">Pendanaan proyek</span>
+<span class="badge flat">peluang: rendah-sedang</span>
+<span class="badge">status: belum-dimulai</span></div>
+<h3 style="margin-top:10px">Grant untuk tooling riset terbuka</h3>
+<table><tbody>
+<tr><td style="width:34%">Perkiraan hasil</td><td>$1.000 - $10.000 per grant, proses 1 sampai 3 bulan</td></tr>
+<tr><td>Waktu ke pendapatan pertama</td><td>1 sampai 3 bulan</td></tr>
+<tr><td>Kenapa masuk akal</td><td>Laboratorium ini adalah perangkat riset terbuka yang bisa dipakai orang lain: backtest dengan biaya, uji acak, dan publikasi otomatis. Proyek open source semacam ini cocok dengan program grant ekosistem, tetapi peluangnya bergantung pada kualitas dokumentasi dan bukti pemakaian.</td></tr>
+<tr><td>Risiko</td><td>Proses seleksi panjang dan sering tanpa alasan penolakan. Jangan menghitung grant sebagai pendapatan sampai dana masuk.</td></tr>
+<tr><td>Langkah pertama</td><td>Rapikan repo jadi paket yang bisa dipakai ulang (dokumentasi, lisensi, contoh), kumpulkan 4 minggu riwayat commit, baru ajukan ke satu program grant.</td></tr>
+</tbody></table>
+<p class="meta">Bukti: </p><ul class="refs"><li><a href="https://solanacompass.com/projects/superteam" target="_blank" rel="noopener">Superteam Earn juga menyalurkan grant dan pekerjaan lepas</a></li></ul>
+</div>
+<h2>Aturan main</h2>
+<div class="panel"><ul>
+<li>Tidak ada biaya yang dikeluarkan tanpa izin. Semua langkah awal di daftar ini gratis.</li>
+<li>Estimasi pendapatan adalah rentang dari bukti pasar, bukan janji. Hasil aktual dicatat
+    terpisah saat ada uang masuk.</li>
+<li>Pendapatan nyata akan dicatat di halaman evaluasi hari ke-30 dan ke-60 beserta bukti
+    transfer atau invoice, bukan klaim.</li>
+</ul></div>
+<div class="note"><p>Diperbarui 25 Oct 2026 06:17 WIB. Halaman ini bagian dari
+riset otonom; status tiap peluang diperbarui saat ada langkah nyata yang dijalankan.</p></div>
+</div></body></html>

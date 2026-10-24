@@ -1,0 +1,37 @@
+{
+ "strategi": {
+  "E06:basket_mom": {
+   "mulai": "2026-10-25",
+   "ekuitas": 10000.0,
+   "posisi": {},
+   "params": {
+    "lookback": 30
+   },
+   "riwayat": [
+    {
+     "t": "2026-10-25",
+     "eq": 10000.0,
+     "pos": {}
+    }
+   ],
+   "dihentikan": false
+  },
+  "E03:donchian": {
+   "mulai": "2026-10-25",
+   "ekuitas": 10000.0,
+   "posisi": {},
+   "params": {
+    "entry": 55,
+    "exit": 20
+   },
+   "riwayat": [
+    {
+     "t": "2026-10-25",
+     "eq": 10000.0,
+     "pos": {}
+    }
+   ],
+   "dihentikan": false
+  }
+ }
+}
