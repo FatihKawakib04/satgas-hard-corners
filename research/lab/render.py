@@ -60,6 +60,7 @@ def render() -> str:
             nulls = []
 
     n_lolos = sum(1 for e in exps if e["keputusan"] == "lolos")
+    n_paper = n_lolos  # paper trading hanya untuk yang berstatus lolos
     n_uji = sum(1 for e in exps if e["status"] == "selesai")
 
     # kurva paper per strategi
@@ -136,7 +137,7 @@ terhadap beli-dan-tahan BTC. Yang gagal dicatat, bukan dihapus.</p>
 <div class="cards">
   <div class="card"><div class="k">Eksperimen selesai</div><div class="v">{n_uji}</div></div>
   <div class="card"><div class="k">Lolos gerbang</div><div class="v">{n_lolos}</div></div>
-  <div class="card"><div class="k">Strategi paper</div><div class="v">{len(by_strat)}</div></div>
+  <div class="card"><div class="k">Strategi paper aktif</div><div class="v">{n_paper}</div></div>
   <div class="card"><div class="k">Biaya bulanan tercatat</div>
     <div class="v">${fmt(vps or 0, 2)}</div>
     <div class="d">{'belum diisi' if vps is None else 'VPS'}</div></div>
