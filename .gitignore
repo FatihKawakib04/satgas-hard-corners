@@ -17,3 +17,9 @@ node_modules/
 .DS_Store
 *.log
 __pycache__/
+
+# Riset crypto: basis data dan cache lokal (biner, tumbuh terus)
+research/db/
+research/out/.last_markets.json
+research/out/preview.*
+crypto/.last_markets.json

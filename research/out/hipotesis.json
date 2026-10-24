@@ -1,0 +1,83 @@
+[
+ {
+  "id": "H1",
+  "topik": "Likuiditas",
+  "klaim": "Kontraksi suplai stablecoin 30 hari di bawah -1% mendahului drawdown BTC lebih dari 5% dalam 30 hari berikutnya.",
+  "uji": "Hitung perubahan suplai stablecoin 30 hari dan return BTC 30 hari ke depan pada setiap tanggal sejak 2018. Bandingkan rata-rata return forward saat kondisi terpenuhi versus seluruh sampel.",
+  "kriteria": "Didukung jika return forward rata-rata saat kondisi terpenuhi minimal 3 poin persen lebih rendah dan terjadi pada minimal 20 kejadian.",
+  "status": "tidak-didukung",
+  "evaluator": "stablecoin_drain",
+  "hasil": {
+   "n": 435,
+   "n_base": 2170,
+   "avg_hit": 2.9080958828099406,
+   "avg_base": 4.1439746995226825,
+   "win_hit": 27.126436781609197
+  },
+  "diperbarui": "2026-10-25",
+  "bukti": "435 kejadian kontraksi > 1% dalam 30 hari: return BTC 30 hari berikutnya rata-rata +2.9%, versus +4.1% pada seluruh sampel (2170 hari). Selisih +1.2 poin."
+ },
+ {
+  "id": "H2",
+  "topik": "Positioning",
+  "klaim": "Funding futures negatif ekstrem (di bawah -10% annualized) menandai low lokal: return BTC 10 hari setelahnya positif rata-rata.",
+  "uji": "Kumpulkan semua hari dengan funding annualized di bawah -10%, hitung return BTC 10 hari berikutnya, bandingkan dengan rata-rata sampel.",
+  "kriteria": "Didukung jika rata-rata return 10 hari positif dan menang pada minimal 60% kejadian, dengan minimal 15 kejadian.",
+  "status": "menunggu-data",
+  "evaluator": "funding_negative"
+ },
+ {
+  "id": "H3",
+  "topik": "Rezim",
+  "klaim": "Saat BTC di atas MA200 tetapi breadth lemah (kurang dari 25% aset di atas MA50), return 20 hari ke depan lebih buruk daripada saat breadth lebar.",
+  "uji": "Butuh riwayat breadth harian. Sementara diganti proksi: persentase 20 koin besar di atas MA50 dihitung ulang dari data harian, lalu dibandingkan return forward.",
+  "kriteria": "Didukung jika selisih return forward 20 hari minimal 2 poin persen dan konsisten pada minimal 30 observasi.",
+  "status": "tidak-didukung",
+  "evaluator": "breadth_divergence",
+  "hasil": {
+   "n": 274,
+   "n_base": 509,
+   "avg_hit": 1.0370547612563885,
+   "avg_base": 1.4699423192904413,
+   "median_hit": -0.9264137208219836,
+   "median_base": 0.5122834282110578
+  },
+  "diperbarui": "2026-10-25",
+  "bukti": "Saat BTC di atas MA200 dan breadth di bawah 25% (274 hari), return 20 hari berikutnya rata-rata +1.0% (median -0.9%). Saat breadth di atas 60% (509 hari), rata-rata +1.5%. Selisih +0.4 poin."
+ },
+ {
+  "id": "H4",
+  "topik": "Makro",
+  "klaim": "Korelasi BTC-SPX 60 hari di atas 0,6 membuat guncangan VIX (lonjakan lebih dari 20% dalam sehari) menular ke BTC dalam 3 hari.",
+  "uji": "Cari hari dengan lonjakan VIX lebih dari 20%, pisahkan berdasarkan korelasi 60 hari saat itu, bandingkan return BTC 3 hari setelahnya.",
+  "kriteria": "Didukung jika return BTC 3 hari saat korelasi tinggi lebih rendah minimal 1,5 poin persen dibanding saat korelasi rendah, minimal 12 kejadian per kelompok.",
+  "status": "tidak-didukung",
+  "evaluator": "vix_shock",
+  "hasil": {
+   "n": 9,
+   "n_base": 19,
+   "avg_hit": 0.4316753637359727,
+   "avg_base": 0.47877420502763873
+  },
+  "diperbarui": "2026-10-25",
+  "bukti": "9 guncangan VIX > 15% saat korelasi BTC-SPX di atas 0,5: return BTC 3 hari berikutnya rata-rata +0.4%. Saat korelasi di bawah 0,5 (19 kejadian): +0.5%. Selisih +0.0 poin."
+ },
+ {
+  "id": "H5",
+  "topik": "Aliran institusi",
+  "klaim": "Outflow ETF spot BTC tiga hari berturut-turut lebih dari 300 juta dolar per hari diikuti pelemahan BTC minimal 2% dalam 5 hari.",
+  "uji": "Akumulasi data aliran ETF harian (mulai Oktober 2026), tandai episode outflow beruntun, ukur return BTC 5 hari setelah episode berakhir.",
+  "kriteria": "Didukung jika minimal 70% episode diikuti pelemahan, dengan minimal 8 episode.",
+  "status": "menunggu-data",
+  "evaluator": null
+ },
+ {
+  "id": "H6",
+  "topik": "Rotasi",
+  "klaim": "Dominasi BTC yang naik lebih dari 2 poin persen dalam 7 hari menandakan fase risk-off di dalam crypto, dan altcoin baru pulih setelah dominasi berhenti naik.",
+  "uji": "Ukur perubahan dominasi 7 hari dan return altcoin (ETH, SOL, dan basket 10 koin) 10 hari ke depan.",
+  "kriteria": "Didukung jika return altcoin 10 hari setelah kenaikan dominasi lebih rendah minimal 3 poin persen dibanding baseline.",
+  "status": "menunggu-data",
+  "evaluator": null
+ }
+]
