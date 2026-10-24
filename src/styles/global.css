@@ -3,7 +3,7 @@
 /* ==========================================================================
    SATGAS — Neo-brutalist token layer (Tailwind v4 @theme)
    Brand constraints (disclosed): 3px structural borders, hard corners,
-   flat surfaces (shadows only on real overlays), one accent lime with a
+   flat surfaces (shadows only on real overlays), one accent cobalt with a
    single orange state pop.
    ========================================================================== */
 
@@ -17,7 +17,7 @@
   --color-paper: #fffdf8;
 
   /* Accent pops */
-  --color-lime: #c8f436;
+  --color-lime: #73A5CA;
   --color-lime-ink: #0a0908;
   --color-orange: #ff5c1a;
 
