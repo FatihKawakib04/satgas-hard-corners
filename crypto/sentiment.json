@@ -1,0 +1,67 @@
+{
+ "mood": "risk-off",
+ "score": -1,
+ "tema": [
+  "Bitcoin",
+  "Likuidasi",
+  "Institusi",
+  "Regulasi",
+  "Geopolitik"
+ ],
+ "poin": [
+  {
+   "teks": "Bitcoin turun di bawah $80.000 setelah bertahan di atas level itu lebih dari 30 hari.",
+   "sumber": "@coingecko"
+  },
+  {
+   "teks": "$186 juta likuidasi dalam satu jam setelah Bitcoin jatuh di bawah $80K; total 24 jam mencapai $838 juta.",
+   "sumber": "@Cointelegraph"
+  },
+  {
+   "teks": "Whale ETH dengan 93.184 ETH senilai $214 juta berisiko likuidasi di $2.256,45 dan $2.226,53 jika pasar terus turun.",
+   "sumber": "@lookonchain"
+  },
+  {
+   "teks": "Machi dilikuidasi lima kali dalam satu jam dan hanya menyisakan sekitar $5K di akunnya.",
+   "sumber": "@lookonchain"
+  },
+  {
+   "teks": "Realized cap Bitcoin naik, tanda modal baru masuk dan historis sinyal awal bull market.",
+   "sumber": "@BitcoinMagazine"
+  },
+  {
+   "teks": "CMCC Global berencana meluncurkan dua dana Bitcoin tokenized senilai $500 juta, termasuk target return 8% sampai 12% dalam BTC.",
+   "sumber": "@BitcoinMagazine"
+  },
+  {
+   "teks": "IRS menurunkan penalti pajak kripto, menyediakan resolusi 120 hari dan cicilan sebelum Desember.",
+   "sumber": "@Cointelegraph"
+  },
+  {
+   "teks": "FCA Inggris menyatakan label decentralized tidak membebaskan proyek DeFi dari regulasi.",
+   "sumber": "@Cointelegraph"
+  },
+  {
+   "teks": "Macro investor menyebut bull market kripto sudah mulai dan berada di fase awal pematangan.",
+   "sumber": "@Cointelegraph"
+  },
+  {
+   "teks": "Laporan menyebut AS bersiap memulai lagi operasi militer terhadap Iran, menambah risiko geopolitik.",
+   "sumber": "@WSJ"
+  },
+  {
+   "teks": "Prancis mengerahkan 70.000 polisi di Paris saat protes biaya hidup meningkatkan kekhawatiran kekerasan.",
+   "sumber": "@Reuters"
+  }
+ ],
+ "risiko": [
+  "Bitcoin di bawah $80K dapat memicu likuidasi berantai dan memperparah tekanan harga.",
+  "Posisi long ETH senilai $214 juta berisiko likuidasi jika ETH mendekati $2.256 atau $2.226.",
+  "Eskalasi konflik Iran dan protes di Prancis dapat menekan selera risiko pasar global.",
+  "Ketidakpastian regulasi DeFi Inggris dan pajak kripto AS dapat membatasi sentimen.",
+  "Aksi jual token seperti ENA oleh Arthur Hayes dapat menambah tekanan pada altcoin."
+ ],
+ "dibuat_ms": 1792857487368,
+ "jumlah_tweet": 84,
+ "jumlah_akun": 12
+}

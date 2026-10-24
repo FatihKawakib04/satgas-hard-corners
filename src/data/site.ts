@@ -8,6 +8,7 @@ export const nav = [
   { label: "Services", href: "#services" },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
+  { label: "Crypto desk", href: "/crypto/" },
 ];
 
 export const marquee = [
