@@ -64,8 +64,6 @@ berarti bekerja 30+ jam untuk $250, dan itu merugikan.
 >
 > Total committed: 15 hours, $210 for phases 0-2. Classification buttons are quoted separately, after I read the existing provider and reference-table code.
 >
-> **Not included in this quote: auto-update from Google Drive and AI classification.**
->
 > **Auto-update from Google Drive is not in this quote.** It touches installation on your
 > users' machines: download, verify, install, roll back on failure. That needs testing on
 > a clean Windows machine, and doing it blind is how a working install gets broken. If you
