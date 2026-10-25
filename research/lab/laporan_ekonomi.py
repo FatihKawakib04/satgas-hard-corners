@@ -145,7 +145,8 @@ historis, bukan analisis manual sekali jadi.</p>
 kondisi lapangan dan cuaca, dan estimasi probabilitas menang untuk cricket, sepak bola, dan
 tenis.</p>
 <p><b>Rencana penawaran:</b> fase 1 dibatasi 12 jam pada $25/jam ($300) untuk lapisan data,
-fitur, dan satu laporan contoh; fase 2 dibatasi 14 jam ($350) untuk kalibrasi model dan
+fitur, dan satu laporan contoh; fase 2 dibatasi 14 jam ($350) untuk kalibrasi model dan generator. Bruto maksimum $650, bersih $585 setelah biaya platform 10 persen;
+ini usulan, bukan kontrak.
 generator. Estimasi 21 jam tidak dipakai sebagai angka final karena olahraga, sumber data, dan
 format keluaran belum dikonfirmasi; rentang jujurnya 18 sampai 30 jam. Karena proyeknya hourly,
 fase 1 harus didanai sebagai milestone lebih dulu. Catatan carry: proyeksi memakai laju 2026 sebesar 0,7 persen, setara $0,07 per tahun pada modal $10. Angka $0,38 hanya pembanding historis. Rincian di
