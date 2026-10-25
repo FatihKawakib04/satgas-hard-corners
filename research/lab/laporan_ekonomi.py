@@ -136,16 +136,18 @@ pendapatan yang dicatat sebelum uangnya diterima.</p>
 <h3>{target.get('judul','belum ada target')}</h3>
 {status_target}
 <p><b>Kenapa ini, bukan yang lain.</b> Dari 196 proyek aktif yang dipindai, hanya 7 yang
-kliennya terverifikasi pembayaran, dan hanya dua yang cocok dengan kemampuan nyata. Yang
-satu beranggaran maksimal $250 dengan lingkup 25 jam. Proyek ini punya lima bid, anggaran
-yang cukup untuk pekerjaan serius, dan hasilnya bisa diotomatiskan: laporan probabilitas
-dari data historis, bukan analisis manual sekali jadi.</p>
+kliennya terverifikasi pembayaran, dan hanya dua yang cocok dengan kemampuan nyata. Yang satu
+beranggaran maksimal $250 dengan lingkup 25 jam. Proyek ini <b>hourly</b> dengan tarif
+terpasang ₹4.000 sampai ₹10.000 per jam (sekitar $42 sampai $105), saat diperiksa
+<b>belum ada satu pun bid</b>, dan hasilnya bisa diotomatiskan: laporan probabilitas dari data
+historis, bukan analisis manual sekali jadi.</p>
 <p><b>Yang diminta:</b> laporan kuantitatif pra-pertandingan, model head-to-head, pengaruh
 kondisi lapangan dan cuaca, dan estimasi probabilitas menang untuk cricket, sepak bola, dan
 tenis.</p>
-<p><b>Rencana penawaran:</b> pilot $600 untuk tiga pertandingan dalam lima hari kerja,
-berisi lapisan data, model, templat laporan, dan generator yang bisa dijalankan ulang.
-Kalau cocok, lanjut retainer $1.800 per bulan.</p>
+<p><b>Rencana penawaran:</b> fase 1 selama 12 jam pada $25/jam ($300) untuk lapisan data,
+fitur, dan satu laporan contoh; fase 2 selama 9 jam ($225) untuk kalibrasi model dan generator.
+Total 21 jam, $525. Karena proyeknya hourly, fase 1 harus didanai sebagai milestone lebih dulu.
+Kalau cocok, lanjut $30/jam dengan batas 8 jam per minggu.</p>
 <p><b>Langkah berikutnya:</b></p><ol>{langkah}</ol>
 <p class="meta">Semua langkah di atas masih menunggu persetujuan Fatih pada harga dan isi
 proposal. Belum ada yang dikirim.</p>

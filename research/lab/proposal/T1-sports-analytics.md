@@ -1,95 +1,167 @@
-# Proposal target utama: Sports Analytics Probability Reports
+# Proposal T1 v2: Sports Analytics Probability Reports
 
-Status: **draf final, menunggu persetujuan Fatih**. Belum dikirim.
-Sumber: Freelancer.com, proyek `statistical-analysis/Sports-Analytics-Probability-Reports`
-Anggaran klien: $4.000 sampai $10.000. Pesaing: **5 bid**. Klien: pembayaran terverifikasi,
-akun 25 hari, belum ada ulasan, belum ada deposit.
-
----
-
-## Kenapa ini yang dipilih
-
-Dari 196 proyek aktif yang dipindai, hanya 7 yang kliennya terverifikasi pembayaran. Dari
-tujuh itu, hanya dua yang cocok dengan kemampuan nyata: satu proyek Excel/VBA dengan
-anggaran maksimal $250, dan proyek ini. Proyek ini punya lima bid, anggaran yang cukup
-untuk pekerjaan serius, dan deliverable-nya adalah sesuatu yang bisa diotomatiskan:
-laporan probabilitas dari data historis, bukan analisis manual sekali jadi.
-
-Risiko yang harus disebut: klien belum punya ulasan, dan topiknya berhubungan dengan
-prediksi pertandingan. Kalau tujuannya taruhan, itu keputusan Fatih, bukan keputusan saya.
+Status: **draf final, BELUM DIKIRIM**. Menunggu persetujuan Fatih pada tarif, isi, dan nama.
+Versi 1 diarsipkan sebagai `T1-sports-analytics-v1-arsip.md` karena salah membaca anggaran:
+yang tertulis $4.000-10.000 ternyata rupiah per jam, bukan total proyek.
 
 ---
 
-## Draf proposal (bahasa Inggris)
+## 1. Fakta terverifikasi (diperiksa 25 Okt 2026)
 
-> **Subject: Automated probability reports — pilot on 3 fixtures before a retainer**
+| Hal | Fakta | Bukti |
+|---|---|---|
+| Status listing | **aktif** | halaman proyek, `status: active` |
+| Tautan | https://www.freelancer.com/projects/statistical-analysis/Sports-Analytics-Probability-Reports | URL publik |
+| Tipe proyek | **hourly**, bukan fixed price | field `type: hourly` |
+| Tarif terpublikasi | **₹4.000 sampai ₹10.000 per jam**, sekitar $42 sampai $105 per jam (kurs 95) | field `formattedBudget: "₹4000-10000 INR / hour"` |
+| Jumlah bid | **0** | `bidCount: 0`, `bidAvg: 0` |
+| Batas waktu | `hoursLeft: 23`, sementara `endTime` 31 Okt 2026 13:01 UTC. Dua field bertentangan, anggap **paling cepat 24 jam** | halaman proyek |
+| Klien | akun dibuat 28 Feb 2025 (sekitar 20 bulan), **pembayaran terverifikasi**, **0 ulasan**, profil lengkap | `registrationTime`, `paymentVerified`, `reviewCount` |
+| Mata uang | INR, klien India | field mata uang proyek |
+
+**Asumsi yang tidak boleh dianggap fakta:**
+
+- Bahwa klien akan membayar ₹4.000 sampai ₹10.000 per jam. Itu tarif yang dipasang, bukan kontrak.
+- Bahwa tenggat 23 jam benar. `hoursLeft` dan `endTime` tidak cocok.
+- Bahwa proyek ini untuk taruhan. Deskripsi tidak menyebut taruhan; penggunaannya tidak diketahui.
+- Bahwa data historis tiga olahraga tersedia gratis dengan kualitas setara. Yang diperiksa baru
+  ketersediaan halamannya, bukan isi dan lisensinya.
+
+## 2. Kebutuhan klien, sesuai deskripsi asli
+
+- Laporan kuantitatif pra-pertandingan: head-to-head, form 5 sampai 10 laga terakhir, rekor venue,
+  pemisahan kandang dan tandang.
+- Analisis situasional: pengaruh toss atau first-strike, cuaca, kondisi lapangan, tekanan turnamen.
+- Perbandingan pemain kunci: strike rate, economy bowling, expected goals (xG), status cedera,
+  head-to-head pemain.
+- Pemodelan probabilitas: peluang hasil dan proyeksi total run, gol, atau poin dari data historis.
+- Penyajian: Google Sheets, PDF ringkas, atau dashboard data.
+- Kandidat diminta menyebut pengalaman, olahraga yang dikuasai, dan waktu penyelesaian laporan.
+
+## 3. Isi proposal (bahasa Inggris, siap dikirim setelah disetujui)
+
+> **Subject: Reproducible pre-match reports — 12-hour first phase, fixed rate**
 >
 > Hi,
 >
-> You are not asking for predictions, you are asking for reproducible quantitative
-> breakdowns: head-to-head, recent form, venue splits, and the situational variables that
-> move a match. That is a data pipeline plus a report template, and it should be built once
-> and then run every week, not rewritten per fixture.
+> Your brief asks for quantitative breakdowns, not predictions: head-to-head, recent form,
+> venue splits, situational variables, and a probability with a stated method. That is a data
+> pipeline plus a report template. Built once, it regenerates for every fixture instead of
+> being rewritten by hand each time.
 >
-> **What I would build for you**
+> **What I would build**
 >
-> 1. **Data layer.** A collector for historical results and fixtures per sport, stored in a
->    local database with a source column and a last-updated timestamp, so every number in a
->    report can be traced back. Public sources first; paid feeds only if you already have
->    them.
-> 2. **Model layer.** Head-to-head and recent-form ratings, venue and home/away splits, plus
->    a win-probability estimate with a stated method. Where the sample is too small to say
->    anything, the report says so instead of inventing a number.
-> 3. **Report layer.** A fixed template generated automatically: form table, H2H table,
->    situational notes, probability line with confidence interval, and a "what would change
->    this" section. Output as PDF and as a web page.
-> 4. **Refresh.** One command regenerates the report for a new fixture. A health check
->    reports when a data source fails, so a report never silently ships stale numbers.
+> 1. **Data layer.** Ingest historical results and fixtures, store them in a local database
+>    with a source and a fetch date on every row, so any number in a report can be traced
+>    back. Public sources first. If a competition is not covered by a free source, I will say
+>    so before quoting.
+> 2. **Feature layer.** Recent form (last 5 and 10), head-to-head, venue splits, home and away
+>    splits, rest days, and the situational flags you listed.
+> 3. **Model layer.** A transparent baseline first: ratings plus a probability model with a
+>    calibration check. I will report the model's accuracy on past fixtures instead of
+>    claiming it works. If the sample is too small to support a number, the report says
+>    "insufficient data" rather than inventing one.
+> 4. **Report layer.** One fixed template: form table, H2H table, situational notes,
+>    probability with uncertainty, and a short "what would change this" section. Output as PDF
+>    and Google Sheets, regenerated by one command.
+> 5. **Refresh check.** A small health check that flags a failed data source, so a report never
+>    ships stale numbers silently.
 >
-> **Pilot (recommended first step): $600, 5 working days.**
-> Three fixtures, one sport, the full template, the data layer, and the generator. You keep
-> everything, including the method document. If the format is not what you want, we stop
-> after the pilot and you have lost $600, not $6,000.
+> **Engagement shape.** This is an hourly project, so I propose a capped first phase rather
+> than an open-ended commitment:
 >
-> **Ongoing: $1,800 per month** for weekly reports across all fixtures you select, with
-> revisions to the model as the season progresses.
+> - **Phase 1: 12 hours at $25/hour ($300), 3 working days.** Data layer, feature layer, and
+>   one sample report for one fixture, so you can judge the format before spending more.
+> - **Phase 2: 9 hours at $25/hour ($225).** Model calibration, remaining report sections, and
+>   the generator.
+> - **Ongoing: $30/hour** for weekly reports, capped at 8 hours per week unless you approve
+>   more in advance.
 >
-> **Acceptance criteria, agreed before we start:** every report shows its sources and data
-> dates; every probability states its method and uncertainty; the generator reproduces a
-> past report exactly from stored data; a failed data source is flagged, never silently
-> replaced with zeros.
+> **Acceptance criteria, agreed before we start.** Every report lists its sources and data
+> dates. Every probability states its method and uncertainty. Re-running the generator on the
+> same data reproduces the same numbers. A failed source is flagged, never filled with zeros.
+> Model accuracy is reported on held-out fixtures, not asserted.
 >
-> Three questions:
+> **What I will not claim.** I am a data engineer, not a cricket analyst. I will build the
+> pipeline, the statistics, and the reporting, and I will show you the accuracy numbers. The
+> domain calls, such as which competitions matter and which situational factors count, need
+> your input or a specialist's.
 >
-> - Which sport and which competition should the pilot cover first?
-> - Do you already have a data source you trust, or should I source it?
-> - Is the output for internal decision support, or for publication? That changes how much
->   explanation each number needs.
+> Four questions:
 >
-> I build data pipelines for a living: collection, validation, storage, and automated
-> reporting. A public example of the reporting style is here:
+> 1. Which sport and competition should the sample report cover first?
+> 2. Which data sources do you already trust, and do you have paid access to any?
+> 3. Is the output for internal decisions or for publication?
+> 4. Can Phase 1 be funded as a milestone before I start?
+>
+> A public example of my reporting and data pipeline work:
 > https://satgas.ai.id/crypto/riset/
 >
 > Kawakib
 
----
+## 4. Perhitungan harga
 
-## Catatan harga untuk Fatih
+| Tahap | Jam |
+|---|---|
+| Akuisisi dan pembersihan data, satu olahraga | 5 |
+| Fitur: form, H2H, venue, istirahat, situasional | 4 |
+| Model baseline dan uji kalibrasi | 6 |
+| Templat laporan PDF dan Sheets | 4 |
+| Uji, dokumentasi metode, serah terima | 2 |
+| **Total** | **21** |
 
-- Pilot $600 untuk 20 sampai 25 jam kerja (tarif efektif $24-30/jam).
-- Retainer $1.800/bulan untuk sekitar 60-80 jam, setara $22-30/jam.
-- Jangan menerima $4.000 langsung untuk lingkup penuh sebelum pilot. Angka itu kemungkinan
-  mencakup banyak kompetisi dan pekerjaan berbulan-bulan.
-- Pembayaran pilot harus masuk escrow sebelum mulai.
-- Kalau klien menolak pilot dan mau langsung penuh, minta spesifikasi tertulis dan bayar
-  per milestone mingguan.
+- 21 jam x $22 (tarif implementasi) = **$462**.
+- Cadangan risiko 15% untuk data yang tidak rapi = sekitar **$530**.
+- Ditawarkan dua milestone: **12 jam x $25 = $300** dan **9 jam x $25 = $225**, total **$525**.
 
-## Risiko
+Kenapa $25 dan bukan $22: proyek ini hourly dan tarif terpasang klien mulai $42 per jam.
+$22 menaruh kita jauh di bawah pasar untuk pekerjaan yang belum terbukti kegagalannya, tapi
+$25 masih separuh tarif klien sehingga risikonya kecil baginya. Selisih $3 adalah premi
+ketidakpastian data olahraga yang belum pernah kita sentuh.
 
-1. Klien tanpa ulasan. Mitigasi: escrow, pilot kecil.
-2. Domain cricket. Mitigasi: minta klien menentukan kompetisi dan sumber data; kita yang
-   membangun pipeline, bukan mengklaim ahli cricket.
-3. Topik taruhan. Mitigasi: keputusan Fatih. Kalau untuk publikasi prediksi publik, tidak
-   masalah. Kalau untuk saran taruhan berbayar, pertimbangkan ulang.
-4. Data historis berbayar. Mitigasi: sebutkan di proposal bahwa sumber berbayar ditanggung
-   klien.
+Kenapa bukan $600 seperti draf v1: $600 setara 24 jam pada $25, sementara estimasi nyata 21
+jam. Angka itu dibulatkan ke atas tanpa dasar. Yang benar 21 jam, dipecah dua milestone supaya
+klien bisa berhenti setelah melihat satu laporan contoh.
+
+Kenapa bukan ₹4.000 sampai ₹10.000: itu tarif yang dipasang klien, bukan harga wajar untuk
+akun tanpa ulasan di domain baru. Meminta $105 per jam pada pekerjaan pertama akan membuat
+proposal dilewati.
+
+## 5. Escrow dan pembayaran: fakta, bukan asumsi
+
+- Freelancer menyatakan milestone yang sudah didanai disimpan di **Escrow.com** sampai dilepas.
+  Sumber: FAQ Freelancer.
+- Proyek **hourly** ditagih dari jam yang dilacak, bukan milestone tetap. Perlindungan escrow
+  karena itu tidak otomatis; yang menentukan adalah klien mendanai milestone atau membayar
+  invoice mingguan.
+- Syarat yang diajukan ke klien: **fase 1 didanai sebagai milestone sebelum mulai**. Kalau
+  klien menolak mendanai di muka, pekerjaan tidak dimulai.
+
+## 6. Kesesuaian dengan kemampuan sebenarnya
+
+Bisa dibuktikan:
+
+- Pipeline data: ambil, bersihkan, simpan dengan jejak sumber dan tanggal.
+- Statistik dasar: form, H2H, split, interval kepercayaan, kalibrasi probabilitas.
+- Pelaporan otomatis: templat, PDF, Sheets, halaman statis.
+- Uji dan dokumentasi metode, termasuk pengukuran akurasi pada data yang tidak dipakai melatih.
+
+Belum terbukti:
+
+- Pengetahuan domain cricket, sepak bola, atau tenis pada level analis olahraga.
+- Akses data berbayar seperti Opta atau StatsBomb.
+- Riwayat klien di domain olahraga. Portofolio publik yang ada adalah pipeline riset pasar.
+
+## 7. Risiko yang tersisa
+
+1. **Tenggat tidak konsisten.** `hoursLeft: 23` sementara `endTime` 31 Okt. Kalau yang benar 23
+   jam, proposal harus dikirim hari ini atau tidak sama sekali.
+2. **Hourly tanpa jaminan jam.** Klien bisa berhenti setelah dua jam.
+3. **Data tidak seragam antar olahraga.** Cricket punya data ball-by-ball gratis, tenis
+   bergantung arsip komunitas, sepak bola lain lagi. Fase 1 sengaja satu olahraga.
+4. **Klien tanpa ulasan.** Akun 20 bulan dan pembayaran terverifikasi, tapi belum pernah memberi
+   ulasan. Escrow tetap syarat.
+5. **Ekspektasi domain.** Klien mungkin mencari analis olahraga, bukan pembangun pipeline.
+   Proposal menyebut batas ini eksplisit supaya tidak ada kesalahpahaman.
+6. **Sumber data berbayar.** Kalau kompetisi yang dipilih hanya tercakup sumber berbayar,
+   biayanya harus ditanggung klien; ini disebut di pertanyaan klarifikasi.

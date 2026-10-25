@@ -4,7 +4,7 @@
    "judul": "Sports Analytics Probability Reports",
    "sumber": "Freelancer.com",
    "url": "https://www.freelancer.com/projects/statistical-analysis/Sports-Analytics-Probability-Reports",
-   "nilai_potensial_usd": 600.0,
+   "nilai_potensial_usd": 525,
    "tahap": "proposal_disiapkan",
    "riwayat": [
     {
@@ -21,6 +21,11 @@
      "tahap": "proposal_disiapkan",
      "waktu": "2026-10-25 10:15",
      "catatan": "draf T1-sports-analytics.md, pilot 600 dolar"
+    },
+    {
+     "tahap": "diverifikasi",
+     "waktu": "2026-10-25 10:25",
+     "catatan": "koreksi: proyek hourly INR 4.000-10.000 per jam (setara 42-105 dolar), 0 bid, klien 604 hari, pembayaran terverifikasi. Nilai pilot dikoreksi dari 600 ke 525 (21 jam x 25)."
     }
    ]
   }
