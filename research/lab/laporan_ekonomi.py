@@ -44,11 +44,19 @@ def main() -> int:
         anggaran = f"{usd(a[0],0)} - {usd(a[1],0)}" if a[1] else "belum ada"
         status = ("<span class='badge up'>siap dikirim</span>" if p["kirim"]
                   else f"<span class='badge warn'>{p['peluang_menang']}</span>")
+        v = p.get("verifikasi") or {}
+        if v.get("payment_verified") is True:
+            ver = "<span class='badge up'>pembayaran terverifikasi</span>"
+        elif v.get("payment_verified") is False:
+            ver = "<span class='badge down'>belum terverifikasi</span>"
+        else:
+            ver = f"<span class='badge flat'>{v.get('status','-')}</span>"
         baris.append(
             f"<tr><td><b>{p['id']}</b><br>{p['judul']}</td>"
             f"<td>{p['sumber'].split('(')[0].strip()}</td>"
             f"<td class='n'>{anggaran}</td><td class='n'>{p['pesaing']}</td>"
-            f"<td class='n'>{p['estimasi_jam']} jam</td><td>{status}</td></tr>")
+            f"<td class='n'>{p['estimasi_jam']} jam</td>"
+            f"<td>{ver}</td><td>{status}</td></tr>")
 
     detail = "".join(
         f"<div class='panel'><h3>{p['id']} · {p['judul']}</h3>"
@@ -58,6 +66,25 @@ def main() -> int:
         f"Perkiraan waktu: {p['estimasi_jam']} jam · "
         f"Biaya pengerjaan: {usd(p['biaya_pengerjaan_usd'])}</p></div>"
         for p in peluang)
+
+    verifikasi_rows = []
+    for q in peluang:
+        v = q.get("verifikasi") or {}
+        if v.get("payment_verified") is None and not v.get("umur_akun_hari"):
+            verifikasi_rows.append(
+                f"<tr><td>{q['id']}</td><td colspan='4'>{v.get('catatan','tidak ada data')}</td>"
+                f"<td>{v.get('status','-')}</td></tr>")
+            continue
+        pb = ("ya" if v.get("payment_verified") else "tidak")
+        umur = f"{v.get('umur_akun_hari')} hari" if v.get("umur_akun_hari") else "-"
+        ulasan = v.get("ulasan", "-")
+        dep = "ya" if v.get("deposit") else "tidak"
+        risiko = ("risiko rendah" if v.get("payment_verified") and (v.get("ulasan") or 0) > 0
+                  else "risiko tinggi, wajib escrow")
+        verifikasi_rows.append(
+            f"<tr><td>{q['id']} · {q['judul'][:40]}</td><td>{pb}</td>"
+            f"<td class='n'>{umur}</td><td class='n'>{ulasan}</td><td class='n'>{dep}</td>"
+            f"<td>{risiko}</td></tr>")
 
     prod = d["produk"]
     bukti = "".join(f"<li>{x}</li>" for x in prod["bukti_yang_sudah_ada"])
@@ -108,11 +135,36 @@ benar-benar ditagih, tambahkan sebagai baris invoice baru, bukan sebagai estimas
 adalah jumlah bid atau submisi yang terlihat saat pengambilan data, bukan perkiraan.</p>
 <div class="panel"><table><thead><tr><th>Peluang</th><th>Sumber</th>
 <th class="n">Anggaran</th><th class="n">Pesaing</th><th class="n">Waktu</th>
-<th>Status</th></tr></thead><tbody>{''.join(baris)}</tbody></table></div>
+<th>Verifikasi klien</th><th>Status</th></tr></thead><tbody>{''.join(baris)}</tbody></table></div>
 
 {detail}
 
-<h2>3. Kenapa marketplace sulit</h2>
+<h2>3. Verifikasi klien dan risiko penipuan</h2>
+<p>Anggaran besar bukan bukti proyek nyata. Yang diperiksa: status verifikasi pembayaran,
+umur akun, jumlah ulasan, kelengkapan profil, dan apakah klien sudah menaruh deposit.
+Data diambil dari halaman publik proyek.</p>
+<div class="panel"><table><thead><tr><th>Peluang</th><th>Verifikasi pembayaran</th>
+<th class="n">Umur akun</th><th class="n">Ulasan</th><th class="n">Deposit</th>
+<th>Penilaian</th></tr></thead><tbody>{verifikasi_rows}</tbody></table>
+<p class="meta">Klien tanpa verifikasi pembayaran bukan otomatis penipu, tapi risikonya
+nyata: pekerjaan selesai lalu tidak dibayar. Aturan yang dipakai: pekerjaan hanya dimulai
+kalau pembayaran masuk escrow per milestone, apa pun status verifikasinya.</p></div>
+
+<h2>4. Tarif dan cara menagih</h2>
+<div class="panel"><table><thead><tr><th>Jenis pekerjaan</th><th class="n">Tarif</th>
+<th>Dasar</th></tr></thead><tbody>
+<tr><td>Diagnosis dan spesifikasi</td><td class="n">$25/jam</td>
+<td>dibayar lebih dulu, hasilnya dokumen yang bisa dipakai klien</td></tr>
+<tr><td>Implementasi</td><td class="n">$22/jam</td>
+<td>per milestone, bukan borongan di awal</td></tr>
+<tr><td>Retainer bulanan</td><td class="n">$18/jam</td>
+<td>untuk pekerjaan berulang dengan jam terjamin</td></tr>
+</tbody></table>
+<p class="meta">Dasar tarif: profil Upwork Indonesia dengan portofolio setara memasang 25
+dolar per jam. Akun baru di marketplace realistis di 18 sampai 25 dolar. Diagnosis dipisah
+dari implementasi supaya tidak ada janji hasil sebelum masalahnya dipahami.</p></div>
+
+<h2>5. Kenapa marketplace sulit</h2>
 <p>Data hari ini: proyek Python/SQLite dengan anggaran 250 sampai 750 dolar punya 147 bid,
 proyek otomasi database 15 sampai 25 dolar punya 187 bid, dan proyek integrasi Azure punya
 65 bid. Untuk akun tanpa ulasan, peluang menang di angka itu kecil. Karena itu strategi
@@ -124,7 +176,7 @@ persis dengan portofolio yang ada</li>
 <li>bangun posisi niche di pipeline data kripto, tempat pesaing lebih sedikit</li>
 </ul>
 
-<h2>4. Produk sebagai sampingan</h2>
+<h2>6. Produk sebagai sampingan</h2>
 <p><b>{prod['nama']}</b></p>
 <p>Yang sudah ada dan bisa ditunjukkan:</p><ul>{bukti}</ul>
 <p>Yang belum ada, dan lebih penting daripada fitur:</p><ul>{belum}</ul>
@@ -132,10 +184,13 @@ persis dengan portofolio yang ada</li>
 <p class="meta">Aturan yang dipegang: tidak ada fitur baru sebelum ada satu orang yang
 membayar atau berkomitmen. Produk yang belum ada pembelinya adalah biaya, bukan pendapatan.</p>
 
-<h2>5. Urutan kerja</h2>
+<h2>7. Urutan kerja</h2>
 <ol>
-<li>Kirim dua draf proposal yang sudah siap, setelah Fatih memutuskan harga dan tanda
-tangannya.</li>
+<li>Kirim draf V1 (dashboard) setelah Fatih menyetujui harga. Ini peluang dengan klien
+terverifikasi dan portofolio paling cocok.</li>
+<li>F2 hanya dikirim kalau klien bersedia memakai escrow per milestone. Kliennya baru tiga
+hari dan pembayaran belum terverifikasi.</li>
+<li>F1 tidak dikirim: listingnya sudah tidak aktif saat diperiksa ulang.</li>
 <li>Susun profil Upwork dengan posisi niche: pipeline data kripto dan otomasi laporan.
 Portofolio yang dipakai adalah situs ini, termasuk bug yang ditemukan dan cara
 verifikasinya.</li>
@@ -144,7 +199,7 @@ verifikasinya.</li>
 marketplace bukan tempat yang tepat, dan jalur langsung ke perusahaan lebih masuk akal.</li>
 </ol>
 
-<h2>6. Yang tidak dilakukan</h2>
+<h2>8. Yang tidak dilakukan</h2>
 <ul>
 <li>Tidak mengirim proposal atau membuat komitmen atas nama Fatih.</li>
 <li>Tidak mengarang pengalaman, ulasan, atau portofolio yang tidak ada.</li>
