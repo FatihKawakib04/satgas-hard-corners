@@ -1,0 +1,25 @@
+{
+ "freelance_target": {
+  "id": "T1",
+  "status": "usulan, belum kontrak",
+  "fase1_bruto_usd": 300,
+  "fase2_bruto_usd": 350,
+  "bruto_maks_usd": 650,
+  "biaya_platform_persen": 10,
+  "net_setelah_platform_usd": 585,
+  "fase1_net_usd": 270
+ },
+ "carry": {
+  "proyeksi_laju_tahunan": 0.007,
+  "proyeksi_usd_per_tahun": 0.07,
+  "historimpl": 0.038,
+  "historis_usd_per_tahun": 0.38,
+  "label_historis": "pembanding historis 2023-2026, bukan proyeksi"
+ },
+ "biaya": {
+  "vps_rp_per_bulan": 18000,
+  "vps_usd_per_bulan": 1.0,
+  "api_usd_per_bulan": 0.0
+ },
+ "catatan": "Satu-satunya sumber angka ekonomi. Renderer dan pemeriksa wajib membaca dari sini."
+}

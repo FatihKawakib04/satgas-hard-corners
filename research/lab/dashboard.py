@@ -203,7 +203,7 @@ dipastikan baru tugas yang tidak bergantung jawaban di atas: lapisan data dan te
 
 <h2>Keputusan yang menunggu Fatih</h2>
 <ol>
-<li>Setujui atau koreksi tarif $25/jam dan dua milestone $300 + $225 untuk T1.</li>
+<li>Setujui atau koreksi tarif $25/jam dan dua milestone $300 + $350 untuk T1.</li>
 <li>Nama tanda tangan di proposal.</li>
 <li>Izin mengirim proposal, atau kirim sendiri.</li>
 <li>Kalau trading nanti lolos validasi: setujui modal live 10 dolar.</li>

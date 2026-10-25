@@ -99,7 +99,7 @@ def main() -> int:
         "Catat pembayaran di karir.py supaya pendapatan dan laba bersih terbarui.",
     ])
     status_target = (f"<p class='meta'>Tahap sekarang: <b>{target.get('tahap','-')}</b> · "
-                     f"nilai pilot {usd(target.get('nilai_potensial_usd',0),0)} · "
+                     f"nilai bruto maksimum {usd(650,0)} · "
                      f"<a href='{target.get('url','#')}'>halaman proyek</a></p>") if target else ""
 
     prod = d["produk"]
@@ -148,7 +148,7 @@ tenis.</p>
 fitur, dan satu laporan contoh; fase 2 dibatasi 14 jam ($350) untuk kalibrasi model dan
 generator. Estimasi 21 jam tidak dipakai sebagai angka final karena olahraga, sumber data, dan
 format keluaran belum dikonfirmasi; rentang jujurnya 18 sampai 30 jam. Karena proyeknya hourly,
-fase 1 harus didanai sebagai milestone lebih dulu. Rincian lengkap di
+fase 1 harus didanai sebagai milestone lebih dulu. Catatan carry: proyeksi memakai laju 2026 sebesar 0,7 persen, setara $0,07 per tahun pada modal $10. Angka $0,38 hanya pembanding historis. Rincian di
 <a href="dashboard.html">dashboard ekonomi</a>.</p>
 <p><b>Langkah berikutnya:</b></p><ol>{langkah}</ol>
 <p class="meta">Semua langkah di atas masih menunggu persetujuan Fatih pada harga dan isi

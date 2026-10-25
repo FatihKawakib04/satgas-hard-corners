@@ -79,6 +79,39 @@ def main() -> int:
         if not v.get("nilai_potensial_usd"):
             salah.append(f"{pid}: nilai potensial kosong")
 
+
+    # 7. audit nilai ekonomi: sumber kanonis dan larangan nilai lama
+    import glob, re
+    kan_path = os.path.join(HERE, "ekonomi_kanonis.json")
+    if os.path.exists(kan_path):
+        kan = json.load(open(kan_path))
+        net = kan["freelance_target"]["net_setelah_platform_usd"]
+        brut = kan["freelance_target"]["bruto_maks_usd"]
+        if round(brut - brut * kan["freelance_target"]["biaya_platform_persen"] / 100) != net:
+            salah.append(f"kanonis: {brut} dikurangi biaya platform bukan {net}")
+        else:
+            cek.append(f"kanonis: bruto {brut} -> bersih {net} konsisten")
+
+        halaman = ["../reports/dashboard.html", "../reports/ekonomi.html"]
+        for f in halaman:
+            fp = os.path.join(HERE, f)
+            if not os.path.exists(fp):
+                salah.append(f"halaman tidak ada: {f}")
+                continue
+            t = open(fp, errors="ignore").read()
+            if "525" in t:
+                salah.append(f"{os.path.basename(f)}: masih memuat nilai proyek lama 525")
+            if "300 + $225" in t or "300 dan $225" in t:
+                salah.append(f"{os.path.basename(f)}: milestone lama 300+225 masih ada")
+            for m in re.finditer(r"0[,.]38", t):
+                sekitar = t[max(0, m.start() - 220):m.start() + 120].lower()
+                if not any(k in sekitar for k in ("historis", "pembanding", "versi sebelumnya", "keliru")):
+                    salah.append(f"{os.path.basename(f)}: 0,38 tanpa label historis")
+                    break
+            for wajib in (str(brut), str(net), "0,07"):
+                if wajib not in t:
+                    salah.append(f"{os.path.basename(f)}: angka kanonis {wajib} tidak muncul")
+
     for c in cek:
         print("cek:", c)
     if salah:

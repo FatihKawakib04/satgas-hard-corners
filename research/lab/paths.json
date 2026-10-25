@@ -34,9 +34,9 @@
     "dasar": "menyusun proposal, panggilan klarifikasi, serah terima"
    },
    "laba_bersih": {
-    "nilai": "sekitar 525 per proyek pertama",
+    "nilai": "650 bruto, 585 bersih setelah biaya platform",
     "label": "estimasi",
-    "dasar": "21 jam x 25 dolar, sebelum pajak dan waktu pencarian klien"
+    "dasar": "usulan, bukan kontrak; 0 diterima"
    },
    "pendapatan_diterima": 0,
    "bukti": [
@@ -74,9 +74,9 @@
     "label": "estimasi"
    },
    "laba_bersih": {
-    "nilai": "0,38 dolar per tahun pada modal 10 dolar bila carry 3,8 persen bertahan",
+    "nilai": "0,07 per tahun (laju 2026); 0,38 hanya pembanding historis",
     "label": "estimasi",
-    "dasar": "10 x 3,8 persen; angka ini menunjukkan batas modal, bukan kualitas strategi"
+    "dasar": "10 dolar x 0,7 persen disetahunkan"
    },
    "pendapatan_diterima": 0,
    "bukti": [
