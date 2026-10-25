@@ -1,6 +1,6 @@
 # Proposal T1 v2: Sports Analytics Probability Reports
 
-Status: **draf final, BELUM DIKIRIM**. Menunggu persetujuan Fatih pada tarif, isi, dan nama.
+Status: **draf cadangan, BELUM DIKIRIM.** CATATAN: persyaratan klien minta riwayat sports analytics dan contoh laporan olahraga sebelumnya; kita BELUM MEMENUHI keduanya. Demo mandiri hanya menunjukkan format, bukan pengalaman. Menunggu persetujuan Fatih pada tarif, isi, dan nama.
 Versi 1 diarsipkan sebagai `T1-sports-analytics-v1-arsip.md` karena salah membaca anggaran:
 yang tertulis $4.000-10.000 ternyata rupiah per jam, bukan total proyek.
 
