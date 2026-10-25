@@ -103,9 +103,27 @@ def main() -> int:
     a, b = terakhir["home"], terakhir["away"]
     fa, fb = ringkas(data, a), ringkas(data, b)
 
-    def baris_form(xs):
-        return "".join(f"<span class='badge {'up' if x=='M' else ('flat' if x=='S' else 'down')}'>{x}</span> "
-                       for x in xs) or "-"
+    # cek: jumlah observasi yang dilaporkan harus sama dengan yang dihitung
+    for tim, rk in ((a, fa), (b, fb)):
+        hitung = len([r for r in data if tim in (r["home"], r["away"])])
+        assert rk["main"] == hitung, f"{tim}: {rk['main']} != {hitung}"
+        assert len(form(data, tim, 10)) == min(10, hitung), f"{tim}: form 10 tidak cocok"
+    print(f"cek observasi: OK ({a} {fa['main']} laga, {b} {fb['main']} laga)")
+
+    def baris_form(xs, diminta=None):
+        """Tampilkan deret dan jumlah observasi yang benar-benar dipakai.
+
+        Kalau pertandingan tersedia kurang dari yang diminta, itu ditulis apa
+        adanya, bukan dipaksa tampil seolah lengkap.
+        """
+        if not xs:
+            return "-"
+        html = "".join(
+            f"<span class='badge {'up' if x=='M' else ('flat' if x=='S' else 'down')}'>{x}</span> "
+            for x in xs)
+        if diminta and len(xs) < diminta:
+            html += f"<span class='meta'> (hanya {len(xs)} dari {diminta} tersedia)</span>"
+        return html
 
     h2h_html = "".join(
         f"<tr><td>{r['tgl']}</td><td>{r['home']} {r['hg']} - {r['ag']} {r['away']}</td>"
@@ -140,18 +158,18 @@ dihitung dari pertandingan yang sudah selesai, bukan prediksi.</p>
 <h2>1. Bentuk terkini</h2>
 <table><thead><tr><th>Tim</th><th>5 laga</th><th>10 laga</th><th class="n">Menang</th>
 <th class="n">Gol/partai</th><th class="n">Kebobolan/partai</th></tr></thead><tbody>
-<tr><td><b>{a}</b></td><td>{baris_form(form(data,a,5))}</td><td>{baris_form(form(data,a,10))}</td>
+<tr><td><b>{a}</b></td><td>{baris_form(form(data,a,5),5)}</td><td>{baris_form(form(data,a,10),10)}</td>
 <td class="n">{fa['menang']}/{fa['main']}</td><td class="n">{fa['gf_pg']:.2f}</td>
 <td class="n">{fa['ga_pg']:.2f}</td></tr>
-<tr><td><b>{b}</b></td><td>{baris_form(form(data,b,5))}</td><td>{baris_form(form(data,b,10))}</td>
+<tr><td><b>{b}</b></td><td>{baris_form(form(data,b,5),5)}</td><td>{baris_form(form(data,b,10),10)}</td>
 <td class="n">{fb['menang']}/{fb['main']}</td><td class="n">{fb['gf_pg']:.2f}</td>
 <td class="n">{fb['ga_pg']:.2f}</td></tr>
 </tbody></table>
 
 <h2>2. Split kandang dan tandang</h2>
 <table><thead><tr><th>Tim</th><th>Kandang (5)</th><th>Tandang (5)</th></tr></thead><tbody>
-<tr><td>{a}</td><td>{baris_form(form(data,a,5,True))}</td><td>{baris_form(form(data,a,5,False))}</td></tr>
-<tr><td>{b}</td><td>{baris_form(form(data,b,5,True))}</td><td>{baris_form(form(data,b,5,False))}</td></tr>
+<tr><td>{a}</td><td>{baris_form(form(data,a,5,True),5)}</td><td>{baris_form(form(data,a,5,False),5)}</td></tr>
+<tr><td>{b}</td><td>{baris_form(form(data,b,5,True),5)}</td><td>{baris_form(form(data,b,5,False),5)}</td></tr>
 </tbody></table>
 
 <h2>3. Head-to-head terakhir</h2>

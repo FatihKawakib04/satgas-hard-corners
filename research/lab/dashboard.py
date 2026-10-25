@@ -116,6 +116,15 @@ dihitung sebagai pendapatan.</p>
 <div class='ket'>{runway_ket}</div></div>
 </div>
 
+<h2>Definisi metrik</h2>
+<div class="panel"><table><thead><tr><th>Metrik</th><th>Definisi</th><th>Periode</th></tr></thead><tbody>
+<tr><td>Pendapatan diterima</td><td>jumlah pembayaran yang benar-benar masuk dan tercatat</td><td>sejak 25 Okt 2026</td></tr>
+<tr><td>Biaya platform</td><td>10% dari nilai proyek saat dibayar (minimum $5)</td><td>sejak 25 Okt 2026</td></tr>
+<tr><td>Laba bersih</td><td>pendapatan diterima dikurangi biaya platform dan biaya langsung</td><td>sejak 25 Okt 2026</td></tr>
+<tr><td>Biaya operasional</td><td>VPS Rp18.000 per bulan, invoice</td><td>bulan berjalan</td></tr>
+<tr><td>Runway</td><td>kas operasional dibagi biaya operasional bulanan</td><td>titik waktu, bukan periode</td></tr>
+</tbody></table></div>
+
 <h2>Perbandingan tiga jalur</h2>
 <div class="panel"><table><thead><tr><th>Jalur</th><th class="n">Biaya awal</th>
 <th class="n">Biaya bulanan</th><th>Waktu ke pendapatan</th><th>Risiko gagal</th>
@@ -127,16 +136,29 @@ estimasi. Tidak ada angka probabilitas yang dikarang ketika datanya tidak ada.</
 <h2>Rekonsiliasi angka yang sempat tidak konsisten</h2>
 <div class="panel"><table><thead><tr><th>Angka</th><th class="n">Perhitungan</th>
 <th>Periode sumber</th></tr></thead><tbody>
-<tr><td>Carry 2026 pada modal $10</td><td class="n">10 x 0,7% = <b>$0,07/tahun</b></td>
-<td>laju 2026 saja, 298 hari</td></tr>
-<tr><td>Carry rata-rata 2023-2026 pada modal $10</td><td class="n">10 x 3,8% = <b>$0,38/tahun</b></td>
-<td>rata-rata tiga tahun, termasuk 2024 yang jauh lebih gemuk</td></tr>
-<tr><td>Versi dashboard sebelumnya</td><td class="n">$0,38</td>
-<td>keliru dipakai sebagai proyeksi ke depan tanpa menyebut periodenya</td></tr>
+<tr><td>Carry <b>proyeksi ke depan</b> pada modal $10</td><td class="n">10 x 0,7% = <b>$0,07/tahun</b></td>
+<td>0,7% adalah return <b>disetahunkan</b> dari pengamatan 2026 (298 hari, bukan setahun penuh)</td></tr>
+<tr><td>Carry historis 2023-2026 pada modal $10</td><td class="n">10 x 3,8% = $0,38/tahun</td>
+<td>3,8% adalah rata-rata <b>disetahunkan</b> tiga tahun, termasuk 2024 yang jauh lebih gemuk</td></tr>
+<tr><td>Versi sebelumnya</td><td class="n">$0,38 dipakai sebagai proyeksi</td>
+<td>keliru: angka lama dipakai untuk melihat ke depan tanpa menyebut periodenya</td></tr>
 </tbody></table>
-<p class="meta">Koreksi: proyeksi memakai angka terbaru, $0,07 per tahun, bukan $0,38. Kedua
-angka tetap ditampilkan supaya asalnya jelas. Selisihnya lima kali lipat, dan itu justru inti
-temuannya: hasil carry menyusut dari tahun ke tahun.</p></div>
+<p class="meta">Semua persentase adalah return disetahunkan, bukan return periode pengamatan.
+Proyeksi memakai 0,7% karena itu laju terbaru; $0,38 tetap ditampilkan hanya sebagai pembanding
+historis, bukan angka yang dipakai untuk keputusan.</p></div>
+
+<h2>Struktur kontrak: hourly versus fixed-price per fase</h2>
+<div class="panel"><table><thead><tr><th>Aspek</th><th>Hourly (seperti dipasang klien)</th>
+<th>Fixed-price per fase (yang diajukan)</th></tr></thead><tbody>
+<tr><td>Cara bayar</td><td>invoice mingguan dari jam terlacak</td><td>milestone tetap per fase</td></tr>
+<tr><td>Pelacakan jam</td><td>wajib, klien harus mengaktifkan penagihan otomatis</td><td>tidak perlu pelacakan</td></tr>
+<tr><td>Batas biaya</td><td>tidak ada batas total; jam bisa berjalan terus</td><td>batas keras per fase</td></tr>
+<tr><td>Perlindungan dana</td><td>tidak otomatis; tergantung tagihan mingguan</td><td>milestone didanai lebih dulu, ditahan Escrow.com</td></tr>
+<tr><td>Risiko untuk kita</td><td>klien berhenti kapan saja setelah beberapa jam</td><td>pekerjaan penuh satu fase sudah didanai</td></tr>
+</tbody></table>
+<p class="meta">Karena itu yang diajukan fixed-price per fase, bukan hourly terbuka. Kedua bentuk
+dikenai biaya platform 10%. Fase 2 hanya dimulai setelah fase 1 ditinjau dan disetujui tertulis.
+Belum ada milestone yang didanai, dan tidak ada klaim bahwa dana sudah diamankan.</p></div>
 
 <h2>Bukti per jalur</h2>
 {bukti}

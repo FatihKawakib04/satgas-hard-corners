@@ -14,8 +14,8 @@ yang tertulis $4.000-10.000 ternyata rupiah per jam, bukan total proyek.
 | Tautan | https://www.freelancer.com/projects/statistical-analysis/Sports-Analytics-Probability-Reports | URL publik |
 | Tipe proyek | **hourly**, bukan fixed price | field `type: hourly` |
 | Tarif terpublikasi | **₹4.000 sampai ₹10.000 per jam**, sekitar $42 sampai $105 per jam (kurs 95) | field `formattedBudget: "₹4000-10000 INR / hour"` |
-| Jumlah bid | **0** | `bidCount: 0`, `bidAvg: 0` |
-| Batas waktu | `hoursLeft: 23`, sementara `endTime` 31 Okt 2026 13:01 UTC. Dua field bertentangan, anggap **paling cepat 24 jam** | halaman proyek |
+| Jumlah bid | **0 menurut field halaman**, tidak diverifikasi independen | `bidCount: 0`, `bidAvg: 0`; tidak ada halaman daftar bid yang bisa diperiksa tanpa masuk |
+| Batas waktu | **tidak pasti.** Halaman publik pada 25 Okt 2026 menunjukkan status Open dengan tenggat **enam hari**; data internal sebelumnya menunjukkan `hoursLeft: 23` dan `endTime` 31 Okt. Tiga sumber tidak sepakat, jadi tenggat tidak boleh dipakai sebagai dasar keputusan | halaman proyek + field internal |
 | Klien | akun dibuat 28 Feb 2025 (sekitar 20 bulan), **pembayaran terverifikasi**, **0 ulasan**, profil lengkap | `registrationTime`, `paymentVerified`, `reviewCount` |
 | Mata uang | INR, klien India | field mata uang proyek |
 
@@ -102,6 +102,17 @@ yang tertulis $4.000-10.000 ternyata rupiah per jam, bukan total proyek.
 >
 > Kawakib
 
+## 3b. Apakah $25/jam bisa diajukan pada listing ini
+
+Bisa secara teknis: pada proyek hourly, nilai bid diisi pelamar sendiri, dan Freelancer tidak
+mewajibkan bid berada di dalam rentang yang dipasang klien. Rentang ₹4.000-10.000 per jam
+(sekitar $42-105) adalah harapan klien, bukan batas sistem.
+
+Risikonya nyata: klien yang memasang tarif mulai $42 mungkin menyaring bid yang jauh di
+bawahnya, jadi bid $25 bisa tidak dibaca. Alasan tetap diajukan: akun tanpa ulasan di domain
+olahraga tidak punya dasar meminta $42, dan $25 masih 40% di bawah batas bawah klien sehingga
+klien mendapat nilai lebih. Kalau klien menolak, itu informasi, bukan kerugian.
+
 ## 4. Perhitungan harga
 
 | Tahap | Jam | Bisa diperkirakan sekarang? |
@@ -126,6 +137,8 @@ Yang belum bisa diperkirakan sebelum klien menjawab:
 Konsekuensi pada harga:
 
 - Titik tengah 21 jam x $22 = $462. Pada rentang 18 sampai 30 jam, biayanya **$396 sampai $660**.
+- Nilai proyek **bruto maksimum $650** (fase 1 $300 + fase 2 $350). Setelah biaya platform 10%
+  menjadi **$585 bersih**; fase 1 saja $300 kotor, **$270 bersih**.
 - Yang ditawarkan bukan satu angka final, melainkan **batas**: fase 1 maksimal 12 jam
   ($300), fase 2 maksimal 14 jam ($350). Total maksimum $650, dan klien hanya membayar jam
   yang benar-benar dipakai.
