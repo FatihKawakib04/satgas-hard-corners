@@ -1,0 +1,215 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard ekonomi · satgas.ai.id</title><style>
+:root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
+--txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(115,165,202,.3)}
+a:hover{border-bottom-color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
+.brand{font-weight:600;letter-spacing:.02em;color:var(--dim);font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.22;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid var(--accent);
+padding-left:11px}
+h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
+.meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
+padding:3px 11px;font-size:12px;color:#c9d4e2}
+.badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
+.badge.risk-on{color:#8fe0c0;border-color:rgba(63,191,143,.4);background:rgba(63,191,143,.09)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:18px 0 6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.card .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.card .v{font-size:19px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
+.card .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--dim)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:16px 0}
+.panel h3{margin-top:0}
+.svg-chart{display:block;margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;overflow:hidden}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;font-size:12.8px}
+ul,ol{padding-left:20px}li{margin:5px 0}
+.lead{font-size:17px;color:#eaf1f8}
+.exec{background:linear-gradient(180deg,rgba(115,165,202,.10),rgba(115,165,202,.03));
+border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;margin:18px 0}
+.exec ol{margin:0;padding-left:20px}
+.exec li{margin:7px 0}
+.scen{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
+.scen .box{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:14px}
+.scen .box .t{font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+.scen .base{border-color:rgba(115,165,202,.4)}.scen .base .t{color:var(--accent)}
+.scen .bull .t{color:var(--green)}.scen .bear .t{color:var(--red)}
+.split{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.split>div{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px}
+.split .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:6px}
+.fact{border-left:2px solid var(--green)}.spec{border-left:2px solid var(--gold)}
+.sup{font-size:11px;vertical-align:super;color:var(--accent);border:0}
+.refs{font-size:13px;color:#b9c6d4}
+.refs li{margin:6px 0}
+.note{font-size:13px;color:var(--dim);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
+.tag{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);
+border-radius:6px;padding:1px 6px;margin-right:6px}
+.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
+td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+.card .v{font-size:17px}}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tscroll table{min-width:100%}
+.risk li{margin:8px 0}
+.watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head><body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
+
+<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
+<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
+<a href="ekonomi.html">Ekonomi</a> · <a href="audit-e06.html">Audit E06</a></div></div>
+
+<h1>Dashboard ekonomi</h1>
+<p class="lead">Satu halaman untuk menjawab: berapa uang yang benar-benar masuk, berapa
+biayanya, dan jalur mana yang paling masuk akal. Saldo akun dan profit simulasi tidak
+dihitung sebagai pendapatan.</p>
+
+<div class="cards">
+<div class='card'><div class='k'>Pendapatan freelance diterima</div><div class='v'>$0.00</div>
+<div class='ket'>sejak 25 Okt 2026, hanya pembayaran tercatat</div></div>
+<div class='card'><div class='k'>Biaya platform</div><div class='v'>$0.00</div>
+<div class='ket'>sejak 25 Okt 2026, 10 persen saat ada pembayaran</div></div>
+<div class='card'><div class='k'>Laba bersih</div><div class='v'>$0.00</div>
+<div class='ket'>pendapatan minus biaya langsung dan platform</div></div>
+<div class='card'><div class='k'>Biaya operasional</div><div class='v'>$1.00/bln</div>
+<div class='ket'>Rp 18,000 VPS, invoice bulan berjalan</div></div>
+<div class='card'><div class='k'>Modal trading live</div><div class='v'>$0.00</div>
+<div class='ket'>batas $10, belum dipakai</div></div>
+<div class='card'><div class='k'>Realized PnL trading</div><div class='v'>$0.00</div>
+<div class='ket'>sejak 25 Okt 2026, belum ada transaksi nyata</div></div>
+<div class='card'><div class='k'>Unrealized PnL</div><div class='v'>n/a</div>
+<div class='ket'>tidak ada posisi live</div></div>
+<div class='card'><div class='k'>Runway biaya</div><div class='v'>belum diketahui</div>
+<div class='ket'>saldo kas operasional belum dicatat</div></div>
+</div>
+
+<h2>Definisi metrik</h2>
+<div class="panel"><table><thead><tr><th>Metrik</th><th>Definisi</th><th>Periode</th></tr></thead><tbody>
+<tr><td>Pendapatan diterima</td><td>jumlah pembayaran yang benar-benar masuk dan tercatat</td><td>sejak 25 Okt 2026</td></tr>
+<tr><td>Biaya platform</td><td>10% dari nilai proyek saat dibayar (minimum $5)</td><td>sejak 25 Okt 2026</td></tr>
+<tr><td>Laba bersih</td><td>pendapatan diterima dikurangi biaya platform dan biaya langsung</td><td>sejak 25 Okt 2026</td></tr>
+<tr><td>Biaya operasional</td><td>VPS Rp18.000 per bulan, invoice</td><td>bulan berjalan</td></tr>
+<tr><td>Runway</td><td>kas operasional dibagi biaya operasional bulanan</td><td>titik waktu, bukan periode</td></tr>
+</tbody></table></div>
+
+<h2>Perbandingan tiga jalur</h2>
+<div class="panel"><table><thead><tr><th>Jalur</th><th class="n">Biaya awal</th>
+<th class="n">Biaya bulanan</th><th>Waktu ke pendapatan</th><th>Risiko gagal</th>
+<th>Intervensi manusia</th><th>Laba bersih potensial</th></tr></thead>
+<tbody><tr><td><b>Freelance data engineering</b><br><span class='meta'>aktif, target T1</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td>3 sampai 30 hari<br><span class='meta'>estimasi</span></td><td>tidak diketahui<br><span class='meta'>asumsi</span></td><td>2 sampai 4 jam per peluang</td><td>650 bruto, 585 bersih setelah biaya platform<br><span class='meta'>estimasi</span></td></tr><tr><td><b>Trading otomatis (paper sekarang, live dibatasi 10 dolar)</b><br><span class='meta'>paper trading saja, tidak menghasilkan</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td>tidak dapat diprediksi<br><span class='meta'>fakta</span></td><td>tinggi<br><span class='meta'>fakta</span></td><td>pemantauan harian, keputusan saat sinyal</td><td>0,07 per tahun (laju 2026); 0,38 hanya pembanding historis<br><span class='meta'>estimasi</span></td></tr><tr><td><b>Layanan atau produk otomatis</b><br><span class='meta'>belum ada bukti permintaan</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>estimasi</span></td><td>tidak diketahui<br><span class='meta'>fakta</span></td><td>tidak diketahui<br><span class='meta'>fakta</span></td><td>dukungan pelanggan dan pemasaran</td><td>belum dapat dihitung<br><span class='meta'>fakta</span></td></tr></tbody></table>
+<p class="meta">Label kecil di bawah angka menunjukkan tingkat keyakinan: fakta, asumsi, atau
+estimasi. Tidak ada angka probabilitas yang dikarang ketika datanya tidak ada.</p></div>
+
+<h2>Rekonsiliasi angka yang sempat tidak konsisten</h2>
+<div class="panel"><table><thead><tr><th>Angka</th><th class="n">Perhitungan</th>
+<th>Periode sumber</th></tr></thead><tbody>
+<tr><td>Carry <b>proyeksi ke depan</b> pada modal $10</td><td class="n">10 x 0,7% = <b>$0,07/tahun</b></td>
+<td>0,7% adalah return <b>disetahunkan</b> dari pengamatan 2026 (298 hari, bukan setahun penuh)</td></tr>
+<tr><td>Carry historis 2023-2026 pada modal $10</td><td class="n">10 x 3,8% = $0,38/tahun</td>
+<td>3,8% adalah rata-rata <b>disetahunkan</b> tiga tahun, termasuk 2024 yang jauh lebih gemuk</td></tr>
+<tr><td>Versi sebelumnya</td><td class="n">$0,38 dipakai sebagai proyeksi</td>
+<td>keliru: angka lama dipakai untuk melihat ke depan tanpa menyebut periodenya</td></tr>
+</tbody></table>
+<p class="meta">Semua persentase adalah return disetahunkan, bukan return periode pengamatan.
+Proyeksi memakai 0,7% karena itu laju terbaru; $0,38 tetap ditampilkan hanya sebagai pembanding
+historis, bukan angka yang dipakai untuk keputusan.</p></div>
+
+<h2>Struktur kontrak: hourly versus fixed-price per fase</h2>
+<div class="panel"><table><thead><tr><th>Aspek</th><th>Hourly (seperti dipasang klien)</th>
+<th>Fixed-price per fase (yang diajukan)</th></tr></thead><tbody>
+<tr><td>Cara bayar</td><td>invoice mingguan dari jam terlacak</td><td>milestone tetap per fase</td></tr>
+<tr><td>Pelacakan jam</td><td>wajib, klien harus mengaktifkan penagihan otomatis</td><td>tidak perlu pelacakan</td></tr>
+<tr><td>Batas biaya</td><td>tidak ada batas total; jam bisa berjalan terus</td><td>batas keras per fase</td></tr>
+<tr><td>Perlindungan dana</td><td>tidak otomatis; tergantung tagihan mingguan</td><td>milestone didanai lebih dulu, ditahan Escrow.com</td></tr>
+<tr><td>Risiko untuk kita</td><td>klien berhenti kapan saja setelah beberapa jam</td><td>pekerjaan penuh satu fase sudah didanai</td></tr>
+</tbody></table>
+<p class="meta">Karena itu yang diajukan fixed-price per fase, bukan hourly terbuka. Kedua bentuk
+dikenai biaya platform 10%. Fase 2 hanya dimulai setelah fase 1 ditinjau dan disetujui tertulis.
+Belum ada milestone yang didanai, dan tidak ada klaim bahwa dana sudah diamankan.</p></div>
+
+<h2>Bukti per jalur</h2>
+<div class='panel'><h3>Freelance data engineering</h3><ul><li>196 proyek dipindai, 7 klien terverifikasi pembayaran, 2 cocok skill</li><li>target T1 hourly, 0 bid, tarif terpasang 42 sampai 105 dolar per jam</li><li>belum ada proposal terkirim, jadi belum ada data konversi</li></ul></div><div class='panel'><h3>Trading otomatis (paper sekarang, live dibatasi 10 dolar)</h3><ul><li>audit E06: Sharpe 0,20 pada universe point-in-time, CAGR negatif</li><li>audit carry: 3,8 persen per tahun lalu turun ke 0,7 persen pada 2026</li><li>modal live dibatasi 10 dolar, jadi hasil maksimum secara matematis kecil</li></ul></div><div class='panel'><h3>Layanan atau produk otomatis</h3><ul><li>pipeline riset yang sudah jalan bisa dijadikan jasa pemasangan</li><li>belum ada satu pun percakapan dengan calon pembeli</li><li>aturan: tidak menulis fitur baru sebelum ada satu orang yang membayar atau berkomitmen</li></ul></div>
+
+<h2>Trading: batas dan penghentian otomatis</h2>
+<div class="panel">
+<p>Status sekarang: <b>paper trading saja</b>. Tidak ada dana live, tidak ada leverage, tidak
+ada pinjaman, tidak ada penarikan API.</p>
+<p>Syarat sebelum modal live boleh dipakai:</p><ol><li>strategi lolos validasi: DSR minimal 0,95 dan kedua uji null signifikan</li><li>paper trading minimal 60 hari dengan drawdown dalam batas</li><li>batas rugi harian 2 persen dari modal, batas rugi total 10 persen</li><li>penghentian otomatis kalau batas terlampaui atau data harga gagal</li></ol>
+<p class="meta">Batas rugi: 2 persen modal per hari, 10 persen total. Kalau batas terlampaui
+atau data harga gagal, sistem berhenti dan tidak membuka posisi baru. Tidak ada target
+transaksi untuk menutup biaya VPS; kalau tidak ada sinyal valid, tidak ada transaksi.</p>
+</div>
+
+<h2>Paper trading (simulasi, bukan pendapatan)</h2>
+<div class="panel"><table><thead><tr><th>Metrik</th><th class="n">Nilai</th>
+<th>Arti</th></tr></thead><tbody>
+<tr><td>Strategi aktif</td><td class="n">2</td><td>kandidat yang masih diuji maju</td></tr>
+<tr><td>Ekuitas simulasi</td><td class="n">$20,000</td>
+<td>modal fiktif 10.000 per strategi, tidak pernah menjadi uang</td></tr>
+<tr><td>Pendapatan dari trading</td><td class="n">$0.00</td>
+<td>belum ada strategi yang lolos validasi</td></tr>
+</tbody></table>
+<p class="meta">Angka ekuitas di atas sengaja tidak dimasukkan ke kartu pendapatan. Simulasi
+yang naik bukan uang masuk.</p></div>
+
+<h2>Yang belum bisa diperkirakan</h2>
+<div class="panel">
+<p>Estimasi 21 jam pada target T1 belum bisa dianggap akurat sebelum empat hal ini
+dikonfirmasi klien:</p>
+<ul>
+<li>Olahraga dan kompetisi mana yang dipakai. Cricket, sepak bola, dan tenis punya
+ketersediaan data yang berbeda jauh.</li>
+<li>Sumber data yang dipakai dan siapa yang menanggung biayanya.</li>
+<li>Format keluaran: PDF, Google Sheets, atau dashboard. Ketiganya beda jam kerja.</li>
+<li>Seberapa dalam analisis situasional yang diminta: toss dan cuaca saja, atau termasuk
+tracking cedera pemain.</li>
+</ul>
+<p>Karena itu rentang yang jujur adalah <b>18 sampai 30 jam</b>, bukan satu angka. Yang bisa
+dipastikan baru tugas yang tidak bergantung jawaban di atas: lapisan data dan templat dasar.</p>
+</div>
+
+<h2>Keputusan yang menunggu Fatih</h2>
+<ol>
+<li>Setujui atau koreksi tarif $25/jam dan dua milestone $300 + $350 untuk T1.</li>
+<li>Nama tanda tangan di proposal.</li>
+<li>Izin mengirim proposal, atau kirim sendiri.</li>
+<li>Kalau trading nanti lolos validasi: setujui modal live 10 dolar.</li>
+</ol>
+
+<div class="note"><p>Diperbarui 25 Oct 2026 13:32 WIB.
+Sumber: karir.json (pembayaran), freelance.json (biaya invoice), paths.json (perbandingan
+jalur), paper_state.json (simulasi).</p></div>
+</div></body></html>

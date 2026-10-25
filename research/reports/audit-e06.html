@@ -1,4 +1,5 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Audit E06 · satgas.ai.id</title><style>
 :root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
@@ -57,7 +58,7 @@ border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;marg
 border-radius:6px;padding:1px 6px;margin-right:6px}
 .grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
 @media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
-.panel{padding:13px 12px}table{font-size:12.2px}th,td{padding:6px 4px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
 td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
 .card .v{font-size:17px}}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -65,116 +66,134 @@ td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,
 .risk li{margin:8px 0}
 .watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
-</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="validasi.html">Validasi</a> · <a href="peluang.html">Peluang</a></div></div>
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head><body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
 
-<h1>Audit E06: momentum keranjang BTC/ETH/SOL</h1>
-<p class="lead">E06 adalah satu-satunya strategi yang sempat lolos gerbang lab. Halaman ini
-menguji ulang tiga hal yang paling sering membuat hasil backtest terlihat lebih bagus dari
-kenyataan: universe yang dipilih dengan ilmu belakang, koreksi karena banyaknya percobaan,
-dan kestabilan antar periode.</p>
+<div class="wrap"><div class="top"><div class="brand">Crypto Research · satgas.ai.id</div>
+<div class="meta"><a href="./">Reports</a> · <a href="lab.html">Lab</a> ·
+<a href="validasi.html">Validation</a> · <a href="peluang.html">Opportunities</a></div></div>
+
+<h1>Audit E06: BTC/ETH/SOL basket momentum</h1>
+<p class="lead">E06 is the only strategy that ever passed the lab gate. This page
+re-examines the three things that most often make backtest results look better than
+reality: a universe selected with hindsight, correction for multiple trials,
+and stability across periods.</p>
 
 <div class="panel verdict">
-<h2>Kesimpulan</h2>
-<p><b>E06 diturunkan dari "lolos" menjadi "gugur".</b> Bukan karena satu p-value, tapi karena
-tiga bukti yang saling mendukung: keunggulannya hilang begitu universe dipilih tanpa ilmu
-belakang, seluruh labanya terkonsentrasi di 2020-2021 dan 2023, dan efeknya lenyap saat data
-disampling mingguan. DSR sendiri tidak bisa dipakai sebagai penentu karena hasilnya bergerak
-dari 0,09 ke 0,99 hanya dengan mengubah asumsi korelasi antar percobaan.</p>
+<h2>Conclusion</h2>
+<p><b>E06 is downgraded from "pass" to "fail".</b> Not because of a single p-value, but because of
+three mutually supporting pieces of evidence: its edge disappears once the universe is selected without hindsight, all of its profit is concentrated in 2020-2021 and 2023, and the effect vanishes when the data is sampled weekly. DSR itself cannot be used as the deciding factor because its result moves from 0.09 to 0.99 merely by changing the assumption about correlation between trials.</p>
 </div>
 
 <div class="cards">
-<div class='card'><div class='k'>Sharpe E06 (harian, penuh)</div><div class='v'>1,14</div><div class='ket'>annualisasi 16,4x</div></div>
-<div class='card'><div class='k'>Percobaan dievaluasi</div><div class='v'>87</div><div class='ket'>baris di lab_runs</div></div>
-<div class='card'><div class='k'>Jendela 12 bulan terakhir</div><div class='v'>+0.44</div><div class='ket'>Sharpe bergulir terakhir</div></div>
-<div class='card'><div class='k'>Universe point-in-time</div><div class='v'>0.20</div><div class='ket'>Sharpe, termasuk aset mati</div></div>
+<div class='card'><div class='k'>E06 Sharpe (daily, full)</div><div class='v'>1.14</div><div class='ket'>annualized 16.4x</div></div>
+<div class='card'><div class='k'>Trials evaluated</div><div class='v'>87</div><div class='ket'>rows in lab_runs</div></div>
+<div class='card'><div class='k'>Last 12-month window</div><div class='v'>+0.44</div><div class='ket'>Latest rolling Sharpe</div></div>
+<div class='card'><div class='k'>Point-in-time universe</div><div class='v'>0.20</div><div class='ket'>Sharpe, including dead assets</div></div>
 </div>
 
 <h2>1. Survivorship bias</h2>
-<p>E06 memilih BTC, ETH, dan SOL. Ketiganya masih hidup dan sempat naik ratusan kali lipat.
-Itu keputusan yang hanya bisa diambil setelah tahu hasilnya. Untuk mengujinya, universe
-ditentukan oleh aturan yang tidak melihat masa depan: pada setiap awal bulan, ambil 10 aset
-dengan median volume dollar 30 hari tertinggi, minimal 180 hari riwayat, lalu long hanya yang
-momentum 60 harinya positif. Kandidatnya mencakup aset yang sudah mati atau kolaps permanen
+<p>E06 selected BTC, ETH, and SOL. All three are still alive and have at some point risen hundreds of times over.
+That is a decision that could only be made after knowing the outcome. To test it, the universe
+is determined by a rule that does not look into the future: at the start of each month, take the 10 assets
+with the highest 30-day median dollar volume, with at least 180 days of history, then go long only those whose
+60-day momentum is positive. The candidates include assets that are already dead or permanently collapsed
 (LUNA, FTT, SRM, WAVES, ANT, TORN, KLAY, BTS, XEM, REN).</p>
-<div class="panel"><table><thead><tr><th>Varian</th><th class="n">CAGR</th>
-<th class="n">Sharpe</th><th class="n">Max DD</th><th class="n">Waktu di pasar</th></tr></thead>
-<tbody><tr><td>BTC/ETH/SOL tetap (E06 asli)</td><td class='n'>15,4%</td><td class='n'><span class='badge warn'>0,54</span></td><td class='n'>-76,4%</td><td class='n'>67%</td></tr><tr><td>Top-10 likuiditas point-in-time, termasuk aset mati</td><td class='n'>-2,8%</td><td class='n'><span class='badge warn'>0,20</span></td><td class='n'>-78,3%</td><td class='n'>92%</td></tr><tr><td>Top-10 likuiditas point-in-time, hanya aset yang masih hidup</td><td class='n'>-3,5%</td><td class='n'><span class='badge warn'>0,19</span></td><td class='n'>-80,2%</td><td class='n'>91%</td></tr><tr><td>Beli dan tahan BTC</td><td class='n'>39,2%</td><td class='n'><span class='badge up'>0,87</span></td><td class='n'>-76,6%</td><td class='n'>0%</td></tr></tbody></table>
-<p class="meta">Periode 2020-09-14 sampai 2026-10-25, 30 aset, biaya 15 bps per sisi,
-rebalance bulanan, mesin yang sama untuk semua baris supaya perbandingannya adil.</p></div>
-<p>Dengan universe yang realistis, strategi ini <b>tidak menghasilkan uang</b>: CAGR -2,8% dan
-Sharpe 0,20, sementara membeli BTC lalu diam menghasilkan 39,2% dan Sharpe 0,87. Selisih
-antara baris dua dan tiga kecil (0,20 vs 0,19), jadi yang membunuh bukan aset mati itu
-sendiri, melainkan perluasan universe: begitu kita tidak lagi memilih tiga pemenang, edge-nya
-hilang.</p>
+<div class="panel"><table><thead><tr><th>Variant</th><th class="n">CAGR</th>
+<th class="n">Sharpe</th><th class="n">Max DD</th><th class="n">Time in market</th></tr></thead>
+<tbody><tr><td>BTC/ETH/SOL fixed (original E06)</td><td class='n'>15.4%</td><td class='n'><span class='badge warn'>0.54</span></td><td class='n'>-76.4%</td><td class='n'>67%</td></tr><tr><td>Top-10 point-in-time liquidity, including dead assets</td><td class='n'>-2.8%</td><td class='n'><span class='badge warn'>0.20</span></td><td class='n'>-78.3%</td><td class='n'>92%</td></tr><tr><td>Top-10 point-in-time liquidity, only assets still alive</td><td class='n'>-3.5%</td><td class='n'><span class='badge warn'>0.19</span></td><td class='n'>-80.2%</td><td class='n'>91%</td></tr><tr><td>Buy and hold BTC</td><td class='n'>39.2%</td><td class='n'><span class='badge up'>0.87</span></td><td class='n'>-76.6%</td><td class='n'>0%</td></tr></tbody></table>
+<p class="meta">Period 2020-09-14 to 2026-10-25, 30 assets, 15 bps cost per side,
+monthly rebalance, same engine for all rows so the comparison is fair.</p></div>
+<p>With a realistic universe, this strategy <b>does not make money</b>: CAGR -2.8% and
+Sharpe 0.20, while buying BTC and then doing nothing yields 39.2% and Sharpe 0.87. The difference
+between rows two and three is small (0.20 vs 0.19), so what kills it is not the dead assets
+themselves, but the expansion of the universe: once we no longer pick the three winners, its edge
+disappears.</p>
 
 <h2>2. Audit Deflated Sharpe Ratio</h2>
-<p>DSR menjawab: setelah mencoba sekian banyak kombinasi, seberapa yakin Sharpe terbaik bukan
-kebetulan. Rumusnya mengikuti Bailey dan Lopez de Prado, dan implementasinya sudah saya
-periksa ulang: SR0 memakai ekspektasi maksimum dari N percobaan normal, penyebut memakai
-skewness dan kurtosis, dan Sharpe dihitung harian sebelum dibandingkan. Yang bermasalah bukan
-rumusnya, tapi asumsinya: <b>percobaan dianggap independen</b>, padahal 87 run kita memakai
-data yang sama.</p>
-<div class="panel"><table><thead><tr><th class="n">Korelasi antar percobaan</th>
-<th class="n">N efektif</th><th class="n">SR0</th><th class="n">DSR</th></tr></thead>
-<tbody><tr><td class='n'>0.00</td><td class='n'>87.00</td><td class='n'>0.0977</td><td class='n'><span class='badge warn'>0.094</span></td></tr><tr><td class='n'>0.30</td><td class='n'>3.25</td><td class='n'>0.0358</td><td class='n'><span class='badge warn'>0.946</span></td></tr><tr><td class='n'>0.50</td><td class='n'>1.98</td><td class='n'>0.0200</td><td class='n'><span class='badge up'>0.991</span></td></tr><tr><td class='n'>0.75</td><td class='n'>1.33</td><td class='n'>0.0021</td><td class='n'><span class='badge up'>0.999</span></td></tr><tr><td class='n'>0.90</td><td class='n'>1.11</td><td class='n'>-0.0115</td><td class='n'><span class='badge up'>1.000</span></td></tr></tbody></table>
-<p class="meta">Korelasi return antar empat lookback E06 yang saya ukur: 0,74 rata-rata
-(0,58 sampai 0,87). Dengan angka itu N efektif jatuh ke sekitar 1,3, dan DSR melonjak ke 0,99.</p></div>
-<p>Artinya DSR <b>bukan bukti final ke arah mana pun</b>. Pada asumsi independen hasilnya 0,09
-(gagal), pada asumsi berkorelasi penuh hasilnya 0,99 (lulus). Yang bisa disimpulkan hanya:
-Sharpe harian E06 (0,070) berada di bawah SR0 pada asumsi independen (0,098) tapi di atasnya
-pada asumsi berkorelasi. Karena itu keputusan di halaman ini tidak bergantung pada DSR.</p>
+<p>DSR answers: after trying so many combinations, how confident are we that the best Sharpe is not
+luck. The formula follows Bailey and Lopez de Prado, and I have rechecked
+the implementation: SR0 uses the expected maximum of N normal trials, the denominator uses
+skewness and kurtosis, and Sharpe is calculated daily before being compared. What is problematic is not
+the formula, but its assumptions: <b>trials are assumed to be independent</b>, even though our 87 runs use
+the same data.</p>
+<div class="panel"><table><thead><tr><th class="n">Correlation between trials</th>
+<th class="n">Effective N</th><th class="n">SR0</th><th class="n">DSR</th></tr></thead>
+<tbody><tr><td class='n'>0.00</td><td class='n'>87.00</td><td class='n'>0.0977</td><td class='n'><span class='badge warn'>0.094</span></td></tr><tr><td class='n'>0.30</td><td class='n'>3.25</td><td class='n'>0.0358</td><td class='n'><span class='badge warn'>0.946</span></td></tr><tr><td class='n'>0.50</td><td class='n'>1.98</td><td class='n'>0.0200</td><td class='n'><span class='badge up'>0.991</span></td></tr><tr><td class='n'>0.75</td><td class='n'>1.33</td><td class='n'>0.0021</td><td class='n'><span class='badge up'>0.999</span></td></tr><tr><td class='n'>0.90</td><td class='n'>1.11</td><td class='n'>-0.0115</td><td class='n'><span class='badge up'>1,000</span></td></tr></tbody></table>
+<p class="meta">The return correlation between the four E06 lookbacks I measured: 0.74 on average
+(0.58 to 0.87). With those numbers, effective N falls to around 1.3, and DSR jumps to 0.99.</p></div>
+<p>This means DSR <b>is not final evidence in either direction</b>. Under the independent assumption the result is 0.09
+(fail), under the fully correlated assumption the result is 0.99 (pass). All that can be concluded is:
+E06's daily Sharpe (0.070) is below SR0 under the independent assumption (0.098) but above it
+under the correlated assumption. Therefore the decision on this page does not depend on DSR.</p>
 
-<h2>3. Stabilitas antar periode</h2>
-<p>Parameter dibekukan di 60 hari, dipilih di muka, bukan dari hasil holdout. Jendela 12 bulan
-bergulir, langkah 3 bulan.</p>
-<div class="panel"><table><thead><tr><th>Jendela</th><th class="n">Return</th>
+<h2>3. Stability across periods</h2>
+<p>Parameters are fixed at 60 days, chosen in advance, not from holdout results. Rolling 12-month
+window, 3-month step.</p>
+<div class="panel"><table><thead><tr><th>Window</th><th class="n">Return</th>
 <th class="n">Sharpe</th><th class="n">Max DD</th></tr></thead>
 <tbody><tr><td>2020-10-16 → 2021-10-10</td><td class='n'>+1129.2%</td><td class='n'><span class='badge up'>+3.55</span></td><td class='n'>-32.8%</td></tr><tr><td>2021-01-14 → 2022-01-08</td><td class='n'>+525.3%</td><td class='n'><span class='badge up'>+2.68</span></td><td class='n'>-32.8%</td></tr><tr><td>2021-04-14 → 2022-04-08</td><td class='n'>+107.7%</td><td class='n'><span class='badge up'>+1.42</span></td><td class='n'>-33.8%</td></tr><tr><td>2021-07-13 → 2022-07-07</td><td class='n'>+66.3%</td><td class='n'><span class='badge up'>+1.27</span></td><td class='n'>-42.2%</td></tr><tr><td>2021-10-11 → 2022-10-05</td><td class='n'>-35.6%</td><td class='n'><span class='badge down'>-0.91</span></td><td class='n'>-54.3%</td></tr><tr><td>2022-01-09 → 2023-01-03</td><td class='n'>-38.9%</td><td class='n'><span class='badge down'>-1.61</span></td><td class='n'>-50.0%</td></tr><tr><td>2022-04-09 → 2023-04-03</td><td class='n'>-14.8%</td><td class='n'><span class='badge down'>-0.18</span></td><td class='n'>-43.2%</td></tr><tr><td>2022-07-08 → 2023-07-02</td><td class='n'>+0.7%</td><td class='n'><span class='badge warn'>+0.23</span></td><td class='n'>-34.2%</td></tr><tr><td>2022-10-06 → 2023-09-30</td><td class='n'>+11.8%</td><td class='n'><span class='badge warn'>+0.48</span></td><td class='n'>-27.7%</td></tr><tr><td>2023-01-04 → 2023-12-29</td><td class='n'>+154.5%</td><td class='n'><span class='badge up'>+2.19</span></td><td class='n'>-29.7%</td></tr><tr><td>2023-04-04 → 2024-03-28</td><td class='n'>+177.2%</td><td class='n'><span class='badge up'>+2.43</span></td><td class='n'>-29.7%</td></tr><tr><td>2023-07-03 → 2024-06-26</td><td class='n'>+107.3%</td><td class='n'><span class='badge up'>+1.74</span></td><td class='n'>-31.3%</td></tr><tr><td>2023-10-01 → 2024-09-24</td><td class='n'>+93.4%</td><td class='n'><span class='badge up'>+1.63</span></td><td class='n'>-44.2%</td></tr><tr><td>2023-12-30 → 2024-12-23</td><td class='n'>+29.6%</td><td class='n'><span class='badge warn'>+0.79</span></td><td class='n'>-45.6%</td></tr><tr><td>2024-03-29 → 2025-03-23</td><td class='n'>-28.6%</td><td class='n'><span class='badge down'>-0.71</span></td><td class='n'>-45.6%</td></tr><tr><td>2024-06-27 → 2025-06-21</td><td class='n'>-0.7%</td><td class='n'><span class='badge warn'>+0.16</span></td><td class='n'>-23.0%</td></tr><tr><td>2024-09-25 → 2025-09-19</td><td class='n'>+73.1%</td><td class='n'><span class='badge up'>+1.52</span></td><td class='n'>-23.0%</td></tr><tr><td>2024-12-24 → 2025-12-18</td><td class='n'>-1.0%</td><td class='n'><span class='badge warn'>+0.16</span></td><td class='n'>-22.8%</td></tr><tr><td>2025-03-24 → 2026-03-18</td><td class='n'>-0.5%</td><td class='n'><span class='badge warn'>+0.16</span></td><td class='n'>-31.8%</td></tr><tr><td>2025-06-22 → 2026-06-16</td><td class='n'>-4.5%</td><td class='n'><span class='badge warn'>+0.03</span></td><td class='n'>-35.3%</td></tr><tr><td>2025-09-20 → 2026-09-14</td><td class='n'>-12.5%</td><td class='n'><span class='badge down'>-0.31</span></td><td class='n'>-35.7%</td></tr><tr><td>2025-12-19 → 2026-10-25</td><td class='n'>+7.8%</td><td class='n'><span class='badge warn'>+0.44</span></td><td class='n'>-17.9%</td></tr></tbody></table></div>
-<p>Polanya jelas: Sharpe 3,55 pada 2020-2021, negatif sepanjang 2022, kembali 1,6-2,4 pada 2023,
-lalu mendekati nol sejak akhir 2024. Tidak ada bukti bahwa keunggulan itu bertahan di rezim
-pasar yang berbeda; yang ada adalah dua periode bull yang menutupi sisanya.</p>
+<p>The pattern is clear: Sharpe 3.55 in 2020-2021, negative throughout 2022, back to 1.6-2.4 in 2023,
+then approaching zero since late 2024. There is no evidence that the edge persists across different
+market regimes; what exists is two bull periods that cover up the rest.</p>
 
-<h2>4. Dari aset mana keunggulan datang</h2>
-<div class="panel"><table><thead><tr><th>Aset</th><th class="n">Sharpe</th>
+<h2>4. Which assets the edge comes from</h2>
+<div class="panel"><table><thead><tr><th>Asset</th><th class="n">Sharpe</th>
 <th class="n">Return</th><th class="n">Max DD</th></tr></thead>
 <tbody><tr><td>BTC</td><td class='n'>1.00</td><td class='n'>+114%</td><td class='n'>-25.8%</td></tr><tr><td>ETH</td><td class='n'>1.01</td><td class='n'>+188%</td><td class='n'>-20.4%</td></tr><tr><td>SOL</td><td class='n'>1.21</td><td class='n'>+508%</td><td class='n'>-38.8%</td></tr></tbody></table>
-<p class="meta">Aturan yang sama (momentum 60 hari, long-only) dijalankan pada satu aset saja.</p></div>
-<p>Sharpe ketiga aset mirip (1,0 sampai 1,2), jadi bukan satu koin ajaib. Tapi return-nya
-didominasi SOL (+508%), dan itu pengingat bahwa hasil akhir sangat bergantung pada satu aset
-yang kebetulan dipilih.</p>
+<p class="meta">The same rule (60-day momentum, long-only) is run on a single asset only.</p></div>
+<p>Sharpe is similar across the three assets (1.0 to 1.2), so it is not one magic coin. But the return
+is dominated by SOL (+508%), and that is a reminder that the final result depends heavily on one asset
+that happened to be chosen.</p>
 
 <h2>5. Paper trading</h2>
-<div class="panel"><table><thead><tr><th>Strategi</th><th>Mulai</th><th class="n">Return</th>
-<th>Posisi</th><th class="n">Hari</th></tr></thead>
-<tbody><tr><td>E06:basket_mom</td><td>2026-10-25</td><td class='n'>+0.00%</td><td>kas</td><td class='n'>1</td></tr><tr><td>E03:donchian</td><td>2026-10-25</td><td class='n'>+0.00%</td><td>kas</td><td class='n'>1</td></tr><tr><td>E10:ma_cross</td><td>2026-10-25</td><td class='n'>+0.00%</td><td>kas</td><td class='n'>1</td></tr></tbody></table>
-<p class="meta">Ekuitas awal 10.000, biaya 15 bps per transaksi, benchmark BTC/ETH/SOL dicatat
-harian. Posisi kosong berarti seluruh dana di kas, bukan tidak ada data.</p></div>
+<div class="panel"><table><thead><tr><th>Strategy</th><th>Start</th><th class="n">Return</th>
+<th>Position</th><th class="n">Days</th></tr></thead>
+<tbody><tr><td>E06:basket_mom</td><td>2026-10-25</td><td class='n'>+0.00%</td><td>cash</td><td class='n'>1</td></tr><tr><td>E03:donchian</td><td>2026-10-25</td><td class='n'>+0.00%</td><td>cash</td><td class='n'>1</td></tr><tr><td>E10:ma_cross</td><td>2026-10-25</td><td class='n'>+0.00%</td><td>cash</td><td class='n'>1</td></tr></tbody></table>
+<p class="meta">Initial equity 10,000, 15 bps cost per transaction, BTC/ETH/SOL benchmark recorded
+daily. An empty position means all funds are in cash, not that there is no data.</p></div>
 
-<h2>6. Keterbatasan</h2>
+<h2>6. Limitations</h2>
 <ul>
-<li>Tidak ada dataset universe bebas survivorship yang lengkap. Aset mati yang bisa saya
-ambil hanya yang masih tersedia di Binance; koin yang delisting dari semua bursa dan datanya
-hilang tidak terwakili. Karena itu angka -2,8% adalah <i>batas atas</i> optimisme, bukan
-perkiraan netral.</li>
-<li>Ticker LUNAUSDT dipakai ulang untuk Terra 2.0 setelah Mei 2022, jadi seri LUNA dipotong
-di 2022-05-12. Menyambungnya akan menciptakan harga yang tidak pernah ada.</li>
-<li>Uji null pada validasi sebelumnya memakai 81 permutasi, sehingga p=0,012 adalah lantai
-resolusi (1/81), bukan nilai sebenarnya. Untuk klaim yang lebih halus perlu 1.000 permutasi.</li>
-<li>DSR sensitif terhadap asumsi korelasi dan tidak dipakai sebagai penentu di sini.</li>
+<li>There is no complete survivorship-bias-free universe dataset. The dead assets I could
+retrieve are only those still available on Binance; coins delisted from all exchanges and whose data
+is lost are not represented. Therefore the -2.8% figure is <i>an upper bound</i> of optimism, not a
+neutral estimate.</li>
+<li>The LUNAUSDT ticker was reused for Terra 2.0 after May 2022, so the LUNA series is cut off
+on 2022-05-12. Splicing it together would create prices that never existed.</li>
+<li>The null test in the previous validation used 81 permutations, so p=0.012 is the resolution
+floor (1/81), not the actual value. For finer claims, 1,000 permutations are needed.</li>
+<li>DSR is sensitive to correlation assumptions and is not used as a deciding factor here.</li>
 </ul>
 
-<h2>7. Langkah berikutnya</h2>
-<p>E06 tidak dilanjutkan sebagai kandidat. Paper trading tetap berjalan sebagai catatan
-observasi, bukan sebagai strategi yang diharapkan profit. Pendekatan berikutnya yang paling
-layak diuji adalah <b>carry funding</b> (E17): strategi yang tidak bergantung pada arah harga
-dan punya ekonomi yang berbeda, dengan Sharpe walk-forward 2,30 yang justru perlu dicurigai
-karena terlalu bagus. Uji pertama untuk E17 adalah memastikan datanya tidak bocor dan biaya
-funding-nya nyata, bukan menambah strategi baru.</p>
+<h2>7. Next steps</h2>
+<p>E06 is not continued as a candidate. Paper trading continues as an observation
+record, not as a strategy expected to be profitable. The next approach most
+worth testing is <b>carry funding</b> (E17): a strategy that does not depend on price direction
+and has different economics, with a walk-forward Sharpe of 2.30 that should actually be treated with suspicion
+because it is too good. The first test for E17 is to ensure its data is not leaked and its funding
+costs are real, not to add a new strategy.</p>
 
-<div class="note"><p>Diperbarui 25 Oct 2026 08:12 WIB.
-Sumber data: Binance klines dan CoinGecko (cache lokal), dihitung ulang setiap audit.
-Tidak ada klaim profit nyata di halaman ini.</p></div>
+<div class="note"><p>Updated 25 Oct 2026 08:12 UTC+7.
+Data sources: Binance klines and CoinGecko (local cache), recalculated on every audit.
+No real-profit claims are made on this page.</p></div>
 </div></body></html>

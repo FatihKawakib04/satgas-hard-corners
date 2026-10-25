@@ -1,0 +1,109 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Validasi strategi · satgas.ai.id</title><style>
+:root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
+--txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(115,165,202,.3)}
+a:hover{border-bottom-color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
+.brand{font-weight:600;letter-spacing:.02em;color:var(--dim);font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.22;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid var(--accent);
+padding-left:11px}
+h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
+.meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
+padding:3px 11px;font-size:12px;color:#c9d4e2}
+.badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
+.badge.risk-on{color:#8fe0c0;border-color:rgba(63,191,143,.4);background:rgba(63,191,143,.09)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:18px 0 6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.card .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.card .v{font-size:19px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
+.card .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--dim)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:16px 0}
+.panel h3{margin-top:0}
+.svg-chart{display:block;margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;overflow:hidden}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;font-size:12.8px}
+ul,ol{padding-left:20px}li{margin:5px 0}
+.lead{font-size:17px;color:#eaf1f8}
+.exec{background:linear-gradient(180deg,rgba(115,165,202,.10),rgba(115,165,202,.03));
+border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;margin:18px 0}
+.exec ol{margin:0;padding-left:20px}
+.exec li{margin:7px 0}
+.scen{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
+.scen .box{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:14px}
+.scen .box .t{font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+.scen .base{border-color:rgba(115,165,202,.4)}.scen .base .t{color:var(--accent)}
+.scen .bull .t{color:var(--green)}.scen .bear .t{color:var(--red)}
+.split{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.split>div{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px}
+.split .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:6px}
+.fact{border-left:2px solid var(--green)}.spec{border-left:2px solid var(--gold)}
+.sup{font-size:11px;vertical-align:super;color:var(--accent);border:0}
+.refs{font-size:13px;color:#b9c6d4}
+.refs li{margin:6px 0}
+.note{font-size:13px;color:var(--dim);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
+.tag{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);
+border-radius:6px;padding:1px 6px;margin-right:6px}
+.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
+td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+.card .v{font-size:17px}}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tscroll table{min-width:100%}
+.risk li{margin:8px 0}
+.watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head><body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
+
+<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
+<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
+<a href="peluang.html">Peluang</a></div></div>
+<h1>Validasi strategi</h1>
+<p class="lead">Setiap strategi yang lolos gerbang lab diuji ulang dengan standar lebih keras:
+kebocoran informasi masa depan, sensitivitas biaya, seluruh nilai parameter, holdout yang belum
+pernah dipakai memilih, frekuensi data berbeda, ketergantungan universe, uji null, dan koreksi
+karena banyaknya kombinasi yang sudah dicoba.</p>
+<div class="panel"><table><thead><tr><th>ID</th><th>Strategi</th><th>Status bukti</th>
+<th class="n">DSR</th><th>Diperiksa</th></tr></thead><tbody><tr><td><a href='validasi-e06.html'>E06</a></td><td>basket_mom</td><td><span class='badge warn'>gugur</span></td><td class='n'>0,278</td><td>2026-10-25 08:53</td></tr><tr><td><a href='validasi-e12.html'>E12</a></td><td>breakout_stop</td><td><span class='badge warn'>lemah</span></td><td class='n'>0,012</td><td>2026-10-25 07:21</td></tr><tr><td><a href='validasi-e18.html'>E18</a></td><td>ma_filter_breakout</td><td><span class='badge warn'>lemah</span></td><td class='n'>0,002</td><td>2026-10-25 07:21</td></tr><tr><td><a href='validasi-e17.html'>E17</a></td><td>carry_funding</td><td><span class='badge warn'>belum-konklusif</span></td><td class='n'>—</td><td></td></tr></tbody></table>
+<p class="meta">Audit mendalam E06 (survivorship, sensitivitas DSR, jendela bergulir):
+<a href="audit-e06.html">buka halaman audit</a>. Audit carry funding (E20):
+<a href="audit-carry.html">hasil lengkap</a>.</p>
+<p class="meta">Status: kuat bila DSR di atas 0,95 dan kedua uji null signifikan; sedang bila
+DSR 0,90 sampai 0,95; lemah bila di bawah itu; bocor bila uji look-ahead gagal. DSR adalah
+probabilitas keunggulan nyata setelah dikoreksi karena kita sudah menguji banyak kombinasi.</p>
+</div>
+<div class="note"><p>Diperbarui 25 Oct 2026 08:53 WIB.</p></div>
+</div></body></html>

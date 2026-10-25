@@ -1,0 +1,112 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metode riset · satgas.ai.id</title><style>
+:root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
+--txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(115,165,202,.3)}
+a:hover{border-bottom-color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
+.brand{font-weight:600;letter-spacing:.02em;color:var(--dim);font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.22;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid var(--accent);
+padding-left:11px}
+h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
+.meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
+padding:3px 11px;font-size:12px;color:#c9d4e2}
+.badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
+.badge.risk-on{color:#8fe0c0;border-color:rgba(63,191,143,.4);background:rgba(63,191,143,.09)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:18px 0 6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.card .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.card .v{font-size:19px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
+.card .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--dim)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:16px 0}
+.panel h3{margin-top:0}
+.svg-chart{display:block;margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;overflow:hidden}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;font-size:12.8px}
+ul,ol{padding-left:20px}li{margin:5px 0}
+.lead{font-size:17px;color:#eaf1f8}
+.exec{background:linear-gradient(180deg,rgba(115,165,202,.10),rgba(115,165,202,.03));
+border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;margin:18px 0}
+.exec ol{margin:0;padding-left:20px}
+.exec li{margin:7px 0}
+.scen{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
+.scen .box{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:14px}
+.scen .box .t{font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+.scen .base{border-color:rgba(115,165,202,.4)}.scen .base .t{color:var(--accent)}
+.scen .bull .t{color:var(--green)}.scen .bear .t{color:var(--red)}
+.split{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.split>div{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px}
+.split .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:6px}
+.fact{border-left:2px solid var(--green)}.spec{border-left:2px solid var(--gold)}
+.sup{font-size:11px;vertical-align:super;color:var(--accent);border:0}
+.refs{font-size:13px;color:#b9c6d4}
+.refs li{margin:6px 0}
+.note{font-size:13px;color:var(--dim);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
+.tag{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);
+border-radius:6px;padding:1px 6px;margin-right:6px}
+.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
+td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+.card .v{font-size:17px}}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tscroll table{min-width:100%}
+.risk li{margin:8px 0}
+.watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head>
+<body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
+
+<div class="wrap">
+<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
+<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
+<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a></div></div>
+<h1>Metode dan batasan</h1>
+<p class="lead">Semua angka dalam laporan dihitung kode dari sumber primer, disimpan di basis data
+SQLite lokal, dan bisa ditelusuri ulang. Model bahasa hanya menulis narasi dari angka itu.</p>
+<h2>Sumber data</h2><div class="panel"><table><tbody><tr><td>Harga dan kapitalisasi</td><td>CoinGecko API publik, 60 aset teratas, snapshot tiap 15 menit. Riwayat harian 400 hari dari Binance klines untuk aset yang terdaftar di Binance.</td></tr><tr><td>Derivatif</td><td>Binance USD-M Futures: funding rate 8 jam, open interest, rasio long/short akun, rasio taker beli/jual. Hanya tiga aset (BTC, ETH, SOL) untuk menjaga kuota.</td></tr><tr><td>Makro</td><td>S&P 500 dan VIX dari CBOE (CSV harian). Kurva imbal hasil US Treasury (2Y, 10Y, 30Y). Kurs EUR/USD, USD/JPY, USD/CNY, USD/GBP dari ECB. Emas memakai PAXG dari CoinGecko.</td></tr><tr><td>Likuiditas</td><td>Suplai stablecoin agregat dan TVL DeFi dari DefiLlama. Aliran ETF spot AS dari Farside Investors (dibaca harian). Statistik jaringan Bitcoin dari Blockchair.</td></tr><tr><td>Sentimen</td><td>Fear & Greed Index dari Alternative.me, rata-rata 7 dan 30 hari, plus persentil setahun.</td></tr><tr><td>Berita</td><td>RSS CoinDesk, Cointelegraph, The Block, Blockworks, Decrypt, Federal Reserve, ECB, BIS, dan kueri Google News untuk makro, geopolitik, regulasi, serta ETF.</td></tr></tbody></table></div>
+<h2>Definisi metrik</h2><div class="panel"><table><tbody><tr><td>Rezim</td><td>Skor gabungan dari VIX, posisi S&P 500 terhadap MA50, perubahan UST 10Y 20 hari, posisi BTC terhadap MA200, dan breadth 7 hari. Skor -3 atau lebih rendah = risk-off.</td></tr><tr><td>Funding annualized</td><td>Funding per 8 jam dikali 3 dikali 365. Positif berarti long membayar short, tanda posisi long ramai.</td></tr><tr><td>Persentil 1 tahun</td><td>Posisi nilai terkini dalam rentang 365 hari terakhir. 90 berarti nilai sekarang lebih tinggi dari 90% hari dalam setahun.</td></tr><tr><td>Breadth</td><td>Jumlah aset dengan perubahan positif 7 hari, dan jumlah aset di atas MA50 dari sampel yang punya riwayat cukup.</td></tr><tr><td>Drawdown</td><td>Jarak harga terkini dari puncak 400 hari, dalam persen negatif.</td></tr><tr><td>Keyakinan</td><td>Penilaian editorial atas kualitas bukti: tinggi bila banyak sumber independen dan data panjang, rendah bila bergantung pada satu seri atau sampel pendek.</td></tr></tbody></table></div>
+<h2>Batasan yang harus diketahui</h2><div class="panel"><ul><li>Data ETF hanya tersedia untuk hari bursa dan mulai terkumpul sejak Oktober 2026, jadi analisis aliran jangka panjang belum memungkinkan.</li><li>Derivatif hanya dari Binance, bukan agregat seluruh bursa. Posisi di bursa lain tidak terlihat.</li><li>CoinGecko membatasi permintaan dari IP VPS. Saat kena batas, kolektor memakai cache terakhir dan menandainya di log.</li><li>Narasi laporan disusun model bahasa dari angka yang dihitung kode. Angka tidak pernah dikarang model, tetapi penekanan dan interpretasi bisa keliru dan harus dibaca kritis.</li><li>Tidak ada data posisi institusi (13F), data on-chain exchange reserve berbayar, atau data opsi level strike. Analisis positioning karena itu tidak lengkap.</li></ul></div>
+<h2>Alur kerja</h2><div class="panel"><ol>
+<li>Kolektor berjalan tiap 15 menit (harga, derivatif) dan tiap 30 menit (berita). Data harian
+dan makro ditarik sekali sehari.</li>
+<li>Analisis menghitung metrik dan sinyal dengan aturan tetap di <code>analyze.py</code>.</li>
+<li>Penulis laporan menyusun narasi dari lembar fakta, lalu angka diperiksa ulang terhadap
+basis data.</li>
+<li>Watcher memantau ambang signifikan tiap 20 menit dan hanya berbicara kalau ada yang penting.</li>
+<li>Hipotesis riset dicatat, diuji, dan hasilnya ditampilkan terbuka di halaman hipotesis.</li>
+</ol></div>
+<div class="note"><p>Diperbarui 25 Oct 2026 06:17 WIB. Bukan rekomendasi investasi.</p></div>
+</div></body></html>

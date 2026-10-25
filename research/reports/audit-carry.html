@@ -1,6 +1,7 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Audit carry funding · satgas.ai.id</title><style>
+<title>Funding carry audit · satgas.ai.id</title><style>
 :root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
 --txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
 *{box-sizing:border-box}
@@ -57,7 +58,7 @@ border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;marg
 border-radius:6px;padding:1px 6px;margin-right:6px}
 .grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
 @media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
-.panel{padding:13px 12px}table{font-size:12.2px}th,td{padding:6px 4px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
 td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
 .card .v{font-size:17px}}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -65,175 +66,196 @@ td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,
 .risk li{margin:8px 0}
 .watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
-</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="validasi.html">Validasi</a> · <a href="audit-e06.html">Audit E06</a></div></div>
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head><body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
 
-<h1>Audit E20: carry funding</h1>
-<p class="lead">Strategi yang tidak menebak arah harga: beli spot, short perpetual, panen
-pembayaran funding. Walk-forward sebelumnya melaporkan Sharpe 2,30 dan itu justru alasan
-untuk curiga. Halaman ini menghitung ulang dari nol dengan timing ketat, biaya dua kaki,
-stress test, dan pemeriksaan data ke bursa.</p>
+<div class="wrap"><div class="top"><div class="brand">Crypto Research · satgas.ai.id</div>
+<div class="meta"><a href="./">Report</a> · <a href="lab.html">Lab</a> ·
+<a href="validasi.html">Validation</a> · <a href="audit-e06.html">Audit E06</a></div></div>
+
+<h1>Audit E20: funding carry</h1>
+<p class="lead">A strategy that does not guess price direction: buy spot, short perpetual, harvest
+funding payments. The previous walk-forward reported Sharpe 2.30 and that is precisely the reason
+to be suspicious. This page recomputes from scratch with strict timing, two-leg costs,
+stress tests, and data checks against the exchange.</p>
 
 <div class="panel verdict">
-<h2>Kesimpulan</h2>
-<p><b>Carry funding itu nyata, tapi kecil, dan menyusut.</b> Selalu aktif menghasilkan
-<b>+11.72%</b> dalam tiga tahun (+3.9% per tahun) setelah
-biaya. Angka Sharpe-nya tinggi karena volatilitasnya hampir nol, bukan karena returnnya besar.
-Yang <b>tidak</b> terbukti adalah overlay timing yang dipakai E17: ambang yang dipilih dari
-data latih menghasilkan <b>-1.02%</b> di dua tahun berikutnya
-(Sharpe -1.22). Status: <b>belum konklusif sebagai sumber alpha</b>,
-layak hanya sebagai produk kas berisiko rendah dengan notional 0,5x.</p>
+<h2>Conclusion</h2>
+<p><b>Funding carry is real, but small, and shrinking.</b> Always active generates
+<b>+11.72%</b> over three years (+3.9% per year) after
+costs. Its Sharpe is high because volatility is almost zero, not because returns are large.
+What <b>is not</b> proven is the timing overlay used by E17: the threshold selected from
+training data produces <b>-1.02%</b> in the next two years
+(Sharpe -1.22). Status: <b>not yet conclusive as a source of alpha</b>,
+only suitable as a low-risk cash product with notional 0.5x.</p>
 </div>
 
 <div class="cards">
-<div class='card'><div class='k'>Return bersih, selalu aktif</div>
-<div class='v'>+11.72%</div><div class='ket'>3 tahun, notional 0,5x modal</div></div>
-<div class='card'><div class='k'>Biaya total</div>
-<div class='v'>+0.14%</div><div class='ket'>1 transaksi, dua kaki</div></div>
-<div class='card'><div class='k'>OOS overlay timing</div>
-<div class='v'>-1.02%</div><div class='ket'>2 tahun setelah parameter dipilih</div></div>
-<div class='card'><div class='k'>Funding negatif</div>
-<div class='v'>14%</div><div class='ket'>interval, run terpanjang 6 hari</div></div>
+<div class='card'><div class='k'>Net return, always active</div>
+<div class='v'>+11.72%</div><div class='ket'>3 years, notional 0.5x capital</div></div>
+<div class='card'><div class='k'>Total cost</div>
+<div class='v'>+0.14%</div><div class='ket'>1 transaction, two legs</div></div>
+<div class='card'><div class='k'>OOS timing overlay</div>
+<div class='v'>-1.02%</div><div class='ket'>2 years after parameters were selected</div></div>
+<div class='card'><div class='k'>Negative funding</div>
+<div class='v'>14%</div><div class='ket'>intervals, longest run 6 days</div></div>
 </div>
 
-<h2>1. Audit data</h2>
-<p>Sebelum percaya hasil, datanya diperiksa dulu: jarak antar settlement, duplikat, dan
-kecocokan dengan bursa.</p>
+<h2>1. Data audit</h2>
+<p>Before trusting the results, the data is checked first: spacing between settlements, duplicates, and
+match with the exchange.</p>
 <ul>
-<li>Rentang: 2023-10-26 sampai 2026-10-25, 3286 interval
-8 jam per aset, untuk BTC, ETH, dan SOL.</li>
-<li>Jarak antar settle tepat 8 jam di seluruh 3285 pasangan berurutan,
-nol duplikat, jam settle hanya 00, 08, dan 16 UTC.</li>
-<li>Cocok dengan endpoint funding Binance untuk enam titik uji (Maret 2024, Januari 2025, Juni
-2026): <b>6 dari 6 identik</b> sampai delapan desimal.</li>
-<li>Harga spot di database dibandingkan dengan klines Binance: 2.201 tanggal, <b>nol</b> selisih
-di atas 0,2%.</li>
+<li>Range: 2023-10-26 to 2026-10-25, 3286 8-hour
+intervals per asset, for BTC, ETH, and SOL.</li>
+<li>Spacing between settlements is exactly 8 hours across all 3285 consecutive pairs,
+zero duplicates, settlement hours only 00, 08, and 16 UTC.</li>
+<li>Matches Binance funding endpoint for six test points (March 2024, January 2025, June
+2026): <b>6 of 6 identical</b> to eight decimals.</li>
+<li>Spot prices in the database compared with Binance klines: 2,201 dates, <b>zero</b> difference
+above 0.2%.</li>
 </ul>
-<p>Yang <b>tidak</b> tersedia: harga perpetual historis. Tabel deriv hanya menyimpan open
-interest dan rasio long/short sejak September 2026, jadi basis spot-perp tidak bisa diukur dan
-dimodelkan sebagai asumsi di stress test. Ini keterbatasan nyata, bukan detail.</p>
+<p>What <b>is not</b> available: historical perpetual prices. The deriv table only stores open
+interest and long/short ratio since September 2026, so the spot-perp basis cannot be measured and
+is modeled as an assumption in the stress test. This is a real limitation, not a detail.</p>
 
-<h2>2. Look-ahead: versi lama versus versi ketat</h2>
-<p>Carry versi lama menentukan posisi hari ini memakai rata-rata funding yang memasukkan
-pembayaran hari ini juga. Itu keliru secara logika, jadi saya ukur dampaknya:</p>
-<div class="panel"><table><thead><tr><th>Varian sinyal</th><th class="n">Return 3 tahun</th>
-<th class="n">Sharpe</th><th class="n">Transaksi</th></tr></thead><tbody><tr><td>Sinyal ketat (benar)</td><td class='n'>+4.26%</td><td class='n'>4.09</td><td class='n'>48</td></tr><tr><td>Sinyal bocor (versi lama)</td><td class='n'>+4.28%</td><td class='n'>4.06</td><td class='n'>48</td></tr></tbody></table>
-<p class="meta">Selisihnya 0.02 poin persen,
-praktis nol, karena funding sangat persisten. Kebocorannya nyata tapi tidak material. Kode tetap
-diperbaiki.</p></div>
+<h2>2. Look-ahead: old version versus strict version</h2>
+<p>The old carry version determines today's position using an average funding that includes
+today's payment as well. That is logically wrong, so I measured its impact:</p>
+<div class="panel"><table><thead><tr><th>Signal variant</th><th class="n">3-year return</th>
+<th class="n">Sharpe</th><th class="n">Transactions</th></tr></thead><tbody><tr><td>Strict signal (correct)</td><td class='n'>+4.26%</td><td class='n'>4.09</td><td class='n'>48</td></tr><tr><td>Leaky signal (old version)</td><td class='n'>+4.28%</td><td class='n'>4.06</td><td class='n'>48</td></tr></tbody></table>
+<p class="meta">The difference is 0.02 percentage points,
+practically zero, because funding is very persistent. The leak is real but not material. The code is still
+fixed.</p></div>
 
-<h2>3. Biaya dan apa yang benar-benar diterima</h2>
-<p>Setiap transaksi punya empat komponen biaya: fee spot 10 bps, slippage spot 5 bps, fee perp
-5 bps, slippage perp 5 bps. Total 25 bps per arah atas notional, jadi 50 bps pulang-pergi.</p>
-<div class="panel"><table><thead><tr><th>Komponen</th><th class="n">Nilai</th></tr></thead><tbody>
-<tr><td>Funding bruto (selalu aktif, BTC)</td><td class="n">+11.86%</td></tr>
-<tr><td>Setelah biaya</td><td class="n">+11.72%</td></tr>
-<tr><td>Biaya yang dibayar</td><td class="n">+0.14%</td></tr>
-<tr><td>Rata-rata funding per 8 jam</td><td class="n">0.0068%</td></tr>
+<h2>3. Costs and what is actually received</h2>
+<p>Each transaction has four cost components: spot fee 10 bps, spot slippage 5 bps, perp fee
+5 bps, perp slippage 5 bps. Total 25 bps per direction on notional, so 50 bps round-trip.</p>
+<div class="panel"><table><thead><tr><th>Component</th><th class="n">Value</th></tr></thead><tbody>
+<tr><td>Gross funding (always active, BTC)</td><td class="n">+11.86%</td></tr>
+<tr><td>After costs</td><td class="n">+11.72%</td></tr>
+<tr><td>Costs paid</td><td class="n">+0.14%</td></tr>
+<tr><td>Average funding per 8 hours</td><td class="n">0.0068%</td></tr>
 </tbody></table>
-<p class="meta">Dengan satu transaksi, biaya nyaris tidak terasa. Masalahnya muncul saat strategi
-sering masuk-keluar: 48 transaksi memakan sekitar 1,2% dari modal, dan itu sepertiga dari laba
-tiga tahun.</p></div>
+<p class="meta">With one transaction, costs are barely noticeable. The problem appears when the strategy
+frequently enters and exits: 48 transactions consume about 1.2% of capital, and that is one-third of the profit
+over three years.</p></div>
 
-<h2>4. Selalu aktif versus overlay timing</h2>
-<div class="panel"><table><thead><tr><th>Syarat masuk</th><th class="n">CAGR</th>
-<th class="n">Sharpe</th><th class="n">Max DD</th><th class="n">Transaksi</th></tr></thead>
-<tbody>["<tr><td>selalu aktif (ambang 0)</td><td class='n'>+1.62%</td><td class='n'>3.50</td><td class='n'>-2.7%</td><td class='n'>147</td></tr>", "<tr><td>rata 7 hari > 0.005% per 8 jam</td><td class='n'>+0.15%</td><td class='n'>0.29</td><td class='n'>-5.2%</td><td class='n'>215</td></tr>", "<tr><td>rata 7 hari > 0.010% per 8 jam</td><td class='n'>+1.40%</td><td class='n'>4.09</td><td class='n'>-0.4%</td><td class='n'>48</td></tr>", "<tr><td>rata 7 hari > 0.020% per 8 jam</td><td class='n'>+0.51%</td><td class='n'>1.83</td><td class='n'>-0.3%</td><td class='n'>36</td></tr>", "<tr><td>rata 7 hari > 0.030% per 8 jam</td><td class='n'>+0.35%</td><td class='n'>1.70</td><td class='n'>-0.3%</td><td class='n'>20</td></tr>"]</tbody></table></div>
-<p>Semua varian menghasilkan return kecil dengan drawdown sangat kecil. Sharpe di atas 3 di sini
-<b>bukan</b> tanda keunggulan luar biasa: pembilangnya kecil dan penyebutnya hampir nol. Jangan
-bandingkan angka ini dengan Sharpe 0,86 milik BTC.</p>
+<h2>4. Always active versus timing overlay</h2>
+<div class="panel"><table><thead><tr><th>Entry condition</th><th class="n">CAGR</th>
+<th class="n">Sharpe</th><th class="n">Max DD</th><th class="n">Transactions</th></tr></thead>
+<tbody>["<tr><td>always active (threshold 0)</td><td class='n'>+1.62%</td><td class='n'>3.50</td><td class='n'>-2.7%</td><td class='n'>147</td></tr>", "<tr><td>7-day average > 0.005% per 8 hours</td><td class='n'>+0.15%</td><td class='n'>0.29</td><td class='n'>-5.2%</td><td class='n'>215</td></tr>", "<tr><td>7-day average > 0.010% per 8 hours</td><td class='n'>+1.40%</td><td class='n'>4.09</td><td class='n'>-0.4%</td><td class='n'>48</td></tr>", "<tr><td>7-day average > 0.020% per 8 hours</td><td class='n'>+0.51%</td><td class='n'>1.83</td><td class='n'>-0.3%</td><td class='n'>36</td></tr>", "<tr><td>7-day average > 0.030% per 8 hours</td><td class='n'>+0.35%</td><td class='n'>1.70</td><td class='n'>-0.3%</td><td class='n'>20</td></tr>"]</tbody></table></div>
+<p>All variants produce small returns with very small drawdowns. A Sharpe above 3 here
+<b>is not</b> a sign of extraordinary superiority: the numerator is small and the denominator is nearly zero. Do not
+compare this figure with BTC's Sharpe of 0.86.</p>
 
-<h2>5. Per aset</h2>
-<div class="panel"><table><thead><tr><th>Aset</th><th class="n">CAGR</th><th class="n">Sharpe</th>
-<th class="n">Max DD</th><th class="n">Transaksi</th></tr></thead><tbody><tr><td>BTC</td><td class='n'>+1.14%</td><td class='n'>2.82</td><td class='n'>-0.6%</td><td class='n'>18</td></tr><tr><td>ETH</td><td class='n'>+1.25%</td><td class='n'>2.94</td><td class='n'>-0.8%</td><td class='n'>20</td></tr><tr><td>SOL</td><td class='n'>+1.80%</td><td class='n'>4.60</td><td class='n'>-0.3%</td><td class='n'>10</td></tr></tbody></table>
-<p class="meta">Ambang 0,01% per 8 jam, sinyal ketat. SOL paling gemuk, sesuai namanya yang paling
-sering dibayar premium.</p></div>
+<h2>5. By asset</h2>
+<div class="panel"><table><thead><tr><th>Asset</th><th class="n">CAGR</th><th class="n">Sharpe</th>
+<th class="n">Max DD</th><th class="n">Transactions</th></tr></thead><tbody><tr><td>BTC</td><td class='n'>+1.14%</td><td class='n'>2.82</td><td class='n'>-0.6%</td><td class='n'>18</td></tr><tr><td>ETH</td><td class='n'>+1.25%</td><td class='n'>2.94</td><td class='n'>-0.8%</td><td class='n'>20</td></tr><tr><td>SOL</td><td class='n'>+1.80%</td><td class='n'>4.60</td><td class='n'>-0.3%</td><td class='n'>10</td></tr></tbody></table>
+<p class="meta">Threshold 0.01% per 8 hours, strict signal. SOL is the fattest, as its name suggests it is the one most
+often paid a premium.</p></div>
 
-<h2>6. Rezim per tahun (selalu aktif)</h2>
-<div class="panel"><table><thead><tr><th>Tahun</th><th class="n">Return</th>
-<th class="n">Setara per tahun</th><th class="n">Sharpe</th><th class="n">Max DD</th></tr></thead>
+<h2>6. Regime by year (always active)</h2>
+<div class="panel"><table><thead><tr><th>Year</th><th class="n">Return</th>
+<th class="n">Annualized</th><th class="n">Sharpe</th><th class="n">Max DD</th></tr></thead>
 <tbody><tr><td>2023</td><td class='n'>+1.47%</td><td class='n'>+8.0%</td><td class='n'>19.4</td><td class='n'>-0.11%</td></tr><tr><td>2024</td><td class='n'>+6.65%</td><td class='n'>+6.6%</td><td class='n'>18.4</td><td class='n'>-0.01%</td></tr><tr><td>2025</td><td class='n'>+1.75%</td><td class='n'>+1.7%</td><td class='n'>10.7</td><td class='n'>-0.18%</td></tr><tr><td>2026</td><td class='n'>+0.58%</td><td class='n'>+0.7%</td><td class='n'>5.3</td><td class='n'>-0.41%</td></tr></tbody></table></div>
-<p>Ini bagian yang paling penting: hasilnya <b>menyusut</b>. 2024 masih +6.6%,
-2025 +1.7%, dan 2026 baru +0.58% dalam
-298 hari. Pola ini konsisten dengan makin banyaknya modal yang berebut
-trade yang sama.</p>
+<p>This is the most important part: the results <b>are shrinking</b>. 2024 was still +6.6%,
+2025 +1.7%, and 2026 only +0.58% in
+298 days. This pattern is consistent with more capital competing for
+the same trade.</p>
 
 <h2>7. Out-of-sample</h2>
-<p>Ambang dipilih dari 12 bulan pertama, lalu diuji buta pada 24 bulan berikutnya tanpa memilih
-ulang. Terpilih ambang <b>0.0</b> dengan Sharpe latih 12.8.</p>
-<div class="panel"><table><thead><tr><th>Periode uji</th><th class="n">Return</th>
+<p>The threshold was selected from the first 12 months, then blind-tested on the next 24 months without re-selecting
+it. Selected threshold <b>0.0</b> with training Sharpe 12.8.</p>
+<div class="panel"><table><thead><tr><th>Test period</th><th class="n">Return</th>
 <th class="n">Sharpe</th><th class="n">Max DD</th></tr></thead><tbody>
-<tr><td>2024-10-25 sampai 2026-10-25</td><td class="n">-1.02%</td>
+<tr><td>2024-10-25 to 2026-10-25</td><td class="n">-1.02%</td>
 <td class="n">-1.22</td><td class="n">-2.7%</td></tr>
 </tbody></table></div>
-<p>Overlay timing yang menjadi dasar klaim Sharpe 2,30 itu <b>kehilangan uang</b> begitu diuji
-buta. Yang bertahan hanya versi selalu aktif, dan itu tidak butuh parameter apa pun.</p>
+<p>The timing overlay that underpinned the Sharpe 2.30 claim <b>lost money</b> once blind-tested.
+What survived is only the always-active version, and that needs no parameters at all.</p>
 
 <h2>8. Stress test</h2>
-<div class="panel"><table><thead><tr><th>Skenario</th><th class="n">Return 3 tahun</th>
-<th class="n">Sharpe</th><th class="n">Max DD</th></tr></thead><tbody><tr><td>biaya 2x</td><td class='n'>+2.19%</td><td class='n'>1.47</td><td class='n'>-1.1%</td></tr><tr><td>basis minus 5bps</td><td class='n'>+3.84%</td><td class='n'>3.43</td><td class='n'>-0.5%</td></tr><tr><td>basis minus 20bps</td><td class='n'>+2.60%</td><td class='n'>1.87</td><td class='n'>-0.9%</td></tr></tbody></table>
-<p class="meta">Basis negatif berarti perpetual diperdagangkan lebih murah dari spot saat masuk
-dan keluar, sehingga carry harus menanggung selisih itu. Basis 20 bps saja sudah memangkas
-hampir separuh laba.</p></div>
+<div class="panel"><table><thead><tr><th>Scenario</th><th class="n">3-year return</th>
+<th class="n">Sharpe</th><th class="n">Max DD</th></tr></thead><tbody><tr><td>2x costs</td><td class='n'>+2.19%</td><td class='n'>1.47</td><td class='n'>-1.1%</td></tr><tr><td>basis minus 5bps</td><td class='n'>+3.84%</td><td class='n'>3.43</td><td class='n'>-0.5%</td></tr><tr><td>basis minus 20bps</td><td class='n'>+2.60%</td><td class='n'>1.87</td><td class='n'>-0.9%</td></tr></tbody></table>
+<p class="meta">Negative basis means the perpetual is trading cheaper than spot on entry
+and exit, so carry has to bear that difference. A basis of just 20 bps already cuts
+nearly half the profit.</p></div>
 
-<h2>9. Modal, likuidasi, dan risiko nyata</h2>
-<p>Dengan notional 0,5x modal, short perpetual berjalan pada leverage 1x: margin setara
-notional, likuidasi baru terjadi kalau harga naik sekitar 100% tanpa penambahan margin. Itu
-sebabnya drawdown-nya terlihat kecil. Tapi konsekuensinya return juga kecil.</p>
-<div class="panel"><table><thead><tr><th>Notional / modal</th><th class="n">Margin short</th>
-<th class="n">Harga naik sampai likuidasi</th><th class="n">Perkiraan hasil per tahun</th></tr></thead>
+<h2>9. Capital, liquidation, and real risks</h2>
+<p>With a notional of 0.5x capital, the perpetual short runs at 1x leverage: margin equal to
+notional, liquidation only occurs if the price rises by around 100% without additional margin. That
+is why its drawdown looks small. But the consequence is that the return is also small.</p>
+<div class="panel"><table><thead><tr><th>Notional / capital</th><th class="n">Short margin</th>
+<th class="n">Price rise to liquidation</th><th class="n">Estimated annual return</th></tr></thead>
 <tbody>
-<tr><td>0,5x (dipakai di sini)</td><td class="n">100% notional</td><td class="n">+100%</td>
+<tr><td>0.5x (used here)</td><td class="n">100% notional</td><td class="n">+100%</td>
 <td class="n">+3.9%</td></tr>
-<tr><td>0,75x</td><td class="n">33% notional</td><td class="n">+33%</td>
+<tr><td>0.75x</td><td class="n">33% notional</td><td class="n">+33%</td>
 <td class="n">+5.9%</td></tr>
-<tr><td>0,9x</td><td class="n">11% notional</td><td class="n">+11%</td>
+<tr><td>0.9x</td><td class="n">11% notional</td><td class="n">+11%</td>
 <td class="n">+7.0%</td></tr>
 </tbody></table>
-<p class="meta">Rally historis: BTC pernah +60% dalam 30 hari, ETH +70%, SOL +120%. Pada notional
-0,75x, rally seperti itu sudah melewati titik likuidasi kalau margin tidak ditambah dari leg
-spot. Delta-netral bukan berarti bebas risiko; risikonya pindah ke operasional.</p></div>
+<p class="meta">Historical rally: BTC once rose +60% in 30 days, ETH +70%, SOL +120%. At a notional
+of 0.75x, a rally like that would already pass the liquidation point if margin is not added from the spot
+leg. Delta-neutral does not mean risk-free; the risk moves to operations.</p></div>
 
 <h2>10. Benchmark</h2>
-<div class="panel"><table><thead><tr><th>Pembanding</th><th class="n">Total 3 tahun</th>
+<div class="panel"><table><thead><tr><th>Comparator</th><th class="n">3-year total</th>
 <th class="n">CAGR</th><th class="n">Sharpe</th><th class="n">Max DD</th></tr></thead><tbody>
-<tr><td>Carry funding (selalu aktif)</td><td class="n">+11.72%</td>
+<tr><td>Carry funding (always active)</td><td class="n">+11.72%</td>
 <td class="n">+3.9%</td><td class="n">3.5</td>
 <td class="n">-2.7%</td></tr>
-<tr><td>Beli dan tahan BTC</td><td class="n">+614%</td>
+<tr><td>Buy and hold BTC</td><td class="n">+614%</td>
 <td class="n">+38.6%</td><td class="n">0.86</td>
 <td class="n">-77%</td></tr>
-<tr><td>Kas (0%)</td><td class="n">0,00%</td><td class="n">0,00%</td><td class="n">-</td>
-<td class="n">0,00%</td></tr>
+<tr><td>Cash (0%)</td><td class="n">0.00%</td><td class="n">0.00%</td><td class="n">-</td>
+<td class="n">0.00%</td></tr>
 </tbody></table>
-<p class="meta">Pembanding yang lebih jujur untuk carry bukan BTC, melainkan deposito atau surat
-utang jangka pendek. Kalau instrumen bebas risiko memberi 4 sampai 5% per tahun, carry 3,8%
-sebelum pajak dan biaya operasional tidak layak dikerjakan.</p></div>
+<p class="meta">A more honest comparator for carry is not BTC, but deposits or short-term
+debt securities. If risk-free instruments yield 4 to 5% per year, a carry of 3.8%
+before tax and operational costs is not worth doing.</p></div>
 
-<h2>11. Keterbatasan</h2>
+<h2>11. Limitations</h2>
 <ul>
-<li>Hanya tiga tahun dan tiga aset. Tidak ada 2021-2022, jadi carry saat bull ekstrem dan bear
-dalam tidak terwakili. Status hasil: <b>belum konklusif</b> untuk periode selain 2023-2026.</li>
-<li>Basis spot-perp tidak diukur, hanya diasumsikan lewat skenario. Kalau basis riil lebih
-negatif dari 20 bps, angka di atas terlalu optimistis.</li>
-<li>Satu bursa. Risiko exchange, perubahan aturan funding, dan pemeliharaan margin tidak
-dimodelkan.</li>
-<li>Pajak, biaya transfer, dan biaya oportunitas modal tidak dihitung.</li>
-<li>Funding adalah rate yang ditetapkan bursa dan bisa berubah mekanismenya kapan saja.</li>
+<li>Only three years and three assets. 2021-2022 is missing, so carry during an extreme bull and deep
+bear is not represented. Result status: <b>not yet conclusive</b> for periods other than 2023-2026.</li>
+<li>The spot-perp basis is not measured, only assumed through scenarios. If the real basis is more
+negative than 20 bps, the figures above are too optimistic.</li>
+<li>One exchange. Exchange risk, changes in funding rules, and margin maintenance are not
+modeled.</li>
+<li>Taxes, transfer costs, and the opportunity cost of capital are not included.</li>
+<li>Funding is a rate set by the exchange, and its mechanism can change at any time.</li>
 </ul>
 
-<h2>12. Keputusan</h2>
-<p>E17 tidak dilanjutkan sebagai kandidat alpha. Klaim Sharpe 2,30 ditolak karena berasal dari
-overlay timing yang gagal diuji buta. Carry tetap dicatat sebagai instrumen kas berisiko rendah
-dengan angka realistis: <b>3,8% per tahun pada 2023-2026, turun menjadi sekitar 0,7% pada 2026</b>.
-Tidak ada paper trading baru untuk carry sebelum ada data basis historis.</p>
-<p>Langkah berikutnya bukan menambah eksperimen carry, tetapi memutuskan secara ekonomi: kalau
-targetnya menutup biaya VPS, carry 0,5x notional tidak akan sampai. Kalau targetnya menyimpan
-kas dengan risiko rendah, ini kalah dari deposito. Keduanya perlu keputusan Fatih, bukan
-eksperimen tambahan.</p>
+<h2>12. Decision</h2>
+<p>E17 is not pursued as an alpha candidate. The claimed Sharpe of 2.30 is rejected because it comes from a
+timing overlay that failed blind testing. Carry is still recorded as a low-risk cash instrument
+with realistic figures: <b>3.8% per year in 2023-2026, falling to around 0.7% in 2026</b>.
+No new paper trading for carry until historical basis data exists.</p>
+<p>The next step is not to add more carry experiments, but to decide economically: if
+the target is to cover VPS costs, a carry of 0.5x notional will not be enough. If the target is to hold
+cash with low risk, this is worse than a deposit. Both require a decision from Fatih, not
+additional experiments.</p>
 
-<div class="note"><p>Diperbarui 25 Oct 2026 08:52 WIB.
-Data funding diverifikasi ulang ke Binance. Tidak ada klaim profit nyata di halaman ini.</p></div>
+<div class="note"><p>Updated 25 Oct 2026 08:52 UTC+7.
+Funding data was re-verified against Binance. There are no real profit claims on this page.</p></div>
 </div></body></html>

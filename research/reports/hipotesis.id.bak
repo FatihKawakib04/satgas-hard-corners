@@ -1,0 +1,107 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catatan hipotesis riset · satgas.ai.id</title><style>
+:root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
+--txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(115,165,202,.3)}
+a:hover{border-bottom-color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
+.brand{font-weight:600;letter-spacing:.02em;color:var(--dim);font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.22;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid var(--accent);
+padding-left:11px}
+h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
+.meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
+padding:3px 11px;font-size:12px;color:#c9d4e2}
+.badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
+.badge.risk-on{color:#8fe0c0;border-color:rgba(63,191,143,.4);background:rgba(63,191,143,.09)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:18px 0 6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.card .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.card .v{font-size:19px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
+.card .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--dim)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:16px 0}
+.panel h3{margin-top:0}
+.svg-chart{display:block;margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;overflow:hidden}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;font-size:12.8px}
+ul,ol{padding-left:20px}li{margin:5px 0}
+.lead{font-size:17px;color:#eaf1f8}
+.exec{background:linear-gradient(180deg,rgba(115,165,202,.10),rgba(115,165,202,.03));
+border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;margin:18px 0}
+.exec ol{margin:0;padding-left:20px}
+.exec li{margin:7px 0}
+.scen{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
+.scen .box{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:14px}
+.scen .box .t{font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+.scen .base{border-color:rgba(115,165,202,.4)}.scen .base .t{color:var(--accent)}
+.scen .bull .t{color:var(--green)}.scen .bear .t{color:var(--red)}
+.split{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.split>div{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px}
+.split .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:6px}
+.fact{border-left:2px solid var(--green)}.spec{border-left:2px solid var(--gold)}
+.sup{font-size:11px;vertical-align:super;color:var(--accent);border:0}
+.refs{font-size:13px;color:#b9c6d4}
+.refs li{margin:6px 0}
+.note{font-size:13px;color:var(--dim);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
+.tag{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);
+border-radius:6px;padding:1px 6px;margin-right:6px}
+.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
+td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+.card .v{font-size:17px}}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tscroll table{min-width:100%}
+.risk li{margin:8px 0}
+.watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
+
+.badge.warn{color:#e5c76b;border-color:rgba(201,162,39,.45);background:rgba(201,162,39,.10)}</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head>
+<body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
+
+<div class="wrap">
+<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
+<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
+<a href="peluang.html">Peluang</a> · <a href="metode.html">Metode</a></div></div>
+<h1>Catatan hipotesis</h1>
+<p class="lead">Riset yang berguna harus punya klaim yang bisa salah. Halaman ini mencatat
+hipotesis yang sedang diuji, kriteria lulusnya, dan bukti terukur dari basis data sendiri.
+Hipotesis yang tidak didukung dicatat sebagai temuan, bukan dihapus.</p>
+<h2>Daftar hipotesis</h2><div class="panel" id="h1"><div class="meta"><span class="badge">H1</span><span class="badge">Likuiditas</span><span class="badge warn">status: tidak-didukung</span></div><p class="lead" style="margin:10px 0 6px">Kontraksi suplai stablecoin 30 hari di bawah -1% mendahului drawdown BTC lebih dari 5% dalam 30 hari berikutnya.</p><p class="meta">Kriteria: Didukung jika return forward rata-rata saat kondisi terpenuhi minimal 3 poin persen lebih rendah dan terjadi pada minimal 20 kejadian.</p><p class="meta" style="margin-top:8px">435 kejadian kontraksi > 1% dalam 30 hari: return BTC 30 hari berikutnya rata-rata +2.9%, versus +4.1% pada seluruh sampel (2170 hari). Selisih +1.2 poin.</p></div><div class="panel" id="h2"><div class="meta"><span class="badge">H2</span><span class="badge">Positioning</span><span class="badge flat">status: menunggu-data</span></div><p class="lead" style="margin:10px 0 6px">Funding futures negatif ekstrem (di bawah -10% annualized) menandai low lokal: return BTC 10 hari setelahnya positif rata-rata.</p><p class="meta">Kriteria: Didukung jika rata-rata return 10 hari positif dan menang pada minimal 60% kejadian, dengan minimal 15 kejadian.</p><p class="meta" style="margin-top:8px">Cara uji: Kumpulkan semua hari dengan funding annualized di bawah -10%, hitung return BTC 10 hari berikutnya, bandingkan dengan rata-rata sampel.</p></div><div class="panel" id="h3"><div class="meta"><span class="badge">H3</span><span class="badge">Rezim</span><span class="badge warn">status: tidak-didukung</span></div><p class="lead" style="margin:10px 0 6px">Saat BTC di atas MA200 tetapi breadth lemah (kurang dari 25% aset di atas MA50), return 20 hari ke depan lebih buruk daripada saat breadth lebar.</p><p class="meta">Kriteria: Didukung jika selisih return forward 20 hari minimal 2 poin persen dan konsisten pada minimal 30 observasi.</p><p class="meta" style="margin-top:8px">Saat BTC di atas MA200 dan breadth di bawah 25% (274 hari), return 20 hari berikutnya rata-rata +1.0% (median -0.9%). Saat breadth di atas 60% (509 hari), rata-rata +1.5%. Selisih +0.4 poin.</p></div><div class="panel" id="h4"><div class="meta"><span class="badge">H4</span><span class="badge">Makro</span><span class="badge warn">status: tidak-didukung</span></div><p class="lead" style="margin:10px 0 6px">Korelasi BTC-SPX 60 hari di atas 0,6 membuat guncangan VIX (lonjakan lebih dari 20% dalam sehari) menular ke BTC dalam 3 hari.</p><p class="meta">Kriteria: Didukung jika return BTC 3 hari saat korelasi tinggi lebih rendah minimal 1,5 poin persen dibanding saat korelasi rendah, minimal 12 kejadian per kelompok.</p><p class="meta" style="margin-top:8px">9 guncangan VIX > 15% saat korelasi BTC-SPX di atas 0,5: return BTC 3 hari berikutnya rata-rata +0.4%. Saat korelasi di bawah 0,5 (19 kejadian): +0.5%. Selisih +0.0 poin.</p></div><div class="panel" id="h5"><div class="meta"><span class="badge">H5</span><span class="badge">Aliran institusi</span><span class="badge flat">status: menunggu-data</span></div><p class="lead" style="margin:10px 0 6px">Outflow ETF spot BTC tiga hari berturut-turut lebih dari 300 juta dolar per hari diikuti pelemahan BTC minimal 2% dalam 5 hari.</p><p class="meta">Kriteria: Didukung jika minimal 70% episode diikuti pelemahan, dengan minimal 8 episode.</p><p class="meta" style="margin-top:8px">Cara uji: Akumulasi data aliran ETF harian (mulai Oktober 2026), tandai episode outflow beruntun, ukur return BTC 5 hari setelah episode berakhir.</p></div><div class="panel" id="h6"><div class="meta"><span class="badge">H6</span><span class="badge">Rotasi</span><span class="badge flat">status: menunggu-data</span></div><p class="lead" style="margin:10px 0 6px">Dominasi BTC yang naik lebih dari 2 poin persen dalam 7 hari menandakan fase risk-off di dalam crypto, dan altcoin baru pulih setelah dominasi berhenti naik.</p><p class="meta">Kriteria: Didukung jika return altcoin 10 hari setelah kenaikan dominasi lebih rendah minimal 3 poin persen dibanding baseline.</p><p class="meta" style="margin-top:8px">Cara uji: Ukur perubahan dominasi 7 hari dan return altcoin (ETH, SOL, dan basket 10 koin) 10 hari ke depan.</p></div>
+<div class="note"><p>Diperbarui 25 Oct 2026 06:17 WIB. Status dihitung
+otomatis dari data historis yang tersimpan. Hipotesis tanpa evaluator menunggu data cukup
+panjang. Catatan statistik: return forward dihitung harian sehingga jendela pengamatan
+saling tumpang tindih, jumlah observasi efektif lebih kecil dari angka yang tampil dan
+selang kepercayaan sesungguhnya lebih lebar. Hasil di sini adalah bukti awal, bukan
+kesimpulan final.</p></div></div></body></html>

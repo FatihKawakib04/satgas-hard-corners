@@ -1,0 +1,126 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lab riset: uji strategi dan peluang · satgas.ai.id</title>
+<style>
+:root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
+--txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(115,165,202,.3)}
+a:hover{border-bottom-color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
+.brand{font-weight:600;letter-spacing:.02em;color:var(--dim);font-size:13px;text-transform:uppercase}
+h1{font-size:clamp(26px,4vw,34px);line-height:1.22;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid var(--accent);
+padding-left:11px}
+h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
+.meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
+padding:3px 11px;font-size:12px;color:#c9d4e2}
+.badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
+.badge.risk-on{color:#8fe0c0;border-color:rgba(63,191,143,.4);background:rgba(63,191,143,.09)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:18px 0 6px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.card .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
+.card .v{font-size:19px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
+.card .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--dim)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:16px 0}
+.panel h3{margin-top:0}
+.svg-chart{display:block;margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;overflow:hidden}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;font-size:12.8px}
+ul,ol{padding-left:20px}li{margin:5px 0}
+.lead{font-size:17px;color:#eaf1f8}
+.exec{background:linear-gradient(180deg,rgba(115,165,202,.10),rgba(115,165,202,.03));
+border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;margin:18px 0}
+.exec ol{margin:0;padding-left:20px}
+.exec li{margin:7px 0}
+.scen{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
+.scen .box{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:14px}
+.scen .box .t{font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+.scen .base{border-color:rgba(115,165,202,.4)}.scen .base .t{color:var(--accent)}
+.scen .bull .t{color:var(--green)}.scen .bear .t{color:var(--red)}
+.split{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.split>div{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px}
+.split .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:6px}
+.fact{border-left:2px solid var(--green)}.spec{border-left:2px solid var(--gold)}
+.sup{font-size:11px;vertical-align:super;color:var(--accent);border:0}
+.refs{font-size:13px;color:#b9c6d4}
+.refs li{margin:6px 0}
+.note{font-size:13px;color:var(--dim);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
+.tag{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);
+border-radius:6px;padding:1px 6px;margin-right:6px}
+.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
+td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+.card .v{font-size:17px}}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tscroll table{min-width:100%}
+.risk li{margin:8px 0}
+.watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
+</style></head><body><div class="wrap">
+<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
+<div class="meta"><a href="./">Laporan</a> · <a href="peluang.html">Peluang</a> ·
+<a href="hipotesis.html">Hipotesis</a> · <a href="metode.html">Metode</a></div></div>
+<h1>Lab eksperimen</h1>
+<p class="lead">Mesin uji yang berjalan otomatis: setiap siklus mengambil satu eksperimen dari
+antrean, menjalankan backtest dengan biaya transaksi, membagi data jadi beberapa blok
+walk-forward, memilih parameter hanya dari data masa lalu, lalu menilai hasil out-of-sample
+terhadap beli-dan-tahan BTC. Yang gagal dicatat, bukan dihapus.</p>
+<div class="cards">
+  <div class="card"><div class="k">Eksperimen selesai</div><div class="v">19</div></div>
+  <div class="card"><div class="k">Lolos gerbang</div><div class="v">0</div></div>
+  <div class="card"><div class="k">Strategi paper aktif</div><div class="v">0</div></div>
+  <div class="card"><div class="k">Biaya bulanan tercatat</div>
+    <div class="v">$0,00</div>
+    <div class="d">belum diisi</div></div>
+</div>
+
+<h2>Antrean dan hasil eksperimen</h2>
+<div class="panel"><table><thead><tr><th>ID</th><th>Strategi</th><th>Keluarga</th>
+<th>Putusan</th><th>Ringkas</th></tr></thead><tbody><tr><td>E01</td><td>tsmom</td><td>momentum</td><td><span class="badge warn">gagal</span></td><td>Return OOS +47.9%, Sharpe 0.42, DD -44.5%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.42 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E02</td><td>ma_cross</td><td>trend</td><td><span class="badge flat">kandidat</span></td><td>Return OOS +145.9%, Sharpe 0.77, DD -40.0%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.87 berada di persentil 100 dari 200 sinyal acak. Uji null p=0,344: unggul tidak terbukti, kemungkinan hasil pencarian parameter. Uji null p=0,344: keunggulan bisa dijelaskan pencarian parameter.</td></tr><tr><td>E03</td><td>donchian</td><td>breakout</td><td><span class="badge flat">kandidat</span></td><td>Return OOS +100.7%, Sharpe 0.70, DD -37.4%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.76 berada di persentil 100 dari 200 sinyal acak. Uji null p=0,508: unggul tidak terbukti. Uji null p=0,508: keunggulan tidak terbukti.</td></tr><tr><td>E04</td><td>vol_target</td><td>manajemen risiko</td><td><span class="badge warn">gagal</span></td><td>Return OOS +81.4%, Sharpe 0.70, DD -29.9%, BTC +93.3% (DD -62.0%). kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E05</td><td>rotasi_eth</td><td>rotasi</td><td><span class="badge warn">gagal</span></td><td>Return OOS -12.4%, Sharpe 0.13, DD -44.0%, BTC +93.3% (DD -62.0%). return OOS -12.4% tidak positif; Sharpe OOS 0.13 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E06</td><td>basket_mom</td><td>momentum</td><td><span class="badge flat">ditutup</span></td><td>Return OOS +311.6%, Sharpe 0.99, DD -40.9%, BTC +93.3% (DD -62.0%). Sharpe penuh 1.63 berada di persentil 100 dari 200 sinyal acak. Uji null p=0,016: Sharpe 1,63 lebih tinggi dari 59 dari 60 dunia sintetis. | Audit lanjutan: universe point-in-time (top-10 likuiditas, termasuk aset mati) menurunkan Sharpe ke 0,20 dan CAGR ke -2,8%; seluruh laba berasal dari 2020-2021 dan 2023; efek hilang pada sampling mingguan. Status diturunkan 25 Okt 2026. | Audit survivorship + stabilitas antar periode menggugurkan klaim edge. Ditutup sementara 25 Okt 2026, dibuka lagi hanya jika ada bukti baru.</td></tr><tr><td>E07</td><td>dd_buy</td><td>mean reversion</td><td><span class="badge warn">gagal</span></td><td>Return OOS +19.8%, Sharpe 0.29, DD -31.8%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.29 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E08</td><td>xs_mom</td><td>rotasi</td><td><span class="badge warn">gagal</span></td><td>Return OOS +17.7%, Sharpe 0.40, DD -78.3%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.40 di bawah 0.5; drawdown -78.3% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E09</td><td>rotasi_eth</td><td>rotasi</td><td><span class="badge warn">gagal</span></td><td>Return OOS +25.7%, Sharpe 0.34, DD -63.8%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.34 di bawah 0.5; drawdown -63.8% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E10</td><td>ma_cross</td><td>trend</td><td><span class="badge flat">kandidat</span></td><td>Return OOS +142.5%, Sharpe 0.75, DD -33.1%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.91 mengalahkan 200 dari 200 sinyal acak. Uji null p=0.344: tidak menonjol dibanding pencarian parameter.</td></tr><tr><td>E11</td><td>mom_vol</td><td>momentum + rezim</td><td><span class="badge warn">gagal</span></td><td>Return OOS +39.8%, Sharpe 0.40, DD -34.8%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.40 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E12</td><td>breakout_stop</td><td>breakout + risiko</td><td><span class="badge flat">kandidat</span></td><td>Return OOS +107.2%, Sharpe 0.87, DD -20.3%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.97 mengalahkan 200 dari 200 sinyal acak. Uji null p=0.066: tidak menonjol dibanding pencarian parameter.</td></tr><tr><td>E13</td><td>ma_cross_eth</td><td>trend</td><td><span class="badge warn">gagal</span></td><td>Return OOS +81.7%, Sharpe 0.52, DD -49.1%, BTC +93.3% (DD -62.0%). drawdown -49.1% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E14</td><td>vol_target</td><td>manajemen risiko</td><td><span class="badge warn">gagal</span></td><td>Return OOS +33.5%, Sharpe 0.39, DD -35.7%, BTC +93.3% (DD -62.0%). Sharpe OOS 0.39 di bawah 0.5; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E15</td><td>breakout_stop</td><td>breakout + risiko</td><td><span class="badge warn">gagal</span></td><td>Return OOS +61.5%, Sharpe 0.58, DD -22.4%, BTC +93.3% (DD -62.0%). kalah dari beli-dan-tahan BTC (+93.3%).</td></tr><tr><td>E16</td><td>donchian</td><td>breakout</td><td><span class="badge flat">kandidat</span></td><td>Return OOS +135.1%, Sharpe 0.80, DD -31.4%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.94 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.508 (median Sharpe dunia sintetis +0.78). Tidak menonjol dibanding hasil pencarian parameter acak.</td></tr><tr><td>E17</td><td>carry_funding</td><td>market netral</td><td><span class="badge flat">ditutup</span></td><td>Return OOS +3.3% (CAGR +0.7%), Sharpe 2.30, DD -0.6%, ambang terbaik 0.005% per 8 jam. Uji null p=1.000. CAGR OOS +0.7% di bawah ambang 5%, tidak sepadan dengan risiko operasional posisi perpeta; tidak menonjol pada uji null funding. | Audit E20 (25 Okt 2026): dihitung ulang dengan sinyal ketat. Selalu aktif +11,72% dalam 3 tahun (3,8%/tahun), menyusut ke 0,6% pada 2026. Overlay timing yang menghasilkan Sharpe 2,30 gagal di uji buta: -1,02% dalam 24 bulan. Klaim alpha ditolak; carry hanya layak sebagai produk kas 0,5x notional. Data funding 6/6 cocok dengan Binance. | Overlay timing gagal di uji buta dan return menyusut ke 0,7% per tahun. Ditutup sementara 25 Okt 2026 sebagai kandidat alpha.</td></tr><tr><td>E18</td><td>ma_filter_breakout</td><td>breakout + rezim</td><td><span class="badge flat">kandidat</span></td><td>Return OOS +126.2%, Sharpe 0.84, DD -25.4%, BTC +93.3% (DD -62.0%). Sharpe penuh 0.69 mengalahkan 198 dari 200 sinyal acak. Uji null: p=0.426 (median Sharpe dunia sintetis +0.66). Tidak menonjol dibanding hasil pencarian parameter acak.</td></tr><tr><td>E19</td><td>pair_zscore</td><td>relative value</td><td><span class="badge warn">gagal</span></td><td>Return OOS -54.1%, Sharpe -0.13, DD -63.3%, BTC +93.3% (DD -62.0%). return OOS -54.1% tidak positif; Sharpe OOS -0.13 di bawah 0.5; drawdown -63.3% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+93.3%).</td></tr></tbody></table></div>
+
+<h2>Papan peringkat out-of-sample</h2>
+<div class="panel"><table><thead><tr><th>ID</th><th>Strategi</th><th class="n">Parameter</th>
+<th class="n">Blok terakhir</th><th class="n">Sharpe blok</th><th class="n">DD blok</th>
+<th class="n">Sharpe penuh</th></tr></thead><tbody><tr><td>E17</td><td>carry_funding</td><td class="n">{"ambang": 5e-05}</td><td class="n up">+8,8%</td><td class="n">4,76</td><td class="n">-0,6%</td><td class="n">4,76</td></tr><tr><td>E17</td><td>carry_funding</td><td class="n">{"ambang": 0.0001}</td><td class="n up">+7,2%</td><td class="n">3,65</td><td class="n">-1,2%</td><td class="n">3,65</td></tr><tr><td>E17</td><td>carry_funding</td><td class="n">{"ambang": 0.0003}</td><td class="n up">+4,2%</td><td class="n">2,83</td><td class="n">-0,5%</td><td class="n">2,83</td></tr><tr><td>E17</td><td>carry_funding</td><td class="n">{"ambang": 0.0002}</td><td class="n up">+4,2%</td><td class="n">2,16</td><td class="n">-2,1%</td><td class="n">2,16</td></tr><tr><td>E17</td><td>carry_funding</td><td class="n">{"ambang": 0.0005}</td><td class="n up">+1,9%</td><td class="n">1,56</td><td class="n">-0,3%</td><td class="n">1,56</td></tr><tr><td>E05</td><td>rotasi_eth</td><td class="n">{"lookback": 30}</td><td class="n up">+130,0%</td><td class="n">1,45</td><td class="n">-34,9%</td><td class="n">0,91</td></tr><tr><td>E07</td><td>dd_buy</td><td class="n">{"drawdown": 0.1, "window": 180}</td><td class="n up">+42,3%</td><td class="n">1,42</td><td class="n">-13,4%</td><td class="n">0,03</td></tr><tr><td>E09</td><td>rotasi_eth</td><td class="n">{"lookback": 38}</td><td class="n up">+90,4%</td><td class="n">1,17</td><td class="n">-36,6%</td><td class="n">0,81</td></tr><tr><td>E07</td><td>dd_buy</td><td class="n">{"drawdown": 0.1, "window": 90}</td><td class="n up">+24,8%</td><td class="n">1,12</td><td class="n">-13,4%</td><td class="n">-0,30</td></tr><tr><td>E09</td><td>rotasi_eth</td><td class="n">{"lookback": 24}</td><td class="n up">+76,3%</td><td class="n">1,05</td><td class="n">-39,7%</td><td class="n">0,74</td></tr><tr><td>E09</td><td>rotasi_eth</td><td class="n">{"lookback": 48}</td><td class="n up">+72,4%</td><td class="n">1,04</td><td class="n">-36,4%</td><td class="n">0,81</td></tr><tr><td>E13</td><td>ma_cross_eth</td><td class="n">{"fast": 20, "slow": 100, "sym": "ETH"}</td><td class="n up">+59,6%</td><td class="n">0,93</td><td class="n">-32,0%</td><td class="n">0,54</td></tr></tbody></table>
+<p class="meta">Kolom "blok terakhir" adalah kinerja satu parameter pada blok waktu terakhir,
+bukan hasil walk-forward. Angka walk-forward yang dipakai menilai ada di tabel antrean.
+Sharpe penuh memakai seluruh riwayat sehingga optimistis dan tidak boleh dipakai sebagai bukti.</p></div>
+
+<h2>Validasi strategi</h2><div class="panel"><table><thead><tr><th>ID</th><th>Strategi</th><th>Status bukti</th><th class="n">DSR</th><th>Diperiksa</th></tr></thead><tbody><tr><td>E06</td><td>basket_mom</td><td><span class='badge warn'>gugur</span></td><td class='n'>0,278</td><td>2026-10-25 08:53</td></tr><tr><td>E12</td><td>breakout_stop</td><td><span class='badge warn'>lemah</span></td><td class='n'>0,012</td><td>2026-10-25 07:21</td></tr><tr><td>E18</td><td>ma_filter_breakout</td><td><span class='badge warn'>lemah</span></td><td class='n'>0,002</td><td>2026-10-25 07:21</td></tr><tr><td>E17</td><td>carry_funding</td><td><span class='badge warn'>belum-konklusif</span></td><td class='n'>—</td><td></td></tr></tbody></table><p class="meta">DSR mengoreksi Sharpe karena kita sudah mencoba banyak kombinasi. Di bawah 0,90 berarti keunggulan belum bisa dibedakan dari keberuntungan pemilihan parameter. <a href="validasi.html">Lihat rincian sembilan uji</a>. E06 sudah diaudit lebih dalam: <a href="audit-e06.html">survivorship, DSR, dan stabilitas antar periode</a> menurunkannya menjadi gugur. Carry funding juga sudah diaudit: <a href="audit-carry.html">E20, kenapa Sharpe 2,30 tidak bertahan</a>. Perbandingan peluang pendapatan dan biaya operasional: <a href="ekonomi.html">halaman ekonomi</a>. Angka biaya, pendapatan, modal, dan runway: <a href="dashboard.html">dashboard ekonomi</a>.</p></div>
+<h2>Uji null: apakah unggul dari keberuntungan pencarian parameter</h2><div class="panel"><table><thead><tr><th>ID</th><th>Strategi</th><th class="n">Sharpe asli</th><th class="n">Median dunia sintetis</th><th class="n">p-value</th><th>Putusan</th></tr></thead><tbody><tr><td>E06</td><td>basket_mom</td><td class='n'>1,63</td><td class='n'>1,09</td><td class='n'>0,016</td><td><span class='badge up'>menonjol</span></td></tr><tr><td>E12</td><td>breakout_stop</td><td class='n'>0,97</td><td class='n'>0,57</td><td class='n'>0,066</td><td><span class='badge warn'>tidak-menonjol</span></td></tr><tr><td>E02</td><td>ma_cross</td><td class='n'>0,87</td><td class='n'>0,80</td><td class='n'>0,344</td><td><span class='badge warn'>tidak-menonjol</span></td></tr><tr><td>E10</td><td>ma_cross</td><td class='n'>0,87</td><td class='n'>0,80</td><td class='n'>0,344</td><td><span class='badge warn'>tidak-menonjol</span></td></tr><tr><td>E18</td><td>ma_filter_breakout</td><td class='n'>0,69</td><td class='n'>0,66</td><td class='n'>0,426</td><td><span class='badge warn'>tidak-menonjol</span></td></tr><tr><td>E03</td><td>donchian</td><td class='n'>0,76</td><td class='n'>0,78</td><td class='n'>0,508</td><td><span class='badge warn'>tidak-menonjol</span></td></tr><tr><td>E16</td><td>donchian</td><td class='n'>0,76</td><td class='n'>0,78</td><td class='n'>0,508</td><td><span class='badge warn'>tidak-menonjol</span></td></tr><tr><td>E17</td><td>carry_funding</td><td class='n'>4,76</td><td class='n'>4,76</td><td class='n'>1,000</td><td><span class='badge warn'>tidak-menonjol</span></td></tr></tbody></table><p class="meta">Harga sintetis dibuat dari block bootstrap return historis, sehingga volatilitas dan korelasi antar aset tetap mirip. Uji ini menanyakan: kalau grid parameter yang sama disisir pada data tanpa pola timing, sebaik apa hasil terbaiknya? p di atas 0,05 berarti keunggulan strategi bisa dijelaskan pencarian parameter.</p></div>
+
+<div class="panel"><h3>Paper trading versus benchmark</h3><table><thead><tr><th>Strategi</th><th class="n">Ekuitas</th><th class="n">Return</th><th class="n">BTC</th><th class="n">Keranjang</th><th>Posisi</th></tr></thead><tbody><tr><td>E10:ma_cross</td><td class='n'>$10.000</td><td class='n flat'>+0,0%</td><td class='n'>+0,0%</td><td class='n'>+0,0%</td><td><code>{}</code></td></tr><tr><td>E18:ma_filter_breakout</td><td class='n'>$10.000</td><td class='n flat'>+0,0%</td><td class='n'>+0,0%</td><td class='n'>+0,0%</td><td><code>{}</code></td></tr></tbody></table><p class="meta">Keranjang = bobot sama BTC/ETH/SOL sejak tanggal mulai. Periode masih pendek, jadi belum bisa dipakai menyimpulkan.</p></div>
+
+<h2>Biaya operasional</h2>
+<div class="panel"><table><thead><tr><th>Item</th><th class="n">USD/bulan</th>
+<th>Catatan</th></tr></thead><tbody><tr><td>API publik (CoinGecko, Binance, CBOE, Treasury, ECB, DefiLlama, Farside)</td><td class="n">0,00</td><td>tanpa kredensial berbayar</td></tr><tr><td>LLM (paket Mpruy, dipakai bersama proyek lain)</td><td class="n">0,00</td><td>kuota berbagi, bukan biaya tambahan</td></tr><tr><td>VPS (provider, belum diisi Fatih)</td><td class="n">—</td><td>harga sebenarnya belum diketahui</td></tr></tbody></table>
+<p class="meta">Total tercatat $0,00 per bulan.
+Harga VPS belum diisi, jadi laba bersih belum bisa dihitung.</p></div>
+
+<h2>Metode</h2>
+<div class="panel"><ol>
+<li>Sinyal dihitung dari penutupan hari t, posisi baru berlaku pada return t+1. Tidak ada lookahead.</li>
+<li>Biaya 10 bps fee + 5 bps slippage
+    dipotong tiap perubahan posisi. Long-only spot, tanpa leverage.</li>
+<li>Data dibagi empat blok. Parameter untuk blok uji dipilih dari Sharpe blok sebelumnya saja.</li>
+<li>Gerbang lolos: Sharpe OOS minimal 0.5, return OOS positif,
+    drawdown tidak lebih buruk dari -45%, frekuensi transaksi
+    minimal 3 per tahun, dan mengalahkan beli-dan-tahan BTC.</li>
+<li>Strategi yang lolos masuk paper trading dengan modal simulasi
+    $10.000, dihentikan otomatis bila drawdown menembus
+    -25%.</li>
+</ol></div>
+<div class="note"><p>Diperbarui 25 Oct 2026 22:22 WIB. Semua angka adalah hasil
+simulasi historis atau paper trading. Tidak ada uang sungguhan, tidak ada order yang dikirim.
+Bukan rekomendasi investasi.</p></div>
+</div></body></html>

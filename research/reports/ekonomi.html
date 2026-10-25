@@ -1,6 +1,7 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ekonomi proyek · satgas.ai.id</title><style>
+<title>Project economics · satgas.ai.id</title><style>
 :root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
 --txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
 *{box-sizing:border-box}
@@ -57,7 +58,7 @@ border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;marg
 border-radius:6px;padding:1px 6px;margin-right:6px}
 .grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
 @media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
-.panel{padding:13px 12px}table{font-size:12.2px}th,td{padding:6px 4px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
 td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
 .card .v{font-size:17px}}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -65,146 +66,167 @@ td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,
 .risk li{margin:8px 0}
 .watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
-</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="audit-e06.html">Audit E06</a> · <a href="audit-carry.html">Audit carry</a></div></div>
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head><body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
 
-<h1>Ekonomi proyek: biaya aktual, peluang freelance, rencana produk</h1>
-<p class="lead">Arah yang dipilih: freelance sebagai jalur utama, produk sebagai sampingan.
-Halaman ini mencatat biaya yang benar-benar ditagih, peluang yang benar-benar ada beserta
-persaingannya, dan rencana validasi produk sebelum membangun fitur baru. Tidak ada
-pendapatan yang dicatat sebelum uangnya diterima.</p>
+<div class="wrap"><div class="top"><div class="brand">Crypto Research · satgas.ai.id</div>
+<div class="meta"><a href="./">Reports</a> · <a href="lab.html">Lab</a> ·
+<a href="audit-e06.html">Audit E06</a> · <a href="audit-carry.html">Carry audit</a></div></div>
+
+<h1>Project economics: actual costs, freelance opportunities, product plan</h1>
+<p class="lead">Chosen direction: freelance as the main path, product as a side line.
+This page records costs that are actually billed, opportunities that actually exist along with
+their competition, and the product validation plan before building new features. No
+revenue is recorded before the money is received.</p>
 
 <div class="cards">
-<div class='card'><div class='k'>Pendapatan diterima</div><div class='v'>$0</div>
-<div class='ket'>belum ada pembayaran</div></div>
-<div class='card'><div class='k'>Biaya invoice</div><div class='v'>$1.00</div>
-<div class='ket'>VPS Rp 18.000 per bulan</div></div>
-<div class='card'><div class='k'>Laba bersih</div><div class='v'>$-1.00</div>
-<div class='ket'>per bulan</div></div>
-<div class='card'><div class='k'>Proposal siap</div><div class='v'>2</div>
-<div class='ket'>draf, belum dikirim</div></div>
+<div class='card'><div class='k'>Revenue received</div><div class='v'>$0</div>
+<div class='ket'>no payment yet</div></div>
+<div class='card'><div class='k'>Invoice costs</div><div class='v'>$1.00</div>
+<div class='ket'>VPS Rp 18,000 per month</div></div>
+<div class='card'><div class='k'>Net profit</div><div class='v'>$-1.00</div>
+<div class='ket'>per month</div></div>
+<div class='card'><div class='k'>Proposal ready</div><div class='v'>2</div>
+<div class='ket'>draft, not sent</div></div>
 </div>
 
-<h2>0. Target minggu ini: satu pekerjaan pertama</h2>
+<h2>0. This week's target: one first job</h2>
 <div class="panel">
 <h3>Sports Analytics Probability Reports</h3>
-<p class='meta'>Tahap sekarang: <b>proposal_disiapkan</b> · nilai bruto maksimum $650 · <a href='https://www.freelancer.com/projects/statistical-analysis/Sports-Analytics-Probability-Reports'>halaman proyek</a></p>
-<p><b>Kenapa ini, bukan yang lain.</b> Dari 196 proyek aktif yang dipindai, hanya 7 yang
-kliennya terverifikasi pembayaran, dan hanya dua yang cocok dengan kemampuan nyata. Yang satu
-beranggaran maksimal $250 dengan lingkup 25 jam. Proyek ini <b>hourly</b> dengan tarif
-terpasang ₹4.000 sampai ₹10.000 per jam (sekitar $42 sampai $105), saat diperiksa
-<b>belum ada satu pun bid</b>, dan hasilnya bisa diotomatiskan: laporan probabilitas dari data
-historis, bukan analisis manual sekali jadi.</p>
-<p><b>Yang diminta:</b> laporan kuantitatif pra-pertandingan, model head-to-head, pengaruh
-kondisi lapangan dan cuaca, dan estimasi probabilitas menang untuk cricket, sepak bola, dan
-tenis.</p>
-<p><b>Rencana penawaran:</b> fase 1 dibatasi 12 jam pada $25/jam ($300) untuk lapisan data,
-fitur, dan satu laporan contoh; fase 2 dibatasi 14 jam ($350) untuk kalibrasi model dan generator. Bruto maksimum $650, bersih $585 setelah biaya platform 10 persen;
-ini usulan, bukan kontrak.
-generator. Estimasi 21 jam tidak dipakai sebagai angka final karena olahraga, sumber data, dan
-format keluaran belum dikonfirmasi; rentang jujurnya 18 sampai 30 jam. Karena proyeknya hourly,
-fase 1 harus didanai sebagai milestone lebih dulu. Catatan carry: proyeksi memakai laju 2026 sebesar 0,7 persen, setara $0,07 per tahun pada modal $10. Angka $0,38 hanya pembanding historis. Rincian di
-<a href="dashboard.html">dashboard ekonomi</a>.</p>
-<p><b>Langkah berikutnya:</b></p><ol><li>Kirim proposal setelah Fatih menyetujui harga pilot $600 dan tanda tangan.</li><li>Kalau dibalas: satu panggilan 20 menit untuk memastikan sport, kompetisi, dan sumber data.</li><li>Kirim spesifikasi tertulis dan minta pembayaran pilot masuk escrow sebelum mulai.</li><li>Kerjakan dengan alat kerja yang sudah ada: scaffold, tes, dokumentasi metode, cek serah terima.</li><li>Serahkan paket, minta konfirmasi tertulis bahwa kriteria penerimaan terpenuhi.</li><li>Catat pembayaran di karir.py supaya pendapatan dan laba bersih terbarui.</li></ol>
-<p class="meta">Semua langkah di atas masih menunggu persetujuan Fatih pada harga dan isi
-proposal. Belum ada yang dikirim.</p>
+<p class='meta'>Current stage: <b>proposal_prepared</b> · maximum gross value $650 · <a href='https://www.freelancer.com/projects/statistical-analysis/Sports-Analytics-Probability-Reports'>project page</a></p>
+<p><b>Why this, not the others.</b> Of 196 active projects scanned, only 7 have
+clients with verified payment, and only two match actual capabilities. One has a maximum
+budget of $250 with a 25-hour scope. This project is <b>hourly</b> with a listed rate of
+₹4.000 to ₹10.000 per hour (about $42 to $105), when checked
+<b>not a single bid yet</b>, and the result can be automated: probability reports from historical
+data, not a one-off manual analysis.</p>
+<p><b>What is requested:</b> pre-match quantitative reports, head-to-head models, the effect of
+field and weather conditions, and win probability estimates for cricket, soccer, and
+tennis.</p>
+<p><b>Proposal plan:</b> phase 1 is limited to 12 hours at $25/hour ($300) for the data layer,
+features, and one sample report; phase 2 is limited to 14 hours ($350) for model calibration and the generator. Maximum gross $650, net $585 after a 10 percent platform fee;
+this is a proposal, not a contract.
+generator. The 21-hour estimate is not used as the final figure because the sport, data sources, and
+output format have not been confirmed; the honest range is 18 to 30 hours. Because the project is hourly,
+phase 1 must be funded as a milestone first. Carry note: the projection uses the 2026 rate of 0.7 percent, equivalent to $0.07 per year on $10 of capital. The $0.38 figure is only a historical comparison. Details on
+<a href="dashboard.html">economic dashboard</a>.</p>
+<p><b>Next steps:</b></p><ol><li>Send the proposal after Fatih approves the $600 pilot price and signs.</li><li>If replied: a 20-minute call to confirm the sport, competition, and data sources.</li><li>Send the written specification and ask for the pilot payment to go into escrow before starting.</li><li>Work with existing tools: scaffold, tests, method documentation, handover check.</li><li>Deliver the package, ask for written confirmation that the acceptance criteria are met.</li><li>Record the payment in karir.py so revenue and net profit are updated.</li></ol>
+<p class="meta">All steps above are still awaiting Fatih's approval on the price and content of the
+proposal. Nothing has been sent yet.</p>
 </div>
 
-<h2>1. Biaya</h2>
-<div class="panel"><table><thead><tr><th>Pos</th><th class="n">Per bulan</th>
-<th>Sifat</th></tr></thead><tbody>
-<tr><td>VPS</td><td class="n">Rp 18.000 ($1.00)</td>
-<td>invoice tercatat, tagihan perpanjangan</td></tr>
-<tr><td>API model</td><td class="n">$0.00</td>
-<td>tidak ada pengeluaran baru; model utama prabayar, cadangan memakai free tier</td></tr>
-<tr><td>Domain dan lain-lain</td><td class="n">$0.00</td>
-<td>belum ada tagihan tercatat, tidak dihitung sebagai biaya</td></tr>
-<tr><td><b>Total</b></td><td class="n"><b>Rp 18.000 ($1.00)</b></td>
-<td>kurs 18,087 per dolar, 25 Okt 2026</td></tr>
+<h2>1. Costs</h2>
+<div class="panel"><table><thead><tr><th>Item</th><th class="n">Per month</th>
+<th>Type</th></tr></thead><tbody>
+<tr><td>VPS</td><td class="n">Rp 18,000 ($1.00)</td>
+<td>invoice recorded, renewal bill</td></tr>
+<tr><td>Model API</td><td class="n">$0.00</td>
+<td>no new spending; main model prepaid, backup uses free tier</td></tr>
+<tr><td>Domain and others</td><td class="n">$0.00</td>
+<td>no recorded bill, not counted as a cost</td></tr>
+<tr><td><b>Total</b></td><td class="n"><b>Rp 18,000 ($1.00)</b></td>
+<td>exchange rate 18.087 per dollar, 25 Oct 2026</td></tr>
 </tbody></table>
-<p class="meta">Perkiraan tidak digabung dengan invoice. Kalau nanti ada biaya lain yang
-benar-benar ditagih, tambahkan sebagai baris invoice baru, bukan sebagai estimasi.</p></div>
+<p class="meta">Estimates are not combined with invoices. If there are other costs later that
+are actually billed, add them as a new invoice line, not as an estimate.</p></div>
 
-<h2>2. Peluang freelance</h2>
-<p>Semua angka diambil dari API publik dan halaman platform pada 25 Oktober 2026. Pesaing
-adalah jumlah bid atau submisi yang terlihat saat pengambilan data, bukan perkiraan.</p>
-<div class="panel"><table><thead><tr><th>Peluang</th><th>Sumber</th>
-<th class="n">Anggaran</th><th class="n">Pesaing</th><th class="n">Waktu</th>
-<th>Verifikasi klien</th><th>Status</th></tr></thead><tbody><tr><td><b>V1</b><br>React & Python Business Dashboard</td><td>Freelancer.com, proyek aktif, klien terverifikasi</td><td class='n'>$12,500 - $37,500</td><td class='n'>208</td><td class='n'>120 jam</td><td><span class='badge up'>pembayaran terverifikasi</span></td><td><span class='badge up'>siap dikirim</span></td></tr><tr><td><b>V2</b><br>Part-Time Full Stack Developer, Stripe & Security</td><td>Freelancer.com, proyek aktif, klien terverifikasi</td><td class='n'>$25 - $35</td><td class='n'>28</td><td class='n'>80 jam</td><td><span class='badge up'>pembayaran terverifikasi</span></td><td><span class='badge up'>siap dikirim</span></td></tr><tr><td><b>S1</b><br>Bounty data crypto di Superteam Earn</td><td>Superteam Earn</td><td class='n'>$500 - $40,000</td><td class='n'>2 sampai 301 submisi</td><td class='n'>6 jam</td><td><span class='badge flat'>platform nyata, nilai harapan rendah</span></td><td><span class='badge warn'>sangat rendah</span></td></tr><tr><td><b>F1</b><br>Text-to-Database Upload Automation</td><td>Freelancer.com, listing tidak lagi aktif saat diperiksa ulang</td><td class='n'>$12,500 - $37,500</td><td class='n'>101</td><td class='n'>60 jam</td><td><span class='badge flat'>tidak bisa diverifikasi</span></td><td><span class='badge warn'>tidak berlaku</span></td></tr><tr><td><b>F2</b><br>Senior Python/SQLite Engineer, pemulihan database dan backend</td><td>Freelancer.com, proyek aktif</td><td class='n'>$250 - $750</td><td class='n'>149</td><td class='n'>14 jam</td><td><span class='badge down'>belum terverifikasi</span></td><td><span class='badge warn'>rendah</span></td></tr><tr><td><b>V3</b><br>Sports Analytics Probability Reports (target utama)</td><td>Freelancer.com, proyek aktif, klien belum verifikasi pembayaran</td><td class='n'>$42 - $105</td><td class='n'>0</td><td class='n'>21 jam</td><td><span class='badge up'>pembayaran terverifikasi</span></td><td><span class='badge warn'>sedang</span></td></tr><tr><td><b>U1</b><br>Posisi niche di Upwork: pipeline data kripto dan otomasi laporan</td><td>Upwork</td><td class='n'>$25 - $35</td><td class='n'>puluhan profil per pencarian</td><td class='n'>4 jam</td><td><span class='badge flat'>bukan proyek, tapi kanal</span></td><td><span class='badge warn'>sedang</span></td></tr><tr><td><b>F3</b><br>Azure Databricks Integration Expert</td><td>Freelancer.com</td><td class='n'>$15 - $18</td><td class='n'>65</td><td class='n'>20 jam</td><td><span class='badge flat'>tidak dikirim</span></td><td><span class='badge warn'>tidak dikirim</span></td></tr></tbody></table></div>
+<h2>2. Freelance opportunities</h2>
+<p>All figures are taken from public APIs and platform pages on 25 October 2026. Competitors
+are the number of bids or submissions visible at the time of data collection, not estimates.</p>
+<div class="panel"><table><thead><tr><th>Opportunity</th><th>Source</th>
+<th class="n">Budget</th><th class="n">Competitors</th><th class="n">Time</th>
+<th>Client verification</th><th>Status</th></tr></thead><tbody><tr><td><b>V1</b><br>React & Python Business Dashboard</td><td>Freelancer.com, active project, verified client</td><td class='n'>$12.500 - $37.500</td><td class='n'>208</td><td class='n'>120 hours</td><td><span class='badge up'>payment verified</span></td><td><span class='badge up'>ready to send</span></td></tr><tr><td><b>V2</b><br>Part-Time Full Stack Developer, Stripe & Security</td><td>Freelancer.com, active project, verified client</td><td class='n'>$25 - $35</td><td class='n'>28</td><td class='n'>80 hours</td><td><span class='badge up'>payment verified</span></td><td><span class='badge up'>ready to send</span></td></tr><tr><td><b>S1</b><br>Crypto data bounty on Superteam Earn</td><td>Superteam Earn</td><td class='n'>$500 - $40.000</td><td class='n'>2 to 301 submissions</td><td class='n'>6 hours</td><td><span class='badge flat'>real platform, low expected value</span></td><td><span class='badge warn'>very low</span></td></tr><tr><td><b>F1</b><br>Text-to-Database Upload Automation</td><td>Freelancer.com, listing no longer active when rechecked</td><td class='n'>$12.500 - $37.500</td><td class='n'>101</td><td class='n'>60 hours</td><td><span class='badge flat'>cannot be verified</span></td><td><span class='badge warn'>not applicable</span></td></tr><tr><td><b>F2</b><br>Senior Python/SQLite Engineer, database and backend recovery</td><td>Freelancer.com, active project</td><td class='n'>$250 - $750</td><td class='n'>149</td><td class='n'>14 hours</td><td><span class='badge down'>not verified</span></td><td><span class='badge warn'>low</span></td></tr><tr><td><b>V3</b><br>Sports Analytics Probability Reports (main target)</td><td>Freelancer.com, active project, client has not verified payment</td><td class='n'>$42 - $105</td><td class='n'>0</td><td class='n'>21 hours</td><td><span class='badge up'>payment verified</span></td><td><span class='badge warn'>medium</span></td></tr><tr><td><b>U1</b><br>Niche position on Upwork: crypto data pipeline and report automation</td><td>Upwork</td><td class='n'>$25 - $35</td><td class='n'>dozens of profiles per search</td><td class='n'>4 hours</td><td><span class='badge flat'>not a project, but a channel</span></td><td><span class='badge warn'>medium</span></td></tr><tr><td><b>F3</b><br>Azure Databricks Integration Expert</td><td>Freelancer.com</td><td class='n'>$15 - $18</td><td class='n'>65</td><td class='n'>20 hours</td><td><span class='badge flat'>not sent</span></td><td><span class='badge warn'>not sent</span></td></tr></tbody></table></div>
 
-<div class='panel'><h3>V1 · React & Python Business Dashboard</h3><p>Paling cocok dengan portofolio: dashboard data dengan backend Python. Klien terverifikasi dan punya 12 ulasan. Kelemahannya 208 bid, jadi peluang menang kecil, tapi ini jenis pekerjaan yang layak dikirim karena portofolio kita persis di situ.</p><p class='meta'>Sumber: Freelancer.com, proyek aktif, klien terverifikasi · Tenggat: lihat sisa hari di halaman proyek · Persyaratan: Python, React, dashboard, integrasi data · Perkiraan waktu: 120 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>V2 · Part-Time Full Stack Developer, Stripe & Security</h3><p>Persaingan paling rendah di antara proyek yang relevan (28 bid) dan dibayar per jam, artinya bisa berulang tiap bulan. Cocok kalau ingin pendapatan yang stabil, bukan proyek sekali jadi.</p><p class='meta'>Sumber: Freelancer.com, proyek aktif, klien terverifikasi · Tenggat: lihat sisa hari di halaman proyek · Persyaratan: Python, full stack, integrasi pembayaran, keamanan dasar · Perkiraan waktu: 80 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>S1 · Bounty data crypto di Superteam Earn</h3><p>Hanya untuk portofolio. Bukan pendapatan.</p><p class='meta'>Sumber: Superteam Earn (API publik) · Tenggat: bervariasi · Persyaratan: menulis, analisis data · Perkiraan waktu: 6 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>F1 · Text-to-Database Upload Automation</h3><p>Tidak lagi aktif. Angka besar tanpa klien yang bisa diverifikasi bukan bukti proyek nyata. Draf proposalnya disimpan sebagai templat untuk pekerjaan serupa, bukan untuk dikirim.</p><p class='meta'>Sumber: Freelancer.com, listing tidak lagi aktif saat diperiksa ulang · Tenggat: tutup · Persyaratan: Python, Data Processing, MySQL · Perkiraan waktu: 60 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>F2 · Senior Python/SQLite Engineer, pemulihan database dan backend</h3><p>Lingkupnya bagus: menyelamatkan aplikasi yang dibangun dengan alat AI, persis kemampuan kita. Tapi klien baru 3 hari, profil belum lengkap, dan pembayaran belum diverifikasi. Risiko tidak dibayar tinggi. Hanya dikirim kalau memakai escrow per milestone.</p><p class='meta'>Sumber: Freelancer.com, proyek aktif · Tenggat: sisa hari 0 saat diperiksa · Persyaratan: Python, SQLite, FastAPI, React, audit integritas data · Perkiraan waktu: 14 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>V3 · Sports Analytics Probability Reports (target utama)</h3><p>Target utama. Hourly, belum ada bid, klien 20 bulan dan pembayaran terverifikasi. Deliverable-nya pipeline dan templat laporan yang bisa diotomatiskan. Risiko: domain olahraga belum terbukti, klien tanpa ulasan, tenggat tidak konsisten.</p><p class='meta'>Sumber: Freelancer.com, proyek aktif, klien belum verifikasi pembayaran · Tenggat: lihat sisa hari di halaman proyek · Persyaratan: statistik, analisis data, pelaporan · Perkiraan waktu: 21 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>U1 · Posisi niche di Upwork: pipeline data kripto dan otomasi laporan</h3><p>Kanal dengan rasio hasil per usaha terbaik: portofolio nyata, bukan klaim. Perlu profil dan proposal yang konsisten.</p><p class='meta'>Sumber: Upwork (halaman data engineer Indonesia) · Tenggat: berkelanjutan · Persyaratan: Python, API, ETL, dashboard · Perkiraan waktu: 4 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>F3 · Azure Databricks Integration Expert</h3><p>Ditolak. Mengirim proposal berarti mengarang pengalaman.</p><p class='meta'>Sumber: Freelancer.com · Tenggat: 7 hari · Persyaratan: Azure, Databricks · Perkiraan waktu: 20 jam · Biaya pengerjaan: $0.00</p></div>
+<div class='panel'><h3>V1 · React & Python Business Dashboard</h3><p>Best fit with the portfolio: data dashboard with a Python backend. Verified client and has 12 reviews. The downside is 208 bids, so the chance of winning is small, but this is the kind of job worth submitting for because our portfolio is exactly there.</p><p class='meta'>Source: Freelancer.com, active project, verified client · Deadline: see remaining days on the project page · Requirements: Python, React, dashboard, data integration · Estimated time: 120 hours · Work cost: $0.00</p></div><div class='panel'><h3>V2 · Part-Time Full Stack Developer, Stripe & Security</h3><p>Lowest competition among relevant projects (28 bids) and paid hourly, meaning it can recur every month. Suitable if you want stable income, not a one-off project.</p><p class='meta'>Source: Freelancer.com, active project, verified client · Deadline: see remaining days on the project page · Requirements: Python, full stack, payment integration, basic security · Estimated time: 80 hours · Work cost: $0.00</p></div><div class='panel'><h3>S1 · Crypto data bounty on Superteam Earn</h3><p>Portfolio only. Not income.</p><p class='meta'>Source: Superteam Earn (public API) · Deadline: varies · Requirements: writing, data analysis · Estimated time: 6 hours · Work cost: $0.00</p></div><div class='panel'><h3>F1 · Text-to-Database Upload Automation</h3><p>No longer active. Big numbers without a verifiable client are not proof of a real project. The proposal draft is saved as a template for similar work, not for submission.</p><p class='meta'>Source: Freelancer.com, listing no longer active when rechecked · Deadline: closed · Requirements: Python, Data Processing, MySQL · Estimated time: 60 hours · Work cost: $0.00</p></div><div class='panel'><h3>F2 · Senior Python/SQLite Engineer, database and backend recovery</h3><p>The scope is good: rescuing an application built with AI tools, exactly our ability. But the client is only 3 days old, the profile is incomplete, and payment has not been verified. The risk of not being paid is high. Only submitted if using escrow per milestone.</p><p class='meta'>Source: Freelancer.com, active project · Deadline: 0 days remaining when checked · Requirements: Python, SQLite, FastAPI, React, data integrity audit · Estimated time: 14 hours · Work cost: $0.00</p></div><div class='panel'><h3>V3 · Sports Analytics Probability Reports (main target)</h3><p>Main target. Hourly, no bids yet, client for 20 months and payment verified. Deliverables are a pipeline and report templates that can be automated. Risk: sports domain not proven, client has no reviews, deadline inconsistent.</p><p class='meta'>Source: Freelancer.com, active project, client has not verified payment · Deadline: see remaining days on the project page · Requirements: statistics, data analysis, reporting · Estimated time: 21 hours · Work cost: $0.00</p></div><div class='panel'><h3>U1 · Niche position on Upwork: crypto data pipeline and report automation</h3><p>Channel with the best outcome-to-effort ratio: real portfolio, not claims. Needs a consistent profile and proposals.</p><p class='meta'>Source: Upwork (Indonesian data engineer page) · Deadline: ongoing · Requirements: Python, API, ETL, dashboard · Estimated time: 4 hours · Work cost: $0.00</p></div><div class='panel'><h3>F3 · Azure Databricks Integration Expert</h3><p>Rejected. Submitting a proposal would mean fabricating experience.</p><p class='meta'>Source: Freelancer.com · Deadline: 7 days · Requirements: Azure, Databricks · Estimated time: 20 hours · Work cost: $0.00</p></div>
 
-<h2>3. Verifikasi klien dan risiko penipuan</h2>
-<p>Anggaran besar bukan bukti proyek nyata. Yang diperiksa: status verifikasi pembayaran,
-umur akun, jumlah ulasan, kelengkapan profil, dan apakah klien sudah menaruh deposit.
-Data diambil dari halaman publik proyek.</p>
-<div class="panel"><table><thead><tr><th>Peluang</th><th>Verifikasi pembayaran</th>
-<th class="n">Umur akun</th><th class="n">Ulasan</th><th class="n">Deposit</th>
-<th>Penilaian</th></tr></thead><tbody>["<tr><td>V1 · React & Python Business Dashboard</td><td>ya</td><td class='n'>199 hari</td><td class='n'>12</td><td class='n'>ya</td><td>risiko rendah</td></tr>", "<tr><td>V2 · Part-Time Full Stack Developer, Stripe &</td><td>ya</td><td class='n'>78 hari</td><td class='n'>6</td><td class='n'>ya</td><td>risiko rendah</td></tr>", "<tr><td>S1</td><td colspan='4'>11 listing terbuka, total 61.500 dolar, submisi 2-301</td><td>platform nyata, nilai harapan rendah</td></tr>", "<tr><td>F1</td><td colspan='4'>proyek hilang dari daftar aktif pada pemeriksaan 25 Okt 2026; tidak ada data klien yang bisa diambil</td><td>tidak bisa diverifikasi</td></tr>", "<tr><td>F2 · Senior Python/SQLite Engineer, pemulihan</td><td>tidak</td><td class='n'>3 hari</td><td class='n'>0</td><td class='n'>ya</td><td>risiko tinggi, wajib escrow</td></tr>", "<tr><td>V3 · Sports Analytics Probability Reports (ta</td><td>ya</td><td class='n'>604 hari</td><td class='n'>0</td><td class='n'>tidak</td><td>risiko tinggi, wajib escrow</td></tr>", "<tr><td>U1</td><td colspan='4'>tarif atas 25 dolar per jam teramati di profil dengan 25 job dan 80 ribu dolar pendapatan</td><td>bukan proyek, tapi kanal</td></tr>", "<tr><td>F3</td><td colspan='4'>tidak ada bukti pengalaman Databricks</td><td>tidak dikirim</td></tr>"]</tbody></table>
-<p class="meta">Klien tanpa verifikasi pembayaran bukan otomatis penipu, tapi risikonya
-nyata: pekerjaan selesai lalu tidak dibayar. Aturan yang dipakai: pekerjaan hanya dimulai
-kalau pembayaran masuk escrow per milestone, apa pun status verifikasinya.</p></div>
+<h2>3. Client verification and fraud risk</h2>
+<p>A large budget is not proof of a real project. What is checked: payment verification status,
+account age, number of reviews, profile completeness, and whether the client has placed a deposit.
+Data is taken from the project's public page.</p>
+<div class="panel"><table><thead><tr><th>Opportunity</th><th>Payment verification</th>
+<th class="n">Account age</th><th class="n">Reviews</th><th class="n">Deposit</th>
+<th>Assessment</th></tr></thead><tbody>["<tr><td>V1 · React & Python Business Dashboard</td><td>ya</td><td class='n'>199 days</td><td class='n'>12</td><td class='n'>ya</td><td>low risk</td></tr>", "<tr><td>V2 · Part-Time Full Stack Developer, Stripe &</td><td>ya</td><td class='n'>78 days</td><td class='n'>6</td><td class='n'>ya</td><td>low risk</td></tr>", "<tr><td>S1</td><td colspan='4'>11 open listings, total 61,500 dollars, submissions 2-301</td><td>real platform, low expected value</td></tr>", "<tr><td>F1</td><td colspan='4'>project disappeared from active list upon check on 25 Okt 2026; no client data could be retrieved</td><td>cannot be verified</td></tr>", "<tr><td>F2 · Senior Python/SQLite Engineer, recovery</td><td>no</td><td class='n'>3 days</td><td class='n'>0</td><td class='n'>ya</td><td>high risk, escrow required</td></tr>", "<tr><td>V3 · Sports Analytics Probability Reports (ta</td><td>ya</td><td class='n'>604 days</td><td class='n'>0</td><td class='n'>no</td><td>high risk, escrow required</td></tr>", "<tr><td>U1</td><td colspan='4'>rate above 25 dollars per hour observed in the profile with 25 jobs and 80 thousand dollars in revenue</td><td>not a project, but a channel</td></tr>", "<tr><td>F3</td><td colspan='4'>no evidence of Databricks experience</td><td>not submitted</td></tr>"]</tbody></table>
+<p class="meta">A client without payment verification is not automatically a scammer, but the risk is
+real: work is completed and then not paid. The rule used: work only starts
+if payment goes into escrow per milestone, regardless of verification status.</p></div>
 
-<h2>4. Tarif dan cara menagih</h2>
-<div class="panel"><table><thead><tr><th>Jenis pekerjaan</th><th class="n">Tarif</th>
-<th>Dasar</th></tr></thead><tbody>
-<tr><td>Diagnosis dan spesifikasi</td><td class="n">$25/jam</td>
-<td>dibayar lebih dulu, hasilnya dokumen yang bisa dipakai klien</td></tr>
-<tr><td>Implementasi</td><td class="n">$22/jam</td>
-<td>per milestone, bukan borongan di awal</td></tr>
-<tr><td>Retainer bulanan</td><td class="n">$18/jam</td>
-<td>untuk pekerjaan berulang dengan jam terjamin</td></tr>
+<h2>4. Rates and how to bill</h2>
+<div class="panel"><table><thead><tr><th>Type of work</th><th class="n">Rate</th>
+<th>Basis</th></tr></thead><tbody>
+<tr><td>Diagnosis and specification</td><td class="n">$25/hour</td>
+<td>paid upfront, the result is documents the client can use</td></tr>
+<tr><td>Implementation</td><td class="n">$22/hour</td>
+<td>per milestone, not a lump sum upfront</td></tr>
+<tr><td>Monthly retainer</td><td class="n">$18/hour</td>
+<td>for recurring work with guaranteed hours</td></tr>
 </tbody></table>
-<p class="meta">Dasar tarif: profil Upwork Indonesia dengan portofolio setara memasang 25
-dolar per jam. Akun baru di marketplace realistis di 18 sampai 25 dolar. Diagnosis dipisah
-dari implementasi supaya tidak ada janji hasil sebelum masalahnya dipahami.</p></div>
+<p class="meta">Rate basis: Upwork Indonesia profiles with equivalent portfolios set 25
+dollars per hour. New accounts on the marketplace are realistically at 18 to 25 dollars. Diagnosis is separated
+from implementation so there is no promise of results before the problem is understood.</p></div>
 
-<h2>5. Kenapa marketplace sulit</h2>
-<p>Data hari ini: proyek Python/SQLite dengan anggaran 250 sampai 750 dolar punya 147 bid,
-proyek otomasi database 15 sampai 25 dolar punya 187 bid, dan proyek integrasi Azure punya
-65 bid. Untuk akun tanpa ulasan, peluang menang di angka itu kecil. Karena itu strategi
-yang dipakai bukan "kirim sebanyak mungkin", tetapi:</p>
+<h2>5. Why the marketplace is difficult</h2>
+<p>Today's data: Python/SQLite projects with budgets of 250 to 750 dollars have 147 bids,
+database automation projects at 15 to 25 dollars have 187 bids, and Azure integration projects have
+65 bids. For accounts without reviews, the chance of winning at those numbers is small. Therefore the strategy
+used is not "send as many as possible", but:</p>
 <ul>
-<li>kirim hanya ke pekerjaan yang lingkupnya bisa dijelaskan dalam lima baris dan cocok
-persis dengan portofolio yang ada</li>
-<li>mulai dari pekerjaan kecil yang cepat menghasilkan ulasan pertama</li>
-<li>bangun posisi niche di pipeline data kripto, tempat pesaing lebih sedikit</li>
+<li>send only to jobs whose scope can be explained in five lines and matches
+exactly the existing portfolio</li>
+<li>start with small jobs that quickly produce the first review</li>
+<li>build a niche position in crypto data pipelines, where there are fewer competitors</li>
 </ul>
 
-<h2>6. Produk sebagai sampingan</h2>
-<p><b>Pipeline riset sebagai layanan terpasang</b></p>
-<p>Yang sudah ada dan bisa ditunjukkan:</p><ul><li>pengumpul data berjalan tiap 15 menit dengan cache dan rotasi sumber</li><li>audit kualitas data: cross-check ke bursa, deteksi duplikat dan celah</li><li>halaman laporan statis yang tahan beban dan murah</li><li>pemeriksaan kesehatan pipeline yang mendeteksi job mati diam-diam</li></ul>
-<p>Yang belum ada, dan lebih penting daripada fitur:</p><ul><li>bukti ada yang mau membayar</li><li>harga</li><li>halaman penjualan</li><li>dukungan pelanggan</li></ul>
-<p>Rencana validasi sebelum menulis kode baru:</p><ol><li>5 percakapan dengan calon pengguna: analis, komunitas, atau tim kecil yang butuh data harian</li><li>tanya apa yang sekarang mereka kerjakan manual dan berapa jam per minggu</li><li>tawarkan pemasangan berbayar untuk 1 klien pertama dengan lingkup 2 minggu</li><li>jangan menulis fitur baru sebelum ada satu yang berkata ya</li></ol>
-<p class="meta">Aturan yang dipegang: tidak ada fitur baru sebelum ada satu orang yang
-membayar atau berkomitmen. Produk yang belum ada pembelinya adalah biaya, bukan pendapatan.</p>
+<h2>6. Product as a side business</h2>
+<p><b>Research pipeline as an installed service</b></p>
+<p>What already exists and can be shown:</p><ul><li>data collector running every 15 minutes with cache and source rotation</li><li>data quality audit: cross-check to exchanges, duplicate and gap detection</li><li>static report pages that withstand load and are cheap</li><li>pipeline health checks that detect silently dead jobs</li></ul>
+<p>What does not exist yet, and is more important than features:</p><ul><li>evidence that someone is willing to pay</li><li>price</li><li>sales page</li><li>customer support</li></ul>
+<p>Validation plan before writing new code:</p><ol><li>5 conversations with potential users: analysts, communities, or small teams that need daily data</li><li>ask what they currently do manually and how many hours per week</li><li>offer paid installation for the first 1 client with a 2-week scope</li><li>do not write new features before one person says yes</li></ol>
+<p class="meta">Rule held to: no new features before one person
+pays or commits. A product with no buyers yet is a cost, not revenue.</p>
 
-<h2>7. Urutan kerja</h2>
+<h2>7. Work order</h2>
 <ol>
-<li>Kirim draf V1 (dashboard) setelah Fatih menyetujui harga. Ini peluang dengan klien
-terverifikasi dan portofolio paling cocok.</li>
-<li>F2 hanya dikirim kalau klien bersedia memakai escrow per milestone. Kliennya baru tiga
-hari dan pembayaran belum terverifikasi.</li>
-<li>F1 tidak dikirim: listingnya sudah tidak aktif saat diperiksa ulang.</li>
-<li>Susun profil Upwork dengan posisi niche: pipeline data kripto dan otomasi laporan.
-Portofolio yang dipakai adalah situs ini, termasuk bug yang ditemukan dan cara
-verifikasinya.</li>
-<li>Lima percakapan untuk validasi produk. Tanpa kode baru sebelum ada jawaban.</li>
-<li>Kalau dalam 30 hari tidak ada pekerjaan, evaluasi ulang sumbernya: kemungkinan
-marketplace bukan tempat yang tepat, dan jalur langsung ke perusahaan lebih masuk akal.</li>
+<li>Send the V1 draft (dashboard) after Fatih approves the price. This is an opportunity with a
+verified client and the most suitable portfolio.</li>
+<li>F2 is only sent if the client agrees to use escrow per milestone. The client is only three
+days old and payment is not yet verified.</li>
+<li>F1 is not sent: the listing is no longer active when rechecked.</li>
+<li>Build an Upwork profile with a niche position: crypto data pipelines and report automation.
+The portfolio used is this site, including the bugs found and how
+they were verified.</li>
+<li>Five conversations to validate the product. No new code before there is an answer.</li>
+<li>If there is no work within 30 days, re-evaluate the source: possibly
+the marketplace is not the right place, and the direct route to companies makes more sense.</li>
 </ol>
 
-<h2>8. Yang tidak dilakukan</h2>
+<h2>8. What is not done</h2>
 <ul>
-<li>Tidak mengirim proposal atau membuat komitmen atas nama Fatih.</li>
-<li>Tidak mengarang pengalaman, ulasan, atau portofolio yang tidak ada.</li>
-<li>Tidak menghitung hadiah bounty yang belum dibayar sebagai pendapatan.</li>
-<li>Tidak mengeluarkan biaya untuk kredit bid, langganan, atau iklan.</li>
+<li>Do not send proposals or make commitments on behalf of Fatih.</li>
+<li>Do not invent experience, reviews, or portfolios that do not exist.</li>
+<li>Do not count unpaid bounty rewards as income.</li>
+<li>Do not spend on bid credits, subscriptions, or ads.</li>
 </ul>
 
-<div class="note"><p>Diperbarui 25 Oct 2026 13:37 WIB.
-Sumber data: API publik Freelancer.com, Superteam Earn, halaman Upwork Indonesia,
-projects.co.id, dan kurs terbuka. Draf proposal tersimpan di repositori, belum dikirim.</p></div>
+<div class="note"><p>Updated 25 Oct 2026 13:37 UTC+7.
+Data sources: public APIs of Freelancer.com, Superteam Earn, Upwork Indonesia pages,
+projects.co.id, and open exchange rates. Proposal drafts are stored in the repository, not yet sent.</p></div>
 </div></body></html>

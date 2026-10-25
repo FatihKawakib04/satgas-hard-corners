@@ -1,6 +1,7 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Metode riset · satgas.ai.id</title><style>
+<title>Research methods · satgas.ai.id</title><style>
 :root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
 --txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
 *{box-sizing:border-box}
@@ -57,7 +58,7 @@ border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;marg
 border-radius:6px;padding:1px 6px;margin-right:6px}
 .grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
 @media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
-.panel{padding:13px 12px}table{font-size:12.2px}th,td{padding:6px 4px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
 td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
 .card .v{font-size:17px}}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -65,25 +66,47 @@ td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,
 .risk li{margin:8px 0}
 .watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
-</style></head>
-<body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a></div></div>
-<h1>Metode dan batasan</h1>
-<p class="lead">Semua angka dalam laporan dihitung kode dari sumber primer, disimpan di basis data
-SQLite lokal, dan bisa ditelusuri ulang. Model bahasa hanya menulis narasi dari angka itu.</p>
-<h2>Sumber data</h2><div class="panel"><table><tbody><tr><td>Harga dan kapitalisasi</td><td>CoinGecko API publik, 60 aset teratas, snapshot tiap 15 menit. Riwayat harian 400 hari dari Binance klines untuk aset yang terdaftar di Binance.</td></tr><tr><td>Derivatif</td><td>Binance USD-M Futures: funding rate 8 jam, open interest, rasio long/short akun, rasio taker beli/jual. Hanya tiga aset (BTC, ETH, SOL) untuk menjaga kuota.</td></tr><tr><td>Makro</td><td>S&P 500 dan VIX dari CBOE (CSV harian). Kurva imbal hasil US Treasury (2Y, 10Y, 30Y). Kurs EUR/USD, USD/JPY, USD/CNY, USD/GBP dari ECB. Emas memakai PAXG dari CoinGecko.</td></tr><tr><td>Likuiditas</td><td>Suplai stablecoin agregat dan TVL DeFi dari DefiLlama. Aliran ETF spot AS dari Farside Investors (dibaca harian). Statistik jaringan Bitcoin dari Blockchair.</td></tr><tr><td>Sentimen</td><td>Fear & Greed Index dari Alternative.me, rata-rata 7 dan 30 hari, plus persentil setahun.</td></tr><tr><td>Berita</td><td>RSS CoinDesk, Cointelegraph, The Block, Blockworks, Decrypt, Federal Reserve, ECB, BIS, dan kueri Google News untuk makro, geopolitik, regulasi, serta ETF.</td></tr></tbody></table></div>
-<h2>Definisi metrik</h2><div class="panel"><table><tbody><tr><td>Rezim</td><td>Skor gabungan dari VIX, posisi S&P 500 terhadap MA50, perubahan UST 10Y 20 hari, posisi BTC terhadap MA200, dan breadth 7 hari. Skor -3 atau lebih rendah = risk-off.</td></tr><tr><td>Funding annualized</td><td>Funding per 8 jam dikali 3 dikali 365. Positif berarti long membayar short, tanda posisi long ramai.</td></tr><tr><td>Persentil 1 tahun</td><td>Posisi nilai terkini dalam rentang 365 hari terakhir. 90 berarti nilai sekarang lebih tinggi dari 90% hari dalam setahun.</td></tr><tr><td>Breadth</td><td>Jumlah aset dengan perubahan positif 7 hari, dan jumlah aset di atas MA50 dari sampel yang punya riwayat cukup.</td></tr><tr><td>Drawdown</td><td>Jarak harga terkini dari puncak 400 hari, dalam persen negatif.</td></tr><tr><td>Keyakinan</td><td>Penilaian editorial atas kualitas bukti: tinggi bila banyak sumber independen dan data panjang, rendah bila bergantung pada satu seri atau sampel pendek.</td></tr></tbody></table></div>
-<h2>Batasan yang harus diketahui</h2><div class="panel"><ul><li>Data ETF hanya tersedia untuk hari bursa dan mulai terkumpul sejak Oktober 2026, jadi analisis aliran jangka panjang belum memungkinkan.</li><li>Derivatif hanya dari Binance, bukan agregat seluruh bursa. Posisi di bursa lain tidak terlihat.</li><li>CoinGecko membatasi permintaan dari IP VPS. Saat kena batas, kolektor memakai cache terakhir dan menandainya di log.</li><li>Narasi laporan disusun model bahasa dari angka yang dihitung kode. Angka tidak pernah dikarang model, tetapi penekanan dan interpretasi bisa keliru dan harus dibaca kritis.</li><li>Tidak ada data posisi institusi (13F), data on-chain exchange reserve berbayar, atau data opsi level strike. Analisis positioning karena itu tidak lengkap.</li></ul></div>
-<h2>Alur kerja</h2><div class="panel"><ol>
-<li>Kolektor berjalan tiap 15 menit (harga, derivatif) dan tiap 30 menit (berita). Data harian
-dan makro ditarik sekali sehari.</li>
-<li>Analisis menghitung metrik dan sinyal dengan aturan tetap di <code>analyze.py</code>.</li>
-<li>Penulis laporan menyusun narasi dari lembar fakta, lalu angka diperiksa ulang terhadap
-basis data.</li>
-<li>Watcher memantau ambang signifikan tiap 20 menit dan hanya berbicara kalau ada yang penting.</li>
-<li>Hipotesis riset dicatat, diuji, dan hasilnya ditampilkan terbuka di halaman hipotesis.</li>
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head>
+<body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
+
+<div class="wrap">
+<div class="top"><div class="brand">Crypto Research · satgas.ai.id</div>
+<div class="meta"><a href="./">All reports</a> · <a href="lab.html">Lab</a> ·
+<a href="peluang.html">Opportunities</a> · <a href="hipotesis.html">Hypotheses</a></div></div>
+<h1>Methods and limitations</h1>
+<p class="lead">All figures in reports are calculated by code from primary sources, stored in a local
+SQLite database, and can be audited. The language model only writes narrative from those figures.</p>
+<h2>Data sources</h2><div class="panel"><table><tbody><tr><td>Prices and market cap</td><td>Public CoinGecko API, top 60 assets, snapshot every 15 minutes. 400-day daily history from Binance klines for assets listed on Binance.</td></tr><tr><td>Derivatives</td><td>Binance USD-M Futures: 8-hour funding rate, open interest, account long/short ratio, taker buy/sell ratio. Only three assets (BTC, ETH, SOL) to preserve quota.</td></tr><tr><td>Macro</td><td>S&P 500 and VIX from CBOE (daily CSV). US Treasury yield curve (2Y, 10Y, 30Y). EUR/USD, USD/JPY, USD/CNY, USD/GBP rates from ECB. Gold uses PAXG from CoinGecko.</td></tr><tr><td>Liquidity</td><td>Aggregate stablecoin supply and DeFi TVL from DefiLlama. US spot ETF flows from Farside Investors (read daily). Bitcoin network statistics from Blockchair.</td></tr><tr><td>Sentiment</td><td>Fear & Greed Index from Alternative.me, 7- and 30-day averages, plus one-year percentile.</td></tr><tr><td>News</td><td>RSS from CoinDesk, Cointelegraph, The Block, Blockworks, Decrypt, Federal Reserve, ECB, BIS, and Google News queries for macro, geopolitics, regulation, and ETFs.</td></tr></tbody></table></div>
+<h2>Metric definitions</h2><div class="panel"><table><tbody><tr><td>Regime</td><td>Composite score from VIX, S&P 500 position relative to MA50, 20-day change in UST 10Y, BTC position relative to MA200, and 7-day breadth. Score -3 or lower = risk-off.</td></tr><tr><td>Funding annualized</td><td>8-hour funding multiplied by 3 and by 365. Positive means longs pay shorts, a sign that long positioning is crowded.</td></tr><tr><td>1-year percentile</td><td>Current value's position within the last 365-day range. 90 means the current value is higher than 90% of days in the year.</td></tr><tr><td>Breadth</td><td>Number of assets with positive 7-day change, and number of assets above MA50 from the sample with sufficient history.</td></tr><tr><td>Drawdown</td><td>Distance of current price from the 400-day peak, in negative percent.</td></tr><tr><td>Confidence</td><td>Editorial assessment of evidence quality: high when there are many independent sources and long data history, low when it relies on a single series or short sample.</td></tr></tbody></table></div>
+<h2>Limitations to be aware of</h2><div class="panel"><ul><li>ETF data is available only for trading days and has been collected since October 2026, so long-term flow analysis is not yet possible.</li><li>Derivatives are only from Binance, not an aggregate across all exchanges. Positions on other exchanges are not visible.</li><li>CoinGecko rate-limits requests from VPS IPs. When the limit is hit, the collector uses the last cache and notes it in the log.</li><li>Report narratives are composed by a language model from numbers calculated by code. The model never invents numbers, but emphasis and interpretation can be wrong and should be read critically.</li><li>There is no institutional positioning data (13F), paid on-chain exchange reserve data, or options data at strike level. Positioning analysis is therefore incomplete.</li></ul></div>
+<h2>Workflow</h2><div class="panel"><ol>
+<li>Collector runs every 15 minutes (prices, derivatives) and every 30 minutes (news). Daily data
+and macro are pulled once a day.</li>
+<li>Analysis calculates metrics and signals with fixed rules in <code>analyze.py</code>.</li>
+<li>The report writer composes the narrative from the fact sheet, then the numbers are rechecked against
+the database.</li>
+<li>Watcher monitors significant thresholds every 20 minutes and only speaks up when something important happens.</li>
+<li>Research hypotheses are recorded, tested, and the results are shown openly on the hypotheses page.</li>
 </ol></div>
-<div class="note"><p>Diperbarui 25 Oct 2026 06:17 WIB. Bukan rekomendasi investasi.</p></div>
+<div class="note"><p>Updated 25 Oct 2026 06:17 UTC+7. Not investment advice.</p></div>
 </div></body></html>

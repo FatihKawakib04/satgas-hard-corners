@@ -1,6 +1,7 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demonstrasi laporan olahraga</title>
+<title>Sports report demonstration</title>
 <style>
 body{background:#0d1117;color:#c9d1d9;font-family:system-ui,sans-serif;margin:0;padding:24px}
 .wrap{max-width:860px;margin:0 auto}
@@ -14,45 +15,67 @@ th{color:#8b949e;font-weight:500} .n{text-align:right}
 .up{background:#12351f;color:#3fb950} .down{background:#3d1518;color:#f85149}
 .flat{background:#2d333b;color:#adbac7}
 .meta{color:#8b949e;font-size:13px}
-</style></head><body><div class="wrap">
-<div class="demo"><b>Demonstrasi mandiri.</b> Dibuat oleh penyusun proposal memakai data
-publik football-data.co.uk musim 26/27. Ini bukan pekerjaan klien, bukan
-riwayat konsultasi, dan tidak ada klien olahraga sebelumnya. Tujuannya hanya menunjukkan
-bentuk keluaran.</div>
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head><body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
 
-<h1>Pratinjau pra-pertandingan: Tottenham vs Coventry</h1>
-<p class="meta">Pertandingan terakhir pada data: 19/10/2026. Statistik di bawah
-dihitung dari pertandingan yang sudah selesai, bukan prediksi.</p>
+<div class="wrap">
+<div class="demo"><b>Standalone demonstration.</b> Created by the proposal author using public
+data from football-data.co.uk season 26/27. This is not client work, not a
+consulting history, and there have been no prior sports clients. Its purpose is only to show
+the output format.</div>
 
-<h2>1. Bentuk terkini</h2>
-<table><thead><tr><th>Tim</th><th>5 laga</th><th>10 laga</th><th class="n">Menang</th>
-<th class="n">Gol/partai</th><th class="n">Kebobolan/partai</th></tr></thead><tbody>
-<tr><td><b>Tottenham</b></td><td><span class='badge up'>M</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='badge flat'>S</span> <span class='badge flat'>S</span> </td><td><span class='badge up'>M</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='badge flat'>S</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='meta'> (hanya 7 dari 10 tersedia)</span></td>
+<h1>Pre-match preview: Tottenham vs Coventry</h1>
+<p class="meta">Last match in the data: 19/10/2026. The statistics below
+are calculated from completed matches, not predictions.</p>
+
+<h2>1. Current form</h2>
+<table><thead><tr><th>Team</th><th>5 matches</th><th>10 matches</th><th class="n">Wins</th>
+<th class="n">Goals/match</th><th class="n">Goals conceded/match</th></tr></thead><tbody>
+<tr><td><b>Tottenham</b></td><td><span class='badge up'>M</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='badge flat'>S</span> <span class='badge flat'>S</span> </td><td><span class='badge up'>M</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='badge flat'>S</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='meta'> (only 7 of 10 available)</span></td>
 <td class="n">1/7</td><td class="n">0.86</td>
 <td class="n">1.43</td></tr>
-<tr><td><b>Coventry</b></td><td><span class='badge down'>K</span> <span class='badge up'>M</span> <span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge down'>K</span> </td><td><span class='badge down'>K</span> <span class='badge up'>M</span> <span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='meta'> (hanya 7 dari 10 tersedia)</span></td>
+<tr><td><b>Coventry</b></td><td><span class='badge down'>K</span> <span class='badge up'>M</span> <span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge down'>K</span> </td><td><span class='badge down'>K</span> <span class='badge up'>M</span> <span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='meta'> (only 7 of 10 available)</span></td>
 <td class="n">2/7</td><td class="n">0.86</td>
 <td class="n">2.00</td></tr>
 </tbody></table>
 
-<h2>2. Split kandang dan tandang</h2>
-<table><thead><tr><th>Tim</th><th>Kandang (5)</th><th>Tandang (5)</th></tr></thead><tbody>
-<tr><td>Tottenham</td><td><span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='meta'> (hanya 4 dari 5 tersedia)</span></td><td><span class='badge flat'>S</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='meta'> (hanya 3 dari 5 tersedia)</span></td></tr>
-<tr><td>Coventry</td><td><span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='meta'> (hanya 3 dari 5 tersedia)</span></td><td><span class='badge down'>K</span> <span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='meta'> (hanya 4 dari 5 tersedia)</span></td></tr>
+<h2>2. Home and away split</h2>
+<table><thead><tr><th>Team</th><th>Home (5)</th><th>Away (5)</th></tr></thead><tbody>
+<tr><td>Tottenham</td><td><span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='meta'> (only 4 of 5 available)</span></td><td><span class='badge flat'>S</span> <span class='badge flat'>S</span> <span class='badge down'>K</span> <span class='meta'> (only 3 of 5 available)</span></td></tr>
+<tr><td>Coventry</td><td><span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='meta'> (only 3 of 5 available)</span></td><td><span class='badge down'>K</span> <span class='badge up'>M</span> <span class='badge down'>K</span> <span class='badge down'>K</span> <span class='meta'> (only 4 of 5 available)</span></td></tr>
 </tbody></table>
 
-<h2>3. Head-to-head terakhir</h2>
-<table><thead><tr><th>Tanggal</th><th>Skor</th><th>Hasil</th></tr></thead>
+<h2>3. Last head-to-head</h2>
+<table><thead><tr><th>Date</th><th>Score</th><th>Result</th></tr></thead>
 <tbody><tr><td>19/10/2026</td><td>Tottenham 3 - 1 Coventry</td><td>H</td></tr></tbody></table>
 
-<h2>4. Yang tidak ada di demonstrasi ini</h2>
+<h2>4. What is not included in this demonstration</h2>
 <ul>
-<li>Tidak ada probabilitas menang. Model belum dikalibrasi, dan menampilkan angka tanpa uji
-kalibrasi akan menyesatkan.</li>
-<li>Tidak ada data cedera, cuaca, atau kondisi lapangan. Sumbernya belum disiapkan.</li>
-<li>Tidak ada klaim akurasi. Laporan seperti ini bisa diukur akurasinya setelah model dibuat
-dan diuji pada pertandingan yang tidak dipakai melatih.</li>
+<li>There is no win probability. The model has not been calibrated, and showing numbers without calibration
+testing would be misleading.</li>
+<li>There is no injury, weather, or pitch condition data. The sources have not been prepared.</li>
+<li>There is no accuracy claim. A report like this can have its accuracy measured after the model is built
+and tested on matches not used for training.</li>
 </ul>
-<p class="meta">Sumber data: football-data.co.uk, berkas E0.csv musim 26/27.
-Dihasilkan 25 Oct 2026.</p>
+<p class="meta">Data source: football-data.co.uk, E0.csv file season 26/27.
+Generated 25 Oct 2026.</p>
 </div></body></html>

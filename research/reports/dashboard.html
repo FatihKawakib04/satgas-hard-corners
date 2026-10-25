@@ -1,6 +1,7 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dashboard ekonomi · satgas.ai.id</title><style>
+<title>Economic dashboard · satgas.ai.id</title><style>
 :root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
 --txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
 *{box-sizing:border-box}
@@ -57,7 +58,7 @@ border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;marg
 border-radius:6px;padding:1px 6px;margin-right:6px}
 .grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
 @media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
-.panel{padding:13px 12px}table{font-size:12.2px}th,td{padding:6px 4px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
 td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
 .card .v{font-size:17px}}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -65,129 +66,148 @@ td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,
 .risk li{margin:8px 0}
 .watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
-</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="ekonomi.html">Ekonomi</a> · <a href="audit-e06.html">Audit E06</a></div></div>
+</style><!-- satgas-skin -->
+<link rel="stylesheet" href="/crypto/assets/site.css?v=6">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=4">
+<script src="/crypto/assets/theme.js?v=6"></script>
+<!-- /satgas-skin -->
+</head><body>
+<!-- satgas-header -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="/"><span class="badge">SG</span><span class="word">SATGAS</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/" aria-current="page">Research</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+<!-- /satgas-header -->
 
-<h1>Dashboard ekonomi</h1>
-<p class="lead">Satu halaman untuk menjawab: berapa uang yang benar-benar masuk, berapa
-biayanya, dan jalur mana yang paling masuk akal. Saldo akun dan profit simulasi tidak
-dihitung sebagai pendapatan.</p>
+<div class="wrap"><div class="top"><div class="brand">Crypto Research · satgas.ai.id</div>
+<div class="meta"><a href="./">Reports</a> · <a href="lab.html">Lab</a> ·
+<a href="ekonomi.html">Economy</a> · <a href="audit-e06.html">Audit E06</a></div></div>
+
+<h1>Economic dashboard</h1>
+<p class="lead">One page to answer: how much money actually came in, how much it costs, and which path makes the most sense. Account balances and simulated profit are not counted as revenue.</p>
 
 <div class="cards">
-<div class='card'><div class='k'>Pendapatan freelance diterima</div><div class='v'>$0.00</div>
-<div class='ket'>sejak 25 Okt 2026, hanya pembayaran tercatat</div></div>
-<div class='card'><div class='k'>Biaya platform</div><div class='v'>$0.00</div>
-<div class='ket'>sejak 25 Okt 2026, 10 persen saat ada pembayaran</div></div>
-<div class='card'><div class='k'>Laba bersih</div><div class='v'>$0.00</div>
-<div class='ket'>pendapatan minus biaya langsung dan platform</div></div>
-<div class='card'><div class='k'>Biaya operasional</div><div class='v'>$1.00/bln</div>
-<div class='ket'>Rp 18,000 VPS, invoice bulan berjalan</div></div>
-<div class='card'><div class='k'>Modal trading live</div><div class='v'>$0.00</div>
-<div class='ket'>batas $10, belum dipakai</div></div>
-<div class='card'><div class='k'>Realized PnL trading</div><div class='v'>$0.00</div>
-<div class='ket'>sejak 25 Okt 2026, belum ada transaksi nyata</div></div>
+<div class='card'><div class='k'>Freelance revenue received</div><div class='v'>$0.00</div>
+<div class='ket'>since 25 Oct 2026, recorded payments only</div></div>
+<div class='card'><div class='k'>Platform fees</div><div class='v'>$0.00</div>
+<div class='ket'>since 25 Oct 2026, 10 percent when there is a payment</div></div>
+<div class='card'><div class='k'>Net profit</div><div class='v'>$0.00</div>
+<div class='ket'>revenue minus direct and platform costs</div></div>
+<div class='card'><div class='k'>Operating costs</div><div class='v'>$1.00/mo</div>
+<div class='ket'>Rp 18.000 VPS, current month invoice</div></div>
+<div class='card'><div class='k'>Live trading capital</div><div class='v'>$0.00</div>
+<div class='ket'>$10 limit, not used yet</div></div>
+<div class='card'><div class='k'>Realized trading PnL</div><div class='v'>$0.00</div>
+<div class='ket'>since 25 Oct 2026, no real transactions yet</div></div>
 <div class='card'><div class='k'>Unrealized PnL</div><div class='v'>n/a</div>
-<div class='ket'>tidak ada posisi live</div></div>
-<div class='card'><div class='k'>Runway biaya</div><div class='v'>belum diketahui</div>
-<div class='ket'>saldo kas operasional belum dicatat</div></div>
+<div class='ket'>no live positions</div></div>
+<div class='card'><div class='k'>Cost runway</div><div class='v'>unknown yet</div>
+<div class='ket'>operating cash balance not recorded yet</div></div>
 </div>
 
-<h2>Definisi metrik</h2>
-<div class="panel"><table><thead><tr><th>Metrik</th><th>Definisi</th><th>Periode</th></tr></thead><tbody>
-<tr><td>Pendapatan diterima</td><td>jumlah pembayaran yang benar-benar masuk dan tercatat</td><td>sejak 25 Okt 2026</td></tr>
-<tr><td>Biaya platform</td><td>10% dari nilai proyek saat dibayar (minimum $5)</td><td>sejak 25 Okt 2026</td></tr>
-<tr><td>Laba bersih</td><td>pendapatan diterima dikurangi biaya platform dan biaya langsung</td><td>sejak 25 Okt 2026</td></tr>
-<tr><td>Biaya operasional</td><td>VPS Rp18.000 per bulan, invoice</td><td>bulan berjalan</td></tr>
-<tr><td>Runway</td><td>kas operasional dibagi biaya operasional bulanan</td><td>titik waktu, bukan periode</td></tr>
+<h2>Metric definitions</h2>
+<div class="panel"><table><thead><tr><th>Metric</th><th>Definition</th><th>Period</th></tr></thead><tbody>
+<tr><td>Revenue received</td><td>amount of payments that actually came in and were recorded</td><td>since 25 Oct 2026</td></tr>
+<tr><td>Platform fees</td><td>10% of project value when paid (minimum $5)</td><td>since 25 Oct 2026</td></tr>
+<tr><td>Net profit</td><td>revenue received minus platform fees and direct costs</td><td>since 25 Oct 2026</td></tr>
+<tr><td>Operating costs</td><td>VPS Rp18.000 per month, invoice</td><td>current month</td></tr>
+<tr><td>Runway</td><td>operating cash divided by monthly operating costs</td><td>point in time, not a period</td></tr>
 </tbody></table></div>
 
-<h2>Perbandingan tiga jalur</h2>
-<div class="panel"><table><thead><tr><th>Jalur</th><th class="n">Biaya awal</th>
-<th class="n">Biaya bulanan</th><th>Waktu ke pendapatan</th><th>Risiko gagal</th>
-<th>Intervensi manusia</th><th>Laba bersih potensial</th></tr></thead>
-<tbody><tr><td><b>Freelance data engineering</b><br><span class='meta'>aktif, target T1</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td>3 sampai 30 hari<br><span class='meta'>estimasi</span></td><td>tidak diketahui<br><span class='meta'>asumsi</span></td><td>2 sampai 4 jam per peluang</td><td>650 bruto, 585 bersih setelah biaya platform<br><span class='meta'>estimasi</span></td></tr><tr><td><b>Trading otomatis (paper sekarang, live dibatasi 10 dolar)</b><br><span class='meta'>paper trading saja, tidak menghasilkan</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td>tidak dapat diprediksi<br><span class='meta'>fakta</span></td><td>tinggi<br><span class='meta'>fakta</span></td><td>pemantauan harian, keputusan saat sinyal</td><td>0,07 per tahun (laju 2026); 0,38 hanya pembanding historis<br><span class='meta'>estimasi</span></td></tr><tr><td><b>Layanan atau produk otomatis</b><br><span class='meta'>belum ada bukti permintaan</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>estimasi</span></td><td>tidak diketahui<br><span class='meta'>fakta</span></td><td>tidak diketahui<br><span class='meta'>fakta</span></td><td>dukungan pelanggan dan pemasaran</td><td>belum dapat dihitung<br><span class='meta'>fakta</span></td></tr></tbody></table>
-<p class="meta">Label kecil di bawah angka menunjukkan tingkat keyakinan: fakta, asumsi, atau
-estimasi. Tidak ada angka probabilitas yang dikarang ketika datanya tidak ada.</p></div>
+<h2>Comparison of three paths</h2>
+<div class="panel"><table><thead><tr><th>Path</th><th class="n">Initial cost</th>
+<th class="n">Monthly cost</th><th>Time to revenue</th><th>Risk of failure</th>
+<th>Human intervention</th><th>Potential net profit</th></tr></thead>
+<tbody><tr><td><b>Freelance data engineering</b><br><span class='meta'>active, target T1</span></td><td class='n'>$0.00<br><span class='meta'>fact</span></td><td class='n'>$0.00<br><span class='meta'>fact</span></td><td>3 to 30 days<br><span class='meta'>estimate</span></td><td>unknown<br><span class='meta'>assumption</span></td><td>2 to 4 hours per opportunity</td><td>650 gross, 585 net after platform fees<br><span class='meta'>estimate</span></td></tr><tr><td><b>Automated trading (paper now, live limited to 10 dollars)</b><br><span class='meta'>paper trading only, generates no income</span></td><td class='n'>$0.00<br><span class='meta'>fact</span></td><td class='n'>$0.00<br><span class='meta'>fact</span></td><td>cannot be predicted<br><span class='meta'>fact</span></td><td>high<br><span class='meta'>fact</span></td><td>daily monitoring, decision at signal</td><td>0.07 per year (2026 rate); 0.38 is historical comparison only<br><span class='meta'>estimate</span></td></tr><tr><td><b>Automated service or product</b><br><span class='meta'>no evidence of demand yet</span></td><td class='n'>$0.00<br><span class='meta'>fact</span></td><td class='n'>$0.00<br><span class='meta'>estimate</span></td><td>unknown<br><span class='meta'>fact</span></td><td>unknown<br><span class='meta'>fact</span></td><td>customer support and marketing</td><td>cannot be calculated yet<br><span class='meta'>fact</span></td></tr></tbody></table>
+<p class="meta">Small labels below numbers show confidence level: fact, assumption, or
+estimate. No probability figures are invented when the data does not exist.</p></div>
 
-<h2>Rekonsiliasi angka yang sempat tidak konsisten</h2>
-<div class="panel"><table><thead><tr><th>Angka</th><th class="n">Perhitungan</th>
-<th>Periode sumber</th></tr></thead><tbody>
-<tr><td>Carry <b>proyeksi ke depan</b> pada modal $10</td><td class="n">10 x 0,7% = <b>$0,07/tahun</b></td>
-<td>0,7% adalah return <b>disetahunkan</b> dari pengamatan 2026 (298 hari, bukan setahun penuh)</td></tr>
-<tr><td>Carry historis 2023-2026 pada modal $10</td><td class="n">10 x 3,8% = $0,38/tahun</td>
-<td>3,8% adalah rata-rata <b>disetahunkan</b> tiga tahun, termasuk 2024 yang jauh lebih gemuk</td></tr>
-<tr><td>Versi sebelumnya</td><td class="n">$0,38 dipakai sebagai proyeksi</td>
-<td>keliru: angka lama dipakai untuk melihat ke depan tanpa menyebut periodenya</td></tr>
+<h2>Reconciliation of figures that were temporarily inconsistent</h2>
+<div class="panel"><table><thead><tr><th>Figure</th><th class="n">Calculation</th>
+<th>Source period</th></tr></thead><tbody>
+<tr><td>Carry <b>forward projection</b> on $10 capital</td><td class="n">10 x 0.7% = <b>$0.07/year</b></td>
+<td>0.7% is the return <b>annualized</b> from the 2026 observation (298 days, not a full year)</td></tr>
+<tr><td>Historical carry 2023-2026 on $10 capital</td><td class="n">10 x 3.8% = $0.38/year</td>
+<td>3.8% is the average <b>annualized</b> over three years, including 2024, which was much larger</td></tr>
+<tr><td>Previous version</td><td class="n">$0.38 was used as a projection</td>
+<td>incorrect: the old figure was used to look forward without stating its period</td></tr>
 </tbody></table>
-<p class="meta">Semua persentase adalah return disetahunkan, bukan return periode pengamatan.
-Proyeksi memakai 0,7% karena itu laju terbaru; $0,38 tetap ditampilkan hanya sebagai pembanding
-historis, bukan angka yang dipakai untuk keputusan.</p></div>
+<p class="meta">All percentages are annualized returns, not returns for the observation period.
+The projection uses 0.7% because that is the most recent rate; $0.38 is still shown only as a historical
+comparison, not as the figure used for decisions.</p></div>
 
-<h2>Struktur kontrak: hourly versus fixed-price per fase</h2>
-<div class="panel"><table><thead><tr><th>Aspek</th><th>Hourly (seperti dipasang klien)</th>
-<th>Fixed-price per fase (yang diajukan)</th></tr></thead><tbody>
-<tr><td>Cara bayar</td><td>invoice mingguan dari jam terlacak</td><td>milestone tetap per fase</td></tr>
-<tr><td>Pelacakan jam</td><td>wajib, klien harus mengaktifkan penagihan otomatis</td><td>tidak perlu pelacakan</td></tr>
-<tr><td>Batas biaya</td><td>tidak ada batas total; jam bisa berjalan terus</td><td>batas keras per fase</td></tr>
-<tr><td>Perlindungan dana</td><td>tidak otomatis; tergantung tagihan mingguan</td><td>milestone didanai lebih dulu, ditahan Escrow.com</td></tr>
-<tr><td>Risiko untuk kita</td><td>klien berhenti kapan saja setelah beberapa jam</td><td>pekerjaan penuh satu fase sudah didanai</td></tr>
+<h2>Contract structure: hourly versus fixed-price per phase</h2>
+<div class="panel"><table><thead><tr><th>Aspect</th><th>Hourly (as set up by the client)</th>
+<th>Fixed-price per phase (what was proposed)</th></tr></thead><tbody>
+<tr><td>Payment method</td><td>weekly invoice from tracked hours</td><td>fixed milestone per phase</td></tr>
+<tr><td>Hour tracking</td><td>required, client must enable automatic billing</td><td>no tracking needed</td></tr>
+<tr><td>Cost limit</td><td>no total limit; hours can keep running</td><td>hard limit per phase</td></tr>
+<tr><td>Fund protection</td><td>not automatic; depends on weekly billing</td><td>milestone funded upfront, held by Escrow.com</td></tr>
+<tr><td>Risk to us</td><td>client can stop at any time after a few hours</td><td>full work for one phase is already funded</td></tr>
 </tbody></table>
-<p class="meta">Karena itu yang diajukan fixed-price per fase, bukan hourly terbuka. Kedua bentuk
-dikenai biaya platform 10%. Fase 2 hanya dimulai setelah fase 1 ditinjau dan disetujui tertulis.
-Belum ada milestone yang didanai, dan tidak ada klaim bahwa dana sudah diamankan.</p></div>
+<p class="meta">That is why what was proposed is fixed-price per phase, not open hourly. Both forms
+incur a 10% platform fee. Phase 2 starts only after phase 1 is reviewed and approved in writing.
+No milestone has been funded yet, and there is no claim that funds have been secured.</p></div>
 
-<h2>Bukti per jalur</h2>
-<div class='panel'><h3>Freelance data engineering</h3><ul><li>196 proyek dipindai, 7 klien terverifikasi pembayaran, 2 cocok skill</li><li>target T1 hourly, 0 bid, tarif terpasang 42 sampai 105 dolar per jam</li><li>belum ada proposal terkirim, jadi belum ada data konversi</li></ul></div><div class='panel'><h3>Trading otomatis (paper sekarang, live dibatasi 10 dolar)</h3><ul><li>audit E06: Sharpe 0,20 pada universe point-in-time, CAGR negatif</li><li>audit carry: 3,8 persen per tahun lalu turun ke 0,7 persen pada 2026</li><li>modal live dibatasi 10 dolar, jadi hasil maksimum secara matematis kecil</li></ul></div><div class='panel'><h3>Layanan atau produk otomatis</h3><ul><li>pipeline riset yang sudah jalan bisa dijadikan jasa pemasangan</li><li>belum ada satu pun percakapan dengan calon pembeli</li><li>aturan: tidak menulis fitur baru sebelum ada satu orang yang membayar atau berkomitmen</li></ul></div>
+<h2>Evidence per path</h2>
+<div class='panel'><h3>Freelance data engineering</h3><ul><li>196 projects scanned, 7 clients with verified payment, 2 matching skills</li><li>T1 hourly target, 0 bids, listed rate 42 to 105 dollars per hour</li><li>no proposal sent yet, so no conversion data yet</li></ul></div><div class='panel'><h3>Automated trading (paper now, live limited to 10 dollars)</h3><ul><li>E06 audit: Sharpe 0.20 on a point-in-time universe, negative CAGR</li><li>carry audit: 3.8 percent per year then down to 0.7 percent in 2026</li><li>live capital limited to 10 dollars, so the mathematical maximum result is small</li></ul></div><div class='panel'><h3>Automated service or product</h3><ul><li>an existing research pipeline can be turned into an installation service</li><li>not a single conversation with a prospective buyer yet</li><li>rule: do not write new features before one person pays or commits</li></ul></div>
 
-<h2>Trading: batas dan penghentian otomatis</h2>
+<h2>Trading: limits and automatic stop</h2>
 <div class="panel">
-<p>Status sekarang: <b>paper trading saja</b>. Tidak ada dana live, tidak ada leverage, tidak
-ada pinjaman, tidak ada penarikan API.</p>
-<p>Syarat sebelum modal live boleh dipakai:</p><ol><li>strategi lolos validasi: DSR minimal 0,95 dan kedua uji null signifikan</li><li>paper trading minimal 60 hari dengan drawdown dalam batas</li><li>batas rugi harian 2 persen dari modal, batas rugi total 10 persen</li><li>penghentian otomatis kalau batas terlampaui atau data harga gagal</li></ol>
-<p class="meta">Batas rugi: 2 persen modal per hari, 10 persen total. Kalau batas terlampaui
-atau data harga gagal, sistem berhenti dan tidak membuka posisi baru. Tidak ada target
-transaksi untuk menutup biaya VPS; kalau tidak ada sinyal valid, tidak ada transaksi.</p>
+<p>Current status: <b>paper trading only</b>. No live funds, no leverage, no
+loans, no API withdrawals.</p>
+<p>Conditions before live capital may be used:</p><ol><li>strategy passes validation: DSR minimum 0.95 and both null tests significant</li><li>paper trading for at least 60 days with drawdown within limits</li><li>daily loss limit 2 percent of capital, total loss limit 10 percent</li><li>automatic shutdown if limits are exceeded or price data fails</li></ol>
+<p class="meta">Loss limit: 2 percent of capital per day, 10 percent total. If the limit is exceeded
+or price data fails, the system stops and does not open new positions. There is no transaction
+target to cover VPS costs; if there is no valid signal, there is no transaction.</p>
 </div>
 
-<h2>Paper trading (simulasi, bukan pendapatan)</h2>
-<div class="panel"><table><thead><tr><th>Metrik</th><th class="n">Nilai</th>
-<th>Arti</th></tr></thead><tbody>
-<tr><td>Strategi aktif</td><td class="n">2</td><td>kandidat yang masih diuji maju</td></tr>
-<tr><td>Ekuitas simulasi</td><td class="n">$20,000</td>
-<td>modal fiktif 10.000 per strategi, tidak pernah menjadi uang</td></tr>
-<tr><td>Pendapatan dari trading</td><td class="n">$0.00</td>
-<td>belum ada strategi yang lolos validasi</td></tr>
+<h2>Paper trading (simulation, not revenue)</h2>
+<div class="panel"><table><thead><tr><th>Metric</th><th class="n">Value</th>
+<th>Meaning</th></tr></thead><tbody>
+<tr><td>Active strategy</td><td class="n">2</td><td>candidate still being forward-tested</td></tr>
+<tr><td>Simulated equity</td><td class="n">$20.000</td>
+<td>fictitious capital of 10,000 per strategy, never becomes money</td></tr>
+<tr><td>Revenue from trading</td><td class="n">$0.00</td>
+<td>no strategy has passed validation yet</td></tr>
 </tbody></table>
-<p class="meta">Angka ekuitas di atas sengaja tidak dimasukkan ke kartu pendapatan. Simulasi
-yang naik bukan uang masuk.</p></div>
+<p class="meta">The equity figures above are deliberately not included in the revenue card. A simulation
+that rises is not incoming money.</p></div>
 
-<h2>Yang belum bisa diperkirakan</h2>
+<h2>What cannot yet be estimated</h2>
 <div class="panel">
-<p>Estimasi 21 jam pada target T1 belum bisa dianggap akurat sebelum empat hal ini
-dikonfirmasi klien:</p>
+<p>The 21-hour estimate for target T1 cannot be considered accurate until these four things
+are confirmed by the client:</p>
 <ul>
-<li>Olahraga dan kompetisi mana yang dipakai. Cricket, sepak bola, dan tenis punya
-ketersediaan data yang berbeda jauh.</li>
-<li>Sumber data yang dipakai dan siapa yang menanggung biayanya.</li>
-<li>Format keluaran: PDF, Google Sheets, atau dashboard. Ketiganya beda jam kerja.</li>
-<li>Seberapa dalam analisis situasional yang diminta: toss dan cuaca saja, atau termasuk
-tracking cedera pemain.</li>
+<li>Which sports and competitions are used. Cricket, football, and tennis have
+very different data availability.</li>
+<li>The data source used and who bears the cost.</li>
+<li>Output format: PDF, Google Sheets, or dashboard. All three have different work-hour requirements.</li>
+<li>How deep the situational analysis requested is: toss and weather only, or including
+player injury tracking.</li>
 </ul>
-<p>Karena itu rentang yang jujur adalah <b>18 sampai 30 jam</b>, bukan satu angka. Yang bisa
-dipastikan baru tugas yang tidak bergantung jawaban di atas: lapisan data dan templat dasar.</p>
+<p>Therefore, the honest range is <b>18 to 30 hours</b>, not a single number. The only things that can
+be confirmed so far are tasks that do not depend on the answers above: the data layer and the basic template.</p>
 </div>
 
-<h2>Keputusan yang menunggu Fatih</h2>
+<h2>Decisions awaiting Fatih</h2>
 <ol>
-<li>Setujui atau koreksi tarif $25/jam dan dua milestone $300 + $350 untuk T1.</li>
-<li>Nama tanda tangan di proposal.</li>
-<li>Izin mengirim proposal, atau kirim sendiri.</li>
-<li>Kalau trading nanti lolos validasi: setujui modal live 10 dolar.</li>
+<li>Approve or correct the $25/hour rate and two milestones of $300 + $350 for T1.</li>
+<li>Name for the signature on the proposal.</li>
+<li>Permission to send the proposal, or send it yourself.</li>
+<li>If trading later passes validation: approve live capital of 10 dollars.</li>
 </ol>
 
-<div class="note"><p>Diperbarui 25 Oct 2026 13:32 WIB.
-Sumber: karir.json (pembayaran), freelance.json (biaya invoice), paths.json (perbandingan
-jalur), paper_state.json (simulasi).</p></div>
+<div class="note"><p>Updated 25 Oct 2026 13:32 UTC+7.
+Source: karir.json (payments), freelance.json (invoice costs), paths.json (path
+comparison), paper_state.json (simulation).</p></div>
 </div></body></html>
