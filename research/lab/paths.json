@@ -1,0 +1,73 @@
+{
+ "dibuat": "2026-10-25",
+ "kurs_usdidr": 18087,
+ "kurs_usdinr": 95.0,
+ "catatan": "Setiap angka diberi label: fakta (terukur/terverifikasi), asumsi (masuk akal tapi belum dibuktikan), estimasi (dihitung dari asumsi).",
+ "jalur": [
+  {
+   "id": "freelance",
+   "nama": "Freelance data engineering",
+   "status": "aktif, target T1",
+   "biaya_awal": {"usd": 0, "label": "fakta", "dasar": "platform tidak memungut biaya mendaftar; kredit bid tidak dipakai"},
+   "biaya_bulanan": {"usd": 0, "label": "fakta", "dasar": "tidak ada langganan"},
+   "waktu_pertama": {"nilai": "3 sampai 30 hari", "label": "estimasi", "dasar": "waktu balasan klien tidak diketahui; 0 bid pada target berarti belum ada pesaing"},
+   "probabilitas_gagal": {"nilai": "tidak diketahui", "label": "asumsi", "dasar": "tidak ada data historis proposal kita. Yang bisa dikatakan hanya: akun tanpa ulasan dan klien tanpa ulasan menaikkan risiko"},
+   "intervensi": {"nilai": "2 sampai 4 jam per peluang", "label": "estimasi", "dasar": "menyusun proposal, panggilan klarifikasi, serah terima"},
+   "laba_bersih": {"nilai": "sekitar 525 per proyek pertama", "label": "estimasi", "dasar": "21 jam x 25 dolar, sebelum pajak dan waktu pencarian klien"},
+   "pendapatan_diterima": 0,
+   "bukti": [
+    "196 proyek dipindai, 7 klien terverifikasi pembayaran, 2 cocok skill",
+    "target T1 hourly, 0 bid, tarif terpasang 42 sampai 105 dolar per jam",
+    "belum ada proposal terkirim, jadi belum ada data konversi"
+   ]
+  },
+  {
+   "id": "trading",
+   "nama": "Trading otomatis (paper sekarang, live dibatasi 10 dolar)",
+   "status": "paper trading saja, tidak menghasilkan",
+   "biaya_awal": {"usd": 0, "label": "fakta", "dasar": "tidak ada dana live; modal live maksimal 10 dolar sesuai batas"},
+   "biaya_bulanan": {"usd": 0, "label": "fakta", "dasar": "biaya bursa hanya muncul saat transaksi; belum ada transaksi"},
+   "waktu_pertama": {"nilai": "tidak dapat diprediksi", "label": "fakta", "dasar": "belum ada strategi yang lolos validasi; dua kandidat sudah gugur"},
+   "probabilitas_gagal": {"nilai": "tinggi", "label": "fakta", "dasar": "E06 gugur setelah koreksi universe dan stabilitas; carry 3,8 persen per tahun dan menyusut ke 0,7 persen pada 2026"},
+   "intervensi": {"nilai": "pemantauan harian, keputusan saat sinyal", "label": "estimasi"},
+   "laba_bersih": {"nilai": "0,38 dolar per tahun pada modal 10 dolar bila carry 3,8 persen bertahan", "label": "estimasi", "dasar": "10 x 3,8 persen; angka ini menunjukkan batas modal, bukan kualitas strategi"},
+   "pendapatan_diterima": 0,
+   "bukti": [
+    "audit E06: Sharpe 0,20 pada universe point-in-time, CAGR negatif",
+    "audit carry: 3,8 persen per tahun lalu turun ke 0,7 persen pada 2026",
+    "modal live dibatasi 10 dolar, jadi hasil maksimum secara matematis kecil"
+   ]
+  },
+  {
+   "id": "layanan",
+   "nama": "Layanan atau produk otomatis",
+   "status": "belum ada bukti permintaan",
+   "biaya_awal": {"usd": 0, "label": "fakta", "dasar": "belum ada pengeluaran"},
+   "biaya_bulanan": {"usd": 0, "label": "estimasi", "dasar": "naik hanya kalau perlu server atau API berbayar"},
+   "waktu_pertama": {"nilai": "tidak diketahui", "label": "fakta", "dasar": "belum ada calon pembeli yang diwawancarai"},
+   "probabilitas_gagal": {"nilai": "tidak diketahui", "label": "fakta", "dasar": "tanpa bukti permintaan, angka apa pun akan karangan"},
+   "intervensi": {"nilai": "dukungan pelanggan dan pemasaran", "label": "asumsi"},
+   "laba_bersih": {"nilai": "belum dapat dihitung", "label": "fakta"},
+   "pendapatan_diterima": 0,
+   "bukti": [
+    "pipeline riset yang sudah jalan bisa dijadikan jasa pemasangan",
+    "belum ada satu pun percakapan dengan calon pembeli",
+    "aturan: tidak menulis fitur baru sebelum ada satu orang yang membayar atau berkomitmen"
+   ]
+  }
+ ],
+ "trading_policy": {
+  "modal_live_maks_usd": 10,
+  "leverage": "tidak ada",
+  "pinjaman": "tidak ada",
+  "penarikan_api": "tidak ada",
+  "top_up_tanpa_izin": "dilarang",
+  "syarat_live": [
+   "strategi lolos validasi: DSR minimal 0,95 dan kedua uji null signifikan",
+   "paper trading minimal 60 hari dengan drawdown dalam batas",
+   "batas rugi harian 2 persen dari modal, batas rugi total 10 persen",
+   "penghentian otomatis kalau batas terlampaui atau data harga gagal"
+  ],
+  "status": "belum ada strategi yang memenuhi syarat"
+ }
+}

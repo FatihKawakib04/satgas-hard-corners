@@ -70,10 +70,13 @@ yang tertulis $4.000-10.000 ternyata rupiah per jam, bukan total proyek.
 > **Engagement shape.** This is an hourly project, so I propose a capped first phase rather
 > than an open-ended commitment:
 >
-> - **Phase 1: 12 hours at $25/hour ($300), 3 working days.** Data layer, feature layer, and
->   one sample report for one fixture, so you can judge the format before spending more.
-> - **Phase 2: 9 hours at $25/hour ($225).** Model calibration, remaining report sections, and
->   the generator.
+> - **Phase 1: capped at 12 hours, $25/hour ($300), 3 working days.** Data layer, feature
+>   layer, and one sample report for one fixture, so you can judge the format before spending
+>   more. The 12 hours is a cap, not an estimate: if it finishes sooner you pay for the hours
+>   actually worked.
+> - **Phase 2: capped at 14 hours at the same rate ($350 maximum).** Model calibration, the
+>   remaining report sections, and the generator. I will quote the exact figure after Phase 1,
+>   because it depends on the answers below.
 > - **Ongoing: $30/hour** for weekly reports, capped at 8 hours per week unless you approve
 >   more in advance.
 >
@@ -101,27 +104,41 @@ yang tertulis $4.000-10.000 ternyata rupiah per jam, bukan total proyek.
 
 ## 4. Perhitungan harga
 
-| Tahap | Jam |
-|---|---|
-| Akuisisi dan pembersihan data, satu olahraga | 5 |
-| Fitur: form, H2H, venue, istirahat, situasional | 4 |
-| Model baseline dan uji kalibrasi | 6 |
-| Templat laporan PDF dan Sheets | 4 |
-| Uji, dokumentasi metode, serah terima | 2 |
-| **Total** | **21** |
+| Tahap | Jam | Bisa diperkirakan sekarang? |
+|---|---|---|
+| Fitur: form, H2H, venue, istirahat | 4 | ya, tidak bergantung olahraga |
+| Templat laporan PDF dan Sheets | 4 | ya, bentuknya sama untuk semua cabang |
+| Akuisisi dan pembersihan data | 2 sampai 8 | **tidak**, tergantung olahraga dan sumber |
+| Model baseline dan kalibrasi | 4 sampai 10 | **tidak**, tergantung panjang riwayat dan jumlah kompetisi |
+| Analisis situasional dalam | 2 sampai 6 | **tidak**, tergantung seberapa dalam yang diminta |
+| Uji, dokumentasi, serah terima | 2 | ya |
+| **Total** | **18 sampai 30** | rentang, bukan satu angka |
 
-- 21 jam x $22 (tarif implementasi) = **$462**.
-- Cadangan risiko 15% untuk data yang tidak rapi = sekitar **$530**.
-- Ditawarkan dua milestone: **12 jam x $25 = $300** dan **9 jam x $25 = $225**, total **$525**.
+Yang belum bisa diperkirakan sebelum klien menjawab:
 
-Kenapa $25 dan bukan $22: proyek ini hourly dan tarif terpasang klien mulai $42 per jam.
-$22 menaruh kita jauh di bawah pasar untuk pekerjaan yang belum terbukti kegagalannya, tapi
-$25 masih separuh tarif klien sehingga risikonya kecil baginya. Selisih $3 adalah premi
-ketidakpastian data olahraga yang belum pernah kita sentuh.
+1. **Olahraga dan kompetisi.** Cricket punya data ball-by-ball gratis; tenis bergantung arsip
+   komunitas; sepak bola liga besar mudah, liga kecil tidak. Selisihnya bisa 6 jam.
+2. **Sumber data dan siapa yang membayar.** Sumber berbayar menambah biaya dan waktu akuisisi.
+3. **Format keluaran.** PDF saja paling cepat; Sheets menambah pekerjaan; dashboard menambah
+   jauh lebih banyak.
+4. **Kedalaman analisis situasional.** Toss dan cuaca berbeda dengan tracking cedera pemain.
 
-Kenapa bukan $600 seperti draf v1: $600 setara 24 jam pada $25, sementara estimasi nyata 21
-jam. Angka itu dibulatkan ke atas tanpa dasar. Yang benar 21 jam, dipecah dua milestone supaya
-klien bisa berhenti setelah melihat satu laporan contoh.
+Konsekuensi pada harga:
+
+- Titik tengah 21 jam x $22 = $462. Pada rentang 18 sampai 30 jam, biayanya **$396 sampai $660**.
+- Yang ditawarkan bukan satu angka final, melainkan **batas**: fase 1 maksimal 12 jam
+  ($300), fase 2 maksimal 14 jam ($350). Total maksimum $650, dan klien hanya membayar jam
+  yang benar-benar dipakai.
+- Kalau jawaban klien menunjukkan data harus dibeli, biaya data ditagih terpisah dan disetujui
+  dulu.
+
+Kenapa $25 dan bukan $22: tarif terpasang klien mulai $42 per jam. $22 menaruh kita jauh di
+bawah pasar, $25 masih separuh tarifnya sehingga risikonya kecil baginya. Selisih $3 adalah
+premi untuk data olahraga yang belum pernah kita sentuh.
+
+Kenapa bukan $600 seperti draf v1: $600 adalah 24 jam pada $25 tanpa dasar. Angka itu
+dibulatkan ke atas dari estimasi yang belum tentu benar. Yang benar: batas per fase, bukan
+estimasi yang dipaksakan.
 
 Kenapa bukan ₹4.000 sampai ₹10.000: itu tarif yang dipasang klien, bukan harga wajar untuk
 akun tanpa ulasan di domain baru. Meminta $105 per jam pada pekerjaan pertama akan membuat

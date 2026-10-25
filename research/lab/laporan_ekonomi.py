@@ -144,10 +144,12 @@ historis, bukan analisis manual sekali jadi.</p>
 <p><b>Yang diminta:</b> laporan kuantitatif pra-pertandingan, model head-to-head, pengaruh
 kondisi lapangan dan cuaca, dan estimasi probabilitas menang untuk cricket, sepak bola, dan
 tenis.</p>
-<p><b>Rencana penawaran:</b> fase 1 selama 12 jam pada $25/jam ($300) untuk lapisan data,
-fitur, dan satu laporan contoh; fase 2 selama 9 jam ($225) untuk kalibrasi model dan generator.
-Total 21 jam, $525. Karena proyeknya hourly, fase 1 harus didanai sebagai milestone lebih dulu.
-Kalau cocok, lanjut $30/jam dengan batas 8 jam per minggu.</p>
+<p><b>Rencana penawaran:</b> fase 1 dibatasi 12 jam pada $25/jam ($300) untuk lapisan data,
+fitur, dan satu laporan contoh; fase 2 dibatasi 14 jam ($350) untuk kalibrasi model dan
+generator. Estimasi 21 jam tidak dipakai sebagai angka final karena olahraga, sumber data, dan
+format keluaran belum dikonfirmasi; rentang jujurnya 18 sampai 30 jam. Karena proyeknya hourly,
+fase 1 harus didanai sebagai milestone lebih dulu. Rincian lengkap di
+<a href="dashboard.html">dashboard ekonomi</a>.</p>
 <p><b>Langkah berikutnya:</b></p><ol>{langkah}</ol>
 <p class="meta">Semua langkah di atas masih menunggu persetujuan Fatih pada harga dan isi
 proposal. Belum ada yang dikirim.</p>

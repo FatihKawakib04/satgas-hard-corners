@@ -146,7 +146,8 @@ def render() -> str:
                     'menurunkannya menjadi gugur. Carry funding juga sudah diaudit: '
                     '<a href="audit-carry.html">E20, kenapa Sharpe 2,30 tidak bertahan</a>. '
                     'Perbandingan peluang pendapatan dan biaya operasional: '
-                    '<a href="ekonomi.html">halaman ekonomi</a>.</p></div>')
+                    '<a href="ekonomi.html">halaman ekonomi</a>. Angka biaya, pendapatan, '
+                    'modal, dan runway: <a href="dashboard.html">dashboard ekonomi</a>.</p></div>')
 
     paper_html = ""
     if paper_last:
