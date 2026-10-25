@@ -72,7 +72,7 @@ def skew_kurt(xs: list[float]) -> tuple[float, float]:
     return s, k
 
 
-def deflated_sharpe(rets: list[float], n_trials: int, sr_var_trials: float) -> dict:
+def deflated_sharpe(rets: list[float], n_trials: float, sr_var_trials: float) -> dict:
     """Deflated Sharpe Ratio (Bailey & Lopez de Prado).
 
     Menjawab: setelah mencoba `n_trials` parameter, seberapa yakin Sharpe yang
@@ -471,8 +471,17 @@ def jalankan(exp_id: str = "E06") -> dict:
             con.execute("ALTER TABLE lab_exp ADD COLUMN validasi_ts TEXT")
         except Exception:
             pass
-        con.execute("UPDATE lab_exp SET status_validasi=?, validasi_ts=?, dsr=? WHERE id=?",
-                    (status_v, datetime.now(WIB).strftime("%Y-%m-%d %H:%M"), dsr_v, exp_id))
+        # status "gugur" hanya boleh datang dari audit lanjutan (survivorship +
+        # stabilitas antar periode), bukan dari validasi rutin yang cakupannya
+        # lebih sempit. Jangan turunkan atau naikkan tanpa audit ulang.
+        lama = con.execute("SELECT status_validasi FROM lab_exp WHERE id=?",
+                           (exp_id,)).fetchone()
+        if lama and lama["status_validasi"] == "gugur":
+            con.execute("UPDATE lab_exp SET validasi_ts=?, dsr=? WHERE id=?",
+                        (datetime.now(WIB).strftime("%Y-%m-%d %H:%M"), dsr_v, exp_id))
+        else:
+            con.execute("UPDATE lab_exp SET status_validasi=?, validasi_ts=?, dsr=? WHERE id=?",
+                        (status_v, datetime.now(WIB).strftime("%Y-%m-%d %H:%M"), dsr_v, exp_id))
 
     os.makedirs(REPORTS, exist_ok=True)
     # satu halaman per eksperimen, supaya validasi E12 tidak menimpa E06
@@ -512,6 +521,8 @@ pernah dipakai memilih, frekuensi data berbeda, ketergantungan universe, uji nul
 karena banyaknya kombinasi yang sudah dicoba.</p>
 <div class="panel"><table><thead><tr><th>ID</th><th>Strategi</th><th>Status bukti</th>
 <th class="n">DSR</th><th>Diperiksa</th></tr></thead><tbody>{''.join(trs)}</tbody></table>
+<p class="meta">Audit mendalam E06 (survivorship, sensitivitas DSR, jendela bergulir):
+<a href="audit-e06.html">buka halaman audit</a>.</p>
 <p class="meta">Status: kuat bila DSR di atas 0,95 dan kedua uji null signifikan; sedang bila
 DSR 0,90 sampai 0,95; lemah bila di bawah itu; bocor bila uji look-ahead gagal. DSR adalah
 probabilitas keunggulan nyata setelah dikoreksi karena kita sudah menguji banyak kombinasi.</p>

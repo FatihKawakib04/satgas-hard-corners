@@ -40,7 +40,7 @@ def pct(v, dec=1):
 
 
 def badge(verdict: str) -> str:
-    cls = {"lolos": "up", "gagal": "warn", "lemah": "flat"}.get(verdict, "flat")
+    cls = {"lolos": "up", "gagal": "warn", "gugur": "warn", "lemah": "flat"}.get(verdict, "flat")
     return f'<span class="badge {cls}">{verdict}</span>'
 
 
@@ -74,7 +74,7 @@ def render() -> str:
             nulls = []
 
     n_lolos = sum(1 for e in exps if e["keputusan"] == "lolos")
-    n_paper = n_lolos  # paper trading hanya untuk yang berstatus lolos
+    n_paper = sum(1 for e in exps if e["keputusan"] in ("lolos", "gugur"))
     n_uji = sum(1 for e in exps if e["status"] == "selesai")
 
     # kurva paper per strategi
@@ -141,7 +141,9 @@ def render() -> str:
                     '<p class="meta">DSR mengoreksi Sharpe karena kita sudah mencoba banyak '
                     'kombinasi. Di bawah 0,90 berarti keunggulan belum bisa dibedakan dari '
                     'keberuntungan pemilihan parameter. <a href="validasi.html">Lihat rincian '
-                    'sembilan uji</a>.</p></div>')
+                    'sembilan uji</a>. E06 sudah diaudit lebih dalam: '
+                    '<a href="audit-e06.html">survivorship, DSR, dan stabilitas antar periode</a> '
+                    'menurunkannya menjadi gugur.</p></div>')
 
     paper_html = ""
     if paper_last:

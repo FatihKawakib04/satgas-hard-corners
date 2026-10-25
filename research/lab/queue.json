@@ -274,5 +274,14 @@
   "ringkas": "Return OOS -54.1%, Sharpe -0.13, DD -63.3%, BTC +93.3% (DD -62.0%). return OOS -54.1% tidak positif; Sharpe OOS -0.13 di bawah 0.5; drawdown -63.3% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+93.3%).",
   "keputusan": "gagal",
   "selesai": "2026-10-25 06:48"
+ },
+ {
+  "id": "E20",
+  "strategi": "audit_carry_funding",
+  "catatan": "Audit E17 carry funding, bukan strategi baru: cek kebocoran data funding, biaya nyata, likuiditas, dan apakah Sharpe 2,30 bertahan di luar sampel serta antar bursa.",
+  "status": "antrian",
+  "dibuat": "2026-10-25",
+  "keputusan": null,
+  "ringkas": ""
  }
 ]

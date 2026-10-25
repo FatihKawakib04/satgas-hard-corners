@@ -56,7 +56,7 @@ def aktif() -> list[dict]:
         rows = [dict(r) for r in con.execute(
             "SELECT e.id, e.strategi, e.konfigurasi, "
             "  COALESCE((SELECT MAX(r.oos_sharpe) FROM lab_runs r WHERE r.exp_id=e.id), 0) sh "
-            "FROM lab_exp e WHERE e.keputusan='lolos' ORDER BY sh DESC")]
+            "FROM lab_exp e WHERE e.keputusan IN ('lolos','gugur') ORDER BY sh DESC")]
     batas = CONFIG["paper"].get("maks_strategi", 2)
     return rows[:batas]
 
