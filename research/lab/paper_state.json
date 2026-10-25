@@ -14,12 +14,13 @@
      "pos": {}
     }
    ],
-   "dihentikan": false,
+   "dihentikan": true,
    "bench0": {
     "BTC": 80187.76,
     "ETH": 2316.0,
     "SOL": 100.29
-   }
+   },
+   "alasan_berhenti": "strategi ditutup; riwayat disimpan sebagai arsip"
   },
   "E03:donchian": {
    "mulai": "2026-10-25",
@@ -36,7 +37,8 @@
      "pos": {}
     }
    ],
-   "dihentikan": false
+   "dihentikan": true,
+   "alasan_berhenti": "strategi ditutup; riwayat disimpan sebagai arsip"
   },
   "E10:ma_cross": {
    "mulai": "2026-10-25",
@@ -53,7 +55,10 @@
      "pos": {}
     }
    ],
-   "dihentikan": false
+   "dihentikan": false,
+   "bench0": {
+    "BTC": 80862.0
+   }
   },
   "E17:carry_funding": {
    "mulai": "2026-10-25",
@@ -63,7 +68,27 @@
     "ambang": 5e-05
    },
    "riwayat": [],
-   "dihentikan": false
+   "dihentikan": true,
+   "alasan_berhenti": "strategi ditutup; riwayat disimpan sebagai arsip"
+  },
+  "E18:ma_filter_breakout": {
+   "mulai": "2026-10-25",
+   "ekuitas": 10000.0,
+   "posisi": {},
+   "params": {
+    "entry": 20
+   },
+   "riwayat": [
+    {
+     "t": "2026-10-25",
+     "eq": 10000.0,
+     "pos": {}
+    }
+   ],
+   "dihentikan": false,
+   "bench0": {
+    "BTC": 80862.0
+   }
   }
  }
 }

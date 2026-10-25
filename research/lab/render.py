@@ -144,7 +144,9 @@ def render() -> str:
                     'sembilan uji</a>. E06 sudah diaudit lebih dalam: '
                     '<a href="audit-e06.html">survivorship, DSR, dan stabilitas antar periode</a> '
                     'menurunkannya menjadi gugur. Carry funding juga sudah diaudit: '
-                    '<a href="audit-carry.html">E20, kenapa Sharpe 2,30 tidak bertahan</a>.</p></div>')
+                    '<a href="audit-carry.html">E20, kenapa Sharpe 2,30 tidak bertahan</a>. '
+                    'Perbandingan peluang pendapatan dan biaya operasional: '
+                    '<a href="ekonomi.html">halaman ekonomi</a>.</p></div>')
 
     paper_html = ""
     if paper_last:

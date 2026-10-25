@@ -56,7 +56,7 @@ def aktif() -> list[dict]:
         rows = [dict(r) for r in con.execute(
             "SELECT e.id, e.strategi, e.konfigurasi, "
             "  COALESCE((SELECT MAX(r.oos_sharpe) FROM lab_runs r WHERE r.exp_id=e.id), 0) sh "
-            "FROM lab_exp e WHERE e.keputusan IN ('lolos','gugur') ORDER BY sh DESC")]
+            "FROM lab_exp e WHERE e.keputusan IN ('lolos','kandidat') ORDER BY sh DESC")]
     batas = CONFIG["paper"].get("maks_strategi", 2)
     return rows[:batas]
 
@@ -68,11 +68,24 @@ def target_hari_ini(strat: str, params: dict, dates, prices) -> dict:
     return tg[-1] if tg else {}
 
 
+def bersihkan_state(s: dict, aktif_keys: set[str]) -> None:
+    """Tandai strategi yang tidak lagi aktif supaya berhenti diperbarui.
+
+    Riwayatnya tidak dihapus: itu catatan forward test yang sudah berjalan.
+    """
+    for key, v in s.get("strategi", {}).items():
+        if key not in aktif_keys and not v.get("dihentikan"):
+            v["dihentikan"] = True
+            v["alasan_berhenti"] = "strategi ditutup; riwayat disimpan sebagai arsip"
+
+
 def step() -> list[dict]:
     """Satu langkah harian untuk tiap strategi yang berstatus lolos."""
     st = load_state()
     hasil = []
-    for row in aktif():
+    daftar = aktif()
+    bersihkan_state(st, {f"{r['id']}:{r['strategi']}" for r in daftar})
+    for row in daftar:
         exp_id, strat = row["id"], row["strategi"]
         key = f"{exp_id}:{strat}"
         s = st["strategi"].setdefault(key, {

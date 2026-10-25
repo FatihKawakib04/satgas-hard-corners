@@ -1,0 +1,95 @@
+{
+ "dibuat": "2026-10-25T09:52:19.241042+07:00",
+ "pendapatan_usd": 0.0,
+ "pendapatan_catatan": "Belum ada satu pun pembayaran diterima. Hadiah bounty yang belum dibayar tidak dihitung.",
+ "biaya": {
+  "vps_per_bulan_usd": 4.17,
+  "vps_catatan": "perkiraan dari anggaran tahunan di bawah $50; angka invoice belum dicatat",
+  "api_per_bulan_usd": 0.0,
+  "api_catatan": "model utama prabayar, kenari free tier, tidak ada pengeluaran baru"
+ },
+ "bukti": [
+  {
+   "sumber": "Superteam Earn (API publik)",
+   "temuan": "11 listing terbuka, total hadiah $61.500. Kompetisi: bounty thread $500 menerima 301 submisi, bounty konten $500 menerima 132 submisi, bounty $1.000 menerima 8 submisi.",
+   "implikasi": "Nilai harapan per submisi pada bounty $500 dengan 301 peserta sekitar $1,7. Bukan sumber pendapatan, hanya latihan dan portofolio."
+  },
+  {
+   "sumber": "Algora (halaman bounty selesai)",
+   "temuan": "Hadiah per issue $35 sampai $200, dibayar setelah pull request diterima.",
+   "implikasi": "Butuh pemahaman mendalam satu repo. Cocok untuk yang sudah aktif di proyek itu, tidak efisien sebagai sumber penghasilan utama."
+  },
+  {
+   "sumber": "Upwork, halaman data engineer Indonesia",
+   "temuan": "Profil dengan 7 tahun pengalaman dan 70 job memasang tarif $5/jam. Profil software engineer Python/DevOps dengan 25 job dan $80 ribu pendapatan memasang $25/jam.",
+   "implikasi": "Rentang nyata $5 sampai $25 per jam. Tarif atas dicapai lewat portofolio dan ulasan, bukan lewat klaim kemampuan."
+  },
+  {
+   "sumber": "projects.co.id",
+   "temuan": "Marketplace lokal aktif dengan proyek kecil seperti pembuatan akun cloud dan integrasi sistem, anggaran per proyek.",
+   "implikasi": "Kompetisi lokal lebih rendah dan tidak butuh bahasa Inggris, tapi nilai per proyek lebih kecil."
+  }
+ ],
+ "peluang": [
+  {
+   "nama": "Freelance data engineering (Upwork)",
+   "permintaan": 5,
+   "net": 4,
+   "cepat": 3,
+   "modal": 5,
+   "risiko": 4,
+   "cocok": 5,
+   "catatan": "Bukti tarif $5-25/jam. 20 jam/minggu pada $10-15/jam setara $800-1.200/bulan bruto, sebelum biaya waktu pencarian klien. Butuh profil, portofolio, dan proposal yang konsisten."
+  },
+  {
+   "nama": "Layanan terproduk: pipeline riset + dashboard",
+   "permintaan": 3,
+   "net": 5,
+   "cepat": 2,
+   "modal": 4,
+   "risiko": 4,
+   "cocok": 5,
+   "catatan": "Produk yang sudah jadi: pengumpul data, penyimpanan, halaman riset, alert. Bisa dijual sebagai jasa pemasangan ke komunitas atau analis. Belum ada bukti permintaan berbayar; perlu 5 percakapan dulu."
+  },
+  {
+   "nama": "Bounty crypto (Superteam, Algora)",
+   "permintaan": 4,
+   "net": 1,
+   "cepat": 4,
+   "modal": 5,
+   "risiko": 3,
+   "cocok": 3,
+   "catatan": "Nilai harapan rendah karena peserta ratusan. Berguna sebagai portofolio publik dan jaringan, bukan pendapatan."
+  },
+  {
+   "nama": "Tooling crypto berlangganan (alert, dashboard)",
+   "permintaan": 2,
+   "net": 4,
+   "cepat": 1,
+   "modal": 4,
+   "risiko": 2,
+   "cocok": 4,
+   "catatan": "Butuh audiens. Tanpa distribusi, produk bagus pun tidak terjual. Risiko: membangun berbulan-bulan tanpa pendapatan."
+  },
+  {
+   "nama": "Riset berbayar / laporan khusus",
+   "permintaan": 2,
+   "net": 4,
+   "cepat": 1,
+   "modal": 5,
+   "risiko": 3,
+   "cocok": 5,
+   "catatan": "Audit E06 dan E20 adalah bukti metode. Pasar untuk ini sempit dan butuh reputasi; realistis setelah ada 2-3 klien yang puas."
+  },
+  {
+   "nama": "Trading (momentum / carry)",
+   "permintaan": 5,
+   "net": 1,
+   "cepat": 5,
+   "modal": 2,
+   "risiko": 1,
+   "cocok": 2,
+   "catatan": "Sudah diuji: momentum gagal setelah koreksi universe, carry 3,8%/tahun dan menyusut. Modal kecil, hasil tidak menutup biaya. Ditutup."
+  }
+ ]
+}
