@@ -30,8 +30,8 @@ scan sebelumnya dan **tidak diverifikasi ulang**.
 | 0. Diagnosis | Baca kode, reproduksi bug UAT, daftar prioritas tertulis | 3 | $40 |
 | 1. Bug UAT inti | Paginasi, tata letak cetak, fokus jendela, lisensi | 8 | $110 |
 | 2. Templat laporan | Rumus dan baris bisa diedit, tanpa merusak format | 4 | $60 |
-| 3. Klasifikasi AI | Tombol + antarmuka provider, tanpa auto-update | 4 | $40 |
-| **Total** | | **19** | **$250** |
+| 3. Klasifikasi AI (opsional, terpisah) | Tombol + antarmuka provider | belum pasti | dikutip setelah kode dilihat |
+| **Total wajib (0-2)** | | **15** | **$210** |
 
 Tarif efektif $13,15/jam. Ini **di bawah** tarif normal $22. Diterima hanya karena
 prioritasnya ulasan pertama dari klien tepercaya, bukan karena angka ini bagus.
@@ -58,14 +58,13 @@ berarti bekerja 30+ jam untuk $250, dan itu merugikan.
 > window focus, licence check, and editable report templates including formulas and rows.
 > Each one gets a short reproduction step so you can verify it yourself.
 >
-> **Phase 2 — classification buttons, 4 hours, $40.** Two ribbon buttons calling an AI
+> **Optional, quoted after I see the code — classification buttons.** Two ribbon buttons calling an AI
 > provider behind a swappable interface, with your reference table. No vendor lock-in:
 > the provider is a setting, not hardcoded.
 >
-> Total: 15 hours, $190 for phases 0-2, capped at $250 including Phase 3 below.
+> Total committed: 15 hours, $210 for phases 0-2. Classification buttons are quoted separately, after I read the existing provider and reference-table code.
 >
-> **Phase 3 — editable templates hardening, 4 hours, $60.** Only if Phases 0-2 pass your
-> UAT.
+> **Not included in this quote: auto-update from Google Drive and AI classification.**
 >
 > **Auto-update from Google Drive is not in this quote.** It touches installation on your
 > users' machines: download, verify, install, roll back on failure. That needs testing on
