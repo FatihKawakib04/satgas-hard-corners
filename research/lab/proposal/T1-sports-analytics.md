@@ -169,6 +169,33 @@ Belum terbukti:
 - Akses data berbayar seperti Opta atau StatsBomb.
 - Riwayat klien di domain olahraga. Portofolio publik yang ada adalah pipeline riset pasar.
 
+## 6b. Persyaratan kandidat: kesenjangan yang harus dinyatakan
+
+Klien meminta empat hal saat melamar:
+
+1. Ringkasan latar belakang di analisis olahraga. **Kita tidak punya.** Yang ada: pipeline
+   data, statistik, dan pelaporan untuk pasar keuangan.
+2. Contoh laporan olahraga yang pernah dibuat. **Kita tidak punya riwayat klien olahraga.**
+   Yang bisa diberikan: demonstrasi mandiri dari data publik, berlabel jelas.
+3. Olahraga yang dikuasai. **Belum ada satupun** pada level analis.
+4. Waktu penyelesaian. Bisa dijawab: 3 hari kerja untuk fase 1.
+
+Karena itu proposal menyebut batas ini di depan, bukan menyamarkannya. Konsekuensi yang harus
+diterima: peluang menang lebih rendah daripada proyek di domain yang sudah kita kuasai.
+Demonstrasi: https://satgas.ai.id/crypto/riset/demo-olahraga.html
+
+## 6c. Pembayaran dan biaya platform
+
+- Freelancer memungut **10 persen** dari nilai proyek (minimum 5 dolar) untuk proyek fixed
+  maupun hourly. Sumber: halaman Project Fees.
+- Kotor $650 menjadi **$585 bersih**. Fase 1 kotor $300 menjadi **$270 bersih**.
+- Proyek hourly memakai penagihan otomatis berbasis pelacakan waktu; klien harus
+  mengaktifkannya. Aplikasi desktop untuk pelacakan dihentikan 2026 dan diganti pelacakan
+  lewat situs.
+- Karena itu syaratnya: fase 1 didanai sebagai **milestone tetap**, bukan hourly terbuka.
+  Kalau klien menolak, minta penagihan otomatis aktif dan invoice mingguan pertama disetujui.
+- Fase 2 tidak dimulai sebelum hasil fase 1 ditinjau dan lingkup lanjutan disetujui tertulis.
+
 ## 7. Risiko yang tersisa
 
 1. **Tenggat tidak konsisten.** `hoursLeft: 23` sementara `endTime` 31 Okt. Kalau yang benar 23

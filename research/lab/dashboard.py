@@ -43,10 +43,19 @@ def main() -> int:
     biaya_bulan = fr["biaya"]["vps"]["usd_per_bulan"] + fr["biaya"]["api"]["usd_per_bulan"]
     rp_bulan = fr["biaya"]["vps"]["rp_per_bulan"]
 
+    # pendapatan hanya dari pembayaran tercatat; biaya platform dipisah
     pendapatan = sum(p["usd"] for p in karir["pembayaran"])
     biaya_langsung = sum(p.get("biaya_usd", 0) for p in karir["pembayaran"])
-    laba = pendapatan - biaya_langsung
-    bulan_tertutup = (pendapatan / biaya_bulan) if biaya_bulan else 0
+    biaya_platform = sum(p.get("biaya_platform_usd", 0) for p in karir["pembayaran"])
+    laba = pendapatan - biaya_langsung - biaya_platform
+    # runway hanya bisa dihitung kalau saldo kas operasional diketahui
+    kas = paths.get("kas_operasional_usd")
+    if kas is None:
+        runway_teks, runway_ket = "belum diketahui", "saldo kas operasional belum dicatat"
+    elif biaya_bulan:
+        runway_teks, runway_ket = f"{kas / biaya_bulan:.1f} bln", "kas dibagi biaya bulanan"
+    else:
+        runway_teks, runway_ket = "tidak terbatas", "biaya bulanan nol"
 
     modal_live = 0.0
     realized = laba
@@ -89,18 +98,22 @@ biayanya, dan jalur mana yang paling masuk akal. Saldo akun dan profit simulasi 
 dihitung sebagai pendapatan.</p>
 
 <div class="cards">
-<div class='card'><div class='k'>Pendapatan diterima</div><div class='v'>{usd(pendapatan)}</div>
-<div class='ket'>hanya pembayaran tercatat</div></div>
+<div class='card'><div class='k'>Pendapatan freelance diterima</div><div class='v'>{usd(pendapatan)}</div>
+<div class='ket'>sejak 25 Okt 2026, hanya pembayaran tercatat</div></div>
+<div class='card'><div class='k'>Biaya platform</div><div class='v'>{usd(biaya_platform)}</div>
+<div class='ket'>sejak 25 Okt 2026, 10 persen saat ada pembayaran</div></div>
 <div class='card'><div class='k'>Laba bersih</div><div class='v'>{usd(laba)}</div>
-<div class='ket'>pendapatan minus biaya langsung</div></div>
-<div class='card'><div class='k'>Biaya bulanan</div><div class='v'>{usd(biaya_bulan)}</div>
-<div class='ket'>Rp {rp_bulan:,.0f} VPS, invoice</div></div>
+<div class='ket'>pendapatan minus biaya langsung dan platform</div></div>
+<div class='card'><div class='k'>Biaya operasional</div><div class='v'>{usd(biaya_bulan)}/bln</div>
+<div class='ket'>Rp {rp_bulan:,.0f} VPS, invoice bulan berjalan</div></div>
 <div class='card'><div class='k'>Modal trading live</div><div class='v'>{usd(modal_live)}</div>
-<div class='ket'>batas {usd(pol['modal_live_maks_usd'],0)}</div></div>
-<div class='card'><div class='k'>Realized PnL</div><div class='v'>{usd(realized)}</div>
-<div class='ket'>belum ada transaksi</div></div>
-<div class='card'><div class='k'>Runway biaya</div><div class='v'>{bulan_tertutup:.1f} bln</div>
-<div class='ket'>pendapatan dibagi biaya bulanan</div></div>
+<div class='ket'>batas {usd(pol['modal_live_maks_usd'],0)}, belum dipakai</div></div>
+<div class='card'><div class='k'>Realized PnL trading</div><div class='v'>{usd(realized)}</div>
+<div class='ket'>sejak 25 Okt 2026, belum ada transaksi nyata</div></div>
+<div class='card'><div class='k'>Unrealized PnL</div><div class='v'>n/a</div>
+<div class='ket'>tidak ada posisi live</div></div>
+<div class='card'><div class='k'>Runway biaya</div><div class='v'>{runway_teks}</div>
+<div class='ket'>{runway_ket}</div></div>
 </div>
 
 <h2>Perbandingan tiga jalur</h2>
@@ -110,6 +123,20 @@ dihitung sebagai pendapatan.</p>
 <tbody>{''.join(baris_jalur)}</tbody></table>
 <p class="meta">Label kecil di bawah angka menunjukkan tingkat keyakinan: fakta, asumsi, atau
 estimasi. Tidak ada angka probabilitas yang dikarang ketika datanya tidak ada.</p></div>
+
+<h2>Rekonsiliasi angka yang sempat tidak konsisten</h2>
+<div class="panel"><table><thead><tr><th>Angka</th><th class="n">Perhitungan</th>
+<th>Periode sumber</th></tr></thead><tbody>
+<tr><td>Carry 2026 pada modal $10</td><td class="n">10 x 0,7% = <b>$0,07/tahun</b></td>
+<td>laju 2026 saja, 298 hari</td></tr>
+<tr><td>Carry rata-rata 2023-2026 pada modal $10</td><td class="n">10 x 3,8% = <b>$0,38/tahun</b></td>
+<td>rata-rata tiga tahun, termasuk 2024 yang jauh lebih gemuk</td></tr>
+<tr><td>Versi dashboard sebelumnya</td><td class="n">$0,38</td>
+<td>keliru dipakai sebagai proyeksi ke depan tanpa menyebut periodenya</td></tr>
+</tbody></table>
+<p class="meta">Koreksi: proyeksi memakai angka terbaru, $0,07 per tahun, bukan $0,38. Kedua
+angka tetap ditampilkan supaya asalnya jelas. Selisihnya lima kali lipat, dan itu justru inti
+temuannya: hasil carry menyusut dari tahun ke tahun.</p></div>
 
 <h2>Bukti per jalur</h2>
 {bukti}
@@ -167,7 +194,7 @@ jalur), paper_state.json (simulasi).</p></div>
     with open(OUT, "w") as f:
         f.write(html)
     print("halaman:", OUT)
-    print(f"pendapatan {usd(pendapatan)} | laba {usd(laba)} | biaya/bulan {usd(biaya_bulan)} | runway {bulan_tertutup:.1f} bln")
+    print(f"pendapatan {usd(pendapatan)} | laba {usd(laba)} | biaya/bulan {usd(biaya_bulan)} | runway {runway_teks}")
     return 0
 
 

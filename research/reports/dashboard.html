@@ -76,18 +76,22 @@ biayanya, dan jalur mana yang paling masuk akal. Saldo akun dan profit simulasi 
 dihitung sebagai pendapatan.</p>
 
 <div class="cards">
-<div class='card'><div class='k'>Pendapatan diterima</div><div class='v'>$0.00</div>
-<div class='ket'>hanya pembayaran tercatat</div></div>
+<div class='card'><div class='k'>Pendapatan freelance diterima</div><div class='v'>$0.00</div>
+<div class='ket'>sejak 25 Okt 2026, hanya pembayaran tercatat</div></div>
+<div class='card'><div class='k'>Biaya platform</div><div class='v'>$0.00</div>
+<div class='ket'>sejak 25 Okt 2026, 10 persen saat ada pembayaran</div></div>
 <div class='card'><div class='k'>Laba bersih</div><div class='v'>$0.00</div>
-<div class='ket'>pendapatan minus biaya langsung</div></div>
-<div class='card'><div class='k'>Biaya bulanan</div><div class='v'>$1.00</div>
-<div class='ket'>Rp 18,000 VPS, invoice</div></div>
+<div class='ket'>pendapatan minus biaya langsung dan platform</div></div>
+<div class='card'><div class='k'>Biaya operasional</div><div class='v'>$1.00/bln</div>
+<div class='ket'>Rp 18,000 VPS, invoice bulan berjalan</div></div>
 <div class='card'><div class='k'>Modal trading live</div><div class='v'>$0.00</div>
-<div class='ket'>batas $10</div></div>
-<div class='card'><div class='k'>Realized PnL</div><div class='v'>$0.00</div>
-<div class='ket'>belum ada transaksi</div></div>
-<div class='card'><div class='k'>Runway biaya</div><div class='v'>0.0 bln</div>
-<div class='ket'>pendapatan dibagi biaya bulanan</div></div>
+<div class='ket'>batas $10, belum dipakai</div></div>
+<div class='card'><div class='k'>Realized PnL trading</div><div class='v'>$0.00</div>
+<div class='ket'>sejak 25 Okt 2026, belum ada transaksi nyata</div></div>
+<div class='card'><div class='k'>Unrealized PnL</div><div class='v'>n/a</div>
+<div class='ket'>tidak ada posisi live</div></div>
+<div class='card'><div class='k'>Runway biaya</div><div class='v'>belum diketahui</div>
+<div class='ket'>saldo kas operasional belum dicatat</div></div>
 </div>
 
 <h2>Perbandingan tiga jalur</h2>
@@ -97,6 +101,20 @@ dihitung sebagai pendapatan.</p>
 <tbody><tr><td><b>Freelance data engineering</b><br><span class='meta'>aktif, target T1</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td>3 sampai 30 hari<br><span class='meta'>estimasi</span></td><td>tidak diketahui<br><span class='meta'>asumsi</span></td><td>2 sampai 4 jam per peluang</td><td>sekitar 525 per proyek pertama<br><span class='meta'>estimasi</span></td></tr><tr><td><b>Trading otomatis (paper sekarang, live dibatasi 10 dolar)</b><br><span class='meta'>paper trading saja, tidak menghasilkan</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td>tidak dapat diprediksi<br><span class='meta'>fakta</span></td><td>tinggi<br><span class='meta'>fakta</span></td><td>pemantauan harian, keputusan saat sinyal</td><td>0,38 dolar per tahun pada modal 10 dolar bila carry 3,8 persen bertahan<br><span class='meta'>estimasi</span></td></tr><tr><td><b>Layanan atau produk otomatis</b><br><span class='meta'>belum ada bukti permintaan</span></td><td class='n'>$0.00<br><span class='meta'>fakta</span></td><td class='n'>$0.00<br><span class='meta'>estimasi</span></td><td>tidak diketahui<br><span class='meta'>fakta</span></td><td>tidak diketahui<br><span class='meta'>fakta</span></td><td>dukungan pelanggan dan pemasaran</td><td>belum dapat dihitung<br><span class='meta'>fakta</span></td></tr></tbody></table>
 <p class="meta">Label kecil di bawah angka menunjukkan tingkat keyakinan: fakta, asumsi, atau
 estimasi. Tidak ada angka probabilitas yang dikarang ketika datanya tidak ada.</p></div>
+
+<h2>Rekonsiliasi angka yang sempat tidak konsisten</h2>
+<div class="panel"><table><thead><tr><th>Angka</th><th class="n">Perhitungan</th>
+<th>Periode sumber</th></tr></thead><tbody>
+<tr><td>Carry 2026 pada modal $10</td><td class="n">10 x 0,7% = <b>$0,07/tahun</b></td>
+<td>laju 2026 saja, 298 hari</td></tr>
+<tr><td>Carry rata-rata 2023-2026 pada modal $10</td><td class="n">10 x 3,8% = <b>$0,38/tahun</b></td>
+<td>rata-rata tiga tahun, termasuk 2024 yang jauh lebih gemuk</td></tr>
+<tr><td>Versi dashboard sebelumnya</td><td class="n">$0,38</td>
+<td>keliru dipakai sebagai proyeksi ke depan tanpa menyebut periodenya</td></tr>
+</tbody></table>
+<p class="meta">Koreksi: proyeksi memakai angka terbaru, $0,07 per tahun, bukan $0,38. Kedua
+angka tetap ditampilkan supaya asalnya jelas. Selisihnya lima kali lipat, dan itu justru inti
+temuannya: hasil carry menyusut dari tahun ke tahun.</p></div>
 
 <h2>Bukti per jalur</h2>
 <div class='panel'><h3>Freelance data engineering</h3><ul><li>196 proyek dipindai, 7 klien terverifikasi pembayaran, 2 cocok skill</li><li>target T1 hourly, 0 bid, tarif terpasang 42 sampai 105 dolar per jam</li><li>belum ada proposal terkirim, jadi belum ada data konversi</li></ul></div><div class='panel'><h3>Trading otomatis (paper sekarang, live dibatasi 10 dolar)</h3><ul><li>audit E06: Sharpe 0,20 pada universe point-in-time, CAGR negatif</li><li>audit carry: 3,8 persen per tahun lalu turun ke 0,7 persen pada 2026</li><li>modal live dibatasi 10 dolar, jadi hasil maksimum secara matematis kecil</li></ul></div><div class='panel'><h3>Layanan atau produk otomatis</h3><ul><li>pipeline riset yang sudah jalan bisa dijadikan jasa pemasangan</li><li>belum ada satu pun percakapan dengan calon pembeli</li><li>aturan: tidak menulis fitur baru sebelum ada satu orang yang membayar atau berkomitmen</li></ul></div>
@@ -147,7 +165,7 @@ dipastikan baru tugas yang tidak bergantung jawaban di atas: lapisan data dan te
 <li>Kalau trading nanti lolos validasi: setujui modal live 10 dolar.</li>
 </ol>
 
-<div class="note"><p>Diperbarui 25 Oct 2026 10:32 WIB.
+<div class="note"><p>Diperbarui 25 Oct 2026 10:40 WIB.
 Sumber: karir.json (pembayaran), freelance.json (biaya invoice), paths.json (perbandingan
 jalur), paper_state.json (simulasi).</p></div>
 </div></body></html>
