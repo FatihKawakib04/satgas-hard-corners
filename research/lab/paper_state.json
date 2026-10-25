@@ -54,6 +54,16 @@
     }
    ],
    "dihentikan": false
+  },
+  "E17:carry_funding": {
+   "mulai": "2026-10-25",
+   "ekuitas": 10000,
+   "posisi": {},
+   "params": {
+    "ambang": 5e-05
+   },
+   "riwayat": [],
+   "dihentikan": false
   }
  }
 }

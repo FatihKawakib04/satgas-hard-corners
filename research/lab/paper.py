@@ -105,6 +105,11 @@ def step() -> list[dict]:
         if not s.get("params"):
             s["params"] = (json.loads(row["konfigurasi"]) if row.get("konfigurasi")
                            else pilihan_params(exp_id, strat))
+        if strat not in S.KATALOG:
+            # carry funding punya modul sendiri dan tidak memakai katalog strategi
+            # harga; lewati supaya satu strategi tanpa katalog tidak mematikan
+            # seluruh pencatatan paper trading.
+            continue
         meta = S.KATALOG[strat]
         d = D.load(meta["syms"], min_days=CONFIG["gerbang"]["min_hari_data"])
         tg = target_hari_ini(strat, s["params"], d.dates, d.prices)
