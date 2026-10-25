@@ -70,69 +70,88 @@ td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,
 <div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
 <a href="audit-e06.html">Audit E06</a> · <a href="audit-carry.html">Audit carry</a></div></div>
 
-<h1>Ekonomi proyek: pendapatan, biaya, dan peluang</h1>
-<p class="lead">Halaman ini menjawab satu pertanyaan: dari mana uangnya datang, kalau ada.
-Semua angka luar diberi sumber dan tanggal akses. Angka perkiraan ditandai. Hadiah bounty
-yang belum dibayar tidak dihitung sebagai pendapatan.</p>
+<h1>Ekonomi proyek: biaya aktual, peluang freelance, rencana produk</h1>
+<p class="lead">Arah yang dipilih: freelance sebagai jalur utama, produk sebagai sampingan.
+Halaman ini mencatat biaya yang benar-benar ditagih, peluang yang benar-benar ada beserta
+persaingannya, dan rencana validasi produk sebelum membangun fitur baru. Tidak ada
+pendapatan yang dicatat sebelum uangnya diterima.</p>
 
 <div class="cards">
-<div class='card'><div class='k'>Pendapatan aktual</div><div class='v'>$0</div>
-<div class='ket'>belum ada pembayaran diterima</div></div>
-<div class='card'><div class='k'>Biaya bulanan</div><div class='v'>~$4,17</div>
-<div class='ket'>VPS, perkiraan dari anggaran tahunan</div></div>
-<div class='card'><div class='k'>Laba bersih</div><div class='v'>-$4,17</div>
-<div class='ket'>per bulan, sampai ada pendapatan</div></div>
-<div class='card'><div class='k'>Modal trading</div><div class='v'>$0</div>
-<div class='ket'>tidak ada dana nyata dipakai</div></div>
+<div class='card'><div class='k'>Pendapatan diterima</div><div class='v'>$0</div>
+<div class='ket'>belum ada pembayaran</div></div>
+<div class='card'><div class='k'>Biaya invoice</div><div class='v'>$1.00</div>
+<div class='ket'>VPS Rp 18.000 per bulan</div></div>
+<div class='card'><div class='k'>Laba bersih</div><div class='v'>$-1.00</div>
+<div class='ket'>per bulan</div></div>
+<div class='card'><div class='k'>Proposal siap</div><div class='v'>2</div>
+<div class='ket'>draf, belum dikirim</div></div>
 </div>
 
-<h2>Bukti pasar yang dikumpulkan</h2>
-<div class='panel'><h3>Superteam Earn (API publik)</h3><p>11 listing terbuka, total hadiah $61.500. Kompetisi: bounty thread $500 menerima 301 submisi, bounty konten $500 menerima 132 submisi, bounty $1.000 menerima 8 submisi.</p><p class='meta'>Implikasi: Nilai harapan per submisi pada bounty $500 dengan 301 peserta sekitar $1,7. Bukan sumber pendapatan, hanya latihan dan portofolio.</p></div><div class='panel'><h3>Algora (halaman bounty selesai)</h3><p>Hadiah per issue $35 sampai $200, dibayar setelah pull request diterima.</p><p class='meta'>Implikasi: Butuh pemahaman mendalam satu repo. Cocok untuk yang sudah aktif di proyek itu, tidak efisien sebagai sumber penghasilan utama.</p></div><div class='panel'><h3>Upwork, halaman data engineer Indonesia</h3><p>Profil dengan 7 tahun pengalaman dan 70 job memasang tarif $5/jam. Profil software engineer Python/DevOps dengan 25 job dan $80 ribu pendapatan memasang $25/jam.</p><p class='meta'>Implikasi: Rentang nyata $5 sampai $25 per jam. Tarif atas dicapai lewat portofolio dan ulasan, bukan lewat klaim kemampuan.</p></div><div class='panel'><h3>projects.co.id</h3><p>Marketplace lokal aktif dengan proyek kecil seperti pembuatan akun cloud dan integrasi sistem, anggaran per proyek.</p><p class='meta'>Implikasi: Kompetisi lokal lebih rendah dan tidak butuh bahasa Inggris, tapi nilai per proyek lebih kecil.</p></div>
+<h2>1. Biaya</h2>
+<div class="panel"><table><thead><tr><th>Pos</th><th class="n">Per bulan</th>
+<th>Sifat</th></tr></thead><tbody>
+<tr><td>VPS</td><td class="n">Rp 18.000 ($1.00)</td>
+<td>invoice tercatat, tagihan perpanjangan</td></tr>
+<tr><td>API model</td><td class="n">$0.00</td>
+<td>tidak ada pengeluaran baru; model utama prabayar, cadangan memakai free tier</td></tr>
+<tr><td>Domain dan lain-lain</td><td class="n">$0.00</td>
+<td>belum ada tagihan tercatat, tidak dihitung sebagai biaya</td></tr>
+<tr><td><b>Total</b></td><td class="n"><b>Rp 18.000 ($1.00)</b></td>
+<td>kurs 18,087 per dolar, 25 Okt 2026</td></tr>
+</tbody></table>
+<p class="meta">Perkiraan tidak digabung dengan invoice. Kalau nanti ada biaya lain yang
+benar-benar ditagih, tambahkan sebagai baris invoice baru, bukan sebagai estimasi.</p></div>
 
-<h2>Perbandingan peluang</h2>
-<p>Skor 1 sampai 5. Permintaan dan pendapatan bersih diberi bobot paling besar; kecepatan
-ke dolar pertama, modal, risiko, dan kecocokan skill menyusul. Skor ini penilaian, bukan
-jaminan.</p>
-<div class="panel"><table><thead><tr><th>Peluang</th>
-<th class="n">Permintaan</th><th class="n">Net</th><th class="n">Cepat</th>
-<th class="n">Modal</th><th class="n">Risiko</th><th class="n">Cocok</th>
-<th class="n">Skor</th></tr></thead><tbody><tr><td><b>1. Freelance data engineering (Upwork)</b></td><td class='n'>5</td><td class='n'>4</td><td class='n'>3</td><td class='n'>5</td><td class='n'>4</td><td class='n'>5</td><td class='n'><span class='badge up'>4.31</span></td></tr><tr><td><b>2. Layanan terproduk: pipeline riset + dashboard</b></td><td class='n'>3</td><td class='n'>5</td><td class='n'>2</td><td class='n'>4</td><td class='n'>4</td><td class='n'>5</td><td class='n'><span class='badge up'>3.89</span></td></tr><tr><td><b>3. Riset berbayar / laporan khusus</b></td><td class='n'>2</td><td class='n'>4</td><td class='n'>1</td><td class='n'>5</td><td class='n'>3</td><td class='n'>5</td><td class='n'><span class='badge warn'>3.29</span></td></tr><tr><td><b>4. Bounty crypto (Superteam, Algora)</b></td><td class='n'>4</td><td class='n'>1</td><td class='n'>4</td><td class='n'>5</td><td class='n'>3</td><td class='n'>3</td><td class='n'><span class='badge warn'>3.12</span></td></tr><tr><td><b>5. Tooling crypto berlangganan (alert, dashboard)</b></td><td class='n'>2</td><td class='n'>4</td><td class='n'>1</td><td class='n'>4</td><td class='n'>2</td><td class='n'>4</td><td class='n'><span class='badge warn'>2.86</span></td></tr><tr><td><b>6. Trading (momentum / carry)</b></td><td class='n'>5</td><td class='n'>1</td><td class='n'>5</td><td class='n'>2</td><td class='n'>1</td><td class='n'>2</td><td class='n'><span class='badge warn'>2.63</span></td></tr></tbody></table>
-<p class="meta">Risiko dinilai dari sudut "semakin tinggi semakin aman", jadi 5 berarti
-risiko rendah.</p></div>
+<h2>2. Peluang freelance</h2>
+<p>Semua angka diambil dari API publik dan halaman platform pada 25 Oktober 2026. Pesaing
+adalah jumlah bid atau submisi yang terlihat saat pengambilan data, bukan perkiraan.</p>
+<div class="panel"><table><thead><tr><th>Peluang</th><th>Sumber</th>
+<th class="n">Anggaran</th><th class="n">Pesaing</th><th class="n">Waktu</th>
+<th>Status</th></tr></thead><tbody><tr><td><b>F1</b><br>Text-to-Database Upload Automation</td><td>Freelancer.com</td><td class='n'>$12,500 - $37,500</td><td class='n'>101</td><td class='n'>60 jam</td><td><span class='badge up'>siap dikirim</span></td></tr><tr><td><b>F2</b><br>Senior Python/SQLite Engineer, pemulihan database dan backend</td><td>Freelancer.com</td><td class='n'>$250 - $750</td><td class='n'>147</td><td class='n'>8 jam</td><td><span class='badge up'>siap dikirim</span></td></tr><tr><td><b>S1</b><br>Bounty data crypto di Superteam Earn</td><td>Superteam Earn</td><td class='n'>$500 - $40,000</td><td class='n'>2 sampai 301 submisi per listing</td><td class='n'>6 jam</td><td><span class='badge warn'>sangat rendah</span></td></tr><tr><td><b>U1</b><br>Posisi niche di Upwork: pipeline data kripto dan otomasi laporan</td><td>Upwork</td><td class='n'>$25 - $35</td><td class='n'>puluhan profil per pencarian, tapi sedikit yang punya bukti pipeline berjalan</td><td class='n'>4 jam</td><td><span class='badge warn'>sedang</span></td></tr><tr><td><b>F3</b><br>Azure Databricks Integration Expert</td><td>Freelancer.com</td><td class='n'>$15 - $18</td><td class='n'>65</td><td class='n'>20 jam</td><td><span class='badge warn'>tidak dikirim</span></td></tr><tr><td><b>L1</b><br>Klien lokal langsung: fintech dan bursa kripto Indonesia</td><td>hipotesis, belum ada lowongan kontrak yang terverifikasi</td><td class='n'>belum ada</td><td class='n'>tidak diketahui</td><td class='n'>3 jam</td><td><span class='badge warn'>belum diketahui</span></td></tr></tbody></table></div>
 
-<div class='panel'><h3>Freelance data engineering (Upwork) (skor 4.31)</h3><p>Bukti tarif $5-25/jam. 20 jam/minggu pada $10-15/jam setara $800-1.200/bulan bruto, sebelum biaya waktu pencarian klien. Butuh profil, portofolio, dan proposal yang konsisten.</p></div><div class='panel'><h3>Layanan terproduk: pipeline riset + dashboard (skor 3.89)</h3><p>Produk yang sudah jadi: pengumpul data, penyimpanan, halaman riset, alert. Bisa dijual sebagai jasa pemasangan ke komunitas atau analis. Belum ada bukti permintaan berbayar; perlu 5 percakapan dulu.</p></div><div class='panel'><h3>Riset berbayar / laporan khusus (skor 3.29)</h3><p>Audit E06 dan E20 adalah bukti metode. Pasar untuk ini sempit dan butuh reputasi; realistis setelah ada 2-3 klien yang puas.</p></div><div class='panel'><h3>Bounty crypto (Superteam, Algora) (skor 3.12)</h3><p>Nilai harapan rendah karena peserta ratusan. Berguna sebagai portofolio publik dan jaringan, bukan pendapatan.</p></div><div class='panel'><h3>Tooling crypto berlangganan (alert, dashboard) (skor 2.86)</h3><p>Butuh audiens. Tanpa distribusi, produk bagus pun tidak terjual. Risiko: membangun berbulan-bulan tanpa pendapatan.</p></div><div class='panel'><h3>Trading (momentum / carry) (skor 2.63)</h3><p>Sudah diuji: momentum gagal setelah koreksi universe, carry 3,8%/tahun dan menyusut. Modal kecil, hasil tidak menutup biaya. Ditutup.</p></div>
+<div class='panel'><h3>F1 · Text-to-Database Upload Automation</h3><p>Anggaran besar dan lingkupnya persis kemampuan kita: ambil teks, normalisasi, masukkan ke database. Tapi 101 pesaing dan klien belum tentu serius dengan angka sebesar itu. Layak dikirim satu proposal terarah, tidak layak dijadikan tumpuan.</p><p class='meta'>Sumber: Freelancer.com (API publik proyek aktif) · Tenggat: 7 hari sejak listing · Persyaratan: Python, Data Processing, MySQL, parsing dokumen tidak terstruktur · Perkiraan waktu: 60 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>F2 · Senior Python/SQLite Engineer, pemulihan database dan backend</h3><p>Lingkup kecil dan jelas, bisa selesai dalam satu hari kerja. Nilainya kecil, tapi ini jenis pekerjaan yang menghasilkan ulasan pertama dengan cepat.</p><p class='meta'>Sumber: Freelancer.com (API publik proyek aktif) · Tenggat: 7 hari sejak listing · Persyaratan: Python, SQLite, pemulihan data, backend · Perkiraan waktu: 8 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>S1 · Bounty data crypto di Superteam Earn</h3><p>Nilai harapan rendah: bounty 500 dolar dengan 301 submisi bernilai sekitar 1,7 dolar per submisi. Hanya dipakai kalau hasilnya bisa masuk portofolio publik.</p><p class='meta'>Sumber: Superteam Earn (API publik listing) · Tenggat: bervariasi, 1 sampai 50 hari · Persyaratan: menulis, analisis data, desain, kadang audit keamanan · Perkiraan waktu: 6 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>U1 · Posisi niche di Upwork: pipeline data kripto dan otomasi laporan</h3><p>Tarif atas di kategori ini 25 dolar per jam, dicapai lewat portofolio, bukan klaim. Kita punya portofolio nyata: pipeline yang mengumpulkan data tiap 15 menit, audit kualitas, dan halaman laporan. Ini jalur dengan rasio hasil per usaha terbaik.</p><p class='meta'>Sumber: Upwork (halaman data engineer Indonesia) · Tenggat: berkelanjutan · Persyaratan: Python, API, ETL, dashboard, bahasa Inggris tertulis · Perkiraan waktu: 4 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>F3 · Azure Databricks Integration Expert</h3><p>Ditolak. Anggaran 15-18 dolar kemungkinan per jam, dan kita belum punya bukti pengalaman Databricks. Mengirim proposal berarti mengarang pengalaman.</p><p class='meta'>Sumber: Freelancer.com (API publik proyek aktif) · Tenggat: 7 hari sejak listing · Persyaratan: Azure, Databricks, integrasi data · Perkiraan waktu: 20 jam · Biaya pengerjaan: $0.00</p></div><div class='panel'><h3>L1 · Klien lokal langsung: fintech dan bursa kripto Indonesia</h3><p>Belum ada bukti permintaan yang bisa saya verifikasi. Jangan dihitung sebagai peluang sampai ada lowongan atau balasan. Dicatat sebagai hipotesis yang perlu diuji lewat percakapan.</p><p class='meta'>Sumber: hipotesis, belum ada lowongan kontrak yang terverifikasi · Tenggat: tidak ada tenggat · Persyaratan: portofolio, jaringan, kontrak · Perkiraan waktu: 3 jam · Biaya pengerjaan: $0.00</p></div>
 
-<h2>Keputusan</h2>
-<p><b>Trading ditutup sebagai sumber pendapatan.</b> Dua strategi sudah diuji dan gagal
-setelah biaya serta koreksi statistik. Melanjutkan berarti menambah backtest tanpa bukti
-bahwa ada yang bisa dijual.</p>
-<p><b>Prioritas 1: freelance data engineering.</b> Ini satu-satunya jalur dengan bukti
-tarif nyata dan waktu ke dolar pertama yang pendek. Yang dijual bukan "saya bisa Python",
-tapi pipeline yang sudah jalan: pengumpulan data, penyimpanan, audit kualitas, dan
-halaman laporan seperti di situs ini.</p>
-<p><b>Prioritas 2: produk dari pipeline yang sudah ada.</b> Bukan membangun produk baru,
-tapi mengemas yang sudah jadi untuk satu jenis klien. Butuh 5 percakapan sebelum menulis
-kode tambahan.</p>
-<p><b>Bounty hanya sebagai portofolio.</b> Nilai harapannya $1,7 sampai $125 per submisi
-pada data hari ini. Kalau menang, itu bonus, bukan rencana.</p>
-
-<h2>Rencana 30 hari (target, bukan janji)</h2>
+<h2>3. Kenapa marketplace sulit</h2>
+<p>Data hari ini: proyek Python/SQLite dengan anggaran 250 sampai 750 dolar punya 147 bid,
+proyek otomasi database 15 sampai 25 dolar punya 187 bid, dan proyek integrasi Azure punya
+65 bid. Untuk akun tanpa ulasan, peluang menang di angka itu kecil. Karena itu strategi
+yang dipakai bukan "kirim sebanyak mungkin", tetapi:</p>
 <ul>
-<li>10 proposal freelance yang menyebut kasus nyata: pipeline riset ini, termasuk bug yang
-ditemukan dan cara verifikasinya.</li>
-<li>3 potongan portofolio publik: halaman audit E06, audit carry, dan pipeline health check.</li>
-<li>5 percakapan dengan calon pengguna produk sebelum menulis kode tambahan.</li>
-<li>Nol pengeluaran baru. Nol live trading.</li>
+<li>kirim hanya ke pekerjaan yang lingkupnya bisa dijelaskan dalam lima baris dan cocok
+persis dengan portofolio yang ada</li>
+<li>mulai dari pekerjaan kecil yang cepat menghasilkan ulasan pertama</li>
+<li>bangun posisi niche di pipeline data kripto, tempat pesaing lebih sedikit</li>
 </ul>
 
-<h2>Yang perlu diputuskan Fatih</h2>
+<h2>4. Produk sebagai sampingan</h2>
+<p><b>Pipeline riset sebagai layanan terpasang</b></p>
+<p>Yang sudah ada dan bisa ditunjukkan:</p><ul><li>pengumpul data berjalan tiap 15 menit dengan cache dan rotasi sumber</li><li>audit kualitas data: cross-check ke bursa, deteksi duplikat dan celah</li><li>halaman laporan statis yang tahan beban dan murah</li><li>pemeriksaan kesehatan pipeline yang mendeteksi job mati diam-diam</li></ul>
+<p>Yang belum ada, dan lebih penting daripada fitur:</p><ul><li>bukti ada yang mau membayar</li><li>harga</li><li>halaman penjualan</li><li>dukungan pelanggan</li></ul>
+<p>Rencana validasi sebelum menulis kode baru:</p><ol><li>5 percakapan dengan calon pengguna: analis, komunitas, atau tim kecil yang butuh data harian</li><li>tanya apa yang sekarang mereka kerjakan manual dan berapa jam per minggu</li><li>tawarkan pemasangan berbayar untuk 1 klien pertama dengan lingkup 2 minggu</li><li>jangan menulis fitur baru sebelum ada satu yang berkata ya</li></ol>
+<p class="meta">Aturan yang dipegang: tidak ada fitur baru sebelum ada satu orang yang
+membayar atau berkomitmen. Produk yang belum ada pembelinya adalah biaya, bukan pendapatan.</p>
+
+<h2>5. Urutan kerja</h2>
+<ol>
+<li>Kirim dua draf proposal yang sudah siap, setelah Fatih memutuskan harga dan tanda
+tangannya.</li>
+<li>Susun profil Upwork dengan posisi niche: pipeline data kripto dan otomasi laporan.
+Portofolio yang dipakai adalah situs ini, termasuk bug yang ditemukan dan cara
+verifikasinya.</li>
+<li>Lima percakapan untuk validasi produk. Tanpa kode baru sebelum ada jawaban.</li>
+<li>Kalau dalam 30 hari tidak ada pekerjaan, evaluasi ulang sumbernya: kemungkinan
+marketplace bukan tempat yang tepat, dan jalur langsung ke perusahaan lebih masuk akal.</li>
+</ol>
+
+<h2>6. Yang tidak dilakukan</h2>
 <ul>
-<li>Angka invoice VPS per bulan, supaya biaya di halaman ini bukan perkiraan.</li>
-<li>Apakah mau mengejar freelance sebagai jalur utama, atau produk sebagai jalur utama
-      dengan freelance hanya sebagai kas.</li>
+<li>Tidak mengirim proposal atau membuat komitmen atas nama Fatih.</li>
+<li>Tidak mengarang pengalaman, ulasan, atau portofolio yang tidak ada.</li>
+<li>Tidak menghitung hadiah bounty yang belum dibayar sebagai pendapatan.</li>
+<li>Tidak mengeluarkan biaya untuk kredit bid, langganan, atau iklan.</li>
 </ul>
 
-<div class="note"><p>Diperbarui 25 Oct 2026 09:52 WIB.
-Data pasar diambil 25 Oktober 2026 dari API publik Superteam Earn, halaman bounty Algora,
-halaman data engineer Indonesia di Upwork, dan projects.co.id.</p></div>
+<div class="note"><p>Diperbarui 25 Oct 2026 10:01 WIB.
+Sumber data: API publik Freelancer.com, Superteam Earn, halaman Upwork Indonesia,
+projects.co.id, dan kurs terbuka. Draf proposal tersimpan di repositori, belum dikirim.</p></div>
 </div></body></html>

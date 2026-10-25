@@ -1,0 +1,118 @@
+{
+ "dibuat": "2026-10-25",
+ "kurs_usdidr": 18087,
+ "biaya": {
+  "vps": {"rp_per_bulan": 18000, "usd_per_bulan": 1.0,
+          "sumber": "tagihan perpanjangan VPS yang tercatat"},
+  "api": {"usd_per_bulan": 0.0, "sumber": "model utama prabayar, kenari free tier, tidak ada pengeluaran baru"},
+  "domain_dan_lain": {"usd_per_bulan": 0.0, "sumber": "belum ada tagihan tercatat; jangan dicampur dengan perkiraan"}
+ },
+ "peluang": [
+  {
+   "id": "F1",
+   "judul": "Text-to-Database Upload Automation",
+   "sumber": "Freelancer.com (API publik proyek aktif)",
+   "url": "https://www.freelancer.com/projects/",
+   "tenggat_bid": "7 hari sejak listing",
+   "anggaran_usd": [12500, 37500],
+   "pesaing": 101,
+   "persyaratan": ["Python", "Data Processing", "MySQL", "parsing dokumen tidak terstruktur"],
+   "estimasi_jam": 60,
+   "biaya_pengerjaan_usd": 0,
+   "kenapa": "Anggaran besar dan lingkupnya persis kemampuan kita: ambil teks, normalisasi, masukkan ke database. Tapi 101 pesaing dan klien belum tentu serius dengan angka sebesar itu. Layak dikirim satu proposal terarah, tidak layak dijadikan tumpuan.",
+   "peluang_menang": "rendah",
+   "kirim": true
+  },
+  {
+   "id": "F2",
+   "judul": "Senior Python/SQLite Engineer, pemulihan database dan backend",
+   "sumber": "Freelancer.com (API publik proyek aktif)",
+   "url": "https://www.freelancer.com/projects/",
+   "tenggat_bid": "7 hari sejak listing",
+   "anggaran_usd": [250, 750],
+   "pesaing": 147,
+   "persyaratan": ["Python", "SQLite", "pemulihan data", "backend"],
+   "estimasi_jam": 8,
+   "biaya_pengerjaan_usd": 0,
+   "kenapa": "Lingkup kecil dan jelas, bisa selesai dalam satu hari kerja. Nilainya kecil, tapi ini jenis pekerjaan yang menghasilkan ulasan pertama dengan cepat.",
+   "peluang_menang": "rendah",
+   "kirim": true
+  },
+  {
+   "id": "F3",
+   "judul": "Azure Databricks Integration Expert",
+   "sumber": "Freelancer.com (API publik proyek aktif)",
+   "url": "https://www.freelancer.com/projects/",
+   "tenggat_bid": "7 hari sejak listing",
+   "anggaran_usd": [15, 18],
+   "pesaing": 65,
+   "persyaratan": ["Azure", "Databricks", "integrasi data"],
+   "estimasi_jam": 20,
+   "biaya_pengerjaan_usd": 0,
+   "kenapa": "Ditolak. Anggaran 15-18 dolar kemungkinan per jam, dan kita belum punya bukti pengalaman Databricks. Mengirim proposal berarti mengarang pengalaman.",
+   "peluang_menang": "tidak dikirim",
+   "kirim": false
+  },
+  {
+   "id": "U1",
+   "judul": "Posisi niche di Upwork: pipeline data kripto dan otomasi laporan",
+   "sumber": "Upwork (halaman data engineer Indonesia)",
+   "url": "https://www.upwork.com/hire/data-engineers/id/",
+   "tenggat_bid": "berkelanjutan",
+   "anggaran_usd": [25, 35],
+   "pesaing": "puluhan profil per pencarian, tapi sedikit yang punya bukti pipeline berjalan",
+   "persyaratan": ["Python", "API", "ETL", "dashboard", "bahasa Inggris tertulis"],
+   "estimasi_jam": 4,
+   "biaya_pengerjaan_usd": 0,
+   "kenapa": "Tarif atas di kategori ini 25 dolar per jam, dicapai lewat portofolio, bukan klaim. Kita punya portofolio nyata: pipeline yang mengumpulkan data tiap 15 menit, audit kualitas, dan halaman laporan. Ini jalur dengan rasio hasil per usaha terbaik.",
+   "peluang_menang": "sedang",
+   "kirim": false
+  },
+  {
+   "id": "S1",
+   "judul": "Bounty data crypto di Superteam Earn",
+   "sumber": "Superteam Earn (API publik listing)",
+   "url": "https://superteam.fun/earn/all?tab=bounties",
+   "tenggat_bid": "bervariasi, 1 sampai 50 hari",
+   "anggaran_usd": [500, 40000],
+   "pesaing": "2 sampai 301 submisi per listing",
+   "persyaratan": ["menulis", "analisis data", "desain", "kadang audit keamanan"],
+   "estimasi_jam": 6,
+   "biaya_pengerjaan_usd": 0,
+   "kenapa": "Nilai harapan rendah: bounty 500 dolar dengan 301 submisi bernilai sekitar 1,7 dolar per submisi. Hanya dipakai kalau hasilnya bisa masuk portofolio publik.",
+   "peluang_menang": "sangat rendah",
+   "kirim": false
+  },
+  {
+   "id": "L1",
+   "judul": "Klien lokal langsung: fintech dan bursa kripto Indonesia",
+   "sumber": "hipotesis, belum ada lowongan kontrak yang terverifikasi",
+   "url": "-",
+   "tenggat_bid": "tidak ada tenggat",
+   "anggaran_usd": [0, 0],
+   "pesaing": "tidak diketahui",
+   "persyaratan": ["portofolio", "jaringan", "kontrak"],
+   "estimasi_jam": 3,
+   "biaya_pengerjaan_usd": 0,
+   "kenapa": "Belum ada bukti permintaan yang bisa saya verifikasi. Jangan dihitung sebagai peluang sampai ada lowongan atau balasan. Dicatat sebagai hipotesis yang perlu diuji lewat percakapan.",
+   "peluang_menang": "belum diketahui",
+   "kirim": false
+  }
+ ],
+ "produk": {
+  "nama": "Pipeline riset sebagai layanan terpasang",
+  "bukti_yang_sudah_ada": [
+   "pengumpul data berjalan tiap 15 menit dengan cache dan rotasi sumber",
+   "audit kualitas data: cross-check ke bursa, deteksi duplikat dan celah",
+   "halaman laporan statis yang tahan beban dan murah",
+   "pemeriksaan kesehatan pipeline yang mendeteksi job mati diam-diam"
+  ],
+  "yang_belum_ada": ["bukti ada yang mau membayar", "harga", "halaman penjualan", "dukungan pelanggan"],
+  "validasi_sebelum_bangun": [
+   "5 percakapan dengan calon pengguna: analis, komunitas, atau tim kecil yang butuh data harian",
+   "tanya apa yang sekarang mereka kerjakan manual dan berapa jam per minggu",
+   "tawarkan pemasangan berbayar untuk 1 klien pertama dengan lingkup 2 minggu",
+   "jangan menulis fitur baru sebelum ada satu yang berkata ya"
+  ]
+ }
+}
