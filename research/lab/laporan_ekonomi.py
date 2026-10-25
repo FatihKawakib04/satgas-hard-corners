@@ -86,6 +86,22 @@ def main() -> int:
             f"<td class='n'>{umur}</td><td class='n'>{ulasan}</td><td class='n'>{dep}</td>"
             f"<td>{risiko}</td></tr>")
 
+    karir_path = os.path.join(HERE, "karir.json")
+    karir = json.load(open(karir_path)) if os.path.exists(karir_path) else {"peluang": {}, "pembayaran": []}
+    target_id = "T1"
+    target = karir["peluang"].get(target_id, {})
+    langkah = "".join(f"<li>{x}</li>" for x in [
+        "Kirim proposal setelah Fatih menyetujui harga pilot $600 dan tanda tangan.",
+        "Kalau dibalas: satu panggilan 20 menit untuk memastikan sport, kompetisi, dan sumber data.",
+        "Kirim spesifikasi tertulis dan minta pembayaran pilot masuk escrow sebelum mulai.",
+        "Kerjakan dengan alat kerja yang sudah ada: scaffold, tes, dokumentasi metode, cek serah terima.",
+        "Serahkan paket, minta konfirmasi tertulis bahwa kriteria penerimaan terpenuhi.",
+        "Catat pembayaran di karir.py supaya pendapatan dan laba bersih terbarui.",
+    ])
+    status_target = (f"<p class='meta'>Tahap sekarang: <b>{target.get('tahap','-')}</b> · "
+                     f"nilai pilot {usd(target.get('nilai_potensial_usd',0),0)} · "
+                     f"<a href='{target.get('url','#')}'>halaman proyek</a></p>") if target else ""
+
     prod = d["produk"]
     bukti = "".join(f"<li>{x}</li>" for x in prod["bukti_yang_sudah_ada"])
     belum = "".join(f"<li>{x}</li>" for x in prod["yang_belum_ada"])
@@ -113,6 +129,26 @@ pendapatan yang dicatat sebelum uangnya diterima.</p>
 <div class='ket'>per bulan</div></div>
 <div class='card'><div class='k'>Proposal siap</div><div class='v'>2</div>
 <div class='ket'>draf, belum dikirim</div></div>
+</div>
+
+<h2>0. Target minggu ini: satu pekerjaan pertama</h2>
+<div class="panel">
+<h3>{target.get('judul','belum ada target')}</h3>
+{status_target}
+<p><b>Kenapa ini, bukan yang lain.</b> Dari 196 proyek aktif yang dipindai, hanya 7 yang
+kliennya terverifikasi pembayaran, dan hanya dua yang cocok dengan kemampuan nyata. Yang
+satu beranggaran maksimal $250 dengan lingkup 25 jam. Proyek ini punya lima bid, anggaran
+yang cukup untuk pekerjaan serius, dan hasilnya bisa diotomatiskan: laporan probabilitas
+dari data historis, bukan analisis manual sekali jadi.</p>
+<p><b>Yang diminta:</b> laporan kuantitatif pra-pertandingan, model head-to-head, pengaruh
+kondisi lapangan dan cuaca, dan estimasi probabilitas menang untuk cricket, sepak bola, dan
+tenis.</p>
+<p><b>Rencana penawaran:</b> pilot $600 untuk tiga pertandingan dalam lima hari kerja,
+berisi lapisan data, model, templat laporan, dan generator yang bisa dijalankan ulang.
+Kalau cocok, lanjut retainer $1.800 per bulan.</p>
+<p><b>Langkah berikutnya:</b></p><ol>{langkah}</ol>
+<p class="meta">Semua langkah di atas masih menunggu persetujuan Fatih pada harga dan isi
+proposal. Belum ada yang dikirim.</p>
 </div>
 
 <h2>1. Biaya</h2>
