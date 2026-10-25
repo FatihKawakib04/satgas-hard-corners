@@ -14,7 +14,12 @@
      "pos": {}
     }
    ],
-   "dihentikan": false
+   "dihentikan": false,
+   "bench0": {
+    "BTC": 80187.76,
+    "ETH": 2316.0,
+    "SOL": 100.29
+   }
   },
   "E03:donchian": {
    "mulai": "2026-10-25",

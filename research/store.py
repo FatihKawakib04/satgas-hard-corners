@@ -92,7 +92,10 @@ def connect(path: str = DB_PATH) -> sqlite3.Connection:
     con.execute("PRAGMA journal_mode=WAL")
     con.executescript(SCHEMA)
     # migrasi ringan: kolom tambahan yang mungkin belum ada di DB lama
-    for ddl in ("ALTER TABLE lab_exp ADD COLUMN konfigurasi TEXT",
+    for ddl in ("ALTER TABLE lab_exp ADD COLUMN dsr REAL",
+                "ALTER TABLE lab_paper ADD COLUMN bench_btc REAL",
+                "ALTER TABLE lab_paper ADD COLUMN bench_basket REAL",
+                "ALTER TABLE lab_exp ADD COLUMN konfigurasi TEXT",
                 "ALTER TABLE lab_exp ADD COLUMN wf_return REAL",
                 "ALTER TABLE lab_exp ADD COLUMN wf_sharpe REAL",
                 "ALTER TABLE lab_exp ADD COLUMN wf_maxdd REAL"):

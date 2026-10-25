@@ -54,6 +54,20 @@ def render() -> str:
             "SELECT tanggal, strategi, ekuitas, posisi, catatan FROM lab_paper "
             "ORDER BY tanggal, strategi")]
         biaya = [dict(r) for r in con.execute("SELECT * FROM lab_biaya ORDER BY item")]
+        validasi = [dict(r) for r in con.execute(
+            "SELECT id, strategi, status_validasi, dsr, validasi_ts FROM lab_exp "
+            "WHERE status_validasi IS NOT NULL ORDER BY validasi_ts DESC")]
+        paper_last = [dict(r) for r in con.execute(
+            "SELECT p.* FROM lab_paper p JOIN (SELECT strategi, MAX(tanggal) t FROM lab_paper "
+            "GROUP BY strategi) x ON p.strategi=x.strategi AND p.tanggal=x.t")]
+    # hanya tampilkan strategi yang masih diuji maju
+    try:
+        import paper as P
+        aktif_keys = {f"{a['id']}:{a['strategi']}" for a in P.aktif()}
+        paper_last = [p for p in paper_last if p["strategi"] in aktif_keys]
+    except Exception:
+        pass
+    with store.db() as con:
         try:
             nulls = [dict(r) for r in con.execute("SELECT * FROM lab_null ORDER BY p_value")]
         except Exception:
@@ -113,6 +127,39 @@ def render() -> str:
             'parameter yang sama disisir pada data tanpa pola timing, sebaik apa hasil terbaiknya? '
             'p di atas 0,05 berarti keunggulan strategi bisa dijelaskan pencarian parameter.</p></div>')
 
+    val_html = ""
+    if validasi:
+        vrows = "".join(
+            f"<tr><td>{v['id']}</td><td>{v['strategi']}</td>"
+            f"<td><span class='badge {'up' if v['status_validasi'] in ('kuat','sedang') else 'warn'}'>"
+            f"{v['status_validasi']}</span></td>"
+            f"<td class='n'>{fmt(v['dsr'], 3)}</td><td>{v['validasi_ts'] or ''}</td></tr>"
+            for v in validasi)
+        val_html = ('<h2>Validasi strategi</h2><div class="panel"><table><thead><tr><th>ID</th>'
+                    '<th>Strategi</th><th>Status bukti</th><th class="n">DSR</th>'
+                    '<th>Diperiksa</th></tr></thead><tbody>' + vrows + '</tbody></table>'
+                    '<p class="meta">DSR mengoreksi Sharpe karena kita sudah mencoba banyak '
+                    'kombinasi. Di bawah 0,90 berarti keunggulan belum bisa dibedakan dari '
+                    'keberuntungan pemilihan parameter. <a href="validasi.html">Lihat rincian '
+                    'sembilan uji</a>.</p></div>')
+
+    paper_html = ""
+    if paper_last:
+        prows = "".join(
+            f"<tr><td>{p['strategi']}</td><td class='n'>${fmt(p['ekuitas'], 0)}</td>"
+            f"<td class='n {cls(p['ekuitas'] - CONFIG['paper']['modal_usd'])}'>"
+            f"{pct((p['ekuitas'] / CONFIG['paper']['modal_usd'] - 1) * 100)}</td>"
+            f"<td class='n'>{pct(p.get('bench_btc'))}</td>"
+            f"<td class='n'>{pct(p.get('bench_basket'))}</td>"
+            f"<td><code>{p['posisi']}</code></td></tr>" for p in paper_last)
+        paper_html = ('<div class="panel"><h3>Paper trading versus benchmark</h3>'
+                      '<table><thead><tr><th>Strategi</th><th class="n">Ekuitas</th>'
+                      '<th class="n">Return</th><th class="n">BTC</th>'
+                      '<th class="n">Keranjang</th><th>Posisi</th></tr></thead><tbody>'
+                      + prows + '</tbody></table>'
+                      '<p class="meta">Keranjang = bobot sama BTC/ETH/SOL sejak tanggal mulai. '
+                      'Periode masih pendek, jadi belum bisa dipakai menyimpulkan.</p></div>')
+
     biaya_rows = "".join(
         f'<tr><td>{b["item"]}</td><td class="n">{fmt(b["usd_per_bulan"], 2)}</td>'
         f'<td>{b["catatan"] or ""}</td></tr>' for b in biaya) or \
@@ -157,7 +204,10 @@ terhadap beli-dan-tahan BTC. Yang gagal dicatat, bukan dihapus.</p>
 bukan hasil walk-forward. Angka walk-forward yang dipakai menilai ada di tabel antrean.
 Sharpe penuh memakai seluruh riwayat sehingga optimistis dan tidak boleh dipakai sebagai bukti.</p></div>
 
+{val_html}
 {null_html}
+{''.join(charts) if charts else ''}
+{paper_html}
 
 <h2>Biaya operasional</h2>
 <div class="panel"><table><thead><tr><th>Item</th><th class="n">USD/bulan</th>

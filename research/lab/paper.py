@@ -85,8 +85,22 @@ def step() -> list[dict]:
         })
         if s.get("dihentikan"):
             continue
-        # idempoten: satu tanggal hanya dihitung sekali, walau skrip jalan berkali-kali
-        if s["riwayat"] and s["riwayat"][-1]["t"] == datetime.now(WIB).strftime("%Y-%m-%d"):
+        tgl_ini = datetime.now(WIB).strftime("%Y-%m-%d")
+        # idempoten: satu tanggal hanya dihitung sekali, walau skrip jalan berkali-kali.
+        # Benchmark tetap diisi/diperbarui supaya perbandingan tidak kosong.
+        if s["riwayat"] and s["riwayat"][-1]["t"] == tgl_ini:
+            meta0 = S.KATALOG[strat]
+            d0 = D.load(meta0["syms"], min_days=CONFIG["gerbang"]["min_hari_data"])
+            if not s.get("bench0"):
+                s["bench0"] = {x: d0.prices[x][-1] for x in ("BTC", "ETH", "SOL")
+                               if x in d0.prices}
+            b0 = s["bench0"]
+            btc_ret = (d0.prices["BTC"][-1] / b0["BTC"] - 1) * 100 if b0.get("BTC") else 0.0
+            basket = [d0.prices[x][-1] / b0[x] - 1 for x in b0 if b0.get(x)]
+            basket_ret = (sum(basket) / len(basket) * 100) if basket else 0.0
+            with store.db() as con:
+                con.execute("UPDATE lab_paper SET bench_btc=?, bench_basket=? "
+                            "WHERE tanggal=? AND strategi=?", (btc_ret, basket_ret, tgl_ini, key))
             continue
         if not s.get("params"):
             s["params"] = (json.loads(row["konfigurasi"]) if row.get("konfigurasi")
@@ -95,6 +109,13 @@ def step() -> list[dict]:
         d = D.load(meta["syms"], min_days=CONFIG["gerbang"]["min_hari_data"])
         tg = target_hari_ini(strat, s["params"], d.dates, d.prices)
         harga = d.prices["BTC"][-1] if "BTC" in d.prices else None
+        # simpan harga awal untuk benchmark (BTC dan keranjang sama bobot)
+        if not s.get("bench0"):
+            s["bench0"] = {x: d.prices[x][-1] for x in ("BTC", "ETH", "SOL") if x in d.prices}
+        b0 = s["bench0"]
+        btc_ret = (harga / b0["BTC"] - 1) * 100 if b0.get("BTC") else 0.0
+        basket = [d.prices[x][-1] / b0[x] - 1 for x in b0 if b0.get(x)]
+        basket_ret = (sum(basket) / len(basket) * 100) if basket else 0.0
         # return harian dari posisi sebelumnya, memakai perubahan harga hari ini
         ret = 0.0
         for sym, w in s["posisi"].items():
@@ -115,13 +136,17 @@ def step() -> list[dict]:
             s["dihentikan"] = True
             s["alasan_henti"] = f"drawdown {dd:.1f}% melewati batas"
         with store.db() as con:
-            con.execute("INSERT INTO lab_paper(tanggal,strategi,ekuitas,posisi,harga,catatan) "
-                        "VALUES (?,?,?,?,?,?) ON CONFLICT(tanggal,strategi) DO UPDATE SET "
-                        "ekuitas=excluded.ekuitas, posisi=excluded.posisi",
+            con.execute("INSERT INTO lab_paper(tanggal,strategi,ekuitas,posisi,harga,catatan,"
+                        "bench_btc,bench_basket) VALUES (?,?,?,?,?,?,?,?) "
+                        "ON CONFLICT(tanggal,strategi) DO UPDATE SET ekuitas=excluded.ekuitas,"
+                        " posisi=excluded.posisi, bench_btc=excluded.bench_btc,"
+                        " bench_basket=excluded.bench_basket",
                         (tgl, key, s["ekuitas"], json.dumps(s["posisi"]), harga,
-                         f"dd {dd:.1f}%" + (" DIHENTIKAN" if s["dihentikan"] else "")))
+                         f"dd {dd:.1f}%" + (" DIHENTIKAN" if s["dihentikan"] else ""),
+                         btc_ret, basket_ret))
         hasil.append({"key": key, "ekuitas": round(s["ekuitas"], 2), "dd": round(dd, 2),
-                      "posisi": s["posisi"], "henti": s["dihentikan"]})
+                      "posisi": s["posisi"], "henti": s["dihentikan"],
+                      "bench_btc": round(btc_ret, 2), "bench_basket": round(basket_ret, 2)})
     save_state(st)
     return hasil
 

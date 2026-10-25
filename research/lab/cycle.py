@@ -149,6 +149,20 @@ def siklus(notify: bool = True) -> tuple[int, str]:
             if null["p_value"] >= 0.05:
                 res["verdict"] = "kandidat"
                 res["alasan"] += " Tidak menonjol dibanding hasil pencarian parameter acak."
+            else:
+                # lolos null: jalankan validasi ketat (look-ahead, biaya, holdout, DSR)
+                try:
+                    import validasi as V
+                    V.jalankan(exp["id"])
+                    with store.db() as con:
+                        st = con.execute("SELECT status_validasi, dsr FROM lab_exp WHERE id=?",
+                                         (exp["id"],)).fetchone()
+                    if st and st["status_validasi"] in ("lemah", "bocor"):
+                        res["verdict"] = "kandidat"
+                        res["alasan"] += (f" Validasi ketat: status {st['status_validasi']} "
+                                          f"(DSR {st['dsr']:.2f}), belum cukup bukti.")
+                except Exception as e:
+                    res["alasan"] += f" Validasi ketat gagal dijalankan: {type(e).__name__}."
         except Exception as e:
             res["alasan"] += f" Uji null gagal: {type(e).__name__}."
 
