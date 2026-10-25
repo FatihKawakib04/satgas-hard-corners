@@ -143,7 +143,8 @@ def render() -> str:
                     'keberuntungan pemilihan parameter. <a href="validasi.html">Lihat rincian '
                     'sembilan uji</a>. E06 sudah diaudit lebih dalam: '
                     '<a href="audit-e06.html">survivorship, DSR, dan stabilitas antar periode</a> '
-                    'menurunkannya menjadi gugur.</p></div>')
+                    'menurunkannya menjadi gugur. Carry funding juga sudah diaudit: '
+                    '<a href="audit-carry.html">E20, kenapa Sharpe 2,30 tidak bertahan</a>.</p></div>')
 
     paper_html = ""
     if paper_last:

@@ -522,7 +522,8 @@ karena banyaknya kombinasi yang sudah dicoba.</p>
 <div class="panel"><table><thead><tr><th>ID</th><th>Strategi</th><th>Status bukti</th>
 <th class="n">DSR</th><th>Diperiksa</th></tr></thead><tbody>{''.join(trs)}</tbody></table>
 <p class="meta">Audit mendalam E06 (survivorship, sensitivitas DSR, jendela bergulir):
-<a href="audit-e06.html">buka halaman audit</a>.</p>
+<a href="audit-e06.html">buka halaman audit</a>. Audit carry funding (E20):
+<a href="audit-carry.html">hasil lengkap</a>.</p>
 <p class="meta">Status: kuat bila DSR di atas 0,95 dan kedua uji null signifikan; sedang bila
 DSR 0,90 sampai 0,95; lemah bila di bawah itu; bocor bila uji look-ahead gagal. DSR adalah
 probabilitas keunggulan nyata setelah dikoreksi karena kita sudah menguji banyak kombinasi.</p>

@@ -279,9 +279,10 @@
   "id": "E20",
   "strategi": "audit_carry_funding",
   "catatan": "Audit E17 carry funding, bukan strategi baru: cek kebocoran data funding, biaya nyata, likuiditas, dan apakah Sharpe 2,30 bertahan di luar sampel serta antar bursa.",
-  "status": "antrian",
+  "status": "selesai",
   "dibuat": "2026-10-25",
-  "keputusan": null,
-  "ringkas": ""
+  "keputusan": "gugur",
+  "ringkas": "Carry neto 3,8%/tahun lalu turun ke 0,7% pada 2026. Overlay timing E17 negatif di OOS (-1,02%, Sharpe -1,22). Data funding terverifikasi 6/6 ke Binance, tapi hanya 3 tahun dan tanpa data basis.",
+  "selesai": "2026-10-25 08:52"
  }
 ]
