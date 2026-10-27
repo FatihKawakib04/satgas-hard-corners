@@ -1,0 +1,228 @@
+openapi: 3.0.1
+info:
+  title: Crypto Data API
+  version: 1.0.0
+  description: "Real-time crypto market data. 12 coins with price, 24h/7d change, volume and market cap; global market stats (total market cap, 24h volume, BTC dominance); fear & greed index; sentiment digest. Free tier 10 req/min, no API key. Pro 100 req/min (X-API-Key). Data refreshed every 15 min. Stale data (>30 min) returns 503. Sources: Binance (prices, volume), CoinPaprika (market cap, global), alternative.me (fear & greed)."
+servers:
+  - url: https://satgas.ai.id/api
+    description: Production
+paths:
+  /health:
+    get:
+      summary: Service health check
+      description: Returns service status and coin count.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  coins:
+                    type: integer
+                    example: 12
+  /v1/market:
+    get:
+      summary: All market data
+      description: Returns all 12 coins (price, 24h/7d change, volume, market cap), global market stats, fear & greed index, sentiment digest, and freshness metadata.
+      responses:
+        '200':
+          description: Market data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dibuat:
+                    type: string
+                    format: date-time
+                  global:
+                    type: object
+                    nullable: true
+                    description: "Total market cap, 24h volume, BTC dominance, 24h market cap change."
+                  fear_greed:
+                    type: object
+                    properties:
+                      value:
+                        type: integer
+                      label:
+                        type: string
+                  coins:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        sym:
+                          type: string
+                        name:
+                          type: string
+                        price:
+                          type: number
+                        chg24:
+                          type: number
+                        chg7d:
+                          type: number
+                        mcap:
+                          type: number
+                          nullable: true
+                        vol:
+                          type: number
+                  sentimen:
+                    type: object
+                    properties:
+                      mood:
+                        type: string
+                      score:
+                        type: integer
+                      tema:
+                        type: array
+                        items:
+                          type: string
+                      poin:
+                        type: array
+                        items:
+                          type: object
+                      risiko:
+                        type: array
+                        items:
+                          type: string
+                      umur_menit:
+                        type: integer
+                  _meta:
+                    type: object
+                    properties:
+                      source:
+                        type: string
+                      age_seconds:
+                        type: integer
+                      updated:
+                        type: string
+                        format: date-time
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  limit_per_min:
+                    type: integer
+        '503':
+          description: Data unavailable or stale
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /v1/coin/{sym}:
+    get:
+      summary: Single coin by symbol
+      description: Returns data for a single cryptocurrency by symbol (BTC, ETH, SOL, etc.).
+      parameters:
+        - name: sym
+          in: path
+          required: true
+          description: Coin symbol (1-10 alphanumeric characters)
+          schema:
+            type: string
+            pattern: "^[A-Za-z0-9]{1,10}$"
+          example: BTC
+      responses:
+        '200':
+          description: Coin data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sym:
+                    type: string
+                  name:
+                    type: string
+                  price:
+                    type: number
+                  chg24:
+                    type: number
+                  chg7d:
+                    type: number
+                  mcap:
+                    type: number
+                    nullable: true
+                  vol:
+                    type: number
+        '400':
+          description: Invalid symbol
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '404':
+          description: Coin not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '429':
+          description: Rate limit exceeded
+        '503':
+          description: Data unavailable or stale
+  /v1/fear-greed:
+    get:
+      summary: Fear & greed index
+      description: Returns the current fear & greed index value and label.
+      responses:
+        '200':
+          description: Fear & greed data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: integer
+                  label:
+                    type: string
+        '429':
+          description: Rate limit exceeded
+        '503':
+          description: Data unavailable or stale
+  /v1/payment:
+    get:
+      summary: Payment status
+      description: Returns payment provider status.
+      responses:
+        '200':
+          description: Payment info
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  provider:
+                    type: string
+                    nullable: true
+                  status:
+                    type: string
+                  note:
+                    type: string
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: "Optional. Without key 10 req/min. With key 100 req/min."

@@ -6,6 +6,7 @@ digest, in one flat JSON response. Free tier needs **no API key and no signup**.
 - Landing page and docs: https://satgas.ai.id/crypto/api/
 - Base URL: `https://satgas.ai.id/api`
 - OpenAPI 3.0.3: [`openapi.yaml`](openapi.yaml) (canonical copy: https://satgas.ai.id/crypto/api/openapi.yaml)
+- RapidAPI import-ready spec (OpenAPI 3.0.1, for the marketplace importer which rejects 3.0.3): [`openapi-rapidapi.yaml`](openapi-rapidapi.yaml)
 - Postman Collection v2.1: [`postman_collection.json`](postman_collection.json) (canonical: https://satgas.ai.id/crypto/api/postman_collection.json)
 
 ## Endpoints
