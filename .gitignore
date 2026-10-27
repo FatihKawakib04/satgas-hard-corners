@@ -23,3 +23,7 @@ research/db/
 research/out/.last_markets.json
 research/out/preview.*
 crypto/.last_markets.json
+
+# Runtime caches (snapshot harga & market cap), bukan artefak
+crypto/*_cache.json
+crypto/.last_markets.json

@@ -70,13 +70,14 @@ def spark_svg(prices, w=108, h=30):
 
 # ------------------------------------------------------------- sentimen (LLM)
 SENT_SYSTEM = (
-    "Kamu analis pasar crypto. Dari daftar tweet crypto/ekonomi terbaru, buat ringkasan sentimen.\n"
-    "Balas HANYA JSON valid, tanpa penjelasan, tanpa blok kode, dengan skema:\n"
-    '{"mood":"risk-on|netral|risk-off","score":<-2..2 angka>,"tema":["..."],'
+    "You are a crypto market analyst. From the recent crypto and macro tweets below, "
+    "write a sentiment summary.\n"
+    "Reply with VALID JSON only, no prose, no code block, using this schema:\n"
+    '{"mood":"risk-on|neutral|risk-off","score":<-2..2 number>,"tema":["..."],'
     '"poin":[{"teks":"...","sumber":"@handle"}],"risiko":["..."]}\n'
-    "Aturan: tiap poin maksimal 24 kata, faktual, sebut sumber @handle yang benar-benar ada "
-    "di data. Kalau data tidak mendukung, jangan tulis. Bahasa Indonesia, tanpa em dash. "
-    "score = bias pasar 7 hari dari isi berita: -2 sangat bearish, 0 netral, +2 sangat bullish."
+    "Rules: each point at most 24 words, factual, cite an @handle that actually appears "
+    "in the data. If the data does not support it, do not write it. English only, no em dash. "
+    "score = 7-day market bias from the news: -2 very bearish, 0 neutral, +2 very bullish."
 )
 
 
@@ -292,8 +293,15 @@ ul.poin b{font-weight:800;white-space:nowrap}
 
 /* ---------- responsive ---------- */
 @media (max-width:820px){
-  .main-nav,.hide-sm{display:none}
-  .head-in{padding-block:.55rem}
+  .main-nav{
+    display:flex;order:3;flex:1 0 100%;margin-left:0;width:100%;
+    flex-wrap:wrap;gap:.1rem;padding-bottom:.1rem;
+  }
+  .main-nav a{flex:0 0 auto;white-space:nowrap;padding:.28rem .4rem;font-size:.78rem}
+  .hide-sm{display:none}
+  .head-in{padding-block:.55rem;flex-wrap:wrap;gap:.45rem}
+  .chip{margin-left:auto}
+  .theme-toggle{order:2}
 }
 @media (max-width:700px){
   .col-extra{display:none}
@@ -309,6 +317,43 @@ ul.poin b{font-weight:800;white-space:nowrap}
   .stat .v{font-size:1.2rem}
   .asset .nm{display:none}
   .pct{font-size:.72rem;padding:.05rem .25rem}
+}
+@media (max-width:380px){
+  .chip--live{display:none}
+  .brand .word{font-size:1rem}
+  .head-in{padding-block:.45rem}
+}
+
+/* ---------- dark theme ----------
+   Base #111418, raised surfaces lighter, off-white text, accent desaturated.
+   Borders use a mid tone instead of the light ink so 3px rules do not glare. */
+[data-theme="dark"]{
+  color-scheme:dark;
+  --cream:#111418;--cream2:#181c22;--paper:#1e232a;
+  --ink:#e8e4dc;--lime:#8fb6d2;--orange:#d9825e;
+}
+[data-theme="dark"] body{background:var(--cream);color:var(--ink)}
+[data-theme="dark"] .site-head{background:var(--cream);border-bottom-color:#5f6a76}
+[data-theme="dark"] .panel,
+[data-theme="dark"] table,
+[data-theme="dark"] .stat,
+[data-theme="dark"] .site-foot{border-color:#5f6a76}
+[data-theme="dark"] th{background:var(--cream2)}
+[data-theme="dark"] th,[data-theme="dark"] td{border-bottom-color:#5f6a76}
+[data-theme="dark"] .tag{background:var(--paper);border-color:#5f6a76}
+[data-theme="dark"] .main-nav a:hover,
+[data-theme="dark"] .main-nav a:focus-visible{background:var(--lime);color:#0e1216}
+[data-theme="dark"] .site-foot{border-top-color:#5f6a76}
+[data-theme="dark"] .spark polyline{opacity:.9}
+.theme-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:36px;padding:.28rem .6rem;cursor:pointer;
+  border:2px solid #5f6a76;background:var(--paper);color:var(--ink);
+  font:700 .78rem/1 var(--display);
+}
+.theme-toggle:hover{background:var(--lime);color:#0e1216}
+@media (prefers-reduced-motion:no-preference){
+  body,.site-head,.panel,.stat,.tag,.chip{transition:background-color .18s ease,color .18s ease,border-color .18s ease}
 }
 """
 
@@ -350,13 +395,13 @@ def render(coins, glob, fng_v, fng_c, sent, now):
         vol = glob.get("total_volume", {}).get("usd")
         btc_d = glob.get("market_cap_percentage", {}).get("btc")
         chg = glob.get("market_cap_change_percentage_24h_usd")
-        stats.append(("Kapitalisasi total", cg.human(mc), pct_chip(chg) + " <span>24 jam</span>"))
-        stats.append(("Volume 24 jam", cg.human(vol),
-                      f"<span>dominasi BTC {btc_d:.1f}%</span>" if btc_d else ""))
+        stats.append(("Total market cap", cg.human(mc), pct_chip(chg) + " <span>24h</span>"))
+        stats.append(("24h volume", cg.human(vol),
+                      f"<span>BTC dominance {btc_d:.1f}%</span>" if btc_d else ""))
     btc = next((c for c in coins if (c.get("symbol") or "").lower() == "btc"), None)
     if btc:
         stats.append(("Bitcoin", cg.price_fmt(btc.get("current_price")),
-                      pct_chip(btc.get("price_change_percentage_24h_in_currency")) + " <span>24 jam</span>"))
+                      pct_chip(btc.get("price_change_percentage_24h_in_currency")) + " <span>24h</span>"))
     if fng_v is not None:
         stats.append(("Fear &amp; Greed", f"{fng_v}<span style=\"font-size:.55em\">/100</span>",
                       f"<span>{esc(fng_c)}</span>"))
@@ -379,16 +424,16 @@ def render(coins, glob, fng_v, fng_c, sent, now):
             f'<td class="col-extra">{cg.human(c.get("total_volume"))}</td></tr>')
 
     if sent:
-        mood = (sent.get("mood") or "netral").lower()
-        if mood not in ("risk-on", "netral", "risk-off"):
-            mood = "netral"
+        mood = (sent.get("mood") or "neutral").lower()
+        if mood not in ("risk-on", "neutral", "risk-off"):
+            mood = "neutral"
         score = float(sent.get("score") or 0)
         left = max(0, min(100, (score + 2) / 4 * 100))
         umur = sent.get("umur_menit")
-        umur_txt = ("baru diperbarui" if umur is not None and umur < 3
-                    else f"cache {umur} menit" if umur is not None else "waktu tidak diketahui")
+        umur_txt = ("updated just now" if umur is not None and umur < 3
+                    else f"cached {umur} min ago" if umur is not None else "update time unknown")
         if sent.get("stale"):
-            umur_txt += " (gagal refresh)"
+            umur_txt += " (refresh failed)"
         poin = "".join(
             f'<li><span>{esc(p.get("teks"))} <b>{esc(p.get("sumber"))}</b></span></li>'
             for p in (sent.get("poin") or []) if p.get("teks"))
@@ -406,33 +451,34 @@ def render(coins, glob, fng_v, fng_c, sent, now):
             <span class="score">{score:+.1f}</span>
             <span class="gauge"><i style="left:{min(96, left):.1f}%"></i></span>
           </div>
-          <div class="gauge-lbl"><span>risk-off</span><span>netral</span><span>risk-on</span></div>
+          <div class="gauge-lbl"><span>risk-off</span><span>neutral</span><span>risk-on</span></div>
           <div class="themes">{tema}</div>
-          <ul class="poin">{poin or '<li><span>tidak ada poin</span></li>'}</ul>
+          <ul class="poin">{poin or '<li><span>no points</span></li>'}</ul>
           {f'<ul class="risiko">{risiko}</ul>' if risiko else ''}
           <p class="tag tag--mut" style="margin:.9rem 0 0;font-size:.74rem">
-            Diringkas model bahasa dari {sent.get('jumlah_tweet', '?')} tweet
-            ({sent.get('jumlah_akun', '?')} akun). Verifikasi sebelum dipakai.
+            Summarised by a language model from {sent.get('jumlah_tweet', '?')} tweets
+            ({sent.get('jumlah_akun', '?')} accounts). Verify before use.
           </p>
         </div>
       </div>"""
     else:
         sent_html = ('<div class="panel"><div class="panel-body"><div class="empty">'
-                     'Sentimen belum tersedia: scrape X gagal atau cache kosong.</div></div></div>')
+                     'Sentiment unavailable: X scrape failed or cache is empty.</div></div></div>')
 
     return f"""<!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#eeebe4">
 <meta http-equiv="refresh" content="900">
 <title>SATGAS — Crypto desk {now:%d.%m.%Y %H:%M} WIB</title>
-<meta name="description" content="Snapshot pasar crypto dan sentimen X, diperbarui otomatis oleh unit SATGAS.">
+<meta name="description" content="Crypto market snapshot with X sentiment, refreshed automatically by the SATGAS unit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>{CSS}</style>
+<script src="/crypto/assets/theme.js?v=5"></script>
 </head>
 <body id="top">
 <header class="site-head">
@@ -442,12 +488,16 @@ def render(coins, glob, fng_v, fng_c, sent, now):
       <span class="word">SATGAS</span>
       <span class="tag tag--mut hide-sm">crypto desk</span>
     </a>
-    <nav class="main-nav" aria-label="Navigasi">
-      <a href="#pasar">Pasar</a>
-      <a href="#sentimen">Sentimen</a>
-      <a href="/crypto/riset/">Riset</a>
-      <a href="https://satgas.ai.id/">Beranda</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#markets">Markets</a>
+      <a href="#sentiment">Sentiment</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/">Research</a>
+      <a href="/crypto/api/">API</a>
     </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
     <span class="chip chip--live">{now:%H:%M} WIB</span>
   </div>
 </header>
@@ -456,36 +506,36 @@ def render(coins, glob, fng_v, fng_c, sent, now):
   <section class="hero">
     <p class="kicker">
       <span class="badge">SNAPSHOT</span>
-      <span class="tag tag--mut">auto-refresh 15 menit</span>
+      <span class="tag tag--mut">auto-refresh 15 min</span>
     </p>
-    <h1>Pasar<br>crypto</h1>
-    <p class="lede">Harga <b>top 12 aset</b> dalam USD dari CoinGecko, plus sentimen tweet
-    crypto dan ekonomi internasional hasil ringkasan model bahasa. Angka pasar diperbarui
-    tiap 15 menit, sentimen tiap 2 jam.</p>
+    <h1>Crypto<br>market</h1>
+    <p class="lede">Prices for the <b>top 12 assets</b> in USD from CoinGecko, plus sentiment from
+    crypto and macro tweets summarised by a language model. Market data refreshes every
+    15 minutes, sentiment every 2 hours.</p>
   </section>
 
-  <section class="stats" aria-label="Ringkasan pasar">{stat_html}</section>
+  <section class="stats" aria-label="Market summary">{stat_html}</section>
 
-  <section class="block" id="pasar">
+  <section class="block" id="markets">
     <div class="sec-head">
-      <h2>Top {len(coins)} aset</h2>
-      <span class="meta">perubahan 7 hari · USD</span>
+      <h2>Top {len(coins)} assets</h2>
+      <span class="meta">7-day change · USD</span>
     </div>
     <div class="table-wrap">
       <table>
         <thead><tr>
-          <th>Aset</th><th>7D</th><th>Harga</th><th>24J</th>
-          <th class="col-extra">7H</th><th class="col-extra">MCap</th><th class="col-extra">Vol 24J</th>
+          <th>Asset</th><th>7D</th><th>Price</th><th>24H</th>
+          <th class="col-extra">7D</th><th class="col-extra">MCap</th><th class="col-extra">24H Vol</th>
         </tr></thead>
         <tbody>{''.join(rows)}</tbody>
       </table>
     </div>
   </section>
 
-  <section class="block" id="sentimen">
+  <section class="block" id="sentiment">
     <div class="sec-head">
-      <h2>Sentimen X</h2>
-      <span class="meta">20 akun crypto &amp; ekonomi</span>
+      <h2>X sentiment</h2>
+      <span class="meta">20 crypto and macro accounts</span>
     </div>
     {sent_html}
   </section>
@@ -494,13 +544,13 @@ def render(coins, glob, fng_v, fng_c, sent, now):
 <footer class="site-foot">
   <div class="shell foot-in">
     <div>
-      <p class="lbl">Sumber</p>
-      <p>Harga: CoinGecko (USD, cache publik). Fear &amp; Greed: alternative.me.
-      Sentimen: tweet publik lewat relay sendiri, diringkas model bahasa.</p>
+      <p class="lbl">Sources</p>
+      <p>Prices: CoinGecko (USD, public cache). Fear &amp; Greed: alternative.me.
+      Sentiment: public tweets via a self-hosted relay, summarised by a language model.</p>
     </div>
     <div>
-      <p class="lbl">Dibangun</p>
-      <p>{now:%Y-%m-%d %H:%M} WIB oleh cron, bukan nasihat investasi.</p>
+      <p class="lbl">Built</p>
+      <p>{now:%Y-%m-%d %H:%M} WIB by cron. Not investment advice.</p>
       <p><a href="https://satgas.ai.id/">satgas.ai.id</a></p>
     </div>
   </div>
