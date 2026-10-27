@@ -1,0 +1,330 @@
+{
+  "info": {
+    "_postman_id": "39653ffa-61d1-4716-ae88-64ad3817f997",
+    "name": "Crypto Data API",
+    "description": "Keyless crypto market data: 12 major coins, global market stats, fear & greed index and a sentiment digest.\n\n**Base URL:** https://satgas.ai.id/api\n\n**Auth:** none needed. The free tier accepts anonymous calls (10 requests/minute per IP) and this collection deliberately ships no API key or secret. Paid tiers add an `X-API-Key` header for 100-500 req/min.\n\n**Freshness contract:** the snapshot rebuilds every 15 minutes and every /v1/market response carries `_meta.age_seconds`. If the snapshot is older than 30 minutes the API returns `503` instead of stale prices.\n\n**Docs and spec:** https://satgas.ai.id/crypto/api/ · OpenAPI 3.0.3: https://satgas.ai.id/crypto/api/openapi.yaml\n\n**CORS:** not enabled, call it server-side (backend, script, cron, agent tool).\n\nResponse examples in this collection are real captures from production, not hand-written.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"status is 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"service is ok\", () => pm.expect(pm.response.json().status).to.eql(\"ok\"));",
+              "pm.test(\"snapshot has coins\", () => pm.expect(pm.response.json().coins).to.be.above(0));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        },
+        "description": "Service health check. Returns the service status and how many coins the current snapshot holds. Cheap enough to use as a monitor probe."
+      },
+      "response": [
+        {
+          "name": "200 OK - live capture 2026-10-27 07:08 WIB",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n \"status\": \"ok\",\n \"coins\": 12\n}"
+        }
+      ]
+    },
+    {
+      "name": "Market overview",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"status is 200\", () => pm.response.to.have.status(200));",
+              "const d = pm.response.json();",
+              "pm.test(\"has coins, global and freshness\", () => {",
+              "    pm.expect(d.coins).to.be.an(\"array\").that.is.not.empty;",
+              "    pm.expect(d.global).to.be.an(\"object\");",
+              "    pm.expect(d._meta.age_seconds).to.be.a(\"number\");",
+              "});",
+              "pm.test(\"snapshot is fresh (under 30 min)\", () => pm.expect(d._meta.age_seconds).to.be.below(1800));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/v1/market",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v1",
+            "market"
+          ]
+        },
+        "description": "Full snapshot in one flat JSON payload: every coin (price, 24h and 7d change, volume, market cap), global market stats, the fear & greed index, a sentiment digest, and a _meta block. Use _meta.age_seconds to decide whether the read is fresh: the snapshot rebuilds every 15 minutes and the API answers 503 instead of serving data older than 30 minutes."
+      },
+      "response": [
+        {
+          "name": "200 OK - live capture 2026-10-27 07:08 WIB",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/v1/market",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "market"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n \"dibuat\": \"2026-10-27T07:15:26.741756+07:00\",\n \"global\": {\n  \"total_market_cap\": {\n   \"usd\": 2806452093590\n  },\n  \"total_volume\": {\n   \"usd\": 110564066619\n  },\n  \"market_cap_percentage\": {\n   \"btc\": 57.38\n  },\n  \"market_cap_change_percentage_24h_usd\": 0\n },\n \"fear_greed\": {\n  \"value\": 48,\n  \"label\": \"Neutral\"\n },\n \"coins\": [\n  {\n   \"sym\": \"BTC\",\n   \"name\": \"Bitcoin\",\n   \"price\": 80198.01,\n   \"chg24\": 0.022,\n   \"chg7d\": -1.9562056110070942,\n   \"mcap\": 1610451796376.0,\n   \"vol\": 1226484722.9979088\n  },\n  {\n   \"sym\": \"ETH\",\n   \"name\": \"Ethereum\",\n   \"price\": 2326.34,\n   \"chg24\": -0.28,\n   \"chg7d\": -3.038866312389282,\n   \"mcap\": 283807816695.0,\n   \"vol\": 442045722.847753\n  },\n  {\n   \"sym\": \"BNB\",\n   \"name\": \"BNB\",\n   \"price\": 744.55,\n   \"chg24\": 0.62,\n   \"chg7d\": 2.1891298380455573,\n   \"mcap\": 97783035509.0,\n   \"vol\": 75611689.78232\n  },\n  {\n   \"sym\": \"SOL\",\n   \"name\": \"Solana\",\n   \"price\": 100.97,\n   \"chg24\": -0.552,\n   \"chg7d\": -3.7188900543530137,\n   \"mcap\": 59537094353.0,\n   \"vol\": 166910660.11372\n  },\n  {\n   \"sym\": \"XRP\",\n   \"name\": \"XRP\",\n   \"price\": 1.3084,\n   \"chg24\": 0.817,\n   \"chg7d\": 0.5147115310747429,\n   \"mcap\": 82903906424.0,\n   \"vol\": 97688908.6995\n  },\n  {\n   \"sym\": \"ADA\",\n   \"name\": \"Cardano\",\n   \"price\": 0.207,\n   \"chg24\": 1.173,\n   \"chg7d\": -4.6522339935513575,\n   \"mcap\": 8055043273.0,\n   \"vol\": 13328707.8425\n  },\n  {\n   \"sym\": \"DOGE\",\n   \"name\": \"Dogecoin\",\n   \"price\": 0.07785,\n   \"chg24\": 0.973,\n   \"chg7d\": -1.877756773787026,\n   \"mcap\": 13334256833.0,\n   \"vol\": 26390203.47333\n  },\n  {\n   \"sym\": \"AVAX\",\n   \"name\": \"Avalanche\",\n   \"price\": 8.979,\n   \"chg24\": 0.201,\n   \"chg7d\": -5.850896508335971,\n   \"mcap\": 3784101102.0,\n   \"vol\": 9763621.56964\n  },\n  {\n   \"sym\": \"LINK\",\n   \"name\": \"Chainlink\",\n   \"price\": 11.403,\n   \"chg24\": -0.645,\n   \"chg7d\": -4.800467523793616,\n   \"mcap\": 8735213170.0,\n   \"vol\": 15040493.7806\n  },\n  {\n   \"sym\": \"DOT\",\n   \"name\": \"Polkadot\",\n   \"price\": 1.013,\n   \"chg24\": -1.746,\n   \"chg7d\": -10.984182776801408,\n   \"mcap\": 1727187083.0,\n   \"vol\": 5041236.58421\n  },\n  {\n   \"sym\": \"TRX\",\n   \"name\": \"TRON\",\n   \"price\": 0.3293,\n   \"chg24\": -0.484,\n   \"chg7d\": -0.7235453723243935,\n   \"mcap\": 31257509054.0,\n   \"vol\": 21291540.83818\n  },\n  {\n   \"sym\": \"LTC\",\n   \"name\": \"Litecoin\",\n   \"price\": 56.88,\n   \"chg24\": -0.105,\n   \"chg7d\": -4.226300724027611,\n   \"mcap\": 4290121527.0,\n   \"vol\": 11232777.41298\n  }\n ],\n \"sentimen\": {\n  \"mood\": \"risk-on\",\n  \"score\": 1,\n  \"tema\": [\n   \"Bitcoin accumulation\",\n   \"stablecoin regulation\",\n   \"institutional adoption\",\n   \"market bottom signals\"\n  ],\n  \"poin\": [\n   {\n    \"teks\": \"The Smarter Web Company bought 20 BTC, total holdings 2,850 BTC.\",\n    \"sumber\": \"@BitcoinMagazine\"\n   },\n   {\n    \"teks\": \"El Salvador bought more BTC, now owns 7,817 BTC in Strategic Reserve.\",\n    \"sumber\": \"@BitcoinMagazine\"\n   },\n   {\n    \"teks\": \"OCC encourages community banks to become stablecoin issuers under GENIUS Act.\",\n    \"sumber\": \"@CoinDesk\"\n   },\n   {\n    \"teks\": \"Michael Saylor retweets view that Bitcoin bottom is in and selling pressure diminished.\",\n    \"sumber\": \"@Cointelegraph\"\n   },\n   {\n    \"teks\": \"Grayscale says Bitcoin less volatile than Oracle, Coinbase, Honeywell, Sandisk.\",\n    \"sumber\": \"@Cointelegraph\"\n   },\n   {\n    \"teks\": \"Glassnode: short-term holder supply in profit cooled to 70%, better entry than month ago.\",\n    \"sumber\": \"@glassnode\"\n   },\n   {\n    \"teks\": \"Galaxy Research: BTC bear market ended June, 50-week MA reclaimed five weeks.\",\n    \"sumber\": \"@CoinDesk\"\n   },\n   {\n    \"teks\": \"Bitmine resumes buybacks, spends $45.9M on shares, adds 10,452 ETH.\",\n    \"sumber\": \"@CoinDesk\"\n   },\n   {\n    \"teks\": \"Coinbase Institutional: perpetual funding jumped from 0.1% to 7.2% annualized.\",\n    \"sumber\": \"@CoinMarketCap\"\n   },\n   {\n    \"teks\": \"Chainlink launched CustodySync with Anchorage Digital for institutional DeFi lending.\",\n    \"sumber\": \"@Cointelegraph\"\n   }\n  ],\n  \"risiko\": [\n   \"Keystone wallet breach exposed data of 25,964 customers, destroyed 18,835 units.\",\n   \"Electrum wallet security flaw puts user funds at risk.\",\n   \"Elon Musk warns AI debt markets drying up for companies without revenue.\",\n   \"UK banks face complaints over crypto transaction restrictions.\",\n   \"Large BTC transfers to Coinbase Institutional may signal selling pressure.\"\n  ],\n  \"umur_menit\": 118\n },\n \"_meta\": {\n  \"source\": \"satgas.ai.id/crypto\",\n  \"age_seconds\": 370,\n  \"updated\": \"2026-10-27T07:15:26.741756+07:00\"\n }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Coin by symbol",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"status is 200\", () => pm.response.to.have.status(200));",
+              "const c = pm.response.json();",
+              "pm.test(\"payload matches the requested symbol\", () => pm.expect(c.sym).to.eql(pm.collectionVariables.get(\"sym\").toUpperCase()));",
+              "pm.test(\"price is a number\", () => pm.expect(c.price).to.be.a(\"number\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/v1/coin/{{sym}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v1",
+            "coin",
+            "{{sym}}"
+          ]
+        },
+        "description": "One coin by ticker. Change the collection variable `sym` (default BTC) to any of: BTC, ETH, BNB, SOL, XRP, ADA, DOGE, AVAX, LINK, DOT, TRX, LTC. Unknown symbols return 404, malformed ones (over 10 chars or non-alphanumeric) return 400, both always with an {\"error\": ...} body."
+      },
+      "response": [
+        {
+          "name": "200 OK (BTC) - live capture 2026-10-27 07:08 WIB",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/v1/coin/{{sym}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "coin",
+                "{{sym}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n \"sym\": \"BTC\",\n \"name\": \"Bitcoin\",\n \"price\": 80198.01,\n \"chg24\": 0.022,\n \"chg7d\": -1.9562056110070942,\n \"mcap\": 1610451796376.0,\n \"vol\": 1226484722.9979088\n}"
+        }
+      ]
+    },
+    {
+      "name": "Fear and greed index",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"status is 200\", () => pm.response.to.have.status(200));",
+              "const f = pm.response.json();",
+              "pm.test(\"value is 0-100\", () => pm.expect(f.value).to.be.within(0, 100));",
+              "pm.test(\"label present\", () => pm.expect(f.label).to.be.a(\"string\").and.not.empty);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/v1/fear-greed",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v1",
+            "fear-greed"
+          ]
+        },
+        "description": "Current fear & greed index: numeric value plus the provider label (e.g. Neutral). Same numbers that appear inside /v1/market under fear_greed."
+      },
+      "response": [
+        {
+          "name": "200 OK - live capture 2026-10-27 07:08 WIB",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/v1/fear-greed",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "fear-greed"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n \"value\": 48,\n \"label\": \"Neutral\"\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://satgas.ai.id/api",
+      "type": "string"
+    },
+    {
+      "key": "sym",
+      "value": "BTC",
+      "type": "string",
+      "description": "Ticker used by the 'Coin by symbol' request."
+    }
+  ]
+}
