@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://satgas.ai.id/sitemap.xml
