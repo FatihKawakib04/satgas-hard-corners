@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Snapshot pasar crypto. Sumber: CoinGecko (publik, tanpa API key) + Fear & Greed.
+"""Snapshot pasar crypto. Sumber: Binance (harga, volume, sparkline) + CoinPaprika
+(market cap per koin + global market, keduanya publik tanpa API key) + Fear & Greed.
 
 Pakai:
   python3 crypto.py             # top 15, tabel
@@ -17,6 +18,7 @@ from datetime import datetime, timezone, timedelta
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36"
 CG = "https://xrelay.satgas.ai.id/cg"   # proxy via CF Worker (IP VPS diblokir host)
+PAPRIKA = "https://api.coinpaprika.com/v1"  # keyless, gratis: market cap + global
 WIB = timezone(timedelta(hours=7))
 
 
@@ -80,6 +82,47 @@ def _sparkline(symbol, points=168):
 
 
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".last_markets.json")
+CAPS_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pap_caps_cache.json")
+
+
+def _cache_read(path, key, max_age_h=6):
+    """Baca cache JSON {ts, <key>} kalau umurnya masih di bawah max_age_h."""
+    try:
+        with open(path) as f:
+            d = json.load(f)
+        age = (time.time() - d.get("ts", 0)) / 3600
+        if age <= max_age_h:
+            print(f"peringatan: {key} dari cache {age:.1f} jam lalu", file=sys.stderr)
+            return d.get(key)
+    except (OSError, json.JSONDecodeError, AttributeError):
+        pass
+    return None
+
+
+def fetch_paprika_caps():
+    """Market cap per simbol dari CoinPaprika: 1 request, keyless.
+
+    Simbol yang muncul lebih dari sekali (mis. DOGE vs token meme bernama sama)
+    diambil yang kapitalisasinya terbesar. Gagal → cache < 6 jam → kalau kosong
+    juga, market_cap dibiarkan None (tidak ada angka karangan).
+    """
+    try:
+        rows = get(f"{PAPRIKA}/tickers?quotes=USD", timeout=60)
+        caps = {}
+        for t in rows or []:
+            sym = (t.get("symbol") or "").upper()
+            mc = ((t.get("quotes") or {}).get("USD") or {}).get("market_cap")
+            if sym and mc and mc > caps.get(sym, 0):
+                caps[sym] = float(mc)
+        if caps:
+            with open(CAPS_CACHE, "w") as f:
+                json.dump({"ts": int(time.time()), "caps": caps}, f)
+            return caps
+        print("peringatan: respons ticker CoinPaprika kosong", file=sys.stderr)
+    except Exception as e:
+        print(f"peringatan: market cap CoinPaprika gagal ({type(e).__name__}), pakai cache",
+              file=sys.stderr)
+    return _cache_read(CAPS_CACHE, "caps") or {}
 
 
 def fetch_markets(top, ids=None):
@@ -92,10 +135,21 @@ def fetch_markets(top, ids=None):
     except Exception:
         allt = []
     by = {t.get("symbol"): t for t in (allt or []) if isinstance(t, dict)}
+    caps = fetch_paprika_caps()
     out = []
+    now_ms = int(time.time() * 1000)
     for sym in syms:
         t = by.get(sym + "USDT")
         if not t:
+            continue
+        # Pair yang sudah tidak diperdagangkan (closeTime-nya lama) jangan
+        # dilaporkan sebagai harga hidup: snapshot selalu terlihat "baru",
+        # jadi harga beku bakal lolos dari cek umur di server API.
+        ct = t.get("closeTime")
+        if ct and now_ms - int(ct) > 24 * 3600 * 1000:
+            print(f"peringatan: {sym}USDT di Binance berhenti "
+                  f"{time.strftime('%Y-%m-%d', time.gmtime(int(ct) / 1000))} UTC, dilewati",
+                  file=sys.stderr)
             continue
         closes = _sparkline(sym)
         chg7 = None
@@ -107,7 +161,7 @@ def fetch_markets(top, ids=None):
             "current_price": float(t.get("lastPrice") or 0),
             "price_change_percentage_24h_in_currency": float(t.get("priceChangePercent") or 0),
             "price_change_percentage_7d_in_currency": chg7,
-            "market_cap": None,
+            "market_cap": caps.get(sym),
             "total_volume": float(t.get("quoteVolume") or 0),
             "sparkline_in_7d": {"price": closes},
         })
@@ -135,14 +189,30 @@ def fetch_coins(n=TOP_N if False else 12):
 
 
 def fetch_global():
+    """Global market dari CoinPaprika /global.
+
+    Key-nya sengaja dipertahankan sama seperti CoinGecko /global karena build.py
+    dan data.json sudah memakainya. Gagal ambil → cache < 6 jam.
+    """
     cache = os.path.join(os.path.dirname(os.path.abspath(__file__)), "global_cache.json")
-    # Binance tidak sediakan global market cap; coba pakai cache lama kalau ada.
-    if os.path.exists(cache):
-        try:
-            return json.load(open(cache))
-        except Exception:
-            return None
-    return None
+    try:
+        d = get(f"{PAPRIKA}/global")
+        g = {
+            "total_market_cap": {"usd": d.get("market_cap_usd")},
+            "total_volume": {"usd": d.get("volume_24h_usd")},
+            "market_cap_percentage": {"btc": d.get("bitcoin_dominance_percentage")},
+            "market_cap_change_percentage_24h_usd": d.get("market_cap_change_24h"),
+            "source": "coinpaprika",
+        }
+        if g["total_market_cap"]["usd"]:
+            with open(cache, "w") as f:
+                json.dump({"ts": int(time.time()), "global": g}, f)
+            return g
+        print("peringatan: /global CoinPaprika tanpa market_cap_usd", file=sys.stderr)
+    except Exception as e:
+        print(f"peringatan: /global CoinPaprika gagal ({type(e).__name__}), pakai cache",
+              file=sys.stderr)
+    return _cache_read(cache, "global")
 
 def fetch_fng():
     try:
@@ -200,7 +270,7 @@ def main():
               f"{pct(c.get('price_change_percentage_7d_in_currency')):>9}"
               f"{human(c.get('market_cap')):>12}{human(c.get('total_volume')):>12}")
     print()
-    print(f"sumber: CoinGecko, {len(coins)} aset. harga dalam USD.")
+    print(f"sumber: Binance (harga) + CoinPaprika (market cap), {len(coins)} aset. harga dalam USD.")
     return 0
 
 
