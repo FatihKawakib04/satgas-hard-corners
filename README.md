@@ -9,6 +9,20 @@ surfaces, one lime accent with a single orange state pop. Built with
 **Astro** (static output) and **Tailwind CSS v4**, served as plain HTML by
 nginx — no runtime, no server process.
 
+## Public API
+
+Keyless crypto market data for 12 major coins: prices, 24h/7d change, volume, market cap,
+global market stats, the fear & greed index and a sentiment digest. Free tier needs no API key
+and no signup (10 req/min per IP).
+
+- Docs: https://satgas.ai.id/crypto/api/ · Quickstart: https://satgas.ai.id/crypto/api/quickstart/
+- Spec: [api/openapi.yaml](api/openapi.yaml) · Postman: [api/postman_collection.json](api/postman_collection.json)
+- Client example (stdlib Python): [api/examples/client.py](api/examples/client.py)
+
+```bash
+curl https://satgas.ai.id/api/v1/coin/BTC
+```
+
 ## Stack
 
 | Layer      | Choice                                        |
