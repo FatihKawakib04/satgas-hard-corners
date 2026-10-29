@@ -284,5 +284,29 @@
   "keputusan": "gugur",
   "ringkas": "Carry neto 3,8%/tahun lalu turun ke 0,7% pada 2026. Overlay timing E17 negatif di OOS (-1,02%, Sharpe -1,22). Data funding terverifikasi 6/6 ke Binance, tapi hanya 3 tahun dan tanpa data basis.",
   "selesai": "2026-10-25 08:52"
+ },
+ {
+  "id": "E21",
+  "strategi": "ma_filter_breakout",
+  "catatan": "Turunan dari E18: parameter di sekitar {'entry': 20}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-10-29",
+  "grid": [
+   {
+    "entry": 12
+   },
+   {
+    "entry": 16
+   },
+   {
+    "entry": 25
+   },
+   {
+    "entry": 32
+   }
+  ],
+  "ringkas": "Return OOS +173.8%, Sharpe 0.99, DD -29.1%, BTC +96.3% (DD -61.8%). Sharpe penuh 0.73 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.492 (median Sharpe dunia sintetis +0.67). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-10-29 10:46"
  }
 ]

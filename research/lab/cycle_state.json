@@ -134,15 +134,24 @@
    "oos": -54.09,
    "sharpe": -0.13,
    "bench": 93.26
+  },
+  {
+   "waktu": "2026-10-29T10:46:34.219283+07:00",
+   "exp": "E21",
+   "strategi": "ma_filter_breakout",
+   "verdict": "kandidat",
+   "oos": 173.78,
+   "sharpe": 0.99,
+   "bench": 96.32
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-25T06:48:31.212374+07:00",
-  "exp": "E19",
-  "strategi": "pair_zscore",
-  "verdict": "gagal",
-  "oos": -54.09,
-  "sharpe": -0.13,
-  "bench": 93.26
+  "waktu": "2026-10-29T10:46:34.219283+07:00",
+  "exp": "E21",
+  "strategi": "ma_filter_breakout",
+  "verdict": "kandidat",
+  "oos": 173.78,
+  "sharpe": 0.99,
+  "bench": 96.32
  }
 }

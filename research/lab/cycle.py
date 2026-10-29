@@ -51,10 +51,23 @@ def turunan() -> dict | None:
     with store.db() as con:
         # pilih keluarga yang paling dekat lolos (Sharpe walk-forward tertinggi) tetapi
         # belum dicoba dua kali, supaya loop tidak berputar di satu strategi lemah
-        sudah = [r["id"] for r in con.execute("SELECT id FROM lab_exp")]
+        #
+        # `sudah` harus mencakup id di lab_exp DAN di queue.json. Dulu hanya lab_exp,
+        # sehingga id yang dipakai eksperimen di luar KATALOG (E20 audit_carry_funding,
+        # ada di queue tapi tidak pernah masuk lab_exp) bisa dipakai dua kali.
+        sudah = {r["id"] for r in con.execute("SELECT id FROM lab_exp")}
+        sudah |= {r["exp_id"] for r in con.execute("SELECT DISTINCT exp_id FROM lab_runs")}
+        sudah |= {e.get("id") for e in (X.load_queue() or []) if e.get("id")}
+        # Hanya strategi yang ada di S.KATALOG yang bisa diturunkan dari sini. Strategi
+        # khusus (carry_funding, audit_*) dijalankan modul lain dan TIDAK ada di KATALOG;
+        # tanpa filter ini carry_funding (wf_sharpe tertinggi) selalu terpilih, lalu
+        # `meta` None membuat turunan() mengembalikan None dan siklus berhenti tanpa suara
+        # (kejadian 25-29 Okt 2026: 4 hari tanpa eksperimen baru).
         kandidat = [dict(r) for r in con.execute(
-            "SELECT strategi, MAX(wf_sharpe) sh FROM lab_exp WHERE keputusan != 'lolos' "
+            "SELECT strategi, MAX(wf_sharpe) sh FROM lab_exp "
+            "WHERE keputusan NOT IN ('lolos', 'ditutup') "
             "GROUP BY strategi ORDER BY sh DESC")]
+        kandidat = [k for k in kandidat if k["strategi"] in S.KATALOG]
         hitung = {r["strategi"]: r["n"] for r in con.execute(
             "SELECT strategi, COUNT(*) n FROM lab_exp GROUP BY strategi")}
         pilih = next((k for k in kandidat if hitung.get(k["strategi"], 0) < 2), None)
