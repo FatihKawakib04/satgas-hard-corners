@@ -364,5 +364,37 @@
   "ringkas": "Return OOS +66.7%, Sharpe 0.51, DD -46.4%, BTC +96.3% (DD -61.8%). drawdown -46.4% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+96.3%).",
   "keputusan": "gagal",
   "selesai": "2026-10-29 15:27"
+ },
+ {
+  "id": "E24",
+  "strategi": "xs_mom",
+  "catatan": "Turunan dari E08: parameter di sekitar {'k': 2, 'lookback': 90, 'rebal': 7}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-10-29",
+  "grid": [
+   {
+    "k": 1,
+    "lookback": 54,
+    "rebal": 4
+   },
+   {
+    "k": 2,
+    "lookback": 72,
+    "rebal": 6
+   },
+   {
+    "k": 2,
+    "lookback": 112,
+    "rebal": 9
+   },
+   {
+    "k": 3,
+    "lookback": 144,
+    "rebal": 11
+   }
+  ],
+  "ringkas": "Return OOS +76.7%, Sharpe 0.53, DD -68.9%, BTC +96.3% (DD -61.8%). drawdown -68.9% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+96.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-29 18:02"
  }
 ]
