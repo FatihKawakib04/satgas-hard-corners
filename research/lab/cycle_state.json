@@ -188,15 +188,24 @@
    "oos": 60.63,
    "sharpe": 0.61,
    "bench": 96.32
+  },
+  {
+   "waktu": "2026-10-30T01:47:26.262827+07:00",
+   "exp": "E27",
+   "strategi": "pair_zscore",
+   "verdict": "gagal",
+   "oos": -50.96,
+   "sharpe": -0.0,
+   "bench": 96.32
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-29T23:12:25.260831+07:00",
-  "exp": "E26",
-  "strategi": "dd_buy",
+  "waktu": "2026-10-30T01:47:26.262827+07:00",
+  "exp": "E27",
+  "strategi": "pair_zscore",
   "verdict": "gagal",
-  "oos": 60.63,
-  "sharpe": 0.61,
+  "oos": -50.96,
+  "sharpe": -0.0,
   "bench": 96.32
  }
 }
