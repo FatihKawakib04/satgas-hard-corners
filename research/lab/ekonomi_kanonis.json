@@ -12,7 +12,7 @@
  "carry": {
   "proyeksi_laju_tahunan": 0.007,
   "proyeksi_usd_per_tahun": 0.07,
-  "historimpl": 0.038,
+  "historis_laju_tahunan": 0.038,
   "historis_usd_per_tahun": 0.38,
   "label_historis": "pembanding historis 2023-2026, bukan proyeksi"
  },

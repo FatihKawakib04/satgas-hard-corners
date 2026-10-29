@@ -32,7 +32,29 @@ def cek_cron(masalah: list[str]) -> None:
         return
     now = datetime.now(timezone.utc)
     for j in d.get("jobs", []):
-        if not j.get("name", "").startswith("Riset crypto") or not j.get("enabled"):
+        nama = j.get("name", "")
+        # mesin riset sendiri (lab) sering punya jadwal interval, bukan "*/" cron,
+        # jadi diperiksa terpisah. Kalau job ini mati, siklus riset berhenti total
+        # dan dulu tidak ada yang menangkapnya.
+        if nama == "Lab riset: siklus eksperimen":
+            if not j.get("enabled"):
+                masalah.append("cron 'Lab riset: siklus eksperimen' dinonaktifkan")
+            sched = j.get("schedule", {}) or {}
+            menit = sched.get("minutes") if sched.get("kind") == "interval" else None
+            last = j.get("last_run_at")
+            if last:
+                try:
+                    t = datetime.fromisoformat(last)
+                    # target: siklus maksimal tiap 3 jam. Alarm kalau job interval
+                    # untuk siklus tidak jalan selama lebih dari dua kali jadwalnya.
+                    batas = timedelta(minutes=max(60, int(menit or 180) * 2))
+                    if (now - t) > batas:
+                        masalah.append(
+                            f"cron '{nama}' terakhir jalan {t:%d %b %H:%M} UTC "
+                            f"(batas {batas.total_seconds()/3600:.0f} jam)")
+                except ValueError:
+                    pass
+        if not nama.startswith("Riset crypto") or not j.get("enabled"):
             continue
         sched = j.get("schedule_display") or j.get("schedule", {}).get("display", "")
         last = j.get("last_run_at")
@@ -43,7 +65,7 @@ def cek_cron(masalah: list[str]) -> None:
         except ValueError:
             continue
         if (now - t) > timedelta(hours=3):
-            masalah.append(f"cron '{j['name']}' terakhir jalan {t:%d %b %H:%M} UTC")
+            masalah.append(f"cron '{nama}' terakhir jalan {t:%d %b %H:%M} UTC")
 
 
 def cek_db(masalah: list[str]) -> None:
@@ -113,6 +135,68 @@ def cek_lab(masalah: list[str]) -> None:
         masalah.append(f"tabel lab tidak terbaca: {type(e).__name__}")
 
 
+def cek_laporan(masalah: list[str]) -> None:
+    """Angka likuiditas di laporan terbaru harus cocok dengan baris data yang ada.
+
+    Laporan ditulis LLM dari payload JSON. Tanpa pemeriksaan ini, angka yang
+    melenceng atau tersalin dari laporan sebelumnya lolos ke dokumen keputusan:
+    laporan 27 Okt 2026 menulis suplai stablecoin 303 miliar dolar padahal baris
+    data saat itu 302,28, dan TVL 89,06 miliar padahal barisnya 88,53. Selisih itu
+    membuat perubahan 7 hari tampak bertentangan dengan level yang disebut.
+    """
+    import glob
+    import re
+
+    lap = sorted(glob.glob(os.path.join(BASE, "reports", "harian-*.md")))
+    if not lap:
+        return
+    path = lap[-1]
+    umur = (time.time() - os.path.getmtime(path)) / 3600
+    if umur > 72:
+        return                       # artefak lama: bukan lagi dasar keputusan
+    try:
+        teks = open(path, errors="ignore").read()
+    except OSError as e:
+        masalah.append(f"laporan terbaru tidak terbaca: {type(e).__name__}")
+        return
+    try:
+        con = sqlite3.connect(DB, timeout=10)
+        stb = [r[0] for r in con.execute("SELECT total FROM stables ORDER BY d DESC LIMIT 6")]
+        tvl = [r[0] for r in con.execute(
+            "SELECT tvl FROM tvl WHERE chain='TOTAL' ORDER BY d DESC LIMIT 6")]
+        con.close()
+    except Exception as e:
+        masalah.append(f"data likuiditas tidak terbaca: {type(e).__name__}")
+        return
+
+    ANGKA = re.compile(r"(\d{2,3}(?:[.,]\d{1,2})?)\s*miliar", re.I)
+    for label, nama, seri in (("stablecoin", "stablecoin", stb), ("tvl", "TVL", tvl)):
+        if not seri:
+            continue
+        posisi = [m.start() for m in re.finditer(label, teks, re.I)]
+        if not posisi:
+            masalah.append(f"{os.path.basename(path)}: tidak menyebut {nama}")
+            continue
+        kandidat = []
+        for pos in posisi:
+            # angka yang paling dekat SETELAH label (mis. "Suplai stablecoin 303 miliar
+            # dolar"), baru kalau tidak ada lihat sedikit sebelum label. Jendela lebar
+            # dua arah membuat angka TVL ikut terhitung sebagai angka stablecoin.
+            m = ANGKA.search(teks[pos:pos + 120]) or ANGKA.search(teks[max(0, pos - 80):pos])
+            if m:
+                try:
+                    kandidat.append(float(m.group(1).replace(".", "").replace(",", ".")))
+                except ValueError:
+                    pass
+        if not kandidat:
+            masalah.append(f"{os.path.basename(path)}: angka {nama} tidak ditemukan")
+            continue
+        if not any(abs(k - v / 1e9) < 0.06 for k in kandidat for v in seri):
+            masalah.append(
+                f"{os.path.basename(path)}: angka {nama} {sorted(set(kandidat))} tidak "
+                f"cocok dengan baris data terakhir {[round(v / 1e9, 2) for v in seri]}")
+
+
 def main() -> int:
     masalah: list[str] = []
     cek_cron(masalah)
@@ -121,6 +205,7 @@ def main() -> int:
     cek_halaman(masalah)
     cek_disk(masalah)
     cek_data(masalah)
+    cek_laporan(masalah)
     if masalah:
         print("*Pemeriksaan sistem riset* menemukan masalah:")
         for m in masalah:

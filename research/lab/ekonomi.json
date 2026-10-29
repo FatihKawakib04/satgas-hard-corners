@@ -3,8 +3,8 @@
  "pendapatan_usd": 0.0,
  "pendapatan_catatan": "Belum ada satu pun pembayaran diterima. Hadiah bounty yang belum dibayar tidak dihitung.",
  "biaya": {
-  "vps_per_bulan_usd": 4.17,
-  "vps_catatan": "perkiraan dari anggaran tahunan di bawah $50; angka invoice belum dicatat",
+  "vps_per_bulan_usd": 1.0,
+  "vps_catatan": "tagihan berjalan yang tercatat: Rp18.000/bulan = $1,00 (kurs 18.087). Angka $50/tahun adalah anggaran untuk VPS baru, bukan biaya berjalan, dan sengaja tidak dipakai di sini. Sumber angka ekonomi tunggal: ekonomi_kanonis.json.",
   "api_per_bulan_usd": 0.0,
   "api_catatan": "model utama prabayar, kenari free tier, tidak ada pengeluaran baru"
  },

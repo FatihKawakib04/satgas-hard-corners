@@ -23,7 +23,10 @@ DB = os.path.join(BASE, "db", "research.db")
 REPORTS = os.path.join(BASE, "reports")
 CRON_DB = "/root/.hermes/cron/executions.db"
 WIB = timezone(timedelta(hours=7))
-JOB_NAMA = ("Lab riset: siklus eksperimen", "Lab riset: paper trading harian")
+# "Lab riset: paper trading harian" sengaja tidak lagi diwajibkan di sini: langkah
+# paper trading sekarang dijalankan di dalam cycle.py, dan job terpisahnya
+# dinonaktifkan 26 Okt 2026. Kesegaran paper tetap diperiksa lewat state (langkah 2).
+JOB_NAMA = ("Lab riset: siklus eksperimen",)
 
 
 def umur_jam(path: str) -> float | None:
@@ -78,14 +81,21 @@ def main() -> int:
         peta = {}
         with open("/root/.hermes/cron/jobs.json") as f:
             for j in json.load(f)["jobs"]:
-                peta[j["name"]] = j["id"]
+                peta[j["name"]] = j
         con = sqlite3.connect(f"file:{CRON_DB}?mode=ro", uri=True)
         con.row_factory = sqlite3.Row
         for nama in JOB_NAMA:
-            jid = peta.get(nama)
-            if not jid:
+            j = peta.get(nama)
+            if not j:
                 masalah.append(f"cron: job '{nama}' tidak ada di jobs.json")
                 continue
+            # job bisa saja masih terdaftar tapi dinonaktifkan. Kondisi itu membuat
+            # siklus riset berhenti total tanpa error apa pun (kejadian 26-29 Okt 2026),
+            # jadi status enabled ikut diperiksa, bukan cuma eksekusi terakhir.
+            if not j.get("enabled"):
+                masalah.append(f"cron: job '{nama}' DINONAKTIFKAN")
+                continue
+            jid = j["id"]
             row = con.execute(
                 "SELECT status, started_at, error FROM executions WHERE job_id=? "
                 "ORDER BY started_at DESC LIMIT 1", (jid,)).fetchone()
