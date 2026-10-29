@@ -91,7 +91,7 @@ border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;marg
 border-radius:6px;padding:1px 6px;margin-right:6px}
 .grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
 @media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
-.panel{padding:13px 12px}table{font-size:12.2px}th,td{padding:6px 4px}
+.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
 td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
 .card .v{font-size:17px}}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -158,9 +158,47 @@ Balas HANYA JSON valid tanpa blok kode, dengan skema:
  "katalis": ["2-4 katalis dekat, sebut waktu jika ada di BERITA"]
 }
 Total panjang seluruh teks maksimal 900 kata. Angka desimal pakai koma (contoh 80.120,50).
+ATURAN LIKUIDITAS (wajib): untuk suplai stablecoin dan TVL, salin PERSIS string di
+DATA.likuiditas_kanonis, termasuk tanggal datanya dan tanda persennya. Jangan membulatkan
+ulang, jangan menggeser tanggal, dan jangan memakai angka stablecoin/TVL dari laporan
+sebelumnya. Kalau tanggal data berbeda dari tanggal laporan, sebut tanggal datanya.
 Catatan definisi: drawdown_dari_puncak dihitung dari puncak tertinggi dalam riwayat yang
 tersimpan (hingga enam tahun), breadth MA50 memakai sampel aset yang punya riwayat cukup
 sehingga penyebutnya bisa berbeda dari breadth 24 jam."""
+
+
+def _id_num(v, desimal=2):
+    """Format angka gaya Indonesia (koma desimal) supaya LLM menyalin, bukan membulatkan."""
+    if v is None:
+        return "-"
+    s = f"{v:,.{desimal}f}"
+    return s.replace(",", "\u00a0").replace(".", ",").replace("\u00a0", ".")
+
+
+def likuiditas_kanonis(f: dict) -> dict:
+    """String siap salin untuk stablecoin dan TVL, lengkap dengan tanggal datanya.
+
+    Sebelum ini LLM menerima angka mentah lalu menuliskannya sendiri. Akibatnya angka
+    yang dilaporkan bisa melenceng dari baris data yang benar (laporan 27 Okt 2026
+    menulis 303 miliar dolar padahal baris data saat itu 302,28) dan tanggalnya tidak
+    ikut tertulis, sehingga perubahan 7 hari bisa tampak bertentangan dengan levelnya.
+    """
+    keluar = {}
+    for nama, kunci in (("stablecoin", "stablecoin"), ("tvl", "tvl")):
+        d = f.get(kunci) or {}
+        if not d.get("total_usd"):
+            continue
+        bagian = [f"{_id_num(d['total_usd'] / 1e9)} miliar dolar",
+                  f"(data {d.get('tanggal') or 'tanggal tidak tersedia'})"]
+        if d.get("chg_7d") is not None:
+            bagian.append(f"{_id_num(d['chg_7d'] * 100)}% 7 hari")
+        if d.get("chg_30d") is not None:
+            bagian.append(f"{_id_num(d['chg_30d'] * 100)}% 30 hari")
+        keluar[nama] = " ".join(bagian)
+    if keluar:
+        keluar["aturan"] = ("Salin persis string ini. Jangan ganti tanggalnya dan jangan "
+                            "pakai angka dari laporan sebelumnya.")
+    return keluar
 
 
 def prompt_payload(f: dict, berita: list[dict], jenis: str) -> str:
@@ -183,6 +221,7 @@ def prompt_payload(f: dict, berita: list[dict], jenis: str) -> str:
         "derivatif": {s: {kk: (round(v, 6) if isinstance(v, float) else v)
                           for kk, v in d.items()} for s, d in f.get("derivatif", {}).items()},
         "stablecoin": f.get("stablecoin"), "tvl": f.get("tvl"),
+        "likuiditas_kanonis": likuiditas_kanonis(f),
         "etf": {k: {kk: vv for kk, vv in v.items() if kk != "harian"}
                 for k, v in (f.get("etf") or {}).items()},
         "onchain": f.get("onchain"),
