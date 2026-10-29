@@ -105,9 +105,32 @@
      "pos": {}
     }
    ],
-   "dihentikan": false,
+   "dihentikan": true,
    "bench0": {
     "BTC": 80862.0
+   },
+   "alasan_berhenti": "strategi ditutup; riwayat disimpan sebagai arsip"
+  },
+  "E22:ma_cross_eth": {
+   "mulai": "2026-10-29",
+   "ekuitas": 10000.0,
+   "posisi": {},
+   "params": {
+    "fast": 12,
+    "slow": 60,
+    "sym": "ETH"
+   },
+   "riwayat": [
+    {
+     "t": "2026-10-29",
+     "eq": 10000.0,
+     "pos": {}
+    }
+   ],
+   "dihentikan": false,
+   "bench0": {
+    "BTC": 81194.01,
+    "ETH": 2356.83
    }
   }
  }
