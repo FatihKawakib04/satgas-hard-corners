@@ -170,15 +170,24 @@
    "oos": 76.72,
    "sharpe": 0.53,
    "bench": 96.32
+  },
+  {
+   "waktu": "2026-10-29T20:37:25.968340+07:00",
+   "exp": "E25",
+   "strategi": "mom_vol",
+   "verdict": "gagal",
+   "oos": 22.05,
+   "sharpe": 0.3,
+   "bench": 96.32
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-29T18:02:25.599852+07:00",
-  "exp": "E24",
-  "strategi": "xs_mom",
+  "waktu": "2026-10-29T20:37:25.968340+07:00",
+  "exp": "E25",
+  "strategi": "mom_vol",
   "verdict": "gagal",
-  "oos": 76.72,
-  "sharpe": 0.53,
+  "oos": 22.05,
+  "sharpe": 0.3,
   "bench": 96.32
  }
 }

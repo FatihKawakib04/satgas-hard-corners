@@ -396,5 +396,33 @@
   "ringkas": "Return OOS +76.7%, Sharpe 0.53, DD -68.9%, BTC +96.3% (DD -61.8%). drawdown -68.9% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+96.3%).",
   "keputusan": "gagal",
   "selesai": "2026-10-29 18:02"
+ },
+ {
+  "id": "E25",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 50}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-10-29",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 30
+   },
+   {
+    "lookback": 144,
+    "pct_max": 40
+   },
+   {
+    "lookback": 225,
+    "pct_max": 62
+   },
+   {
+    "lookback": 288,
+    "pct_max": 80
+   }
+  ],
+  "ringkas": "Return OOS +22.0%, Sharpe 0.30, DD -34.1%, BTC +96.3% (DD -61.8%). Sharpe OOS 0.30 di bawah 0.5; kalah dari beli-dan-tahan BTC (+96.3%).",
+  "keputusan": "gagal",
+  "selesai": "2026-10-29 20:37"
  }
 ]
