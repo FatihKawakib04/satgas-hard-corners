@@ -640,5 +640,33 @@
   "ringkas": "Return OOS +19.3%, Sharpe 0.30, DD -26.4%, BTC +86.1% (DD -61.8%). Sharpe OOS 0.30 di bawah 0.5; kalah dari beli-dan-tahan BTC (+86.1%).",
   "keputusan": "gagal",
   "selesai": "2026-10-31 03:06"
+ },
+ {
+  "id": "E34",
+  "strategi": "dd_buy",
+  "catatan": "Turunan dari E26: parameter di sekitar {'drawdown': 0.06, 'window': 108}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-10-31",
+  "grid": [
+   {
+    "drawdown": 0.036,
+    "window": 65
+   },
+   {
+    "drawdown": 0.048,
+    "window": 86
+   },
+   {
+    "drawdown": 0.075,
+    "window": 135
+   },
+   {
+    "drawdown": 0.096,
+    "window": 173
+   }
+  ],
+  "ringkas": "Return OOS +124.6%, Sharpe 0.82, DD -34.8%, BTC +86.1% (DD -61.8%). Sharpe penuh 0.17 mengalahkan 188 dari 200 sinyal acak. Uji null: p=1.000 (median Sharpe dunia sintetis +0.60). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-10-31 05:41"
  }
 ]

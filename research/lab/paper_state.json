@@ -75,10 +75,11 @@
      "pos": {}
     }
    ],
-   "dihentikan": false,
+   "dihentikan": true,
    "bench0": {
     "BTC": 80862.0
-   }
+   },
+   "alasan_berhenti": "strategi ditutup; riwayat disimpan sebagai arsip"
   },
   "E17:carry_funding": {
    "mulai": "2026-10-25",
@@ -151,6 +152,30 @@
    "bench0": {
     "BTC": 81194.01,
     "ETH": 2356.83
+   }
+  },
+  "E34:dd_buy": {
+   "mulai": "2026-10-31",
+   "ekuitas": 9985.0,
+   "posisi": {
+    "BTC": 1.0
+   },
+   "params": {
+    "drawdown": 0.096,
+    "window": 173
+   },
+   "riwayat": [
+    {
+     "t": "2026-10-31",
+     "eq": 9985.0,
+     "pos": {
+      "BTC": 1.0
+     }
+    }
+   ],
+   "dihentikan": false,
+   "bench0": {
+    "BTC": 76978.3
    }
   }
  }
