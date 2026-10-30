@@ -556,5 +556,29 @@
   "ringkas": "Return OOS +133.1%, Sharpe 0.79, DD -33.4%, BTC +86.1% (DD -61.8%). Sharpe penuh 1.05 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.557 (median Sharpe dunia sintetis +0.78). Tidak menonjol dibanding hasil pencarian parameter acak.",
   "keputusan": "kandidat",
   "selesai": "2026-10-30 19:21"
+ },
+ {
+  "id": "E31",
+  "strategi": "ma_cross",
+  "catatan": "Turunan dari E10: parameter di sekitar {'fast': 12, 'slow': 62}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-10-30",
+  "grid": [
+   {
+    "fast": 7,
+    "slow": 37
+   },
+   {
+    "fast": 15,
+    "slow": 78
+   },
+   {
+    "fast": 19,
+    "slow": 99
+   }
+  ],
+  "ringkas": "Return OOS +227.4%, Sharpe 0.95, DD -31.7%, BTC +86.1% (DD -61.8%). Sharpe penuh 0.97 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.361 (median Sharpe dunia sintetis +0.81). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-10-30 21:56"
  }
 ]
