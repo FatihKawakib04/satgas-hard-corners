@@ -215,15 +215,24 @@
    "oos": 103.38,
    "sharpe": 0.83,
    "bench": 86.13
+  },
+  {
+   "waktu": "2026-10-30T19:21:36.440936+07:00",
+   "exp": "E30",
+   "strategi": "donchian",
+   "verdict": "kandidat",
+   "oos": 133.07,
+   "sharpe": 0.79,
+   "bench": 86.13
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-30T16:46:42.121547+07:00",
-  "exp": "E29",
-  "strategi": "breakout_stop",
+  "waktu": "2026-10-30T19:21:36.440936+07:00",
+  "exp": "E30",
+  "strategi": "donchian",
   "verdict": "kandidat",
-  "oos": 103.38,
-  "sharpe": 0.83,
+  "oos": 133.07,
+  "sharpe": 0.79,
   "bench": 86.13
  }
 }
