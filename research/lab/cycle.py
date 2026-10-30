@@ -33,6 +33,43 @@ import strategies as S    # noqa: E402
 WIB = timezone(timedelta(hours=7))
 STATE = os.path.join(HERE, "cycle_state.json")
 
+# Batas percobaan per keluarga strategi sebelum generator berhenti menurunkan dari
+# keluarga itu. 13 strategi x 3 = 39 eksperimen; setelah itu generator berhenti
+# dengan tenang (return None) dan stall_check.py memberi peringatan.
+MAKS_PER_STRATEGI = 3
+
+# Faktor pengali parameter untuk eksperimen turunan (grid pencarian di sekitar base).
+FAKTOR_GRID = (0.6, 0.8, 1.25, 1.6)
+
+
+def _kunci_params(p: dict) -> str:
+    """Kunci kanonik untuk satu kombinasi parameter (dipakai mendeteksi duplikasi)."""
+    return json.dumps(p, sort_keys=True)
+
+
+def _grid_dari(base: dict, terpakai: set[str]) -> list[dict]:
+    """Grid turunan di sekitar `base`, membuang kombinasi yang sudah pernah diuji.
+
+    Mengembalikan [] kalau semua hasil perkalian faktor sudah ada di `terpakai`,
+    sehingga pemanggil bisa mencoba base lain (atau kandidat strategi lain) alih-alih
+    membuat eksperimen yang identik dengan yang lama.
+    """
+    grid: list[dict] = []
+    for factor in FAKTOR_GRID:
+        p = {}
+        for k, v in base.items():
+            if isinstance(v, int) and not isinstance(v, bool):
+                p[k] = max(1, int(round(v * factor)))
+            elif isinstance(v, float):
+                p[k] = round(v * factor, 4)
+            else:
+                p[k] = v
+        if _kunci_params(p) in terpakai:
+            continue
+        if p not in grid:
+            grid.append(p)
+    return grid
+
 
 def log_state(entry: dict) -> None:
     try:
@@ -47,10 +84,26 @@ def log_state(entry: dict) -> None:
 
 
 def turunan() -> dict | None:
-    """Buat eksperimen lanjutan di sekitar parameter terbaik yang belum lolos."""
+    """Buat eksperimen lanjutan di sekitar parameter terbaik yang belum lolos.
+
+    Batas percobaan per strategi (MAKS_PER_STRATEGI) mencegah loop berputar di satu
+    keluarga strategi lemah. Nilai ini dinaikkan dari 2 ke 3 setelah 30 Okt 2026:
+    dengan 13 strategi di KATALOG, batas 2 membuat seluruh kandidat habis
+    (13 x 2 = 26 eksperimen) sehingga generator buntu dan siklus diam ~10 jam.
+
+    Deduplikasi parameter: kandidat hanya dipakai kalau grid yang dihasilkan berisi
+    kombinasi parameter yang BELUM pernah diuji untuk strategi itu. Tanpa ini,
+    percobaan ketiga akan menyalin grid percobaan kedua (base yang sama, faktor
+    yang sama) sehingga eksperimen baru identik dengan yang lama.
+
+    Kalau semua strategi sudah mencapai batas, fungsi ini mengembalikan None
+    (bukan loop): siklus berhenti dengan tenang dan stall_check.py yang memberi
+    peringatan. Jumlah percobaan dibatasi, jadi tidak ada loop tak terbatas.
+    """
     with store.db() as con:
         # pilih keluarga yang paling dekat lolos (Sharpe walk-forward tertinggi) tetapi
-        # belum dicoba dua kali, supaya loop tidak berputar di satu strategi lemah
+        # belum dicoba MAKS_PER_STRATEGI kali, supaya loop tidak berputar di satu
+        # strategi lemah.
         #
         # `sudah` harus mencakup id di lab_exp DAN di queue.json. Dulu hanya lab_exp,
         # sehingga id yang dipakai eksperimen di luar KATALOG (E20 audit_carry_funding,
@@ -70,39 +123,44 @@ def turunan() -> dict | None:
         kandidat = [k for k in kandidat if k["strategi"] in S.KATALOG]
         hitung = {r["strategi"]: r["n"] for r in con.execute(
             "SELECT strategi, COUNT(*) n FROM lab_exp GROUP BY strategi")}
-        pilih = next((k for k in kandidat if hitung.get(k["strategi"], 0) < 2), None)
-        if not pilih:
+        kandidat = [k for k in kandidat if hitung.get(k["strategi"], 0) < MAKS_PER_STRATEGI]
+        if not kandidat:
             return None
-        row = con.execute("SELECT exp_id, strategi, params FROM lab_runs WHERE strategi=? "
-                          "ORDER BY oos_sharpe DESC LIMIT 1", (pilih["strategi"],)).fetchone()
-        if not row:
-            return None
-    strat = row["strategi"]
-    meta = S.KATALOG.get(strat)
-    if not meta:
-        return None
-    base = json.loads(row["params"])
-    grid = []
-    for factor in (0.6, 0.8, 1.25, 1.6):
-        p = {}
-        ok = True
-        for k, v in base.items():
-            if isinstance(v, int):
-                p[k] = max(1, int(round(v * factor)))
-            elif isinstance(v, float):
-                p[k] = round(v * factor, 4)
-            else:
-                p[k] = v
-        if p not in grid:
-            grid.append(p)
-    n = 1
-    while f"E{n:02d}" in sudah:
-        n += 1
-    return {"id": f"E{n:02d}", "strategi": strat,
-            "catatan": f"Turunan dari {row['exp_id']}: parameter di sekitar {base}, "
-                       f"karena keluarga ini paling dekat lolos gerbang",
-            "status": "menunggu", "dibuat": datetime.now(WIB).strftime("%Y-%m-%d"),
-            "grid": grid}
+
+        # coba kandidat berurutan sampai ada yang menghasilkan parameter baru
+        for k in kandidat:
+            strat = k["strategi"]
+            if strat not in S.KATALOG:
+                continue
+            rows = list(con.execute(
+                "SELECT exp_id, params FROM lab_runs WHERE strategi=? "
+                "ORDER BY oos_sharpe DESC", (strat,)))
+            if not rows:
+                continue
+            # semua kombinasi parameter yang sudah pernah diuji untuk strategi ini
+            terpakai = set()
+            for r in rows:
+                try:
+                    terpakai.add(_kunci_params(json.loads(r["params"])))
+                except (ValueError, TypeError):
+                    continue
+            for row in rows:
+                try:
+                    base = json.loads(row["params"])
+                except (ValueError, TypeError):
+                    continue
+                grid = _grid_dari(base, terpakai)
+                if grid:
+                    n = 1
+                    while f"E{n:02d}" in sudah:
+                        n += 1
+                    return {"id": f"E{n:02d}", "strategi": strat,
+                            "catatan": f"Turunan dari {row['exp_id']}: parameter di sekitar "
+                                       f"{base}, karena keluarga ini paling dekat lolos gerbang",
+                            "status": "menunggu",
+                            "dibuat": datetime.now(WIB).strftime("%Y-%m-%d"),
+                            "grid": grid}
+    return None
 
 
 def siklus(notify: bool = True) -> tuple[int, str]:

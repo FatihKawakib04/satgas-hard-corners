@@ -191,9 +191,9 @@ def likuiditas_kanonis(f: dict) -> dict:
         bagian = [f"{_id_num(d['total_usd'] / 1e9)} miliar dolar",
                   f"(data {d.get('tanggal') or 'tanggal tidak tersedia'})"]
         if d.get("chg_7d") is not None:
-            bagian.append(f"{_id_num(d['chg_7d'] * 100)}% 7 hari")
+            bagian.append(f"{_id_num(d['chg_7d'])}% 7 hari")
         if d.get("chg_30d") is not None:
-            bagian.append(f"{_id_num(d['chg_30d'] * 100)}% 30 hari")
+            bagian.append(f"{_id_num(d['chg_30d'])}% 30 hari")
         keluar[nama] = " ".join(bagian)
     if keluar:
         keluar["aturan"] = ("Salin persis string ini. Jangan ganti tanggalnya dan jangan "
@@ -290,6 +290,41 @@ def fallback_narrative(f: dict) -> dict:
                    f"({m['UST10Y'].get('chg_20d_bps') or 0:+.0f} bps dalam 20 hari) dan VIX "
                    f"{m.get('VIX',{}).get('nilai',0):.1f}. Korelasi 60 hari BTC dengan SPX "
                    f"{(f.get('korelasi',{}).get('SPX',{}).get('r60') or 0):+.2f}.")
+
+    # ---- likuiditas: stablecoin + TVL (dipakai saat LLM gagal: 401/429/timeout)
+    # Semua angka diambil apa adanya dari fakta.json (analyze.build()). Tidak ada
+    # nilai yang dikarang: kalau datanya tidak ada, bagian ini menyebutkan bahwa
+    # data belum tersedia alih-alih menebak.
+    aliran = []
+    stb = f.get("stablecoin") or {}
+    tvl = f.get("tvl") or {}
+    if stb.get("total_usd"):
+        potong = [f"Suplai stablecoin {_id_num(stb['total_usd'] / 1e9)} miliar dolar "
+                  f"(data {stb.get('tanggal') or 'tanggal tidak tersedia'})"]
+        if stb.get("chg_7d") is not None:
+            potong.append(f"{_id_num(stb['chg_7d'])}% 7 hari")
+        if stb.get("chg_30d") is not None:
+            potong.append(f"{_id_num(stb['chg_30d'])}% 30 hari")
+        aliran.append(", ".join(potong) + ".")
+    else:
+        aliran.append("Suplai stablecoin belum tersedia pada snapshot ini.")
+    if tvl.get("total_usd"):
+        potong = [f"TVL DeFi total {_id_num(tvl['total_usd'] / 1e9)} miliar dolar "
+                  f"(data {tvl.get('tanggal') or 'tanggal tidak tersedia'})"]
+        if tvl.get("chg_7d") is not None:
+            potong.append(f"{_id_num(tvl['chg_7d'])}% 7 hari")
+        if tvl.get("chg_30d") is not None:
+            potong.append(f"{_id_num(tvl['chg_30d'])}% 30 hari")
+        aliran.append(", ".join(potong) + ".")
+    else:
+        aliran.append("TVL DeFi belum tersedia pada snapshot ini.")
+    if stb.get("total_usd") and tvl.get("total_usd") and \
+            stb.get("chg_7d") is not None and tvl.get("chg_7d") is not None:
+        arah_s = "berkontraksi" if stb["chg_7d"] < 0 else "menguat"
+        arah_t = "berkontraksi" if tvl["chg_7d"] < 0 else "menguat"
+        aliran.append(f"Dalam sepekan likuiditas stablecoin {arah_s} dan TVL DeFi {arah_t}; "
+                      f"ekspansi keduanya biasanya mendahului kenaikan harga yang lebih tahan.")
+
     return {
         "judul": f"Pasar crypto {datetime.now(WIB):%d %b}: rezim {r.get('label','netral')}, "
                  f"BTC {pc(btc.get('chg_7d'),1)} sepekan",
@@ -299,6 +334,7 @@ def fallback_narrative(f: dict) -> dict:
                             "positioning. Tanpa ekspansi likuiditas, kenaikan lebih rentan "
                             "gagal di area resistance."],
         "makro": [], "derivatif": [],
+        "aliran": aliran,
         "skenario": {"dasar": {"prob": 50, "teks": "Konsolidasi di kisaran 90 hari terakhir."},
                      "naik": {"prob": 25, "teks": "Tembus resistance 90 hari dengan volume."},
                      "turun": {"prob": 25, "teks": "Gagal bertahan di support terdekat."}},
