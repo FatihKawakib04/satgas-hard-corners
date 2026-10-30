@@ -206,15 +206,24 @@
    "oos": 152.8,
    "sharpe": 0.93,
    "bench": 86.13
+  },
+  {
+   "waktu": "2026-10-30T16:46:42.121547+07:00",
+   "exp": "E29",
+   "strategi": "breakout_stop",
+   "verdict": "kandidat",
+   "oos": 103.38,
+   "sharpe": 0.83,
+   "bench": 86.13
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-30T13:46:14.099050+07:00",
-  "exp": "E28",
-  "strategi": "ma_filter_breakout",
+  "waktu": "2026-10-30T16:46:42.121547+07:00",
+  "exp": "E29",
+  "strategi": "breakout_stop",
   "verdict": "kandidat",
-  "oos": 152.8,
-  "sharpe": 0.93,
+  "oos": 103.38,
+  "sharpe": 0.83,
   "bench": 86.13
  }
 }
