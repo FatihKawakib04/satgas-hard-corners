@@ -233,15 +233,24 @@
    "oos": 227.38,
    "sharpe": 0.95,
    "bench": 86.13
+  },
+  {
+   "waktu": "2026-10-31T00:31:25.646695+07:00",
+   "exp": "E32",
+   "strategi": "ma_cross_eth",
+   "verdict": "gagal",
+   "oos": 49.32,
+   "sharpe": 0.42,
+   "bench": 86.13
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-30T21:56:35.917519+07:00",
-  "exp": "E31",
-  "strategi": "ma_cross",
-  "verdict": "kandidat",
-  "oos": 227.38,
-  "sharpe": 0.95,
+  "waktu": "2026-10-31T00:31:25.646695+07:00",
+  "exp": "E32",
+  "strategi": "ma_cross_eth",
+  "verdict": "gagal",
+  "oos": 49.32,
+  "sharpe": 0.42,
   "bench": 86.13
  }
 }
