@@ -750,6 +750,23 @@ def main() -> int:
     os.makedirs(OUT_DIR, exist_ok=True)
     os.makedirs(f"{OUT_DIR}/data", exist_ok=True)
     f = analyze.build()
+
+    # Gerbang integritas: jangan terbitkan laporan kalau angka ringkasan tidak bisa
+    # ditelusuri ke deret kanonis DB. Ini menangkap kasus angka yang berasal dari
+    # laporan sebelumnya atau dari pembulatan LLM, bukan dari data.
+    try:
+        import validasi_angka
+        pelanggaran = validasi_angka.validasi_fakta(f)
+    except Exception as e:  # validator rusak tidak boleh memblokir riset diam-diam
+        print(f"PERINGATAN validator angka gagal dijalankan: {e}", file=sys.stderr)
+        pelanggaran = []
+    if pelanggaran:
+        for m in pelanggaran:
+            print(f"INTEGRITAS GAGAL [{m['kode']}] {m['pesan']}", file=sys.stderr)
+        print("Laporan TIDAK diterbitkan: angka likuiditas tidak cocok dengan sumber kanonis.",
+              file=sys.stderr)
+        return 2
+
     with open(f"{STATE}/fakta.json", "w") as fh:
         json.dump(f, fh, indent=1, ensure_ascii=False)
 

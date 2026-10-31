@@ -379,10 +379,14 @@ def regime(f: dict) -> tuple[dict, list[dict]]:
 
     label = "risk-off" if score <= -3 else ("netral-cenderung-risk-off" if score == -2 else
              ("netral" if -1 <= score <= 1 else "risk-on"))
+    # Satuan komponen harus seragam PERSEN. Sebelum ini btc_vs_ma200_pct memakai
+    # fraksi (0,0566) sementara spx_vs_ma50_pct memakai persen (0,287 = 0,287%),
+    # jadi pembaca mengira BTC hanya 0,06% di atas MA200 padahal 5,66%.
     rezim = {"skor": score, "label": label,
              "komponen": {"vix": vix, "spx_vs_ma50_pct": pct(spx_ma, spx),
                           "ust10y_chg_20d_bps": y10.get("chg_20d_bps"),
-                          "btc_vs_ma200_pct": btc.get("vs_ma200"),
+                          "btc_vs_ma200_pct": (btc["vs_ma200"] * 100
+                                               if btc.get("vs_ma200") is not None else None),
                           "breadth_7d_pct": (100 * br["positif_7d"] / br["total_7d"])
                           if br.get("total_7d") else None}}
 
