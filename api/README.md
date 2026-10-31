@@ -74,5 +74,5 @@ by request at halo@satgas.ai.id.
 ## Known limits
 
 - No historical candles/OHLCV, no order books, no on-chain data, no symbol search.
-- CORS headers are not sent: call it server-side (backend, script, cron, agent tool).
+- CORS headers ARE sent: `Access-Control-Allow-Origin: *` for all public endpoints. Browser fetch works directly. Rate limiting still applies per IP.
 - One small VPS, no SLA on the free tier. Fine for tooling and prototypes, not settlement logic.
