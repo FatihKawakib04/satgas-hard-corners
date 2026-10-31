@@ -260,15 +260,24 @@
    "oos": 124.59,
    "sharpe": 0.82,
    "bench": 86.13
+  },
+  {
+   "waktu": "2026-10-31T08:16:35.353543+07:00",
+   "exp": "E35",
+   "strategi": "xs_mom",
+   "verdict": "kandidat",
+   "oos": 126.12,
+   "sharpe": 0.61,
+   "bench": 86.94
   }
  ],
  "terakhir": {
-  "waktu": "2026-10-31T05:41:39.789906+07:00",
-  "exp": "E34",
-  "strategi": "dd_buy",
+  "waktu": "2026-10-31T08:16:35.353543+07:00",
+  "exp": "E35",
+  "strategi": "xs_mom",
   "verdict": "kandidat",
-  "oos": 124.59,
-  "sharpe": 0.82,
-  "bench": 86.13
+  "oos": 126.12,
+  "sharpe": 0.61,
+  "bench": 86.94
  }
 }

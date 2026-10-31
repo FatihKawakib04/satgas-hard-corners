@@ -668,5 +668,37 @@
   "ringkas": "Return OOS +124.6%, Sharpe 0.82, DD -34.8%, BTC +86.1% (DD -61.8%). Sharpe penuh 0.17 mengalahkan 188 dari 200 sinyal acak. Uji null: p=1.000 (median Sharpe dunia sintetis +0.60). Tidak menonjol dibanding hasil pencarian parameter acak.",
   "keputusan": "kandidat",
   "selesai": "2026-10-31 05:41"
+ },
+ {
+  "id": "E35",
+  "strategi": "xs_mom",
+  "catatan": "Turunan dari E24: parameter di sekitar {'k': 1, 'lookback': 54, 'rebal': 4}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-10-31",
+  "grid": [
+   {
+    "k": 1,
+    "lookback": 32,
+    "rebal": 2
+   },
+   {
+    "k": 1,
+    "lookback": 43,
+    "rebal": 3
+   },
+   {
+    "k": 1,
+    "lookback": 68,
+    "rebal": 5
+   },
+   {
+    "k": 2,
+    "lookback": 86,
+    "rebal": 6
+   }
+  ],
+  "ringkas": "Return OOS +126.1%, Sharpe 0.61, DD -69.4%, BTC +86.9% (DD -61.8%). Menang atas BTC tapi: drawdown -69.4% lebih buruk dari batas -45.0%. Sharpe penuh 1.01 mengalahkan 100 dari 100 sinyal acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-10-31 08:16"
  }
 ]
