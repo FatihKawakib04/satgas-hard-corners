@@ -1,14 +1,14 @@
 {
- "dibuat": "2026-11-01T09:00:53+07:00",
- "as_of_utc": "2026-11-01T02:00:53+00:00",
- "snapshot_ts": 1793498436,
+ "dibuat": "2026-11-02T06:30:55+07:00",
+ "as_of_utc": "2026-11-01T23:30:55+00:00",
+ "snapshot_ts": 1793575839,
  "global": {
-  "ts": 1793498436,
-  "mcap": 2630600093822.633,
-  "vol": 66603981435.95021,
-  "btc_d": 59.22903086273937,
-  "eth_d": 10.497185341095559,
-  "chg24": -2.558104584275321
+  "ts": 1793575839,
+  "mcap": 2609028096123.2344,
+  "vol": 99525133241.62202,
+  "btc_d": 60.05348831471578,
+  "eth_d": 10.570115340538642,
+  "chg24": -3.097627239265144
  },
  "makro": {
   "SPX": {
@@ -1152,11 +1152,11 @@
  },
  "breadth": {
   "n_aset": 60,
-  "positif_24h": 29,
+  "positif_24h": 20,
   "total_24h": 60,
   "positif_7d": 12,
   "total_7d": 35,
-  "median_24h": 0.0,
+  "median_24h": -0.06296,
   "median_7d": -2.1510048886474786,
   "dispersi_7d": 5.5458296212038105,
   "di_atas_ma50": 8,
@@ -1228,11 +1228,11 @@
   "BTCUSDT": {
    "funding_sekarang_pct": 0.01,
    "funding_annual_pct": 10.950000000000001,
-   "funding_avg_7d_pct": 0.0077657142857142855,
+   "funding_avg_7d_pct": 0.008049904761904762,
    "funding_persentil_90d": 100.0,
    "funding_min_30d_pct": -0.004135,
    "funding_max_30d_pct": 0.01,
-   "n_funding": 3307,
+   "n_funding": 3309,
    "oi_usd": 7515866680.61986,
    "oi_chg_7d": -2.3137946049741176,
    "oi_chg_30d": -8.594985519933818,
@@ -1240,13 +1240,13 @@
    "taker": null
   },
   "ETHUSDT": {
-   "funding_sekarang_pct": -0.0030759999999999997,
-   "funding_annual_pct": -3.3682199999999995,
-   "funding_avg_7d_pct": 0.0027293809523809527,
-   "funding_persentil_90d": 6.296296296296297,
+   "funding_sekarang_pct": -0.001034,
+   "funding_annual_pct": -1.1322299999999998,
+   "funding_avg_7d_pct": 0.0021133809523809525,
+   "funding_persentil_90d": 9.62962962962963,
    "funding_min_30d_pct": -0.013577,
-   "funding_max_30d_pct": 0.01,
-   "n_funding": 3307,
+   "funding_max_30d_pct": 0.009885,
+   "n_funding": 3309,
    "oi_usd": 5313572344.72347,
    "oi_chg_7d": -0.8172437118594056,
    "oi_chg_30d": -14.276848371952433,
@@ -1254,13 +1254,13 @@
    "taker": null
   },
   "SOLUSDT": {
-   "funding_sekarang_pct": 0.008826,
-   "funding_annual_pct": 9.66447,
-   "funding_avg_7d_pct": 0.006619952380952381,
-   "funding_persentil_90d": 70.37037037037037,
+   "funding_sekarang_pct": 0.01,
+   "funding_annual_pct": 10.950000000000001,
+   "funding_avg_7d_pct": 0.007294999999999999,
+   "funding_persentil_90d": 100.0,
    "funding_min_30d_pct": -0.013796,
    "funding_max_30d_pct": 0.01,
-   "n_funding": 3307,
+   "n_funding": 3309,
    "oi_usd": 841155885.6032,
    "oi_chg_7d": -4.266778898512702,
    "oi_chg_30d": -12.702552812744628,
@@ -1276,10 +1276,10 @@
   "n_titik": 3259
  },
  "tvl": {
-  "total_usd": 84834930442.0,
-  "tanggal": "2026-10-31",
-  "chg_7d": -5.2070471242037115,
-  "chg_30d": -11.0310599509429
+  "total_usd": 85026511462.0,
+  "tanggal": "2026-11-01",
+  "chg_7d": -4.737011705135541,
+  "chg_30d": -11.13644405644979
  },
  "korelasi": {
   "SPX": {
@@ -1467,6 +1467,108 @@
  },
  "berita": [
   {
+   "waktu": "2026-11-02 06:09",
+   "source": "Cointelegraph",
+   "title": "$3.6B flees Binance on reopen, THORChain co-founder opposes coin freeze: Hodler’s Digest",
+   "url": "https://cointelegraph.com/magazine/36b-flees-binance-on-reopen-thorchain-co-founder-opposes-coin-freeze-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-11-02 02:30",
+   "source": "CoinDesk",
+   "title": "The crypto reader's guide to the 2026 midterm election: State of Crypto",
+   "url": "https://www.coindesk.com/policy/2026/11/01/the-crypto-reader-s-guide-to-the-2026-midterm-election-state-of-crypto"
+  },
+  {
+   "waktu": "2026-11-02 01:25",
+   "source": "The Block",
+   "title": "North Korean hackers launder $242 million of Binance loot via Tron as FBI presses THORChain: analyst",
+   "url": "https://www.theblock.co/news/defi/2026-11-01-north-korean-hackers-launder-242-million-of-binance-loot-via-tron-as-fbi-presses-thorchain-analyst-432257"
+  },
+  {
+   "waktu": "2026-11-02 00:00",
+   "source": "CoinDesk",
+   "title": "AI agents bypassed crypto spending limits without human approval, researchers find in a new test",
+   "url": "https://www.coindesk.com/tech/2026/11/01/ai-agents-bypassed-crypto-spending-limits-without-human-approval-researchers-find-in-a-new-test"
+  },
+  {
+   "waktu": "2026-11-01 23:32",
+   "source": "The Block",
+   "title": "Binance sees $3.64 billion in net outflows after reopening withdrawals following record hack",
+   "url": "https://www.theblock.co/news/business/2026-11-01-binance-sees-3-64-billion-in-net-outflows-after-reopening-withdrawals-following-record-hack-432259"
+  },
+  {
+   "waktu": "2026-11-01 23:01",
+   "source": "Decrypt",
+   "title": "Bitcoin ETF Investors Head for the Exits After Record Binance Hack",
+   "url": "https://decrypt.co/382309/bitcoin-etf-investors-exits-record-binance-hack"
+  },
+  {
+   "waktu": "2026-11-01 22:00",
+   "source": "CoinDesk",
+   "title": "Crypto card startups are racking up losses just to buy your loyalty with big rewards",
+   "url": "https://www.coindesk.com/business/2026/11/01/crypto-card-startups-are-racking-up-losses-just-to-buy-your-loyalty-with-big-rewards"
+  },
+  {
+   "waktu": "2026-11-01 22:00",
+   "source": "CoinDesk",
+   "title": "The key races to watch for the 2026 election",
+   "url": "https://www.coindesk.com/policy/2026/11/01/the-key-races-to-watch-for-the-2026-election"
+  },
+  {
+   "waktu": "2026-11-01 21:01",
+   "source": "Decrypt",
+   "title": "How to Run an AI Model Locally—And Why You Might Want To",
+   "url": "https://decrypt.co/382295/how-to-run-ai-model-locally-why-you-might-want"
+  },
+  {
+   "waktu": "2026-11-01 21:00",
+   "source": "CoinDesk",
+   "title": "Crypto PACs made big Republican push in final weeks before November 3 election",
+   "url": "https://www.coindesk.com/policy/2026/11/01/crypto-pacs-made-big-republican-push-in-final-weeks-before-november-3-election"
+  },
+  {
+   "waktu": "2026-11-01 20:40",
+   "source": "Cointelegraph",
+   "title": "DeepSeek developing AI agent requiring less human input: Report",
+   "url": "https://cointelegraph.com/news/deepseek-developing-ai-agent-requiring-less-human-input-report?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-11-01 20:00",
+   "source": "CoinDesk",
+   "title": "Sherrod Brown's Ohio edge threatens a rough go for crypto next year",
+   "url": "https://www.coindesk.com/news-analysis/2026/11/01/sherrod-brown-s-ohio-edge-threatens-a-rough-go-for-crypto-next-year"
+  },
+  {
+   "waktu": "2026-11-01 19:00",
+   "source": "Makro & The Fed",
+   "title": "Why the U.S. can’t get inflation under control, explained in seven charts",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcl9QVUhMOWN6c3FDUFBiSEtack9mek0zX2VsQjZfR3NPM283OWFHQkNuTGFRekRPSjFyTndvWFFkZzc3cEEtNHFzbDQ2a0wxVVBhNzNORGxVSGxIVW9KS1FUZjJYamhXYW9rT0o4ZG5UR05oTG1yRUJKU2I1aEtHcFAtWVJ5N092X3hUa05JUnQyNVVnV2YzQnlYTU5mdzZUaFE?oc=5"
+  },
+  {
+   "waktu": "2026-11-01 17:35",
+   "source": "CoinDesk",
+   "title": "Binance opens crypto withdrawals in phases starting with bitcoin following $6.3 billion hack",
+   "url": "https://www.coindesk.com/markets/2026/11/01/binance-opens-crypto-withdrawals-in-phases-starting-with-bitcoin-following-usd6-3-billion-hack"
+  },
+  {
+   "waktu": "2026-11-01 17:15",
+   "source": "Makro & The Fed",
+   "title": "All Your Bond-Market Questions Answered As Rising Rates Roil Markets",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVmh4TjhRZndXN0ZIRzhwUGlvVzNFOTdoVzc5T3pHRVExa0VyajBPUjBaYlhNb2lGQkRxVEk4VzFZODVrRFlka1B5dXQ5M0NIbnZTSzN3bFg0UEtUZFR3QmZObkdEbVBzWXotYTBWZjhaU3FoSHkzd0tVY0hFV2xISXMwTE1RUGxXMkhn?oc=5"
+  },
+  {
+   "waktu": "2026-11-01 16:38",
+   "source": "Cointelegraph",
+   "title": "Binance says phase one of withdrawals opens after $6.3B hack",
+   "url": "https://cointelegraph.com/news/binance-says-phase-one-of-withdrawals-opens-after-63b-hack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-11-01 14:44",
+   "source": "Cointelegraph",
+   "title": "FBI blames North Korea for record $6.3B Binance hack",
+   "url": "https://cointelegraph.com/news/fbi-blames-north-korea-for-record-63b-binance-hack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
    "waktu": "2026-11-01 08:10",
    "source": "CoinDesk",
    "title": "FBI confirms North Korea's role in $6 billion Binance hack, asks DeFi community to block BTC, ETH, SOL addresses",
@@ -1555,6 +1657,12 @@
    "source": "Cointelegraph",
    "title": "Bitcoin turns 18: Has the original rebel grown up?",
    "url": "https://cointelegraph.com/magazine/bitcoin-turns-18-has-the-original-rebel-grown-up?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-10-31 21:10",
+   "source": "Makro & The Fed",
+   "title": "Trumpflation Is Getting Worse and It Could Trigger a Wall Street Nightmare",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQdHJjZkVCUzFrbmxpUDhZV2RNQ0pUemE3Zm9Tdkd3T3pLY3NYS2hKQlFxSmw3LU5sZWZrNmlXaDB5T0pmUjJ6R3lnTk85bldsR0lrZWJQcVhWU3FTb0tCR1JuUGlxTTh4Q3Uxc3d4MG8tdUtVRm56b256TV9yZjByNmNkNEl5UU9nY3BFNzlSNnVKcXY4bk1DeFU1ZnhUcTBHclVHbGRrdE1SdDRSS0FpSzAyYXJQQVRxOUE?oc=5"
   },
   {
    "waktu": "2026-10-31 21:00",
@@ -1669,504 +1777,6 @@
    "source": "CoinDesk",
    "title": "OpenAI reportedly cuts fundraising and valuation targets amid AI jitters",
    "url": "https://www.coindesk.com/business/2026/10/30/openai-reportedly-cuts-fundraising-target-amid-ai-jitters"
-  },
-  {
-   "waktu": "2026-10-31 05:00",
-   "source": "Cointelegraph",
-   "title": "Binance hackers raced to move billions before it could be frozen",
-   "url": "https://cointelegraph.com/magazine/binance-hackers-raced-to-move-billions-before-could-be-frozen?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-31 04:20",
-   "source": "The Block",
-   "title": "Inside the largest crypto hack on record: How attackers breached Binance for $6.3 billion",
-   "url": "https://www.theblock.co/news/business/2026-10-30-binance-hack-largest-crypto-hack-north-korea-432225"
-  },
-  {
-   "waktu": "2026-10-31 04:16",
-   "source": "Decrypt",
-   "title": "Binance Hack Shows Why Offshore Exchanges Need US Oversight, CFTC Chair Says",
-   "url": "https://decrypt.co/382285/binance-hack-why-offshore-exchanges-need-us-oversight-cftc-chair"
-  },
-  {
-   "waktu": "2026-10-31 04:06",
-   "source": "The Block",
-   "title": "President Trump says they’re looking into Binance hack as calls grow for crypto rules",
-   "url": "https://www.theblock.co/news/regulation/2026-10-30-trump-looking-into-binance-hack-calls-grow-for-crypto-rules-432236"
-  },
-  {
-   "waktu": "2026-10-31 03:53",
-   "source": "Decrypt",
-   "title": "Intel Stock Suffers Worst Crash in 50 Years as Weak Forecast Overshadows AI Chip Demand",
-   "url": "https://decrypt.co/382287/intel-stock-suffers-worst-crash-in-50-years-as-weak-forecast-overshadows-ai-chip-demand"
-  },
-  {
-   "waktu": "2026-10-31 03:06",
-   "source": "Decrypt",
-   "title": "Worried About Crypto Hacks? Buy Bitcoin Proxies in Stock Market Instead, Say Wall Street Firms",
-   "url": "https://decrypt.co/382282/crypto-hacks-buy-bitcoin-proxies-stock-market-wall-street"
-  },
-  {
-   "waktu": "2026-10-31 03:03",
-   "source": "Makro & The Fed",
-   "title": "Fed officials make case for rate hikes amid ongoing inflation concerns",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObTlSSnpPaC0yUGM0aTNCb3h0cUVRejBTRjg0SXVnT0MwSXNMSzBVS1NFSEpUaGxtOUpzSkZmQlRKWjFWQ2UtNEp2RUgzcWwyMEN3clpKaU1acDlRUGFhS21BTEpWQjdSVURWZjRJd19Tc19pbVVHeWYwUEZLdUlka0x6M1p5WDRMVkVjRmlLTWU?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 02:58",
-   "source": "Makro & The Fed",
-   "title": "Fed officials make case for rate hikes amid ongoing inflation concerns",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcF91d1VFeE1CZU9EaXZSS1VObjNNSlFhTnlOeUpsczYyeVJWLUtzbUJDNzlVa285emJzVk9zUWVEWWstOE9rZ0xScVlLTVVsXzFVWDU4eEtMaFlVdXY3ZGJYZmo3a2pTalZGT2NDSzR0UHhnUmZnNWdRM3FacnEzdHM3ZjE5N3ZrRVRINWowSFN3Y1d0bDNN?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 02:55",
-   "source": "CoinDesk",
-   "title": "Experts divided over Binance hack asset freezes, warn recovery is another matter",
-   "url": "https://www.coindesk.com/business/2026/10/30/experts-divided-over-binance-hack-asset-freezes-warn-recovery-is-another-matter"
-  },
-  {
-   "waktu": "2026-10-31 02:51",
-   "source": "Makro & The Fed",
-   "title": "Gold wants to rally, but the threat of higher interest rates is holding it back - Catalyst Funds’ Miller",
-   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSFpzakpxRHEzZkxpTUZBNHYyOTNveFJ6U3hlOXpyQ2RHMGRnVEg1ZkEtc054TFNHR0t1bjNoRUd2VHhLQUxueFNueUw0alBkUEoyRTN0Y2IwcnE3WUdSMmZ2X1lRRktub3ZHeVRvWDRYOS1oVDFfalVoR09KMXhrcU9OczRZZHduUnA1RHZ5SjZDdkFOZWMxRU12eTlEU0tmUGFVblRIMVljckEydXBPZWVnZUIwQUU?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 02:34",
-   "source": "Makro & The Fed",
-   "title": "New I Bond rate jumps to 5.51% starting Nov. 1 as inflation rises",
-   "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQY1NhZXdpRkJPdmdrSEZTaEdYQnBzc1psV3U3OWEyTGZTcGM4Rkg3SS1YRkVWNjZ6X2VUUVFNTU8zS081aU43b21MMzdRYXhGcFJRSmhiY0JLQ3ZyZnZPZnBqOWFSVGdDMlo2OE9IaHkwbHM0a25iaFBYVlAybXJuTFZPUlNCbno4S01MdVpWWkVyZXdFb1NSaHNwVDluNjkwZ09rN21xZXpaV1dIRUQ1X2dMZEJ3eUlUWmZyMU95bkYwTWx5N2R1bGFwalFMaFUtcmVHRWdaYTJkNUJCajRpRFRPM2FTLTNzSkE?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 02:31",
-   "source": "Decrypt",
-   "title": "Reddit Stock Plunges 30% as Google's AI Search Hits Traffic and User Growth",
-   "url": "https://decrypt.co/382276/reddit-stock-plunges-30-googles-ai-search"
-  },
-  {
-   "waktu": "2026-10-31 02:04",
-   "source": "Makro & The Fed",
-   "title": "The Labor Market Is Weaker Than It Looks",
-   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBpLTVkS0dlSWRHV2JaMDU4ZVZpRVFOMzQtUF9zeFE0dnByTjdjSU1hT0w2UVlKbUdMUHJDSWlLLWtfbUMwQlBaQ21lOFdzRWNnU3JCelkwd3JpbGNlWnJDd01zLUNxaEJDWUVNcHN2aFJXRzlTT0JR?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 02:01",
-   "source": "Cointelegraph",
-   "title": "Tether’s excess reserves nearly double to $8B as Q3 profit hits $1.5B",
-   "url": "https://cointelegraph.com/news/tethers-excess-reserves-nearly-double-to-8b-as-q3-profit-hits-15b?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-31 01:54",
-   "source": "Makro & The Fed",
-   "title": "Fed Officials Signal More Interest-Rate Increases Ahead, and Markets Believe It",
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPeWd3d2NyYmQydkw0c2MxRWpwSVhFUjN4TUdwazh4cWFhUlRoZGlydDl3THY5TFNVdUdzbE9oSWRSMjhONG9mb0g1Snd2d0hLanlDSzJYM0R1eHg2ZmFtM2lwRTlCSjdPcWlYczhUVnRyQ0VjRDRyemxicEtXUDBqa1RXbTgzVkZoYUVn?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 01:45",
-   "source": "Decrypt",
-   "title": "Binance Hack: Why Bitcoin Didn't Crash Like It Did in 2018",
-   "url": "https://decrypt.co/382257/binance-hack-why-bitcoin-didnt-crash"
-  },
-  {
-   "waktu": "2026-10-31 01:16",
-   "source": "Decrypt",
-   "title": "$8 Million Crypto Kidnapping Lands Texas Brothers 15-Year Prison Terms",
-   "url": "https://decrypt.co/382269/crypto-kidnapping-texas-brothers-15-year-prison"
-  },
-  {
-   "waktu": "2026-10-31 00:57",
-   "source": "Makro & The Fed",
-   "title": "Fed's Musalem and Logan signal more interest rate hikes",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBVZ1h6QUkxV1hSSjhaRzFIbTZEWld0Z1FFY01HWEtsS2FMU2I3RTFhS3NveXpmeEhYSzVnZzQwWjZuaFpoWExMXzcxbktwZWdzellDWmJ1TjI0VE91akVtMEh6aGdVbW9kY0JObE1EZktnaTJUUkE?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 00:50",
-   "source": "Decrypt",
-   "title": "Secret Service, FBI Join Binance Hack Probe as Circle Freezes $823 Million",
-   "url": "https://decrypt.co/382268/secret-service-fbi-binance-hack-probe"
-  },
-  {
-   "waktu": "2026-10-31 00:48",
-   "source": "Cointelegraph",
-   "title": "Coinbase leads crypto stock selloff following $6.3B Binance hack",
-   "url": "https://cointelegraph.com/markets/coinbase-leads-crypto-stock-selloff-shares-tumble?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-31 00:37",
-   "source": "Makro & The Fed",
-   "title": "Rates need to be higher, 3 Fed members say. The question is how much.",
-   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQeDZEZjlNVkVmT3QydUZXYTlkOEs5dGxCSHBqb3VKVWJwVFA3dVB2MTh3NDk5ZWxVdTdaOUlrZUQycnp6OEw2MXNwSnVTaGZmdjNJYWJHdl90YjBNem5SSWFJSFNsRmQ5bC1kdnVXSWFDUmt3S3BPSzhGTkZYZVJMdUQ4dzZicFhEOHZKRnFfWGxWR2xERzJXX1FSOU5pQVhpSjRLY0lEZWxnZXc0a1hSSmpJX1VqMFY3NHk4X1FBdm5hQkJHbUNaOW1n?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 00:35",
-   "source": "Makro & The Fed",
-   "title": "Fed needs at least two more rate hikes, Logan says",
-   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPN0l1dXR6NGI2OV9OZGVkZHRFdzNqcVBnSGRFamxWZlNaZTNsQmdIbXRHVXc5VE9FZzcyWUI4YU5hai1VZlVtY2ZsQTh0VDgxYmtJT1V3X0NvUEZvRjBDT2VaQUdaeDdIWkZ5MlhraUdTVHJYSlM3RFVzU3lVNjctTzU2eFMzNk5kbDBIWlR2RWJ0NkQ2Znc?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 00:34",
-   "source": "Makro & The Fed",
-   "title": "Fed needs at least two more rate hikes, Logan says",
-   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQcy1sWVctTk90QVVYU0J5ZE9RZm5iNWtzZ2NLcHljbTNsVkZZdG1HRmotWjRMTkFJVkVST1MwTFVfV3B6UFJheHBmTkhBSnNiMHVzMnV3WHQyRWZ4V3hWX2ptQ2dHRkU3UVhrVzJVVnpPY3oxZXF5MlVDWmxOeUM0ckMtVnB4NGNpTlg0UHhYRGZ0TTg?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 00:28",
-   "source": "Makro & The Fed",
-   "title": "Week Ahead for FX, Bonds: U.S. Midterms, Jobs Data in Focus; BOE Expected to Raise Rates",
-   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNnh0RUxfMGk2OW1JOE1LUUFsNkJzamc4RkZKODNFTlVSWk1wR2VseGlFWF9zZ1RKdTlrNVZldm94LWpIa3hHcVdjV3NmdlhqdWh5UlE3UTVyR1AyWUhrRGlpTVN3RkJOZGE4WVBDM0FHdW9jYmZua3RBWFhVOV80alRyUkY2V0ROb0Vrem1Jbmw3Qml2Zm1WZERhdWFCVUIyazVDc1VWemVEall3dGhDVG1RaE9Lc05KVXpDMg?oc=5"
-  },
-  {
-   "waktu": "2026-10-31 00:09",
-   "source": "Cointelegraph",
-   "title": "Crypto Biz: Bitcoin’s quantum threat is becoming an economic problem",
-   "url": "https://cointelegraph.com/news/bitcoin-quantum-threat-ripple-bank-usdc-vaneck-crypto-biz?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 23:53",
-   "source": "Cointelegraph",
-   "title": "Recap: How Binance’s record $6.3B hack unfolded",
-   "url": "https://cointelegraph.com/news/recap-binances-record-63b-hack-unfolded?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 23:34",
-   "source": "Decrypt",
-   "title": "Binance Sets Aside $6.34B to Cover Hack Losses, CEO Says 'Your Assets Are Safe'",
-   "url": "https://decrypt.co/382237/binance-sets-aside-6-34b-to-cover-hack-losses-ceo-says-your-assets-are-safe"
-  },
-  {
-   "waktu": "2026-10-30 23:31",
-   "source": "CoinDesk",
-   "title": "Binance uncovers wider breach in $6.3 billion exploit, targets Sunday withdrawal restart",
-   "url": "https://www.coindesk.com/tech/2026/10/30/binance-uncovers-wider-breach-in-usd6-3-billion-exploit-targets-sunday-withdrawal-restart"
-  },
-  {
-   "waktu": "2026-10-30 23:30",
-   "source": "Makro & The Fed",
-   "title": "St. Louis Fed's Musalem: Another rate hike needed 'soon'",
-   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQQ0hqSXZpT1VZTUNGSkRVSkVaa092QjVSaGt3ZHlpM0F6RENCYlA4U3A4V285MTE0eXp3aFNKNXVjSVVjTEMwbXE1aV95NFJHOFdxMElwWTBsZ05oYjdtWVlmZkFQNzlqMzV2cldpekQxZGVqSTJ6ZXpSc205THRQYdIBhgFBVV95cUxQSU5zQlBqM3NxZWNyWnU3a3NHOEMyNUFZdnh3WW9KOWVDNUh0Q3pIRUdkYzZoZ1lONi00cUF6NmNxM3FGN0ZYYzVoamo1ZHJ1LXBkLUFBVUFBREgtVWVEWFh0NTJnOGQ2T09TUmNpX3dFYjZRS29SSjlFMlk0T25DamNmVWtndw?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 23:30",
-   "source": "Makro & The Fed",
-   "title": "Fed’s Musalem Says More Rate Hikes Needed Soon to Tame Inflation",
-   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNdldJX2pTRXJVUGVnT25uX2NIbzUzWnF4V1R0alZxTjNGa0t1d1ZmZko3dW5xcjhoQ3hCUUFOVURGcnNlZHNFc0dZNTVQSjZBQlVlb1NJeDF5VTlNT3BnZFBqTnhWdDVvN1hXQU15aVUwSVh5Uzd4OTR0dnA2RURLN3FSYVBoRThTREZuNlRYMlVnelZKMnpKbGZtcVNuZVZGTk5qdWtKazR0QzAzczl1RFVER05YUQ?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 23:26",
-   "source": "The Block",
-   "title": "Texas brothers sentenced to 15 years for holding Minnesota family at gunpoint in $8 million crypto heist",
-   "url": "https://www.theblock.co/news/regulation/2026-10-30-texas-brothers-sentenced-15-years-8-million-crypto-robbery-minnesota-432221"
-  },
-  {
-   "waktu": "2026-10-30 23:25",
-   "source": "Decrypt",
-   "title": "Elon Musk, CZ Trade Blows Over SpaceX Shares After $6.4B Binance Hack",
-   "url": "https://decrypt.co/382236/elon-musk-cz-trade-blows-spacex-shares-binance-hack"
-  },
-  {
-   "waktu": "2026-10-30 23:23",
-   "source": "ETF & aliran institusi",
-   "title": "Ethereum Price Outruns Bitcoin in Q3 as ETH ETF Buyers Return",
-   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOWDA4b1JyQWRMNWZSRFdsYWZqV2UzQkxucVFCam9sQVJ0WE9vbkhvRHpMaGpyNFFQYl94RUdLd3ViWlJhRloxbXhqbE8td0VqX0FzN0R6UUl4bkpseWxyX1VmRFh0c0tQeDNsUzYtRHJjS3JKdzZKOUU2UHJlMTZSUUdWcVd5ZVVDTGZhZHNFOA?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 23:10",
-   "source": "ECB",
-   "title": "Philip R. Lane: AI adoption in Europe",
-   "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261030~08d9d540f0.en.html"
-  },
-  {
-   "waktu": "2026-10-30 23:06",
-   "source": "Cointelegraph",
-   "title": "Bitcoin risks worst October in 12 years as tech sell-off spreads to gold",
-   "url": "https://cointelegraph.com/markets/bitcoin-risks-worst-october-in-12-years-as-tech-sell-off-spreads-to-gold?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 21:30",
-   "source": "The Block",
-   "title": "Strategy’s preferred-stock fix sets up renewed bitcoin buying, analysts say",
-   "url": "https://www.theblock.co/news/business/2026-10-30-strategy-mstr-preferred-stock-bitcoin-buying-analysts-432214"
-  },
-  {
-   "waktu": "2026-10-30 21:17",
-   "source": "Decrypt",
-   "title": "What is EIP-7702? The Ethereum Upgrade Behind the $6.4B Binance Hack",
-   "url": "https://decrypt.co/resources/what-is-eip-7702-the-ethereum-upgrade-behind-the-6-4b-binance-hack"
-  },
-  {
-   "waktu": "2026-10-30 21:13",
-   "source": "CoinDesk",
-   "title": "Wall Street analysts urge investors to buy crypto stocks after $6.3 billion Binance hack",
-   "url": "https://www.coindesk.com/markets/2026/10/30/wall-street-analysts-urge-investors-to-buy-crypto-stocks-on-weakness-after-usd6-3-billion-binance-hack"
-  },
-  {
-   "waktu": "2026-10-30 21:07",
-   "source": "Makro & The Fed",
-   "title": "Fed’s Barkin Indicates Backing for ‘Gradual’ Rate Increases",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPR3JPc1I0V3ktNV9veTdKY2l3SWVkVzA2dkhZM05nUkFKc1JfX2RvWjExbU1DaXlrdnM2Zk5HeHFXVE96aU5DSEhSX3B4anUyVzBKRDNBa2JnVUpMR0xmZmdiMlRrbEt6VXZrYnNiQmZCbUxIZGNwbGdBQ1RjSlU2MGxnTVREU3Nrdm9yR2N1ZWVrWUdwRkFJWV8tcWlEVmFvRlpVRE1ESkhWblpx?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 21:00",
-   "source": "ECB",
-   "title": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
-   "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261030~e40f864093.en.html"
-  },
-  {
-   "waktu": "2026-10-30 20:40",
-   "source": "Makro & The Fed",
-   "title": "Gold hits a 4-month low as inflation fuels Fed rate hike fears",
-   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9oVzNmMTNiWlJGZDJ4VkpnbDQyNndXc2VWN3E3dGVUOGNpQ1Q1OFNyWkNTbzlLMHNJbU1jdC1wUV9kdFI1YzFTekZrQUNnTWhLLUttY0VIX1RlTUN4X2lUVVk0ZTlQTllXODFDeU9rdmFHd1k?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 20:30",
-   "source": "Cointelegraph",
-   "title": "Will gold’s ‘infinite mint bug’ make Bitcoin more valuable?",
-   "url": "https://cointelegraph.com/magazine/will-golds-infinite-mint-bug-make-bitcoin-more-valuable?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 20:14",
-   "source": "The Block",
-   "title": "Binance says it has $6.34 billion ready to cover hack losses",
-   "url": "https://www.theblock.co/news/ecosystems/2026-10-30-binance-says-it-has-6-34-billion-ready-to-cover-hack-losses-432208"
-  },
-  {
-   "waktu": "2026-10-30 20:11",
-   "source": "Cointelegraph",
-   "title": "Binance working with FBI to recover assets following $6.3B hack",
-   "url": "https://cointelegraph.com/news/binance-fbi-recover-assets-hack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 20:01",
-   "source": "Makro & The Fed",
-   "title": "US Employment Cost Growth Holds Steady, Stays Below Inflation",
-   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPS3hPdndhOHJLVVFEeWlVcnF3UjJ5aGYzU3dFZHhIc0NVV2RybG9nSEM4MUFaM0thNGZVZ09neU82eGVKcUtCUFRKajg2eDczd1VMclVnaHpEeGdNM3psMTVwcktvWnpmQ25YMFBwei1CUjBrVU5TOU93MzJXZ3Uwb0Z0Ti1xYXc2eXVNT0VyRW1YZ2pvMk9ObWpheWNBekg1NTZCQzJIMGFOSWlsNU9sbA?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 20:00",
-   "source": "Decrypt",
-   "title": "Israel Extradites Alleged Nomad Bridge Exploiter to US Over $2.8M Theft: Report",
-   "url": "https://decrypt.co/382230/israel-extradites-alleged-nomad-bridge-exploiter-to-us-over-2-8m-theft-report"
-  },
-  {
-   "waktu": "2026-10-30 19:41",
-   "source": "Cointelegraph",
-   "title": "Binance says it holds $5B in matching tokens to cover hack losses",
-   "url": "https://cointelegraph.com/news/binance-5-billion-replacement-crypto-in-custody?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 19:31",
-   "source": "Decrypt",
-   "title": "Morning Minute: Binance’s $6.4B Hack Overshadows Hyperliquid’s Biggest Day",
-   "url": "https://decrypt.co/382225/morning-minute-binances-6-4b-hack-overshadows-hyperliquids-biggest-day"
-  },
-  {
-   "waktu": "2026-10-30 19:22",
-   "source": "Decrypt",
-   "title": "TRM and Chainalysis Tie $6.4B Binance Hack to North Korea's TraderTraitor",
-   "url": "https://decrypt.co/382224/trm-and-chainalysis-tie-6-4b-binance-hack-to-north-koreas-tradertraitor"
-  },
-  {
-   "waktu": "2026-10-30 19:13",
-   "source": "CoinDesk",
-   "title": "Binance arranges $6.34 billion to cover losses from record crypto hack",
-   "url": "https://www.coindesk.com/business/2026/10/30/binance-arranges-usd6-34-billion-to-cover-losses-from-record-crypto-hack"
-  },
-  {
-   "waktu": "2026-10-30 18:51",
-   "source": "CoinDesk",
-   "title": "Here's how big bitcoin traders responded after the Binance hack hit",
-   "url": "https://www.coindesk.com/daybook-us/2026/10/30/here-s-how-big-bitcoin-traders-responded-after-the-binance-hack-hit"
-  },
-  {
-   "waktu": "2026-10-30 18:36",
-   "source": "Cointelegraph",
-   "title": "Zcash grants group offers $124M compromise as governance backlash grows",
-   "url": "https://cointelegraph.com/news/zcash-grants-46m-proposal-governance-backlash?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 18:35",
-   "source": "CoinDesk",
-   "title": "Here’s how an Ethereum upgrade helped drain part of Binance’s $6 billion loss",
-   "url": "https://www.coindesk.com/tech/2026/10/30/here-s-how-one-ethereum-permission-let-an-attacker-drain-usd2-5-billion-from-binance"
-  },
-  {
-   "waktu": "2026-10-30 18:29",
-   "source": "Cointelegraph",
-   "title": "Bitcoin price metrics hint at rebound as $1.6B liquidations follow Binance hack",
-   "url": "https://cointelegraph.com/markets/bitcoin-price-metrics-hint-at-rebound-as-16b-liquidations-follow-binance-hack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 18:09",
-   "source": "CoinDesk",
-   "title": "Crypto liquidations jump to $1.57 billion as Binance hack sends bitcoin, ether lower",
-   "url": "https://www.coindesk.com/markets/2026/10/30/crypto-liquidations-jump-to-usd1-57-billion-as-binance-hack-sends-bitcoin-ether-lower"
-  },
-  {
-   "waktu": "2026-10-30 18:00",
-   "source": "Cointelegraph",
-   "title": "EIP-7702 didn’t cause Binance hack, but may have amplified losses",
-   "url": "https://cointelegraph.com/news/binance-hack-security-ethereum-eip-7702-role?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 17:54",
-   "source": "Cointelegraph",
-   "title": "Binance hacker’s Bitcoin haul tops Coinbase’s corporate treasury",
-   "url": "https://cointelegraph.com/news/binance-hacker-bitcoin-holdings-exceed-coinbase-btc-treasury?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 17:12",
-   "source": "Makro & The Fed",
-   "title": "New economic data challenges Fed chief's not-too-hot perspective",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNNV9seWt5MjlGeDJNRkdKLWxjUHQyb2R4QmUtM0ZvOU5hUExsYmpuVkhyZ2RnSGtPajEzZEFFRUluX0xHdTlaQ1NKc0JKcXhQTXB6NGJ4VXJ5NVhNWkZzTTU2WFplQl9zWUFtT3hmWG9FQXhyYVBWN1V4MEhoaGVEd2pfQWRDakQxcExBc3VjQmNNSzhEUDZjMEMwQnpVV1NTMEhZb0Q2LWF1SUZi?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 17:07",
-   "source": "Decrypt",
-   "title": "Trezor Warns CryptoBilis Buyers After Report of Hardware Implant in Safe 5",
-   "url": "https://decrypt.co/382216/trezor-warns-cryptobilis-buyers-after-report-of-hardware-implant-in-safe-5"
-  },
-  {
-   "waktu": "2026-10-30 16:52",
-   "source": "Cointelegraph",
-   "title": "THORChain’s RUNE jumps 13% after Binance’s record $6.3B hack",
-   "url": "https://cointelegraph.com/markets/rune-token-surges-binance-hack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 16:41",
-   "source": "CoinDesk",
-   "title": "Strategy CFO resigns as company posts record quarterly profit. MSTR stock falls 6%",
-   "url": "https://www.coindesk.com/markets/2026/10/30/strategy-cfo-resigns-as-company-posts-record-quarterly-profit-mstr-stock-falls-6"
-  },
-  {
-   "waktu": "2026-10-30 16:31",
-   "source": "Decrypt",
-   "title": "Binance Finds 'Additional Points of Breach' in $6.3B Hack",
-   "url": "https://decrypt.co/382203/binance-finds-additional-points-of-breach-in-6-3b-hack"
-  },
-  {
-   "waktu": "2026-10-30 16:26",
-   "source": "Cointelegraph",
-   "title": "Trezor warns CryptoBilis buyers to move funds over suspected implant",
-   "url": "https://cointelegraph.com/news/trezor-cryptobilis-wallet-implant-funds-warning?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 16:00",
-   "source": "ECB",
-   "title": "Results of the ECB Survey of Professional Forecasters for the fourth quarter of 2026",
-   "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261030~e92c3c838c.en.html"
-  },
-  {
-   "waktu": "2026-10-30 15:57",
-   "source": "The Block",
-   "title": "Coinbase Q3 net income jumps 66% as prediction markets gain traction",
-   "url": "https://www.theblock.co/news/business/2026-10-30-coinbase-q3-net-income-jumps-432189"
-  },
-  {
-   "waktu": "2026-10-30 15:55",
-   "source": "The Block",
-   "title": "Trezor reports suspected hardware implant in Safe 5 sold by CryptoBilis",
-   "url": "https://www.theblock.co/news/ecosystems/2026-10-30-trezor-reports-suspected-hardware-implant-432196"
-  },
-  {
-   "waktu": "2026-10-30 15:36",
-   "source": "CoinDesk",
-   "title": "Live News: Binance hack rattles crypto as Intel plunges and AI spending fears hit tech",
-   "url": "https://www.coindesk.com/markets/2026/10/30/live-news-binance-hack-rattles-crypto-as-intel-plunges-and-ai-spending-fears-hit-tech"
-  },
-  {
-   "waktu": "2026-10-30 14:54",
-   "source": "CoinDesk",
-   "title": "Binance hacker dumps a little-known 2017 token and it crashes 90%",
-   "url": "https://www.coindesk.com/markets/2026/10/30/binance-hacker-dumps-a-little-known-2017-token-and-it-crashes-90"
-  },
-  {
-   "waktu": "2026-10-30 14:33",
-   "source": "Cointelegraph",
-   "title": "Live updates: Binance $6.3B hack linked to North Korea’s TraderTraitor",
-   "url": "https://cointelegraph.com/news/live-updates-binance-63b-hack-linked-to-north-koreas-tradertraitor?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 14:18",
-   "source": "Makro & The Fed",
-   "title": "U.S. Treasury Yields Fall to Multiweek Lows in Asian Trade",
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOS1p6ZkxEeDY0SlhyTDJKSXkyR1NkOUZVa1Z4NWJHU2cxdjFfVlI0TVBGZUZRR1dkLWpEY2RtNC1wSjZKb3ZKaTloVHlvVlF3cFZvdFI2Y3R4c3RIeFd3NU1NMWRpVDBlc3M3STVwa2ZxNVpTLTBIN0t5VTF5alltRGxFQWM3QUpibUF1LWN1Ykhmb3FvVkVmR1pDczZEa2YxTXZz?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 13:43",
-   "source": "ETF & aliran institusi",
-   "title": "Bitcoin ETFs See $17M Inflows, Ethereum ETFs Lose $105M on October 29",
-   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQLVF2VFFscUtYOGtsLXBsX1hsMUdEbUxHRE05QzA4ckFoUnBqZXNWTWhvSk9LdnlTTkppTXNZY19EczNueEFLaGszdkNjanFrYlJKdWZZWGdSYUFteHVCUXJhRnBMX24zUUptODJIdGZGUENpdXNBeGNCLWcyek9OaU9yZVFwSHhPRHBDMUFkZ2VVcXlITzNhWFpNWmZNV1JUSUE?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 13:22",
-   "source": "CoinDesk",
-   "title": "Bitcoin, ether and XRP selloff wipes out $1.5 billion in leveraged crypto bets",
-   "url": "https://www.coindesk.com/markets/2026/10/30/bitcoin-ether-and-xrp-selloff-wipes-out-usd1-5-billion-in-leveraged-crypto-bets"
-  },
-  {
-   "waktu": "2026-10-30 12:53",
-   "source": "Cointelegraph",
-   "title": "Strategy eyes more Bitcoin buys as Saylor touts $30B credit capacity",
-   "url": "https://cointelegraph.com/news/strategy-30-billion-digital-credit-capacity-bitcoin-buys?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 12:51",
-   "source": "Cointelegraph",
-   "title": "North Korea’s TraderTraitor linked to $6.3B Binance hack",
-   "url": "https://cointelegraph.com/news/north-korea-linked-to-63b-binance-hack-by-crypto-investigators?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 12:45",
-   "source": "CoinDesk",
-   "title": "XRP Ledger developers tighten the rules for who can hold 'restricted' tokens",
-   "url": "https://www.coindesk.com/tech/2026/10/30/xrp-ledger-developers-tighten-the-rules-for-who-can-hold-restricted-tokens"
-  },
-  {
-   "waktu": "2026-10-30 12:43",
-   "source": "CoinDesk",
-   "title": "Binance hack bites India's largest crypto exchange as it curbs futures trading",
-   "url": "https://www.coindesk.com/markets/2026/10/30/coindcx-halts-new-crypto-futures-bets-as-binance-incident-disrupts-liquidity"
-  },
-  {
-   "waktu": "2026-10-30 11:50",
-   "source": "CoinDesk",
-   "title": "Binance hacker splits $1.4 billion of bitcoin into 19 wallets that no one can freeze",
-   "url": "https://www.coindesk.com/markets/2026/10/30/binance-hacker-splits-usd1-4-billion-of-bitcoin-into-19-wallets-that-no-one-can-freeze"
-  },
-  {
-   "waktu": "2026-10-30 11:00",
-   "source": "CoinDesk",
-   "title": "$6 billion Binance hack sends bitcoin, ether tumbling; Standard Chartered expects more pain",
-   "url": "https://www.coindesk.com/markets/2026/10/30/usd6-billion-binance-hack-sends-bitcoin-ether-tumbling-standard-chartered-sees-more-losses-ahead"
-  },
-  {
-   "waktu": "2026-10-30 10:56",
-   "source": "CoinDesk",
-   "title": "Institutional crypto investors rush to pull funds from exchanges after Binance hack",
-   "url": "https://www.coindesk.com/markets/2026/10/30/institutional-crypto-investors-rush-to-pull-funds-from-exchanges-after-binance-hack"
-  },
-  {
-   "waktu": "2026-10-30 10:47",
-   "source": "Cointelegraph",
-   "title": "Binance hack could accelerate shift to DEXs: Standard Chartered",
-   "url": "https://cointelegraph.com/news/binance-hack-could-accelerate-shift-to-dexs-standard-chartered?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-10-30 10:36",
-   "source": "CoinDesk",
-   "title": "Crypto's longtime foe, North Korea's Lazarus Group, likely behind Binance hack: blockchain sleuths",
-   "url": "https://www.coindesk.com/policy/2026/10/29/crypto-s-longtime-foe-north-korea-s-lazarus-group-likely-behind-binance-hack-blockchain-sleuths"
-  },
-  {
-   "waktu": "2026-10-30 10:24",
-   "source": "Makro & The Fed",
-   "title": "Gold slips as higher oil, US inflation data bolster Fed hike bets",
-   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOMFY2WEZOWHhyVDVPMkM2ZVUxM01TR09lcUZ0RlBWNF96QkJzWXhUZWpIbmlRSUlxN3FiZ0pEYWVXOW1YcVBQcHQ4cjU1NFpCQVlnS3pneWlKeTZIRjJzWkJuek9OeDhNSGxTU1ozV1g0czltbldNNkJORWRWS0ZBU25WdURjNWNpREdpdmZoV1c2ZzBnUmM5cm5HTG16OFpEdVhLWC13RkxHM3IxX1E?oc=5"
-  },
-  {
-   "waktu": "2026-10-30 09:22",
-   "source": "The Block",
-   "title": "Bitcoin slides below $77,000, BNB drops amid Binance hack",
-   "url": "https://www.theblock.co/news/markets/2026-10-29-bitcoin-slides-below-77000-binance-hack-432183"
   }
  ],
  "rezim": {
