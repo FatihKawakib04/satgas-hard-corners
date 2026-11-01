@@ -5,6 +5,7 @@
  * Usage: node quickstart.js [SYM]  e.g. node quickstart.js BTC ETH SOL
  */
 
+// quickstart.cjs — CommonJS version for Node.js
 const https = require('https');
 
 const BASE = process.env.API_BASE || 'https://satgas.ai.id/api';
