@@ -659,10 +659,14 @@ def index_html() -> str:
         # Baris DB bisa berisi judul sementara (mis. hasil uji template) yang
         # tidak pernah muncul di halaman, dan arsip harus mencerminkan isi halaman.
         judul, ringkas = r["title"], r["summary"] or ""
+        # Judul dari DB dipakai apa adanya. Hanya kalau isinya placeholder
+        # (judul sementara dari uji template, mis. "Test" atau "ringkasan"),
+        # judul diambil dari halaman yang benar-benar terbit.
+        placeholder = (not judul or len(judul.strip()) < 8 or " " not in judul.strip())
         try:
             raw = open(f"{OUT_DIR}/{r['slug']}.html", encoding="utf-8").read()
             m = re.search(r"<h1[^>]*>(.*?)</h1>", raw, re.S)
-            if m:
+            if placeholder and m:
                 judul = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip()
             m = re.search(r'<meta name="description" content="(.*?)">', raw, re.S)
             if m:
@@ -693,6 +697,8 @@ def index_html() -> str:
         ("validasi.html", "Validasi", "Indeks uji sembilan tahap untuk strategi yang lolos gerbang."),
         ("audit-e06.html", "Audit E06", "Universe point-in-time dan sensitivitas DSR."),
         ("audit-carry.html", "Audit carry", "Carry funding dihitung ulang dari nol."),
+        ("demo-olahraga.html", "Demo olahraga",
+         "Contoh format laporan pra-pertandingan, bukan pekerjaan klien."),
         ("data/fakta.json", "Raw data", "fakta.json apa adanya, untuk konsumen mesin."),
     ]
     grid = "".join(

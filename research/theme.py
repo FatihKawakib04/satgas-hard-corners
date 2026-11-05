@@ -110,6 +110,7 @@ code{font-family:var(--mono);font-size:.86em;background:var(--cream2);
 /* ---------- typography ---------- */
 h1{font-size:clamp(1.85rem,5.4vw,3.2rem);line-height:1.03;font-weight:900;
   letter-spacing:-.035em;margin:.2rem 0 1rem;max-width:26ch;overflow-wrap:anywhere}
+
 h2{position:relative;display:block;margin:2.6rem 0 1rem;padding-top:.75rem;
   border-top:var(--w) solid var(--ink);
   font-size:clamp(1.15rem,3.2vw,1.7rem);font-weight:900;letter-spacing:-.03em;
