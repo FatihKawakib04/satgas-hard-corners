@@ -31,6 +31,8 @@ BASE = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, BASE)
 
+import theme  # noqa: E402
+
 import data as D          # noqa: E402
 import engine as E        # noqa: E402
 import store              # noqa: E402
@@ -313,13 +315,7 @@ belum pernah dipakai memilih apa pun. Ini uji paling dekat dengan kondisi nyata.
 <p class="meta">Jumlah hari masih sedikit. Paper trading belum bisa dipakai menyimpulkan
 apa pun sampai minimal 30 hari dan melewati satu periode stres pasar.</p></div>"""
 
-    return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Validasi {nama} · satgas.ai.id</title><style>{css()}</style></head><body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="peluang.html">Peluang</a> · <a href="metode.html">Metode</a></div></div>
-<h1>Validasi {nama} ({exp_id})</h1>
+    return theme.top(f"Validasi {nama} · SATGAS Research", "", sub="") + f"""<h1>Validasi {nama} ({exp_id})</h1>
 <p class="lead">Satu strategi lolos gerbang awal. Halaman ini menguji ulang dengan standar
 lebih keras: apakah ada informasi masa depan yang bocor, apakah hasilnya bertahan setelah
 biaya dinaikkan, apakah parameter dipilih terlalu pintar, dan apakah angkanya masih masuk
@@ -391,7 +387,7 @@ Nilai di bawah 0,95 berarti klaim keunggulan belum cukup kuat untuk dianggap pas
 <div class="panel"><p>{hasil['kesimpulan']}</p></div>
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB. Semua angka dihitung
 dari data tersimpan di research/db. Tidak ada uang sungguhan, tidak ada order.</p></div>
-</div></body></html>"""
+""" + theme.close()
 
 
 def jalankan(exp_id: str = "E06") -> dict:
@@ -508,13 +504,7 @@ def render_hub() -> str:
                    f"<td><span class='badge {kls}'>{r['status_validasi']}</span></td>"
                    f"<td class='n'>{fmt(r['dsr'], 3)}</td>"
                    f"<td>{r['validasi_ts'] or ''}</td></tr>")
-    return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Validasi strategi · satgas.ai.id</title><style>{css()}</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="peluang.html">Peluang</a></div></div>
-<h1>Validasi strategi</h1>
+    return theme.top("Validasi strategi · SATGAS Research", "", sub="") + f"""<h1>Validasi strategi</h1>
 <p class="lead">Setiap strategi yang lolos gerbang lab diuji ulang dengan standar lebih keras:
 kebocoran informasi masa depan, sensitivitas biaya, seluruh nilai parameter, holdout yang belum
 pernah dipakai memilih, frekuensi data berbeda, ketergantungan universe, uji null, dan koreksi
@@ -529,7 +519,7 @@ DSR 0,90 sampai 0,95; lemah bila di bawah itu; bocor bila uji look-ahead gagal. 
 probabilitas keunggulan nyata setelah dikoreksi karena kita sudah menguji banyak kombinasi.</p>
 </div>
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB.</p></div>
-</div></body></html>"""
+""" + theme.close()
 
 
 def main() -> int:

@@ -11,6 +11,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, BASE)
+
+import theme  # noqa: E402
 from validasi import css, fmt, WIB  # noqa: E402
 
 OUT = os.path.join(BASE, "reports", "audit-e06.html")
@@ -92,14 +94,7 @@ def main() -> int:
             f"<tr><td>{nama}</td><td>{s.get('mulai')}</td><td class='n'>{ret*100:+.2f}%</td>"
             f"<td>{pos}</td><td class='n'>{len(s.get('riwayat', []))}</td></tr>")
 
-    html = f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Audit E06 · satgas.ai.id</title><style>{css()}</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="validasi.html">Validasi</a> · <a href="peluang.html">Peluang</a></div></div>
-
-<h1>Audit E06: momentum keranjang BTC/ETH/SOL</h1>
+    html = theme.top("Audit E06 · SATGAS Research", "", sub="") + f"""<h1>Audit E06: momentum keranjang BTC/ETH/SOL</h1>
 <p class="lead">E06 adalah satu-satunya strategi yang sempat lolos gerbang lab. Halaman ini
 menguji ulang tiga hal yang paling sering membuat hasil backtest terlihat lebih bagus dari
 kenyataan: universe yang dipilih dengan ilmu belakang, koreksi karena banyaknya percobaan,
@@ -206,7 +201,8 @@ funding-nya nyata, bukan menambah strategi baru.</p>
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB.
 Sumber data: Binance klines dan CoinGecko (cache lokal), dihitung ulang setiap audit.
 Tidak ada klaim profit nyata di halaman ini.</p></div>
-</div></body></html>"""
+""" + theme.close()
+
 
     with open(OUT, "w") as f:
         f.write(html)

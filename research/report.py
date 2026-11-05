@@ -28,79 +28,23 @@ sys.path.insert(0, "/var/www/satgas-hard-corners/site/research")
 import analyze
 import store
 import svg
+import theme
 
 WIB = timezone(timedelta(hours=7))
 OUT_DIR = "/var/www/satgas-hard-corners/site/research/reports"
 STATE = "/var/www/satgas-hard-corners/site/research/out"
 BASE_URL = "https://satgas.ai.id/crypto/riset/"
 
-CSS = """
-:root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
---txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,
-"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
-a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(115,165,202,.3)}
-a:hover{border-bottom-color:var(--accent)}
-.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
-border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
-.brand{font-weight:600;letter-spacing:.02em;color:var(--dim);font-size:13px;text-transform:uppercase}
-h1{font-size:clamp(26px,4vw,34px);line-height:1.22;margin:6px 0 10px;letter-spacing:-.02em}
-h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid var(--accent);
-padding-left:11px}
-h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
-.meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-@media (max-width:640px){.top{flex-direction:column;align-items:flex-start;gap:8px}.meta{flex-wrap:nowrap;overflow-x:auto;gap:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.meta::-webkit-scrollbar{display:none}.meta a{white-space:nowrap;flex-shrink:0}.brand{font-size:12px}}
-.badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
-padding:3px 11px;font-size:12px;color:#c9d4e2}
-.badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
-.badge.risk-on{color:#8fe0c0;border-color:rgba(63,191,143,.4);background:rgba(63,191,143,.09)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:18px 0 6px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
-.card .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
-.card .v{font-size:19px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
-.card .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--dim)}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:16px 0}
-.panel h3{margin-top:0}
-.svg-chart{display:block;margin:6px 0}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;overflow:hidden}
-th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--dim);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
-td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;font-size:12.8px}
-ul,ol{padding-left:20px}li{margin:5px 0}
-.lead{font-size:17px;color:#eaf1f8}
-.exec{background:linear-gradient(180deg,rgba(115,165,202,.10),rgba(115,165,202,.03));
-border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;margin:18px 0}
-.exec ol{margin:0;padding-left:20px}
-.exec li{margin:7px 0}
-.scen{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
-.scen .box{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:14px}
-.scen .box .t{font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
-.scen .base{border-color:rgba(115,165,202,.4)}.scen .base .t{color:var(--accent)}
-.scen .bull .t{color:var(--green)}.scen .bear .t{color:var(--red)}
-.split{display:grid;gap:10px;grid-template-columns:1fr 1fr}
-.split>div{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px}
-.split .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:6px}
-.fact{border-left:2px solid var(--green)}.spec{border-left:2px solid var(--gold)}
-.sup{font-size:11px;vertical-align:super;color:var(--accent);border:0}
-.refs{font-size:13px;color:#b9c6d4}
-.refs li{margin:6px 0}
-.note{font-size:13px;color:var(--dim);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
-.tag{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);
-border-radius:6px;padding:1px 6px;margin-right:6px}
-.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
-@media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
-.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
-td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
-.card .v{font-size:17px}}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tscroll table{min-width:100%}
-.risk li{margin:8px 0}
-.watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
-.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
-"""
+CSS = theme.CSS
+
+
+def page_open(title: str, desc: str = "", sub: str = "") -> str:
+    """Head + site header + subnav + <div class="wrap"> dari modul tema bersama."""
+    return theme.top(title, desc, sub=sub)
+
+
+def page_close(stamp: str = "") -> str:
+    return theme.close(stamp)
 
 
 def esc(s) -> str:
@@ -622,22 +566,17 @@ def build_html(f: dict, n: dict, berita: list[dict], jenis: str, slug: str) -> s
         f'<a href="{esc(b["url"])}" target="_blank" rel="noopener">sumber</a></li>'
         for b in berita[:28])
 
-    return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(n.get('judul','Laporan riset'))} · Riset Crypto</title>
-<meta name="description" content="{esc((n.get('ringkasan') or [''])[0])}">
-<style>{CSS}</style></head><body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a> ·
-<a href="metode.html">Metode</a> · <span>{now:%d %b %Y %H:%M} WIB</span></div></div>
+    return page_open(
+        f"{esc(n.get('judul','Laporan riset'))} · SATGAS Research",
+        esc((n.get('ringkasan') or [''])[0]),
+        sub="",
+    ) + f"""<p class="kicker"><span class="tag tag--accent">{esc(jenis)}</span>
+<span class="tag">{esc(rez.get('label','netral'))}</span>
+<span class="tag">keyakinan {esc(key.get('level','sedang'))}</span>
+<span class="tag">data per {esc(f['dibuat'][:16].replace('T',' '))} WIB</span></p>
 <h1>{esc(n.get('judul','Laporan riset pasar crypto'))}</h1>
-<div class="meta"><span class="badge {esc(rez.get('label','netral'))}">rezim: {esc(rez.get('label','netral'))}</span>
-<span class="badge">keyakinan: {esc(key.get('level','sedang'))}</span>
-<span>{esc(jenis.capitalize())} · data per {esc(f['dibuat'][:16].replace('T',' '))} WIB</span></div>
 {render_cards(f)}
-<div class="exec"><div class="k" style="font-size:11px;letter-spacing:.05em;text-transform:uppercase;
-color:var(--dim);margin-bottom:8px">Ringkasan eksekutif</div><ol>{ring}</ol></div>
+<div class="exec"><div class="k">Ringkasan eksekutif</div><ol>{ring}</ol></div>
 {section('apa', 'Apa yang terjadi', para(n.get('apa_terjadi')))}
 {section('penting', 'Mengapa ini penting', para(n.get('mengapa_penting')))}
 {section('makro-n', 'Makro dan likuiditas', para(n.get('makro')))}
@@ -668,10 +607,7 @@ yang bisa diaudit di <code>analyze.py</code>. Laporan ini bukan rekomendasi inve
 <div class="note"><div class="foot"><span>Dibuat {now:%d %b %Y %H:%M} WIB ·
 data {esc(f['dibuat'][:16].replace('T',' '))} WIB</span>
 <span><a href="{BASE_URL}{esc(slug)}.md">versi markdown</a> ·
-<a href="{BASE_URL}data/fakta.json">data mentah</a></span></div>
-<p>Laporan riset otomatis untuk pembelajaran. Bukan saran keuangan. Selalu verifikasi angka
-ke sumber primer sebelum mengambil keputusan.</p></div>
-</div></body></html>"""
+<a href="{BASE_URL}data/fakta.json">data mentah</a></span></div></div>""" + page_close()
 
 
 def build_md(f: dict, n: dict, berita: list[dict], jenis: str) -> str:
@@ -713,32 +649,75 @@ def index_html() -> str:
             "SELECT slug,ts,kind,title,summary,confidence FROM reports ORDER BY ts DESC LIMIT 60")]
     items = []
     for r in rows:
+        # Baris DB yang file HTML-nya tidak ada tetap muncul di arsip sebagai
+        # link mati (pernah terjadi saat publish gagal setelah insert). Indeks
+        # hanya menautkan halaman yang benar-benar ada.
+        if not os.path.exists(f"{OUT_DIR}/{r['slug']}.html"):
+            continue
         dt = datetime.fromtimestamp(r["ts"], tz=WIB)
+        # Judul dan ringkasan diambil dari halaman yang benar-benar terbit.
+        # Baris DB bisa berisi judul sementara (mis. hasil uji template) yang
+        # tidak pernah muncul di halaman, dan arsip harus mencerminkan isi halaman.
+        judul, ringkas = r["title"], r["summary"] or ""
+        try:
+            raw = open(f"{OUT_DIR}/{r['slug']}.html", encoding="utf-8").read()
+            m = re.search(r"<h1[^>]*>(.*?)</h1>", raw, re.S)
+            if m:
+                judul = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip()
+            m = re.search(r'<meta name="description" content="(.*?)">', raw, re.S)
+            if m:
+                ringkas = html.unescape(m.group(1)).strip()
+            else:
+                m = re.search(r'<p class="lead">(.*?)</p>', raw, re.S)
+                if m:
+                    ringkas = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip()
+        except OSError:
+            pass
         items.append(
-            f'<li><a href="{esc(r["slug"])}.html"><strong>{esc(r["title"])}</strong></a>'
+            f'<li><a href="{esc(r["slug"])}.html">{esc(judul)}</a>'
             f'<div class="meta"><span>{dt:%d %b %Y %H:%M} WIB</span>'
             f'<span class="badge">{esc(r["kind"])}</span>'
             f'<span class="badge">keyakinan {esc(r["confidence"] or "—")}</span></div>'
-            f'<div class="meta">{esc(r["summary"] or "")}</div></li>')
-    return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Riset Crypto · satgas.ai.id</title><style>{CSS}
-ul.reports{{list-style:none;padding:0}}ul.reports li{{background:var(--panel);
-border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}}
-ul.reports li .meta{{margin-top:4px;font-size:13px}}</style></head><body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="../">Dashboard</a> · <a href="lab.html">Lab</a> ·
-<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a> ·
-<a href="metode.html">Metode</a> · <a href="data/fakta.json">data</a></div></div>
+            f'<div class="meta">{esc(ringkas)}</div></li>')
+
+    # Peta seluruh halaman Research. Halaman yang punya URL tapi tidak punya
+    # jalan masuk dari indeks ini adalah orphan, jadi daftar ini ikut dirawat
+    # setiap kali generator baru menambah halaman.
+    dirs = [
+        ("lab.html", "Lab", "Antrean eksperimen, gerbang walk-forward, paper trading, biaya."),
+        ("peluang.html", "Peluang", "Sumber pendapatan yang punya bukti pasar dan langkah pertama."),
+        ("ekonomi.html", "Ekonomi", "Biaya aktual, pendapatan diterima, rencana produk."),
+        ("dashboard.html", "Dashboard ekonomi", "Satu halaman untuk biaya, kas, dan runway."),
+        ("hipotesis.html", "Hipotesis", "Klaim yang bisa salah, kriteria lulus, bukti terukur."),
+        ("metode.html", "Metode", "Sumber data, definisi metrik, dan batasan yang diketahui."),
+        ("validasi.html", "Validasi", "Indeks uji sembilan tahap untuk strategi yang lolos gerbang."),
+        ("audit-e06.html", "Audit E06", "Universe point-in-time dan sensitivitas DSR."),
+        ("audit-carry.html", "Audit carry", "Carry funding dihitung ulang dari nol."),
+        ("data/fakta.json", "Raw data", "fakta.json apa adanya, untuk konsumen mesin."),
+    ]
+    grid = "".join(
+        f'<a href="{href}"><b>{nama}</b><span>{desc}</span></a>' for href, nama, desc in dirs)
+
+    return page_open(
+        "Riset Crypto · satgas.ai.id",
+        "Laporan riset crypto dan ekonomi global: fakta terukur, tingkat keyakinan, sumber.",
+        sub="",
+    ) + f"""<p class="kicker"><span class="tag tag--accent">Riset Crypto</span>
+<span class="tag">{len(rows)} laporan</span>
+<span class="tag">Diperbarui otomatis</span></p>
 <h1>Laporan riset crypto dan ekonomi global</h1>
 <p class="lead">Analisis berkelanjutan atas pasar crypto, makroekonomi, kebijakan bank sentral,
 dan likuiditas global. Setiap laporan memisahkan fakta terukur dari interpretasi, menyertakan
 tingkat keyakinan, dan mencantumkan sumber.</p>
-<h2>Arsip laporan</h2><ul class="reports">{''.join(items) or '<li>Belum ada laporan.</li>'}</ul>
+<h2>Bagian riset</h2>
+<div class="dir">{grid}</div>
+<h2>Arsip laporan</h2>
+<ul class="reports">{''.join(items) or '<li>Belum ada laporan.</li>'}</ul>
 <div class="note"><p>Data harga: CoinGecko. Derivatif: Binance Futures. Makro: CBOE, US Treasury,
 ECB. Likuiditas stablecoin dan TVL: DefiLlama. Sentimen: Alternative.me. Berita: CoinDesk,
 Cointelegraph, The Block, Blockworks, Decrypt, Federal Reserve, ECB, BIS.</p>
-<p>Bukan rekomendasi investasi.</p></div></div></body></html>"""
+<p>Bukan rekomendasi investasi.</p></div>
+""" + page_close()
 
 
 def main() -> int:

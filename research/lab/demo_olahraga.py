@@ -19,6 +19,9 @@ import sys
 from collections import defaultdict
 from datetime import datetime
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import theme  # noqa: E402
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 OUT = os.path.join(BASE, "reports", "demo-olahraga.html")
@@ -129,24 +132,7 @@ def main() -> int:
         f"<tr><td>{r['tgl']}</td><td>{r['home']} {r['hg']} - {r['ag']} {r['away']}</td>"
         f"<td>{r['res']}</td></tr>" for r in h2h(data, a, b))
 
-    html = f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Demonstrasi laporan olahraga</title>
-<style>
-body{{background:#0d1117;color:#c9d1d9;font-family:system-ui,sans-serif;margin:0;padding:24px}}
-.wrap{{max-width:860px;margin:0 auto}}
-.demo{{background:#3d2b00;border:1px solid #9e6a00;color:#ffd479;padding:10px 14px;
-border-radius:8px;margin-bottom:18px;font-size:14px}}
-h1{{font-size:26px;margin:0 0 6px}} h2{{font-size:18px;margin:24px 0 8px}}
-table{{width:100%;border-collapse:collapse;font-size:14px}}
-th,td{{padding:7px 9px;border-bottom:1px solid #21262d;text-align:left}}
-th{{color:#8b949e;font-weight:500}} .n{{text-align:right}}
-.badge{{display:inline-block;padding:1px 7px;border-radius:10px;font-size:12px}}
-.up{{background:#12351f;color:#3fb950}} .down{{background:#3d1518;color:#f85149}}
-.flat{{background:#2d333b;color:#adbac7}}
-.meta{{color:#8b949e;font-size:13px}}
-</style></head><body><div class="wrap">
-<div class="demo"><b>Demonstrasi mandiri.</b> Dibuat oleh penyusun proposal memakai data
+    html = theme.top("Demonstrasi laporan olahraga · SATGAS Research", "", sub="") + f"""<div class="demo"><b>Demonstrasi mandiri.</b> Dibuat oleh penyusun proposal memakai data
 publik football-data.co.uk musim {season[:2]}/{season[2:]}. Ini bukan pekerjaan klien, bukan
 riwayat konsultasi, dan tidak ada klien olahraga sebelumnya. Tujuannya hanya menunjukkan
 bentuk keluaran.</div>
@@ -186,7 +172,7 @@ dan diuji pada pertandingan yang tidak dipakai melatih.</li>
 </ul>
 <p class="meta">Sumber data: football-data.co.uk, berkas E0.csv musim {season[:2]}/{season[2:]}.
 Dihasilkan {datetime.now().strftime('%d %b %Y')}.</p>
-</div></body></html>"""
+""" + theme.close()
 
     with open(OUT, "w") as f:
         f.write(html)
@@ -197,3 +183,4 @@ Dihasilkan {datetime.now().strftime('%d %b %Y')}.</p>
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

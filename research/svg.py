@@ -8,11 +8,15 @@ from __future__ import annotations
 import html
 import math
 
-ACCENT = "#73A5CA"
-GREEN = "#3fbf8f"
-RED = "#e8657a"
-GRID = "rgba(255,255,255,.08)"
-TXT = "#8b97a8"
+# Palet grafik mengikuti design system /crypto/ (kertas krem, tinta hitam).
+# Grafik disisipkan di halaman laporan, jadi warnanya harus terbaca di atas
+# --paper (#fffdf8), bukan di atas latar gelap lama.
+ACCENT = "#35617f"
+GREEN = "#2e7d5b"
+RED = "#b3402f"
+GRID = "rgba(10,9,8,.14)"
+TXT = "#5c574f"
+INK = "#0a0908"
 
 
 def _esc(s: str) -> str:
@@ -25,7 +29,7 @@ def line_chart(series: dict[str, list[tuple[str, float]]], w=760, h=260, pct=Tru
 
     series: {"BTC": [(tanggal, harga), ...], ...}
     """
-    colors = [ACCENT, "#c9a227", GREEN, RED, "#a78bfa", "#f97316"]
+    colors = [ACCENT, "#8a6d1f", GREEN, RED, "#5f4b8b", "#c25a2a"]
     data = {k: v for k, v in series.items() if len(v) > 1}
     if not data:
         return ""
@@ -75,7 +79,7 @@ def line_chart(series: dict[str, list[tuple[str, float]]], w=760, h=260, pct=Tru
                      f'text-anchor="end">{lbl}</text>')
     if lo < 0 < hi:
         parts.append(f'<line x1="{pad_l}" y1="{Y(0):.1f}" x2="{w-pad_r}" y2="{Y(0):.1f}" '
-                     f'stroke="rgba(255,255,255,.28)" stroke-width="1" stroke-dasharray="3 3"/>')
+                     f'stroke="rgba(10,9,8,.32)" stroke-width="1" stroke-dasharray="3 3"/>')
     # label tanggal
     for frac in (0, 0.25, 0.5, 0.75, 1):
         i = int(frac * (n - 1))
@@ -98,7 +102,7 @@ def line_chart(series: dict[str, list[tuple[str, float]]], w=760, h=260, pct=Tru
         last = pts[-1][1]
         txt = f"{k} {last:+.1f}%" if pct else f"{k} {last:,.0f}"
         parts.append(f'<rect x="{lx}" y="{pad_t-12}" width="14" height="2.5" fill="{col}"/>')
-        parts.append(f'<text x="{lx+19}" y="{pad_t-8}" fill="#cfd8e3" font-size="10.5" '
+        parts.append(f'<text x="{lx+19}" y="{pad_t-8}" fill="{TXT}" font-size="10.5" '
                      f'font-family="ui-monospace,monospace">{_esc(txt)}</text>')
         lx += 26 + 7.0 * len(txt)
     parts.append("</svg>")
@@ -145,7 +149,7 @@ def price_ma_chart(rows: list[tuple[str, float]], ma50=None, ma200=None, w=760, 
         peaks.append(peak)
     top = " ".join(f"{X(i):.1f},{Y(peaks[i]):.1f}" for i in range(n))
     bot = " ".join(f"{X(i):.1f},{Y(vals[i]):.1f}" for i in range(n - 1, -1, -1))
-    parts.append(f'<polygon points="{top} {bot}" fill="rgba(232,101,122,.10)"/>')
+    parts.append(f'<polygon points="{top} {bot}" fill="rgba(179,64,47,.10)"/>')
     path = " ".join(f"{X(i):.1f},{Y(v):.1f}" for i, v in enumerate(vals))
     up = vals[-1] >= vals[0]
     parts.append(f'<polyline points="{path}" fill="none" stroke="{GREEN if up else RED}" '
@@ -180,15 +184,15 @@ def bars(items: list[tuple[str, float]], w=760, h=200, unit="%", title="") -> st
     parts = [f'<svg viewBox="0 0 {w} {h}" width="100%" role="img" '
              f'aria-label="{_esc(title or "bar")}" class="svg-chart">']
     parts.append(f'<line x1="{mid:.1f}" y1="{pad_t}" x2="{mid:.1f}" y2="{h-8}" '
-                 f'stroke="rgba(255,255,255,.2)"/>')
+                 f'stroke="rgba(10,9,8,.2)"/>')
     for i, (lab, v) in enumerate(items):
         y = pad_t + i * rowh
         bw = abs(v) * scale
         x = mid - bw if v < 0 else mid
         col = GREEN if v > 0 else RED
         parts.append(f'<rect x="{x:.1f}" y="{y+3:.1f}" width="{max(bw,1):.1f}" '
-                     f'height="{rowh-8:.1f}" fill="{col}" opacity=".8" rx="2"/>')
-        parts.append(f'<text x="{pad_l-8}" y="{y+rowh/2+3.5:.1f}" fill="#cfd8e3" font-size="11" '
+                     f'height="{rowh-8:.1f}" fill="{col}" opacity=".85"/>')
+        parts.append(f'<text x="{pad_l-8}" y="{y+rowh/2+3.5:.1f}" fill="{TXT}" font-size="11" '
                      f'text-anchor="end">{_esc(lab)}</text>')
         tx = mid + bw + 6 if v >= 0 else mid - bw - 6
         anc = "start" if v >= 0 else "end"
@@ -214,10 +218,10 @@ def gauge(value: float, label: str, w=220, h=120) -> str:
     return (f'<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" '
             f'aria-label="Fear and Greed {value}" class="svg-gauge">'
             f'<path d="M{x0:.1f},{y0:.1f} A{r},{r} 0 0 1 {xe:.1f},{ye:.1f}" fill="none" '
-            f'stroke="rgba(255,255,255,.10)" stroke-width="9" stroke-linecap="round"/>'
+            f'stroke="rgba(10,9,8,.14)" stroke-width="9" stroke-linecap="round"/>'
             f'<path d="M{x0:.1f},{y0:.1f} A{r},{r} 0 0 1 {x1:.1f},{y1:.1f}" fill="none" '
             f'stroke="{col}" stroke-width="9" stroke-linecap="round"/>'
-            f'<text x="{cx}" y="{cy-10}" fill="#e8eef6" font-size="26" text-anchor="middle" '
+            f'<text x="{cx}" y="{cy-10}" fill="{INK}" font-size="26" text-anchor="middle" '
             f'font-weight="600">{value:.0f}</text>'
             f'<text x="{cx}" y="{cy+8}" fill="{TXT}" font-size="10.5" text-anchor="middle">'
             f'{_esc(label)}</text></svg>')
