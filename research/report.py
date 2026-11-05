@@ -51,6 +51,7 @@ h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid
 padding-left:11px}
 h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
 .meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+@media (max-width:640px){.top{flex-direction:column;align-items:flex-start;gap:8px}.meta{gap:6px 10px;font-size:13px}.brand{font-size:12px}}
 .badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
 padding:3px 11px;font-size:12px;color:#c9d4e2}
 .badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
@@ -785,6 +786,34 @@ def main() -> int:
         n = fallback_narrative(f)
         n["_fallback"] = True
 
+    # Gerbang integritas pasca-generasi: LLM sering melenceng dari angka kanonis
+    # (mis. menulis 85,01 padahal data 82,31). Jika validasi gagal, paksa pakai
+    # fallback deterministik; jika tetap gagal, hentikan publikasi.
+    try:
+        import validasi_angka
+        # bangun teks sementara untuk validasi (build_md dipakai sebagai proxy)
+        _md_probe = build_md(f, n, berita, a.jenis)
+        _tmp_path = f"{OUT_DIR}/.validasi_probe.md"
+        with open(_tmp_path, "w") as _fh:
+            _fh.write(_md_probe)
+        _masalah = validasi_angka.validasi_laporan(_tmp_path, f)
+        os.remove(_tmp_path)
+        if _masalah:
+            print("VALIDASI GAGAL setelah LLM:", _masalah, file=sys.stderr)
+            n = fallback_narrative(f)
+            n["_fallback"] = True
+            _md_probe = build_md(f, n, berita, a.jenis)
+            with open(_tmp_path, "w") as _fh:
+                _fh.write(_md_probe)
+            _masalah2 = validasi_angka.validasi_laporan(_tmp_path, f)
+            os.remove(_tmp_path)
+            if _masalah2:
+                print("VALIDASI GAGAL setelah fallback:", _masalah2, file=sys.stderr)
+                print("Laporan TIDAK diterbitkan.", file=sys.stderr)
+                return 2
+    except Exception as e:
+        print(f"PERINGATAN validasi pasca-generasi gagal: {e}", file=sys.stderr)
+
     now = datetime.now(WIB)
     if a.jenis == "harian":
         slug = f"harian-{now:%Y-%m-%d}"
@@ -797,9 +826,39 @@ def main() -> int:
     html_out = (html_out.replace("<table>", '<div class="tscroll"><table>')
                 .replace("</table>", "</table></div>"))
     md_out = build_md(f, n, berita, a.jenis)
-    for name, content in ((f"{slug}.html", html_out), (f"{slug}.md", md_out)):
-        with open(f"{OUT_DIR}/{name}", "w") as fh:
-            fh.write(content)
+    # Tulis ke file sementara dulu; validasi keduanya; publikasikan hanya jika lulus.
+    import tempfile
+    tmp_dir = tempfile.mkdtemp(prefix="report_", dir=OUT_DIR)
+    tmp_html = os.path.join(tmp_dir, f"{slug}.html")
+    tmp_md = os.path.join(tmp_dir, f"{slug}.md")
+    with open(tmp_html, "w") as fh:
+        fh.write(html_out)
+    with open(tmp_md, "w") as fh:
+        fh.write(md_out)
+
+    # Validasi keduanya (MD dan HTML) sebelum publikasi.
+    try:
+        import validasi_angka
+        masalah_md = validasi_angka.validasi_laporan(tmp_md, f)
+        masalah_html = validasi_angka.validasi_laporan(tmp_html, f)
+        masalah = masalah_md + masalah_html
+        if masalah:
+            print("VALIDASI GAGAL (MD/HTML):", masalah, file=sys.stderr)
+            # hapus file sementara, pertahankan laporan lama
+            import shutil
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+            return 2
+    except Exception as e:
+        print(f"PERINGATAN validasi: {e}", file=sys.stderr)
+        import shutil
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+        return 2
+
+    # Publikasikan: pindahkan dari temp ke target.
+    import shutil
+    shutil.move(tmp_html, f"{OUT_DIR}/{slug}.html")
+    shutil.move(tmp_md, f"{OUT_DIR}/{slug}.md")
+    shutil.rmtree(tmp_dir, ignore_errors=True)
 
     summary = re.sub(r"<[^>]+>", "", (n.get("ringkasan") or [""])[0])[:220]
     with store.db() as con:
