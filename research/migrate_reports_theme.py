@@ -70,6 +70,7 @@ DIRS = [
     ("validasi.html", "Validasi", "Indeks uji sembilan tahap untuk strategi yang lolos gerbang."),
     ("audit-e06.html", "Audit E06", "Universe point-in-time dan sensitivitas DSR."),
     ("audit-carry.html", "Audit carry", "Carry funding dihitung ulang dari nol."),
+    ("demo-olahraga.html", "Demo olahraga", "Contoh format laporan pra-pertandingan, bukan pekerjaan klien."),
     ("data/fakta.json", "Raw data", "fakta.json apa adanya, untuk konsumen mesin."),
 ]
 
@@ -122,12 +123,18 @@ def migrate(path: str, dry: bool = False) -> dict:
     if inner.endswith("</div>"):
         inner = inner[:-6].rstrip()
 
-    if name == "index.html" and 'class="dir"' not in inner:
+    if name == "index.html":
+        # Grid bagian riset selalu ditulis ulang dari DIRS supaya daftarnya tidak
+        # pernah basi: halaman yang tidak punya jalan masuk dari sini adalah orphan.
         grid = "".join(
             f'<a href="{h}"><b>{n}</b><span>{d}</span></a>' for h, n, d in DIRS)
         block = f'<h2>Bagian riset</h2>\n<div class="dir">{grid}</div>\n'
-        anchor = "<h2>Arsip laporan</h2>"
-        inner = inner.replace(anchor, block + anchor, 1) if anchor in inner else block + inner
+        old_grid = re.search(r'<h2>Bagian riset</h2>\s*<div class="dir">.*?</div>\s*', inner, re.S)
+        if old_grid:
+            inner = inner[:old_grid.start()] + block + inner[old_grid.end():]
+        else:
+            anchor = "<h2>Arsip laporan</h2>"
+            inner = inner.replace(anchor, block + anchor, 1) if anchor in inner else block + inner
 
     new = theme.top(title or "", desc, sub=sub) + inner + "\n" + theme.close()
     changed = new != original
