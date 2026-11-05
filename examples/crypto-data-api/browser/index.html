@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Data API — Browser Integration</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+  button { padding: 8px 16px; margin: 4px; cursor: pointer; }
+  pre { background: #f4f4f4; padding: 12px; border-radius: 4px; overflow-x: auto; }
+  .status { color: #666; font-size: 14px; }
+  .warning { color: #d97706; }
+  .error { color: #dc2626; }
+</style>
+</head>
+<body>
+<h1>Crypto Data API — Browser Integration</h1>
+<p>Free tier: 10 req/min, no API key, no signup. Same-origin fetch (no CORS preflight needed).</p>
+
+<button onclick="fetchMarket()">Fetch Market</button>
+<button onclick="fetchCoin('BTC')">Fetch BTC</button>
+<button onclick="fetchFG()">Fetch Fear & Greed</button>
+
+<pre id="output">Click a button to fetch data...</pre>
+<p id="status" class="status"></p>
+
+<script>
+const BASE = 'https://satgas.ai.id/api';
+const MAX_AGE = 900;
+
+async function apiFetch(path) {
+  const res = await fetch(BASE + path, {
+    headers: { 'User-Agent': 'crypto-data-api-starter-browser/1.0' }
+  });
+  if (res.status === 429) {
+    throw new Error('Rate limited (429). Wait 60s and retry.');
+  }
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+function show(data, status) {
+  document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+  document.getElementById('status').textContent = status;
+}
+
+async function fetchMarket() {
+  try {
+    const d = await apiFetch('/v1/market');
+    const m = d._meta || {};
+    let status = `age ${m.age_seconds}s | updated ${m.updated}`;
+    if (m.age_seconds > MAX_AGE) status += ' ⚠ stale snapshot';
+    if (m.sentiment_stale) status += ' ⚠ sentiment stale';
+    show(d, status);
+  } catch (e) {
+    document.getElementById('output').textContent = `Error: ${e.message}`;
+    document.getElementById('status').textContent = '';
+  }
+}
+
+async function fetchCoin(sym) {
+  try {
+    const d = await apiFetch('/v1/coin/' + sym);
+    show(d, `Fetched ${sym}`);
+  } catch (e) {
+    document.getElementById('output').textContent = `Error: ${e.message}`;
+  }
+}
+
+async function fetchFG() {
+  try {
+    const d = await apiFetch('/v1/fear-greed');
+    show(d, `Fear & Greed: ${d.value} (${d.label})`);
+  } catch (e) {
+    document.getElementById('output').textContent = `Error: ${e.message}`;
+  }
+}
+</script>
+</body>
+</html>
