@@ -75,14 +75,6 @@ DIRS = [
 ]
 
 
-def _unused_page_title(name: str, s: str) -> str:
-    if name in META:
-        return META[name][0]
-    m = re.search(r"<title>(.*?)</title>", s, re.S)
-    base = html_mod.unescape((m.group(1) if m else "Research").split("·")[0].strip())
-    return f"{base} · SATGAS Research"
-
-
 def migrate(path: str, dry: bool = False) -> dict:
     name = os.path.basename(path)
     s = open(path, encoding="utf-8").read()
