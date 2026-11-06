@@ -13,6 +13,8 @@ BASE = os.path.dirname(HERE)
 sys.path.insert(0, BASE)
 sys.path.insert(0, HERE)
 
+import theme  # noqa: E402
+
 import store              # noqa: E402
 import svg                # noqa: E402
 
@@ -175,14 +177,7 @@ def render() -> str:
     total_biaya = sum((b["usd_per_bulan"] or 0) for b in biaya)
     vps = CONFIG["biaya_operasional"].get("vps_usd_per_bulan")
 
-    return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lab riset: uji strategi dan peluang · satgas.ai.id</title>
-<style>{css()}</style></head><body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="peluang.html">Peluang</a> ·
-<a href="hipotesis.html">Hipotesis</a> · <a href="metode.html">Metode</a></div></div>
-<h1>Lab eksperimen</h1>
+    return theme.top("Lab: uji strategi dan peluang · SATGAS Research", "", sub="lab.html") + f"""<h1>Lab eksperimen</h1>
 <p class="lead">Mesin uji yang berjalan otomatis: setiap siklus mengambil satu eksperimen dari
 antrean, menjalankan backtest dengan biaya transaksi, membagi data jadi beberapa blok
 walk-forward, memilih parameter hanya dari data masa lalu, lalu menilai hasil out-of-sample
@@ -237,7 +232,8 @@ Sharpe penuh memakai seluruh riwayat sehingga optimistis dan tidak boleh dipakai
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB. Semua angka adalah hasil
 simulasi historis atau paper trading. Tidak ada uang sungguhan, tidak ada order yang dikirim.
 Bukan rekomendasi investasi.</p></div>
-</div></body></html>"""
+""" + theme.close()
+
 
 
 def cls(v):

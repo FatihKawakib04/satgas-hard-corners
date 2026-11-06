@@ -17,6 +17,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, BASE)
+
+import theme  # noqa: E402
 from validasi import css, WIB  # noqa: E402
 
 OUT = os.path.join(BASE, "reports", "dashboard.html")
@@ -85,14 +87,7 @@ def main() -> int:
     pol = paths["trading_policy"]
     syarat = "".join(f"<li>{s}</li>" for s in pol["syarat_live"])
 
-    html = f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dashboard ekonomi · satgas.ai.id</title><style>{css()}</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="ekonomi.html">Ekonomi</a> · <a href="audit-e06.html">Audit E06</a></div></div>
-
-<h1>Dashboard ekonomi</h1>
+    html = theme.top("Dashboard ekonomi · SATGAS Research", "", sub="ekonomi.html") + f"""<h1>Dashboard ekonomi</h1>
 <p class="lead">Satu halaman untuk menjawab: berapa uang yang benar-benar masuk, berapa
 biayanya, dan jalur mana yang paling masuk akal. Saldo akun dan profit simulasi tidak
 dihitung sebagai pendapatan.</p>
@@ -212,7 +207,8 @@ dipastikan baru tugas yang tidak bergantung jawaban di atas: lapisan data dan te
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB.
 Sumber: karir.json (pembayaran), freelance.json (biaya invoice), paths.json (perbandingan
 jalur), paper_state.json (simulasi).</p></div>
-</div></body></html>"""
+""" + theme.close()
+
     with open(OUT, "w") as f:
         f.write(html)
     print("halaman:", OUT)

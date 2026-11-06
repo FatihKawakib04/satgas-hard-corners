@@ -1,84 +1,54 @@
 <!doctype html><html lang="id"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Riset Crypto · satgas.ai.id</title><style>
-:root{--bg:#0b1118;--panel:#121a24;--panel2:#16202c;--line:rgba(255,255,255,.08);
---txt:#dfe7f0;--dim:#8b97a8;--accent:#73A5CA;--green:#3fbf8f;--red:#e8657a;--gold:#c9a227}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 -apple-system,BlinkMacSystemFont,
-"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px}
-a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(115,165,202,.3)}
-a:hover{border-bottom-color:var(--accent)}
-.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
-border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:26px}
-.brand{font-weight:600;letter-spacing:.02em;color:var(--dim);font-size:13px;text-transform:uppercase}
-h1{font-size:clamp(26px,4vw,34px);line-height:1.22;margin:6px 0 10px;letter-spacing:-.02em}
-h2{font-size:19px;margin:38px 0 12px;letter-spacing:-.01em;border-left:3px solid var(--accent);
-padding-left:11px}
-h3{font-size:15.5px;margin:22px 0 8px;color:#c9d4e2}
-.meta{color:var(--dim);font-size:13.5px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.badge{display:inline-block;border:1px solid var(--line);background:var(--panel2);border-radius:999px;
-padding:3px 11px;font-size:12px;color:#c9d4e2}
-.badge.risk-off{color:#f2a3b0;border-color:rgba(232,101,122,.4);background:rgba(232,101,122,.09)}
-.badge.risk-on{color:#8fe0c0;border-color:rgba(63,191,143,.4);background:rgba(63,191,143,.09)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:18px 0 6px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
-.card .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--dim)}
-.card .v{font-size:19px;font-weight:600;margin-top:3px;font-variant-numeric:tabular-nums}
-.card .d{font-size:11.5px;margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.up{color:var(--green)}.down{color:var(--red)}.flat{color:var(--dim)}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:16px 0}
-.panel h3{margin-top:0}
-.svg-chart{display:block;margin:6px 0}
-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;overflow:hidden}
-th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--dim);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
-td.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace;font-size:12.8px}
-ul,ol{padding-left:20px}li{margin:5px 0}
-.lead{font-size:17px;color:#eaf1f8}
-.exec{background:linear-gradient(180deg,rgba(115,165,202,.10),rgba(115,165,202,.03));
-border:1px solid rgba(115,165,202,.25);border-radius:13px;padding:16px 20px;margin:18px 0}
-.exec ol{margin:0;padding-left:20px}
-.exec li{margin:7px 0}
-.scen{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
-.scen .box{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px;font-size:14px}
-.scen .box .t{font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
-.scen .base{border-color:rgba(115,165,202,.4)}.scen .base .t{color:var(--accent)}
-.scen .bull .t{color:var(--green)}.scen .bear .t{color:var(--red)}
-.split{display:grid;gap:10px;grid-template-columns:1fr 1fr}
-.split>div{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px}
-.split .h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);margin-bottom:6px}
-.fact{border-left:2px solid var(--green)}.spec{border-left:2px solid var(--gold)}
-.sup{font-size:11px;vertical-align:super;color:var(--accent);border:0}
-.refs{font-size:13px;color:#b9c6d4}
-.refs li{margin:6px 0}
-.note{font-size:13px;color:var(--dim);border-top:1px solid var(--line);margin-top:36px;padding-top:14px}
-.tag{display:inline-block;font-size:11px;color:var(--dim);border:1px solid var(--line);
-border-radius:6px;padding:1px 6px;margin-right:6px}
-.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
-@media(max-width:640px){.grid2,.split{grid-template-columns:1fr}.wrap{padding:18px 14px 60px}
-.panel{padding:13px 12px}table{font-size:12.2px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 4px}
-td.n{font-size:11.6px}.cards{grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
-.card .v{font-size:17px}}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tscroll table{min-width:100%}
-.risk li{margin:8px 0}
-.watch{background:var(--panel2);border-radius:11px;padding:4px 16px;border:1px solid var(--line)}
-.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim);font-size:12.5px}
-
-ul.reports{list-style:none;padding:0}ul.reports li{background:var(--panel);
-border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
-ul.reports li .meta{margin-top:4px;font-size:13px}</style></head><body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="../">Dashboard</a> · <a href="lab.html">Lab</a> ·
-<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a> ·
-<a href="metode.html">Metode</a> · <a href="data/fakta.json">data</a></div></div>
+<title>Riset Crypto · satgas.ai.id</title><meta name="description" content="Laporan riset crypto dan ekonomi global: fakta terukur, tingkat keyakinan, sumber.">
+<meta name="theme-color" content="#eeebe4">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=1bf869ea">
+<script src="/crypto/assets/theme.js?v=6"></script>
+</head><body>
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="https://satgas.ai.id/"><span class="badge">SG</span><span class="word">SATGAS</span><span class="tag">crypto desk</span></a>
+    <nav class="main-nav" aria-label="Main"><a href="/crypto/">Desk</a><a href="/crypto/bounty/">Bounties</a><a href="/crypto/radar/">Radar</a><a href="/crypto/jasa/">Services</a><a href="/crypto/riset/" aria-current="page">Research</a><a href="/crypto/api/">API</a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+  <div class="shell subnav-in">
+    <nav class="sub-nav" aria-label="Research"><a href="" aria-current="page">Reports</a><a href="lab.html">Lab</a><a href="peluang.html">Opportunities</a><a href="hipotesis.html">Hypotheses</a><a href="metode.html">Methods</a><a href="ekonomi.html">Economy</a></nav>
+  </div>
+</header>
+<div class="wrap">
+<p class="kicker"><span class="tag tag--accent">Riset Crypto</span>
+<span class="tag">14 laporan</span>
+<span class="tag">Diperbarui otomatis</span></p>
 <h1>Laporan riset crypto dan ekonomi global</h1>
 <p class="lead">Analisis berkelanjutan atas pasar crypto, makroekonomi, kebijakan bank sentral,
 dan likuiditas global. Setiap laporan memisahkan fakta terukur dari interpretasi, menyertakan
 tingkat keyakinan, dan mencantumkan sumber.</p>
-<h2>Arsip laporan</h2><ul class="reports"><li><a href="harian-2026-11-05.html"><strong>Pasar crypto 05 Nov: rezim netral, BTC -5,0% sepekan</strong></a><div class="meta"><span>05 Nov 2026 06:30 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.250 (-0,26% 24 jam, -5,03% 7 hari), 38.0% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-11-04.html"><strong>BTC 77.056 dolar di bawah MA50, funding crowded long, ETF keluar 313 juta dolar</strong></a><div class="meta"><span>04 Nov 2026 06:30 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC 77.056,01 dolar, turun 4,76% 7 hari dan 10,95% 30 hari, masih 5,26% di atas MA200 73.205,04.</div></li><li><a href="harian-2026-11-03.html"><strong>Test</strong></a><div class="meta"><span>03 Nov 2026 14:21 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">ringkasan</div></li><li><a href="harian-2026-11-02.html"><strong>Pasar crypto 02 Nov: rezim netral, BTC -3,2% sepekan</strong></a><div class="meta"><span>02 Nov 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.622 (+0,05% 24 jam, -3,16% 7 hari), 37.7% di bawah puncak historis tersimpan.</div></li><li><a href="mingguan-2026-W44.html"><strong>Pasar crypto 01 Nov: rezim netral, BTC -3,2% sepekan</strong></a><div class="meta"><span>01 Nov 2026 09:01 WIB</span><span class="badge">mingguan</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.622 (+0,05% 24 jam, -3,16% 7 hari), 37.7% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-11-01.html"><strong>Pasar crypto 01 Nov: rezim risk-on, BTC -4,4% sepekan</strong></a><div class="meta"><span>01 Nov 2026 06:30 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.316 (-0,07% 24 jam, -4,42% 7 hari), 38.0% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-10-31.html"><strong>Pasar crypto 31 Oct: rezim risk-on, BTC -4,4% sepekan</strong></a><div class="meta"><span>31 Oct 2026 12:12 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.316 (-0,07% 24 jam, -4,42% 7 hari), 38.0% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-10-30.html"><strong>Pasar crypto 30 Oct: rezim risk-on, BTC -5,2% sepekan</strong></a><div class="meta"><span>30 Oct 2026 13:47 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $76.978 (-1,30% 24 jam, -5,19% 7 hari), 38.2% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-10-29.html"><strong>Fed Tahan Suku Bunga, BTC di Bawah 80 Ribu, Likuiditas Stablecoin Menyusut</strong></a><div class="meta"><span>29 Oct 2026 12:04 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC 81.194,01 dolar, turun 0,18% 1 hari dan 2,95% 30 hari, masih 11,0% di atas MA200 73.163,09.</div></li><li><a href="harian-2026-10-27.html"><strong>BTC Bertahan di Atas MA200, Funding Crowded Long dan ETF Keluar 2 Hari</strong></a><div class="meta"><span>27 Oct 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC 80.296,01 dolar, turun 2,00% 7 hari, masih 9,95% di atas MA200 73.030,32 dolar.</div></li><li><a href="harian-2026-10-26.html"><strong>BTC Bertahan di Atas MA200, tetapi Breadth Menyempit dan Arus ETF Melambat</strong></a><div class="meta"><span>26 Oct 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">Kapitalisasi kripto global 2,68 triliun dolar turun 3,78% dalam 24 jam, tetapi median 24 jam hanya -0,02% dan 20 dari 60 aset justru positif.</div></li><li><a href="mingguan-2026-W43.html"><strong>BTC Bertahan di Atas MA200, ETF dan Stablecoin Beri Sinyal Kontraksi</strong></a><div class="meta"><span>25 Oct 2026 09:01 WIB</span><span class="badge">mingguan</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC 80.862 dolar, turun 1,53% sepekan dan 3,85% sebulan, tetapi masih 10,78% di atas MA200 72.991,32.</div></li><li><a href="harian-2026-10-25.html"><strong>Bitcoin Bertahan di Atas $80.000, Funding Rendah dan ETF Keluar $138 Juta</strong></a><div class="meta"><span>25 Oct 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">Market cap crypto global turun 2,82% ke $2.717,06 miliar; BTC dominance 59,50%, ETH dominance 10,52%.</div></li></ul>
+<h2>Bagian riset</h2>
+<div class="dir"><a href="lab.html"><b>Lab</b><span>Antrean eksperimen, gerbang walk-forward, paper trading, biaya.</span></a><a href="peluang.html"><b>Peluang</b><span>Sumber pendapatan yang punya bukti pasar dan langkah pertama.</span></a><a href="ekonomi.html"><b>Ekonomi</b><span>Biaya aktual, pendapatan diterima, rencana produk.</span></a><a href="dashboard.html"><b>Dashboard ekonomi</b><span>Satu halaman untuk biaya, kas, dan runway.</span></a><a href="hipotesis.html"><b>Hipotesis</b><span>Klaim yang bisa salah, kriteria lulus, bukti terukur.</span></a><a href="metode.html"><b>Metode</b><span>Sumber data, definisi metrik, dan batasan yang diketahui.</span></a><a href="validasi.html"><b>Validasi</b><span>Indeks uji sembilan tahap untuk strategi yang lolos gerbang.</span></a><a href="audit-e06.html"><b>Audit E06</b><span>Universe point-in-time dan sensitivitas DSR.</span></a><a href="audit-carry.html"><b>Audit carry</b><span>Carry funding dihitung ulang dari nol.</span></a><a href="demo-olahraga.html"><b>Demo olahraga</b><span>Contoh format laporan pra-pertandingan, bukan pekerjaan klien.</span></a><a href="data/fakta.json"><b>Raw data</b><span>fakta.json apa adanya, untuk konsumen mesin.</span></a></div>
+<h2>Arsip laporan</h2>
+<ul class="reports"><li><a href="harian-2026-11-06.html">Pasar crypto 06 Nov: rezim risk-on, BTC +3,5% sepekan</a><div class="meta"><span>06 Nov 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $80.716 (+0,26% 24 jam, +3,49% 7 hari), 35.3% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-11-05.html">Pasar crypto 05 Nov: rezim netral, BTC -5,0% sepekan</a><div class="meta"><span>05 Nov 2026 06:30 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.250 (-0,26% 24 jam, -5,03% 7 hari), 38.0% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-11-04.html">BTC 77.056 dolar di bawah MA50, funding crowded long, ETF keluar 313 juta dolar</a><div class="meta"><span>04 Nov 2026 06:30 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC 77.056,01 dolar, turun 4,76% 7 hari dan 10,95% 30 hari, masih 5,26% di atas MA200 73.205,04.</div></li><li><a href="harian-2026-11-03.html">Pasar crypto 03 Nov: rezim netral, BTC -4,8% sepekan</a><div class="meta"><span>03 Nov 2026 14:21 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.056 (+0,31% 24 jam, -4,76% 7 hari), 38.2% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-11-02.html">Pasar crypto 02 Nov: rezim netral, BTC -3,2% sepekan</a><div class="meta"><span>02 Nov 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.622 (+0,05% 24 jam, -3,16% 7 hari), 37.7% di bawah puncak historis tersimpan.</div></li><li><a href="mingguan-2026-W44.html">Pasar crypto 01 Nov: rezim netral, BTC -3,2% sepekan</a><div class="meta"><span>01 Nov 2026 09:01 WIB</span><span class="badge">mingguan</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.622 (+0,05% 24 jam, -3,16% 7 hari), 37.7% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-11-01.html">Pasar crypto 01 Nov: rezim risk-on, BTC -4,4% sepekan</a><div class="meta"><span>01 Nov 2026 06:30 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $77.316 (-0,07% 24 jam, -4,42% 7 hari), 38.0% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-10-31.html">Pasar crypto 31 Oct: rezim risk-on, BTC -4,4% sepekan</a><div class="meta"><span>31 Oct 2026 12:12 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $76.978 (-1,30% 24 jam, -5,19% 7 hari), 38.2% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-10-30.html">Pasar crypto 30 Oct: rezim risk-on, BTC -5,2% sepekan</a><div class="meta"><span>30 Oct 2026 13:47 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC diperdagangkan di $76.978 (-1,30% 24 jam, -5,19% 7 hari), 38.2% di bawah puncak historis tersimpan.</div></li><li><a href="harian-2026-10-29.html">Fed Tahan Suku Bunga, BTC di Bawah 80 Ribu, Likuiditas Stablecoin Menyusut</a><div class="meta"><span>29 Oct 2026 12:04 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC 81.194,01 dolar, turun 0,18% 1 hari dan 2,95% 30 hari, masih 11,0% di atas MA200 73.163,09.</div></li><li><a href="harian-2026-10-27.html">BTC Bertahan di Atas MA200, Funding Crowded Long dan ETF Keluar 2 Hari</a><div class="meta"><span>27 Oct 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC 80.296,01 dolar, turun 2,00% 7 hari, masih 9,95% di atas MA200 73.030,32 dolar.</div></li><li><a href="harian-2026-10-26.html">BTC Bertahan di Atas MA200, tetapi Breadth Menyempit dan Arus ETF Melambat</a><div class="meta"><span>26 Oct 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">Kapitalisasi kripto global 2,68 triliun dolar turun 3,78% dalam 24 jam, tetapi median 24 jam hanya -0,02% dan 20 dari 60 aset justru positif.</div></li><li><a href="mingguan-2026-W43.html">BTC Bertahan di Atas MA200, ETF dan Stablecoin Beri Sinyal Kontraksi</a><div class="meta"><span>25 Oct 2026 09:01 WIB</span><span class="badge">mingguan</span><span class="badge">keyakinan sedang</span></div><div class="meta">BTC 80.862 dolar, turun 1,53% sepekan dan 3,85% sebulan, tetapi masih 10,78% di atas MA200 72.991,32.</div></li><li><a href="harian-2026-10-25.html">Bitcoin Bertahan di Atas $80.000, Funding Rendah dan ETF Keluar $138 Juta</a><div class="meta"><span>25 Oct 2026 06:31 WIB</span><span class="badge">harian</span><span class="badge">keyakinan sedang</span></div><div class="meta">Market cap crypto global turun 2,82% ke $2.717,06 miliar; BTC dominance 59,50%, ETH dominance 10,52%.</div></li></ul>
 <div class="note"><p>Data harga: CoinGecko. Derivatif: Binance Futures. Makro: CBOE, US Treasury,
 ECB. Likuiditas stablecoin dan TVL: DefiLlama. Sentimen: Alternative.me. Berita: CoinDesk,
 Cointelegraph, The Block, Blockworks, Decrypt, Federal Reserve, ECB, BIS.</p>
-<p>Bukan rekomendasi investasi.</p></div></div></body></html>
+<p>Bukan rekomendasi investasi.</p></div>
+</div>
+<footer class="site-foot">
+  <div class="shell foot-in">
+    <div>
+      <p class="lbl">SATGAS crypto desk</p>
+      
+      <p>Riset otomatis untuk pembelajaran. Bukan rekomendasi investasi. Selalu
+      verifikasi angka ke sumber primer sebelum mengambil keputusan.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/riset/">Research</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/data/fakta.json">Raw data</a>
+    </nav>
+  </div>
+</footer>
+</body></html>

@@ -11,6 +11,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, BASE)
+
+import theme  # noqa: E402
 from validasi import css, fmt, WIB  # noqa: E402
 
 OUT = os.path.join(BASE, "reports", "audit-carry.html")
@@ -64,14 +66,7 @@ def main() -> int:
     oos = d["oos"]
     bm = d["benchmark"]["btc_hold"]
 
-    html = f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Audit carry funding · satgas.ai.id</title><style>{css()}</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="validasi.html">Validasi</a> · <a href="audit-e06.html">Audit E06</a></div></div>
-
-<h1>Audit E20: carry funding</h1>
+    html = theme.top("Audit carry funding · SATGAS Research", "", sub="") + f"""<h1>Audit E20: carry funding</h1>
 <p class="lead">Strategi yang tidak menebak arah harga: beli spot, short perpetual, panen
 pembayaran funding. Walk-forward sebelumnya melaporkan Sharpe 2,30 dan itu justru alasan
 untuk curiga. Halaman ini menghitung ulang dari nol dengan timing ketat, biaya dua kaki,
@@ -237,7 +232,8 @@ eksperimen tambahan.</p>
 
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB.
 Data funding diverifikasi ulang ke Binance. Tidak ada klaim profit nyata di halaman ini.</p></div>
-</div></body></html>"""
+""" + theme.close()
+
 
     with open(OUT, "w") as f:
         f.write(html)

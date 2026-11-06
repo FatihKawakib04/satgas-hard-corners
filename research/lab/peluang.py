@@ -20,6 +20,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 sys.path.insert(0, BASE)
 
+import theme  # noqa: E402
+
 WIB = timezone(timedelta(hours=7))
 OUT = os.path.join(BASE, "reports")
 STATE = os.path.join(HERE, "peluang.json")
@@ -173,14 +175,7 @@ def render(rows: list[dict]) -> str:
 </tbody></table>
 <p class="meta">Bukti: </p><ul class="refs">{bukti}</ul>
 </div>""")
-    return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Peluang ekonomi dari riset · satgas.ai.id</title><style>{css()}</style></head>
-<body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="hipotesis.html">Hipotesis</a> · <a href="metode.html">Metode</a></div></div>
-<h1>Peluang ekonomi</h1>
+    return theme.top("Peluang ekonomi dari riset · SATGAS Research", "", sub="peluang.html") + f"""<h1>Peluang ekonomi</h1>
 <p class="lead">Daftar jalur pendapatan yang dinilai dari bukti pasar, bukan angan-angan.
 Urutannya mengikuti rasio antara peluang berhasil dan waktu sampai uang masuk. Yang paling
 cepat adalah menjual keahlian, bukan menunggu strategi trading mengalahkan pasar.</p>
@@ -203,7 +198,8 @@ dicoret dan diganti, bukan dipaksakan.</li>
 </ul></div>
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB. Halaman ini bagian dari
 riset otonom; status tiap peluang diperbarui saat ada langkah nyata yang dijalankan.</p></div>
-</div></body></html>"""
+""" + theme.close()
+
 
 
 def main() -> int:

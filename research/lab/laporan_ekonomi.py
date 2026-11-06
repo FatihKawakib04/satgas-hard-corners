@@ -17,6 +17,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, BASE)
+
+import theme  # noqa: E402
 from validasi import css, WIB  # noqa: E402
 
 OUT = os.path.join(BASE, "reports", "ekonomi.html")
@@ -107,14 +109,7 @@ def main() -> int:
     belum = "".join(f"<li>{x}</li>" for x in prod["yang_belum_ada"])
     validasi = "".join(f"<li>{x}</li>" for x in prod["validasi_sebelum_bangun"])
 
-    html = f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ekonomi proyek · satgas.ai.id</title><style>{css()}</style></head><body>
-<div class="wrap"><div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="audit-e06.html">Audit E06</a> · <a href="audit-carry.html">Audit carry</a></div></div>
-
-<h1>Ekonomi proyek: biaya aktual, peluang freelance, rencana produk</h1>
+    html = theme.top("Ekonomi proyek · SATGAS Research", "", sub="ekonomi.html") + f"""<h1>Ekonomi proyek: biaya aktual, peluang freelance, rencana produk</h1>
 <p class="lead">Arah yang dipilih: freelance sebagai jalur utama, produk sebagai sampingan.
 Halaman ini mencatat biaya yang benar-benar ditagih, peluang yang benar-benar ada beserta
 persaingannya, dan rencana validasi produk sebelum membangun fitur baru. Tidak ada
@@ -251,7 +246,8 @@ marketplace bukan tempat yang tepat, dan jalur langsung ke perusahaan lebih masu
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB.
 Sumber data: API publik Freelancer.com, Superteam Earn, halaman Upwork Indonesia,
 projects.co.id, dan kurs terbuka. Draf proposal tersimpan di repositori, belum dikirim.</p></div>
-</div></body></html>"""
+""" + theme.close()
+
     with open(OUT, "w") as f:
         f.write(html)
     print("halaman:", OUT)

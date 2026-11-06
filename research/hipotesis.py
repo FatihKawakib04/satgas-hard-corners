@@ -16,6 +16,7 @@ import statistics as st
 from datetime import datetime, timedelta, timezone
 
 import store
+import theme
 
 WIB = timezone(timedelta(hours=7))
 OUT_DIR = "/var/www/satgas-hard-corners/site/research/reports"
@@ -277,18 +278,7 @@ def evaluate(rows: list[dict]) -> list[dict]:
     return rows
 
 
-CSS_PATH = "/var/www/satgas-hard-corners/site/research/report.py"
-
-
-def _css() -> str:
-    import re
-    src = open(CSS_PATH).read()
-    m = re.search(r'CSS = """(.*?)"""', src, re.S)
-    return m.group(1) if m else ""
-
-
 def render_hipotesis(rows: list[dict]) -> str:
-    css = _css()
     badge = {"didukung": "up", "tidak-didukung": "warn", "diuji": "flat",
              "menunggu-data": "flat"}
     cards = []
@@ -306,15 +296,7 @@ def render_hipotesis(rows: list[dict]) -> str:
             f'<span class="badge {badge.get(stt,"")}">status: {stt}</span></div>'
             f'<p class="lead" style="margin:10px 0 6px">{h["klaim"]}</p>'
             f'<p class="meta">Kriteria: {h.get("kriteria","")}</p>{hasil}</div>')
-    return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Catatan hipotesis riset · satgas.ai.id</title><style>{css}
-.badge.warn{{color:#e5c76b;border-color:rgba(201,162,39,.45);background:rgba(201,162,39,.10)}}</style></head>
-<body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="peluang.html">Peluang</a> · <a href="metode.html">Metode</a></div></div>
-<h1>Catatan hipotesis</h1>
+    return theme.top("Catatan hipotesis · SATGAS Research", "", sub="hipotesis.html") + f"""<h1>Catatan hipotesis</h1>
 <p class="lead">Riset yang berguna harus punya klaim yang bisa salah. Halaman ini mencatat
 hipotesis yang sedang diuji, kriteria lulusnya, dan bukti terukur dari basis data sendiri.
 Hipotesis yang tidak didukung dicatat sebagai temuan, bukan dihapus.</p>
@@ -324,7 +306,7 @@ otomatis dari data historis yang tersimpan. Hipotesis tanpa evaluator menunggu d
 panjang. Catatan statistik: return forward dihitung harian sehingga jendela pengamatan
 saling tumpang tindih, jumlah observasi efektif lebih kecil dari angka yang tampil dan
 selang kepercayaan sesungguhnya lebih lebar. Hasil di sini adalah bukti awal, bukan
-kesimpulan final.</p></div></div></body></html>"""
+kesimpulan final.</p></div>""" + theme.close()
 
 
 METODE = [
@@ -370,18 +352,10 @@ BATASAN = [
 
 
 def render_metode() -> str:
-    css = _css()
     src = "".join(f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in METODE)
     dfn = "".join(f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in DEFINISI)
     lim = "".join(f"<li>{x}</li>" for x in BATASAN)
-    return f"""<!doctype html><html lang="id"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Metode riset · satgas.ai.id</title><style>{css}</style></head>
-<body><div class="wrap">
-<div class="top"><div class="brand">Riset Crypto · satgas.ai.id</div>
-<div class="meta"><a href="./">Semua laporan</a> · <a href="lab.html">Lab</a> ·
-<a href="peluang.html">Peluang</a> · <a href="hipotesis.html">Hipotesis</a></div></div>
-<h1>Metode dan batasan</h1>
+    return theme.top("Metode riset · SATGAS Research", "", sub="metode.html") + f"""<h1>Metode dan batasan</h1>
 <p class="lead">Semua angka dalam laporan dihitung kode dari sumber primer, disimpan di basis data
 SQLite lokal, dan bisa ditelusuri ulang. Model bahasa hanya menulis narasi dari angka itu.</p>
 <h2>Sumber data</h2><div class="panel"><table><tbody>{src}</tbody></table></div>
@@ -397,7 +371,7 @@ basis data.</li>
 <li>Hipotesis riset dicatat, diuji, dan hasilnya ditampilkan terbuka di halaman hipotesis.</li>
 </ol></div>
 <div class="note"><p>Diperbarui {datetime.now(WIB):%d %b %Y %H:%M} WIB. Bukan rekomendasi investasi.</p></div>
-</div></body></html>"""
+""" + theme.close()
 
 
 def main() -> int:
@@ -437,3 +411,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
