@@ -1,14 +1,14 @@
 {
- "dibuat": "2026-11-15T09:01:11+07:00",
- "as_of_utc": "2026-11-15T02:01:11+00:00",
- "snapshot_ts": 1794707156,
+ "dibuat": "2026-11-16T06:31:13+07:00",
+ "as_of_utc": "2026-11-15T23:31:13+00:00",
+ "snapshot_ts": 1794785468,
  "global": {
-  "ts": 1794707156,
-  "mcap": 2141116952985.3386,
-  "vol": 108092981443.20781,
-  "btc_d": 58.451700565560614,
-  "eth_d": 9.797334166797013,
-  "chg24": -10.284235158516838
+  "ts": 1794785468,
+  "mcap": 2208177542100.399,
+  "vol": 91954924763.60916,
+  "btc_d": 59.354548970890306,
+  "eth_d": 10.12705412910198,
+  "chg24": -1.095478610558029
  },
  "makro": {
   "SPX": {
@@ -1152,15 +1152,15 @@
  },
  "breadth": {
   "n_aset": 60,
-  "positif_24h": 8,
+  "positif_24h": 50,
   "total_24h": 60,
   "positif_7d": 4,
-  "total_7d": 35,
-  "median_24h": -9.298455,
-  "median_7d": -14.192073170731712,
-  "dispersi_7d": 8.042208580945562,
+  "total_7d": 34,
+  "median_24h": 2.766645,
+  "median_7d": -14.484745473264338,
+  "dispersi_7d": 8.086896309511179,
   "di_atas_ma50": 5,
-  "sampel_ma50": 35,
+  "sampel_ma50": 34,
   "top_gainers_7d": [
    {
     "sym": "USDS",
@@ -1226,13 +1226,13 @@
  },
  "derivatif": {
   "BTCUSDT": {
-   "funding_sekarang_pct": 0.004667,
-   "funding_annual_pct": 5.110364999999999,
-   "funding_avg_7d_pct": 0.006568809523809524,
-   "funding_persentil_90d": 38.148148148148145,
+   "funding_sekarang_pct": -0.000247,
+   "funding_annual_pct": -0.270465,
+   "funding_avg_7d_pct": 0.00616304761904762,
+   "funding_persentil_90d": 7.037037037037037,
    "funding_min_30d_pct": -0.001401,
    "funding_max_30d_pct": 0.01,
-   "n_funding": 3349,
+   "n_funding": 3351,
    "oi_usd": 6280978567.364,
    "oi_chg_7d": -13.748808037488146,
    "oi_chg_30d": -19.05100682676236,
@@ -1240,13 +1240,13 @@
    "taker": null
   },
   "ETHUSDT": {
-   "funding_sekarang_pct": -0.0053739999999999994,
-   "funding_annual_pct": -5.884530000000001,
-   "funding_avg_7d_pct": 0.002325380952380953,
-   "funding_persentil_90d": 2.962962962962963,
+   "funding_sekarang_pct": -0.004249,
+   "funding_annual_pct": -4.652655,
+   "funding_avg_7d_pct": 0.0014835238095238096,
+   "funding_persentil_90d": 5.185185185185185,
    "funding_min_30d_pct": -0.013577,
    "funding_max_30d_pct": 0.01,
-   "n_funding": 3349,
+   "n_funding": 3351,
    "oi_usd": 4102817666.3974485,
    "oi_chg_7d": -22.19768351303889,
    "oi_chg_30d": -25.58160927558579,
@@ -1254,13 +1254,13 @@
    "taker": null
   },
   "SOLUSDT": {
-   "funding_sekarang_pct": -0.013955,
-   "funding_annual_pct": -15.280725,
-   "funding_avg_7d_pct": 0.0023240476190476192,
-   "funding_persentil_90d": 0.37037037037037035,
+   "funding_sekarang_pct": -0.011827,
+   "funding_annual_pct": -12.950565,
+   "funding_avg_7d_pct": 0.0011389523809523811,
+   "funding_persentil_90d": 1.8518518518518519,
    "funding_min_30d_pct": -0.013955,
    "funding_max_30d_pct": 0.01,
-   "n_funding": 3349,
+   "n_funding": 3351,
    "oi_usd": 649459549.9257128,
    "oi_chg_7d": -22.358723300437834,
    "oi_chg_30d": -32.211543250587816,
@@ -1467,6 +1467,150 @@
  },
  "berita": [
   {
+   "waktu": "2026-11-16 05:50",
+   "source": "Cointelegraph",
+   "title": "US sellers drive Bitcoin crash, Jensen plots comeback: Hodler’s Digest",
+   "url": "https://cointelegraph.com/magazine/us-sellers-drive-bitcoin-crash-jensen-plots-comeback-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-11-16 04:57",
+   "source": "The Block",
+   "title": "CZ denies Binance sold crypto as Bitcoin bounces from four-month low near $62,000",
+   "url": "https://www.theblock.co/news/markets/2026-11-15-cz-denies-binance-sold-crypto-as-bitcoin-bounces-from-four-month-low-near-62000-440807"
+  },
+  {
+   "waktu": "2026-11-16 04:00",
+   "source": "Makro & The Fed",
+   "title": "CFOs Face Rising Costs, Reluctant Consumers (GOOS, HLF, PII, SMG, FERG)",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUldiczdrYV80ZklwZklGanowaHY5M0FXcGJzOWU3dF9FSHp4N05POTQ3cjItY3dfOHB5dThCa2NqYTA0ZFJSUXFaMXR1QXZQV3RKNVByZjZvcTZTZlBncFBSOU5MZTE0T3BTa1dXbW1udmpkNGNBM0FZV19qVTJ6MklwN0w3d29qdm5KRFU2SVhFRm9tNGNwbTlQUU9rSkJzWEcyU00zOExGWWxPZUM5ZEF4RHNDWFJlbmc?oc=5"
+  },
+  {
+   "waktu": "2026-11-16 03:33",
+   "source": "The Block",
+   "title": "Traders claim $6 million profit by spotting BitGo’s public pull request and frontrunning memecoin listing",
+   "url": "https://www.theblock.co/news/defi/2026-11-15-traders-claim-6-million-profit-by-spotting-bitgos-public-pull-request-and-frontrunning-memecoin-listing-440363"
+  },
+  {
+   "waktu": "2026-11-16 03:00",
+   "source": "Makro & The Fed",
+   "title": "Roughed-Up Bond Traders Look to Fedspeak, Minutes for Next Move",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPaEV2d0pEVGhUanZROXNyZXgtMm5aUTE4NXJXQ2tuY2pBLWJSaDlLQ2s3MC1ScjZWdFhEZkF4WmotOEQ2Y0J4M3Ytb2tSYkVwVmVvTDVUX0VFb0F0LTVaeGx1MVY2Y2ZtS0E2Z2ZZOGdPNVFIVC05czF3NUhqTW1tWXM2YWdVX2YyYjd4ZGpOTlZ3Sl9EMHZKRjBEa1JFQTc4ZVhzb01EMmpWbEJGdEtycEo1Yw?oc=5"
+  },
+  {
+   "waktu": "2026-11-16 03:00",
+   "source": "Makro & The Fed",
+   "title": "Roughed-Up Bond Traders Look to Fedspeak, Minutes for Next Move",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOODdpSHVQVDlLU3VpYUZWSC1jNm1ZamF4MkVWSlJnVnFnTkxwZGRCQm5nUlNIdVRrandnRXZsUFJRMXZBNzF5UGFxU0J2Vk42emczd2d6bUcyOEZFSkZRUnVCSDZnMmdNakVHS0E3VmEwdERmUjFWMnNSZXY1bDBzRUE4OUswSVk5enkwRlduVWZyM2t3cXF3ajJpUTd2SFV0ejA0MFc2RC15eGY0OS1RN1ItUzRVRURMZ1RPd1FtbG9HSTFjeDFac0ZSdUhMZG5zSmc?oc=5"
+  },
+  {
+   "waktu": "2026-11-16 02:30",
+   "source": "CoinDesk",
+   "title": "Did prediction markets call the U.S. midterm election?: State of Crypto",
+   "url": "https://www.coindesk.com/policy/2026/11/15/did-prediction-markets-call-the-u-s-midterm-election-state-of-crypto"
+  },
+  {
+   "waktu": "2026-11-16 01:58",
+   "source": "Makro & The Fed",
+   "title": "Fed 'has some work to do on inflation,' Kansas City Fed chief says",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPM2g2VXJDaFI2Q0NVa0xEUFZSSWFDbE1pRE1fajNpUldOYXlXSGtySFdzWGxKbldPYkRPdzVmWW1LaHlBMWdqN2JRdmw2THVGYWFWcmtQTXRlMFAycThoLXRzcWZweTNDYi1xYzVpWnRxMkxJdmlNR0Y1ZlVuWno4TmFlR0JrT1FrUWFzNWVhQTFFMkxrM3dkRnQ3c0FvUWxUc0HSAacBQVVfeXFMTzhqeGJUMlhOY3FiV0hxRmVtSXVzZUR1ejhXMGpDSGwtckREYVZYaVpDekY0WUpheUNxc01wOTh2VGhCR0tRVHNwMjlJV3VZT19iVDBnSmMyNzFOLTRlRWNoUFNNM0M3US1DMFh0T0xSUXowcklvT3A3Qm04ZWpHQnE0YnNTRmF0eTZTQVgwa1E2RE1QMVZuSEpvYlUtTlFOWmJNODhsMEk?oc=5"
+  },
+  {
+   "waktu": "2026-11-16 01:43",
+   "source": "Makro & The Fed",
+   "title": "Fed 'has some work to do on inflation,' KC Fed chief says",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORXg3dWdlUEMzckhPaldaYlFrSXlzQnVLeEJLRGtnMFFpeWh5VXI3akUxWEtLQ3JwSk92b2pvWi1FdjNFWVpBZm9Jck56NDUwQkZDUGZpUG01X3RDLS02enpGcWpnXzc3ZWctengxamdOTDY1MzdYMzgxR0V2THk3Zl9xbXZhTEcyWHEzRDU2YWZ2dTZVaFVpNA?oc=5"
+  },
+  {
+   "waktu": "2026-11-16 01:40",
+   "source": "Makro & The Fed",
+   "title": "Schmid Says Fed Has More Work To Do to Bring Down Inflation",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQYlRIUFR3TDJ6U21FdjlsZlNxZHBNQXJUaUpRZjNjNld2bUZianpsUEExS0NVQWVmN0RwVGY0VndQQk5oVGhHZ3pzcV9IMmJrS05tVzBrMWZ6WTV3X0JGWFR3NXJvLUMtTzZVNlRieXBENWhTX3k0S0JpeWRicVFaSmpiVjBBdWwwNkxrRV9ZLXFZNnNlS1A5LTA3VzYwWHRCRV9XSkdZYXAzWE9vYVM0?oc=5"
+  },
+  {
+   "waktu": "2026-11-15 23:16",
+   "source": "Makro & The Fed",
+   "title": "The affordability crisis isn’t about inflation",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVjk1NGY3Y1VHQUp0cTcyeHFhck5vZEpBcHlzakJmanpROF95aHVUX0pMeWg0S1hmbGFmbk5yWmdVOERsZGdwN19Xa2l0UDc4Z3R0U21Rb0ZOeks3Z3FsTVBGSTBCV0YtVXhBUnlRRk5HVTZSSUNvdGlXbjVoQ0ZHcEJUbnlqQkx2U0Nj?oc=5"
+  },
+  {
+   "waktu": "2026-11-15 23:01",
+   "source": "Decrypt",
+   "title": "How Wall Street Is Racing to Claim the Onchain Dollar",
+   "url": "https://decrypt.co/383284/how-wall-street-racing-onchain-dollar-stablecoins"
+  },
+  {
+   "waktu": "2026-11-15 22:22",
+   "source": "Regulasi crypto",
+   "title": "CLARITY Act unlikely to advance as Congress focuses on SEC, CFTC picks",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5MODNrVWRqeFpEN3pNS0dRVlEzWXlITzZ0RkV1Y3JmZ2xYZ3hLdkFUbkpuTUJ4al9VZmd3ZTZWYzRlNEt4bzU5clhDSHgwWXNzaWdiOXd3SFA4THVBdFpTeXRRb2ZtREoxUzV4eld2UjBrdHFQWG1uV2s3UVQ?oc=5"
+  },
+  {
+   "waktu": "2026-11-15 21:30",
+   "source": "Cointelegraph",
+   "title": "Enterprise blockchain is going to come back from the dead",
+   "url": "https://cointelegraph.com/opinion/enterprise-blockchain-come-back-from-dead?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-11-15 21:01",
+   "source": "Decrypt",
+   "title": "Bitcoin ETFs Lose $2.1 Billion in November as Outflow Streak Hits Seven Days",
+   "url": "https://decrypt.co/383282/bitcoin-etfs-lose-2-1-billion-november-outflow-streak-seven-days"
+  },
+  {
+   "waktu": "2026-11-15 21:00",
+   "source": "CoinDesk",
+   "title": "Crypto insiders aren't counting on silver linings in Congress' 'lame duck' session",
+   "url": "https://www.coindesk.com/news-analysis/2026/11/13/crypto-insiders-aren-t-counting-on-silver-linings-in-congress-lame-duck-session"
+  },
+  {
+   "waktu": "2026-11-15 19:55",
+   "source": "ETF & aliran institusi",
+   "title": "Crypto market suffers historic 10-day selloff as ETF outflows and liquidations deepen",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRzhYMVZOMzhZVkRaemMwWUxHTEdZRUcwUWRqdjZrMHZ1T05wdHd4TzBsSnAtaE9pSUV2N1J3cWxtOGNNQkdXWWlUXzdoMHM2TXhwdTVBTW9BNEt3RS1CY01tN2oxR2xPZGlTdHBLMVlrUUUzM01ieEh3S2EzS3drTTMzSm1yZXQzUjNOUVJXbG81TXVzajRXaEFTYw?oc=5"
+  },
+  {
+   "waktu": "2026-11-15 19:52",
+   "source": "ETF & aliran institusi",
+   "title": "Almost $1.5 Billion Withdrawn From Bitcoin and Ethereum ETFs in a Single Week",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYnpxd28tUFcwYVo2ZU5wUGwyVkc0R0Via3hzTmtlS1ZUaDA1V09haHhESFBkV0RPajZVbW5jSUU0Q1J1MjRqSU5LWTBKYnEyRm1FYkhGSW1uMXUxaXFKRVh3b2RMMENMVUJPYjdRMHkwRkhFYjYwTHJEeFBrSGhMeERsak9pU3NPVjhxM2JhZnFUN216Z1dvNHNDY3BOSXRlTHhOZg?oc=5"
+  },
+  {
+   "waktu": "2026-11-15 17:23",
+   "source": "Cointelegraph",
+   "title": "Bitcoin falls to four-month low near $62K as crypto selloff deepens",
+   "url": "https://cointelegraph.com/markets/bitcoin-four-month-low-62k-crypto-market-selloff?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-11-15 15:07",
+   "source": "Cointelegraph",
+   "title": "Coinone warns of phishing, identity theft after customer data breach",
+   "url": "https://cointelegraph.com/news/coinone-data-breach-phishing-identity-theft-customer-information?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-11-15 13:27",
+   "source": "Cointelegraph",
+   "title": "RWA protocol stUSDT winds down three years after $2.3B TVL peak",
+   "url": "https://cointelegraph.com/news/rwa-protocol-stusdt-winds-down-three-years-after-23b-tvl-peak?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+  },
+  {
+   "waktu": "2026-11-15 12:02",
+   "source": "Regulasi crypto",
+   "title": "How Low Can Bitcoin Go by the End of 2026 After Losing $68K? 3 AIs Gave Us Brutal Targets",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZ0J6bE9aSWNyemgxWWZ0S09EN0JaY2R6dDJsbU10eFRreFJyZzhob3o5MUozbXBZblZjOWdwcG1zZ3hRREJ4X3FDN0tZRktfNnJfTTltRVZwQWM4N0wwXzN3U0NyRUMxbFl2S0VaY3Z4WFJPZkZyZXMwVmoySXExTlBkbjNCSkRQOHJ5MmFNc0xydHFEN25hMHczczB1MjYtdGQ2ZjFTTnJOdWotcndmeHYyN2YteHJNUlFnTTNGT3FoVzQ?oc=5"
+  },
+  {
+   "waktu": "2026-11-15 09:50",
+   "source": "CoinDesk",
+   "title": "XRP crashes to its lowest since November 2024 as money leaves crypto",
+   "url": "https://www.coindesk.com/markets/2026/11/15/xrp-crashes-to-its-lowest-since-november-2024-as-money-leaves-crypto"
+  },
+  {
+   "waktu": "2026-11-15 09:05",
+   "source": "ETF & aliran institusi",
+   "title": "Bitcoin Falls Below $64,000 as ¥170 Billion ETF Outflows and ¥110 Billion in Long Liquidations Weigh on Prices",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1McXFNY2ExRk81XzdXa0hyV2RCN2cyUU0yTFk5OWxLbUhsb3VibVl0OWhqUHByZHFmaXlMeTNpVS1WTjFIRDFIVl9NU3lhNFAtTS1PaS1BU2RDejV5MnNyYmVxSmp1YXRCcklfMXNvSmx1Ynd1VGc?oc=5"
+  },
+  {
    "waktu": "2026-11-15 06:07",
    "source": "The Block",
    "title": "Kava Lend loses roughly $3.8 million to hack, sending KAVA token down nearly 40%",
@@ -1483,6 +1627,12 @@
    "source": "Regulasi crypto",
    "title": "Trump Nominates 4 SEC and CFTC Picks, Including CLARITY Act Negotiators",
    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUHo1NjVFU3ZpbkpCMEh4d3pkLUtiT21HSExSM3RibExaRjVWdENuTlhFUHRDWHB2MC1WTEpsMXpCTEJQYUoyczRJWVpTNUFmZndhbi1fNkZOYjNOdnAwQmd4R1ByMkkzUHJrLWpkamdGMFluWjg4VFZVa1lOb240bWZkcjZZcWVNTFkxMGFEVmxBVzgzaWtXcjJJdnM?oc=5"
+  },
+  {
+   "waktu": "2026-11-15 02:30",
+   "source": "ETF & aliran institusi",
+   "title": "Ethereum Flashes Death Cross as ETF Outflows Surge, Futures Open Interest Dives",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRXJfZUgxeXcwejNwdUJLRFBMc2xsOC1oUkFoVFREY19CZC1KaHRXRUtsQm1SVXJEd2RhNzEyVTBCcUx2WTR1LWtXcmx3TjBzNlltdkNQV3owNE5GMGdUQTEwUXVvaEhxREo3QlZrY2pZNXp5S2FUT1FpQ0NNX0l1RnVfbUNwWnI1LW5IbDlDbU5TeV9oeDNrQmJOZHo2QnpHNEZNMFR3UUtLNkh4bF9JZkJCRHR2dEJBbUtWV1lwdHI1d1U?oc=5"
   },
   {
    "waktu": "2026-11-15 02:06",
@@ -1656,6 +1806,12 @@
    "waktu": "2026-11-14 07:00",
    "source": "Makro & The Fed",
    "title": "Fed’s Jefferson Says Inflation Will Determine Rate Decisions",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcGZ4dGllaWl3XzZrVXc1bzc2dnJyVGw1cGQyVE5oay1YakpXYkN1a25TazNFN0dsb2ZJYjJjTjFjVHo0cjBvOWp5TkJiOG1vX3o4R2V5dGlod1NfVWtVaDRlYnYxMXVoWGREb0ltRVNnLXpLbGpZQ2NsNUc2TmJUTDRWcVFBWlVtcjdjdk92cGZKQWVRcXN5ZGQzOWMyWk1Memx5UG93?oc=5"
+  },
+  {
+   "waktu": "2026-11-14 07:00",
+   "source": "Makro & The Fed",
+   "title": "Fed’s Jefferson Says Inflation Will Determine Rate Decisions",
    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZzBwMC1SRHV2ZUJHLTJ2STdWWFlSSXhKN1lkajNFZ0VTNUZNTnRGeW1uMXJRWXhyR05ic2JDMU9xcGxTV0JKZFM3WVByb0gwbEhrQW1WaTViQm12d1FZT1FnU29xX0tZSjJXOXhaWkI5bnk0aENFVTNOTUNYV09RQmJid1E4bFZxeUliR01kTkVCcXFMRDVnTWFUbTFrbk1HM1Q4MDBHbkVVSm9LUHNxMA?oc=5"
   },
   {
@@ -1663,528 +1819,6 @@
    "source": "Makro & The Fed",
    "title": "Fed’s Jefferson Says Inflation Will Determine Rate Decisions",
    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOM1hRM1BNM0tabllKeVlnZjBwd1hlYl9WSUdaX0c1V1RSRnNtVWp6NGR4RVFUelBfSHUyWXJtVUl1ZGJWUGhNdWZfSlIwNEhhUm96Q3BhY24tc1lmbXhRODQ3aHdpYzZIVmxFYnNEMHBUY3hXRk9XeVZ4ekdjakVyY1dGSFlUU2RZTzlZRExZRmFjbzBHOWpnLUEtdkpRMUt0em1fem5yQVFZb0lIbjV0NzA2YXFEVFNCVXFBNVIxVkNaVmoyaHJQcUFLUktPVjQ?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 06:30",
-   "source": "CoinDesk",
-   "title": "Bitcoin miners pay Paraguay $350 million a year, but AI is pushing them out",
-   "url": "https://www.coindesk.com/tech/2026/11/13/bitcoin-miners-pay-paraguay-usd350-million-a-year-but-ai-is-pushing-them-out"
-  },
-  {
-   "waktu": "2026-11-14 06:00",
-   "source": "Makro & The Fed",
-   "title": "Wall Street bears abound after inflation sours Fed outlook, Main Street abandons bullish bias as gold drops below $3,900/oz",
-   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZ09SOU1XMmZSdkZoVU5iQkdoN1duRHpoNUhqWHlJVVRhd3ozYzFLLXkteml0ZXJoODBvUy1iMDB1Yk9qRy1oSFhfQ296RlBITmhSbzFSRVBVeGZLQ1lXb05ZRmRIVl9PclVZdzVJQ0h0M2JTRnZKUzZndkswa1JNNEtwbjdNMW1IQXZuQ1BDdVJlM0Y2TmRRWnhEUDFVb3FROEZyOFA1ZEdjNjlWbzYxak9QSjNKLVk?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 05:52",
-   "source": "Regulasi crypto",
-   "title": "White House nominates four to SEC and CFTC as CLARITY Act stalls",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9EVFZyTGdrZW85UHlJVEJsSk8zYWdWTFZ5YkZfNmxXLXQ0Q1EzQWZMOGVDV25FVGQwR1NmSXV3M1BaV3ZHbkZicmlHbTJRT0xrSTRNMWN3?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 05:16",
-   "source": "Decrypt",
-   "title": "Could a Former Nvidia Executive Replace Jensen Huang? Arm’s Rene Haas Emerges as Candidate",
-   "url": "https://decrypt.co/383276/nvidia-arm-ceo-rene-haas-replace-jensen-huang"
-  },
-  {
-   "waktu": "2026-11-14 05:15",
-   "source": "Makro & The Fed",
-   "title": "The AI boom has handed the Fed an inflation problem that rate hikes may not fix",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVkhCU3k2eWJjeWgyenJiMnppSXBxdnVQRmZkLW9LZWR5UnVGMzB1X1h5TlpMbnl3R1d1TFJhLXJGNzZOTWxGVHRUM3Z0U2hrYVFvOHEwU0FLRlF3S3Jzb2FaMVd5R2tKZ1Y3WENjMmM5amlTLUUwUWU1QVpDeGYtMENqcEd0dXF2YmhqV3VEaEozTzY1QTRzb3lTbzR4akdTTDNtMUNLYy0?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 05:01",
-   "source": "Cointelegraph",
-   "title": "OpenAI launches AI payments in ChatGPT with Visa, Mastercard and Amex",
-   "url": "https://cointelegraph.com/news/openai-ai-payments-chatgpt-wallet-visa-mastercard-amex?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-14 04:49",
-   "source": "Cointelegraph",
-   "title": "Adam Back makes case for simpler security as Blockstream launches Bitcoin custody system",
-   "url": "https://cointelegraph.com/news/adam-back-simpler-security-blockstream-bitcoin-custody-system?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-14 04:36",
-   "source": "Decrypt",
-   "title": "Should Government Officials Be Banned From Prediction Markets? House Oversight Says Maybe",
-   "url": "https://decrypt.co/383271/government-officials-banned-prediction-markets-house-oversight"
-  },
-  {
-   "waktu": "2026-11-14 04:15",
-   "source": "Federal Reserve",
-   "title": "Agencies extend comment period for proposed third-party risk management guidance",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm"
-  },
-  {
-   "waktu": "2026-11-14 04:01",
-   "source": "Cointelegraph",
-   "title": "Kraken parent Payward gains market share as slower trading weighs on earnings",
-   "url": "https://cointelegraph.com/news/kraken-parent-payward-gains-market-share-slower-trading-earnings?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-14 03:55",
-   "source": "The Block",
-   "title": "Meta tests prediction market app using ‘cred’ points instead of cash: WSJ",
-   "url": "https://www.theblock.co/news/markets/2026-11-13-meta-tests-prediction-market-app-using-cred-points-instead-cash-wsj-440215"
-  },
-  {
-   "waktu": "2026-11-14 03:55",
-   "source": "Regulasi crypto",
-   "title": "White House nominates four to SEC and CFTC as CLARITY Act stalls",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNN0h0S0xwam5adkdXdXNSSVBGM2Y2RWx5eXRSUm0zSmhrSDhLOEc1UzBlSTg1aFVJb0R2aEZkQVJuTjlmeUhzU3JkYl9IcGhRNWx1eXJkM0hDVW9HdFI0dmlPd3Q3X3ZRZXhKRDhVeWVLS3BVeWg4SnBpTGM1Q0dRQ1ZtcDVoQjVUV09IN2N3bEU1YWlKU3RmTXBiRQ?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 03:53",
-   "source": "Cointelegraph",
-   "title": "US regulators move ahead on crypto trust charters as Senate scrutiny grows",
-   "url": "https://cointelegraph.com/news/us-regulators-crypto-trust-charters-senate-scrutiny-grows?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-14 03:45",
-   "source": "Decrypt",
-   "title": "China’s $3.2 Billion AI Pipeline Still Calls for Nvidia Chips Washington Restricts",
-   "url": "https://decrypt.co/383266/china-ai-pipeline-nvidia-chips-washington-restricts"
-  },
-  {
-   "waktu": "2026-11-14 03:19",
-   "source": "Makro & The Fed",
-   "title": "Inflation isn't going away. Here's what that means for interest rates.",
-   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE53dzBGV004V2lLZGdMR2FUVjByX1E4Q3BCemoxSzhCWF9YVEpJZUo4ejJlcktSeGdSWEozX0NFaEc2V29IYVJaZGpfN2p6WmNaeWpDa0dYc25LaU9NdVJJS1o2d290X2R4S3ZCWlpELVpraUc2bm42VXRn?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 03:16",
-   "source": "Decrypt",
-   "title": "JPMorgan’s Bitcoin and Crypto-Linked Holdings Approach $1 Billion",
-   "url": "https://decrypt.co/383267/jpmorgan-bitcoin-crypto-linked-holdings-approach-1-billion"
-  },
-  {
-   "waktu": "2026-11-14 02:55",
-   "source": "Makro & The Fed",
-   "title": "Fed on Track to Raise Interest Rates Next Month And Maybe Again in January",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQXzBldEFFQ09NMVZRbllYQ2gwaHM0bm40czUzLThQaEdnNlFweko2MmZmMnl4ZFlQTzgtZGQ4MTVUMDRvdGhkUVhNWElTMnVUQWxwZ0tnajZWXzJWY0xGNEVxNDh6eXJ6M0RLT3Z4ampWMDZsVkVQVFhjOXpYRDJUaHgxbmx1dXRGNG5fXzVaODZqX1hVSlZSZk1qdw?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 02:55",
-   "source": "Makro & The Fed",
-   "title": "Fed on Track to Raise Interest Rates Next Month And Maybe Again in January",
-   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNeXJmalVqcjF1WEgxXzRyZ2hNRTRMWXdCWGdpblhnaGwxY0ZDeFIwYTVnWENtQ2U2NFg3YkpUS21EdkNHaXlwVlVicGxWd2RJZnJqOXlySXJfZzdscXlqRFNJSkswUjZ0ZjFINC11aU9GMWdrMGR6SzdfYUlkN3pGaDZZci1NbnkxWmtoZ1lNa3E2MmxDcnFqRnN0MWpwUURLT05odHBpdVlhNXRjNUJOd3JGcnNCYzd6bjVqWQ?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 02:36",
-   "source": "Decrypt",
-   "title": "Dormant Bitcoin Wallets Wake Up After 16 Years, Moving $6.9 Million",
-   "url": "https://decrypt.co/383264/dormant-bitcoin-wallets-wake-up-after-16-years"
-  },
-  {
-   "waktu": "2026-11-14 02:26",
-   "source": "The Block",
-   "title": "MEGA cuts 20% of workforce as former MegaETH Foundation restructures",
-   "url": "https://www.theblock.co/news/business/2026-11-13-megaeth-mega-layoffs-20-percent-restructuring-440206"
-  },
-  {
-   "waktu": "2026-11-14 02:09",
-   "source": "The Block",
-   "title": "House Oversight Chair calls for possible ban on government officials’ prediction market bets over insider trading concerns",
-   "url": "https://www.theblock.co/news/regulation/2026-11-13-house-oversight-chair-possible-ban-government-officials-prediction-market-bets-insider-trading-concerns-440207"
-  },
-  {
-   "waktu": "2026-11-14 01:51",
-   "source": "The Block",
-   "title": "CFTC’s Selig accuses states of trying to ‘lock up’ prediction market founders",
-   "url": "https://www.theblock.co/news/regulation/2026-11-13-cftcs-selig-accuses-states-trying-lock-up-prediction-market-founders-440199"
-  },
-  {
-   "waktu": "2026-11-14 01:43",
-   "source": "ETF & aliran institusi",
-   "title": "Claude AI Predicts What Bitcoin and Ethereum Could Be Worth by 2030",
-   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPNXRfWndNQ1JKVGE4MWt4dS1NTVNSRmhkZWhNZlpVbkp3UXBoNmp1S1VzVUZvSy1aM2EyQ19Tak9DZVVOWEc4VEJFWUVIMnU5b3g0Y0s3QnNIMUI0UjdRc2dNNEFrTUN2RUYtdURuaFR1SGNxTWdBbHF3dDlKZEpzV0E1aGdHMXNSYXhJcTN4TzlUNTc1eHlld1Y3b0dUQXdDcExYRjJ6THBCSkEwbnpqeWRkZUpBaDZidk55ZHNSbS1NN2Q1?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 01:39",
-   "source": "CoinDesk",
-   "title": "Bitcoin plunges to $68,000 as Anthropic IPO frenzy adds to market jitters",
-   "url": "https://www.coindesk.com/markets/2026/11/13/bitcoin-slides-to-usd68k-as-nvidia-turmoil-anthropic-ipo-fuel-broader-market-sell-off"
-  },
-  {
-   "waktu": "2026-11-14 01:37",
-   "source": "Makro & The Fed",
-   "title": "‘People are chucking stuff like gold and Bitcoin’ as rising inflation leads investors to seek yield",
-   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVDFwLXU1QjZxajVKVGFyYW1CX3Q4WldOTzFOQ1JZNElTRmRFeGRuY3N0Q0xnck9ING9hMUd4YnJDeGsyeHlhYWFYRFY5UHZQdW0tMTFMbHhiZVc0TXRha253TV9SSzNjV0JTU3JldnhiYVNuck5sN19ZeUItMGprZnpCX211a1AxTkVVQlR4MFREbkJ1a2pqVg?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 01:36",
-   "source": "Decrypt",
-   "title": "Fed Chair Warsh Wants Answers on AI Inflation—and Bitcoin May Feel the Impact",
-   "url": "https://decrypt.co/383259/fed-chair-warsh-wants-answers-ai-inflation-bitcoin"
-  },
-  {
-   "waktu": "2026-11-14 01:28",
-   "source": "Cointelegraph",
-   "title": "Metaplanet swings to $170M loss as Bitcoin sale hits earnings",
-   "url": "https://cointelegraph.com/news/metaplanet-swings-170m-loss-bitcoin-sale-earnings?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-14 01:08",
-   "source": "Regulasi crypto",
-   "title": "CLARITY Act Failed: Can Trump’s New CFTC Picks Shape Crypto Rules?",
-   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYVhOeHY4bzlaSkZfQ3VpcUtVMVQxR0E0Q1dhM2hBeUkybnhTeXM3eThWU2o1a1cwY0ZDM0h2OVA2VjFubVZsU0FlckFwMEo0RXRLRmxCcDBPTzRyLWVGUW15VWJyeVRCV0s4cDdGelRWWHQyN3pyQnJWcGpMa1FUUDlFU2Q2elVHdlVnVUtzbXlNV215Z3FWUDhGYTZRbS1POFVn?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 01:00",
-   "source": "Makro & The Fed",
-   "title": "U.S., Eurozone Bond Yields Rise",
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUm1uQmRvQ0wyVFV4VDljWGRaaWZVRDVONmUwc0dlNW9DeF9zMzRtME5KQmxjOHRkemVqeFA4TVBwUnQzLXhIekJ6ODVzOWpTVUZWemlCakw0UUF1RzY2TWJ0MXF2VkpDTHFsVnpSOU1Vd2wzTWN1dS16dGYwM3FDSC1GR0JuNTlXM3hqcjVoRnpaaW1JNkotYmYzalhoRWFYSmNIMFpYLXJSam1xbmhHZTdtTGRNd0hrZnplUDQ0MmMybERQUVd2ZA?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 00:56",
-   "source": "Decrypt",
-   "title": "Trump’s First Democratic Picks for SEC and CFTC Could Reshape Crypto’s Regulators",
-   "url": "https://decrypt.co/383260/trump-first-democratic-picks-sec-cftc-could-reshape-crypto"
-  },
-  {
-   "waktu": "2026-11-14 00:51",
-   "source": "Regulasi crypto",
-   "title": "Can Bipartisan SEC and CFTC Nominees Unlock US Crypto Regulation?",
-   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBydFNFUVk0c2VoRDJIZ1F3QnRrQ1VoeDVKcHpLRlpmRVBqRmVEREpKWThqRGtEYmlZbU15OE9XN0xNb2dMQWJVWEEyMWh4M0ZLLWkwdjVR?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 00:34",
-   "source": "Makro & The Fed",
-   "title": "Waller Floats Prospect Of Larger December Interest Rate Hike",
-   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVlpMUGJTVFJlck5hRWotVFZkNTl1UkhZU1NfOFBBMHpmLUs5dzM3QlA1RXdfdE9lbUJvS3NGNzFxRWdlc2FJLWJUOVo5ZlpPYlY2MnFSY0JIUlFVUGNxQkYzczNqd2hXOHdsRXVRbV8zYjZiWXg3ZklWQ1A2dkE0aHJZMFdSTXFoMExKbktwdFZ4eUpaQkV3NE5ZZnRCblZra2lWODZwR2Fuc3FIeHlHcjl3?oc=5"
-  },
-  {
-   "waktu": "2026-11-14 00:22",
-   "source": "Decrypt",
-   "title": "Bitcoin Hits 12-Week Low as Fed Rate Fears Undo Most of Summer Rally",
-   "url": "https://decrypt.co/383231/bitcoin-hits-12-week-low-fed-rate-fears-undo-summer-rally"
-  },
-  {
-   "waktu": "2026-11-14 00:05",
-   "source": "CoinDesk",
-   "title": "U.S. Senate Banking Committee races toward hearing on new SEC nominations",
-   "url": "https://www.coindesk.com/policy/2026/11/13/u-s-senate-banking-committee-races-toward-hearing-on-new-sec-nominations"
-  },
-  {
-   "waktu": "2026-11-13 23:44",
-   "source": "Makro & The Fed",
-   "title": "Dollar Poised for Best Week in Over a Month on Fed Hike Bets",
-   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOHh5SEF6X2tQTUhkaEpDZk9SWTB2Wk9BTEQxVzRsQTRtOTl3YUswQ2VVaGc2TmQtT2cwRE55SmM2S1BtTFlNMlRmLWNrdklpekpnQV83SVdGOG5PQnRMdEF6NG4zUVZ4NDFNd0xWUU0xNDlwTEdCWWoydmg5aFdZNC1zVU5GOEdlMzFZRlVGckI2OFRJRTdhU3hjNG9TQ0NDWFN6MEFDQW1iOVF3cWJSQQ?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 23:39",
-   "source": "Cointelegraph",
-   "title": "Bitcoin holds below $70K as stocks slip despite a cooler US PPI print",
-   "url": "https://cointelegraph.com/markets/bitcoin-below-70k-stocks-slip-cooler-us-ppi-print?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 23:37",
-   "source": "The Block",
-   "title": "Hyperliquid leapfrogs Bybit, Kraken and OKX in open interest as Q3 positions grow 80%",
-   "url": "https://www.theblock.co/news/markets/2026-11-13-hyperliquid-leapfrogs-bybit-kraken-okx-open-interest-q3-positions-grow-440053"
-  },
-  {
-   "waktu": "2026-11-13 23:33",
-   "source": "Makro & The Fed",
-   "title": "Fed's Collins says more rate hikes are coming, Bloomberg Television reports",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQYkxTQUZzWlJoQ2dEUldBblhHdEkxeGh1dW0xZ25LWjZXRkVaeXFVU3lLdzlwbXZTWWJKS2gwZlJwSVpUUmZYTGJqekhRUzU2a19PODlXRVdQT0Y1QzB5NDNVQ3JjSHdoeDZNU2ZKSWlodXFKa2lqZ1FPUW9sSXU1Y3gzNWRNY1ZQZHFJcVlKcy1jSmUxcGEw?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 23:22",
-   "source": "Makro & The Fed",
-   "title": "US Treasury warns against rate hikes during US-Iran war energy ‘shock’",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0IzNVR6Xzl2Q1NFaVdPY2xCWU11YzN4SWVTc0ZOV2FjRmV4QVZXQVctY2t4S2JJN3hKbWhfbjU5dV9qR2lxTGxZNVpFNTNlNEk3bm1PRGxOVjlrOFdMZE90cHFnU0xCMlFzci1Yc2c1SU9zMUEteUEyUjZ2YnV4M2hici1ZMmRDdzFqNjBuM05kNW1takVSYlg3Tm9NV3l3QllqdHRGRDNMUEVtYzBzbFAxb9IBuAFBVV95cUxQcDBLU1RQR0Etb2lQbm5kOEhlYVpseTJSazRLRWlWb1FIUjFLQ3YzY1p5Y0Jfbk13bU14a0Y2YVYwaW5vdkxEeTdwZ3dHMUdZSGhrNVpuSXAwWjdVTHdOSFg3MVhNMmFyZ2F4YUl3blRWbTN5SjhhcXJodVE0TjF6NlliUXlQV25kMFczalZvYmhINU00aWNNRkZNeGUwOWpLdkNOcHYxenJ5elU2dFpuRG83dW1oaGsx?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 23:01",
-   "source": "CoinDesk",
-   "title": "Bitcoin heads for sixth weekly loss as Anthropic’s blockbuster IPO looms",
-   "url": "https://www.coindesk.com/markets/2026/11/13/bitcoin-heads-for-sixth-weekly-loss-as-anthropic-s-blockbuster-ipo-looms"
-  },
-  {
-   "waktu": "2026-11-13 22:34",
-   "source": "Makro & The Fed",
-   "title": "Fewer Fed Meetings Raise Stakes of Warsh’s Communications",
-   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQaDdDTVRyQmFuME9xMm1Uakhyb2V1S0JINzhjVUlSWkV0X0I1M0p5UWFacFFreThUQy1ZeGJWSDZKX2tOdHhUTXhtN0RVenNIMUhXbkQ0SkwzRUxCUmRyZlI4dHR1RUhuVWUyOUVnM29YMXVzV1ZuNEMtNUdjZVdvTnRrQV80dw?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 22:31",
-   "source": "The Block",
-   "title": "Kraken parent Payward posts 66% drop in Q3 adjusted EBITDA, plans US prediction markets and personal finance AI agent",
-   "url": "https://www.theblock.co/news/business/2026-11-13-kraken-parent-payward-posts-66-drop-in-q3-adjusted-ebitda-plans-us-prediction-markets-and-personal-finance-ai-agent-439721"
-  },
-  {
-   "waktu": "2026-11-13 22:31",
-   "source": "Regulasi crypto",
-   "title": "CLARITY Act Failed: Can Trump’s New CFTC Picks Shape Crypto Rules?",
-   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQckI2T25vcXR1XzhEazM4TVljTC1pcDkwaFBiQVFUV0lNRDdveWVIRDd1Vk1CbElRSUJhNGdtWGFXSEhOR3k0UTI5d1JtRzBIZDA0Snp0N21YLXZ1UFppbDIybWtmYUI2eUlWV2J0VThSX0NIbG4zdnpYQkZtb0JPWnJhVzlTX085Y2VjMk9FV1lUN3gwa1RmU19QeU1yZE15V0tFVlhiLTRkOG_SAbABQVVfeXFMTldZUHF6WVdlaEk2aU1UQWM3NnBpdnZEQ201YzhGQXZjZ05EUW96Zm1PRjRLQmRBTnR2bTliNEhOTUwtbGNoQzNqV3ZWNVgzY3doc2pOMG51SjBicTFSS0x5eHR4al96MFR3cng2QWR2YWtyYUQ1OFZ4V085SGJpaUhST3JFR0FwQWZZd29hQmRwM09SS2QxdmZacVZFVTlGU3dPaGZFdW9LZ2pxUko2ZUo?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 22:07",
-   "source": "Makro & The Fed",
-   "title": "Boston Fed's Susan Collins says inflation fight is worth housing hit",
-   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9zM2x2RmptVWZuejFNQnM4QlU5NXZESVRPNlBUcFU4VGRwN3dUYm9iTGVlRkJfQWhRd1pFZTZPWkFXMER5bFJnTC1vM3BvYzJhV3h1dWdGRUM3a0FRRktXVFdjMmV3bElRX0dLUXdzRVVJQQ?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 22:03",
-   "source": "Makro & The Fed",
-   "title": "Kevin Warsh Puts His Stamp on the Fed, One Canceled Rate Decision at a Time",
-   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWWREYWtpWllac2NUdW9FOW1tdXZrTS1FclFzZnA4TEhkOEFJQ0liTEZZdElXbU5BUHMtTnNVME1zYUVpWHY5VXZmM0Z4YWRMY0U4YzVFdldTOEhEQUpSSnluaXNNM2VVVlQ0YnNXR0hUNHRhM1gwSWhtZXl3QlB2QXR5aUVXajZBTTlRdDhB?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 21:50",
-   "source": "The Block",
-   "title": "Tether-backed Twenty One Capital reports $1.09 billion Q3 net income on bitcoin gains",
-   "url": "https://www.theblock.co/news/business/2026-11-13-tether-backed-twenty-one-capital-reports-1-09-billion-q3-net-income-on-bitcoin-gains-439711"
-  },
-  {
-   "waktu": "2026-11-13 21:36",
-   "source": "Makro & The Fed",
-   "title": "PPI report: Inflation shows signs of broadening in red-hot wholesale prices, keeping pressure on Fed to hike rates",
-   "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOUF9BM1A1S1AzRHd2VEpNRDF2SEU2WjN2WDJFTXRQYl9PREhYVVRlTUllcm1uTEtaZHRybGhPRnBDdzlxZy15MHJFRkc3SF9mVHlSalVCRkVEenhFNEFCbVY5TV9aTl91eU5Uamd5UWNBSVpDOEZMSjBCdU1OZmxQWXNmdHhnSnlRY1JpWXNrU0JtWDVqdUJvM3VHN0NCRW9pRG03MHNJUnlSUTBqMmxhaDFBTUJReTJwLU0zVVBHcFZHV2Z1cW9PQTUxaXhJVXdBU05rWnFVeXNqN3RlZGdvZ1U3SjRWNTZyVktCcUx1RTh1a241TDBaY1BQZXdmdw?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 21:21",
-   "source": "Makro & The Fed",
-   "title": "Week Ahead for FX, Bonds: Fed Minutes, U.K. Data in Focus",
-   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNVEJHdUxfSTJ2V0R4aVFfa3JEbjI4UHpfdmt1d3FWQmdoQk9lbTgtTG5HZUdWTHZFcHlnNWk1MzNSaG5pQVg3eGNvRVhZZjV3cGJwTkROcURLU05LUXpQSHpDd1dpcnBOU2lLVzVSS1pSMDJuZ1R2U1ltQWI5N0NaZzU3SzVtQWFqYW00TDlla0I4MG4z?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 21:12",
-   "source": "The Block",
-   "title": "Ethereum and Layer 1s Explained",
-   "url": "https://www.theblock.co/learn/campus/ethereum-and-layer-1s-explained-435883"
-  },
-  {
-   "waktu": "2026-11-13 21:10",
-   "source": "Makro & The Fed",
-   "title": "Fed’s Collins Says Inflation Fight Outweighs Housing Woes",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOLWNWM3ptZWVMSTZ2Nm1jY2JQU1pXZ3l1Q01qdzAwV1YwbGxPN2JIY19pTmNiTmV5eFA3c1lkQklsX2JKV1BuM2haS09HU21XSk5DT3FvRG5vSkEyNGlLalJMNTZfQ3hCTlM5SVBGY3NBb2xDTloyYmtidHdKNE5YZnNUREI3dk5ZQ01UdVpKaC1MQkJJbkF0V2o5QS1RQQ?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 21:10",
-   "source": "Makro & The Fed",
-   "title": "Fed’s Collins Says Inflation Fight Outweighs Housing Woes",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdEwzV3pSLU9vQ2tmOXhVYzdoTzhyaEcxUjdBdzM2NXE2VC0xNlFDaFhUOGlXa0ZqeTBDTFByTE1xVlVEejBIdEdSUlYwZlZhZnE0MXhzTUtQUlcyNFZYNE1rcVZKV1RWVHRmUXYydWNvbC03V0RFd3NjZUtpS2VtVFl1Umh2RWxDbzQ5a0hlR2F1bDhIN0paOW5sNFdTaU1lOEUwNVNZaHI?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 21:02",
-   "source": "CoinDesk",
-   "title": "Kraken parent Payward says expansion outside crypto trading helps cushion revenue decline",
-   "url": "https://www.coindesk.com/business/2026/11/13/kraken-parent-payward-says-expansion-outside-crypto-trading-helps-cushion-revenue-decline"
-  },
-  {
-   "waktu": "2026-11-13 20:59",
-   "source": "Makro & The Fed",
-   "title": "Goolsbee Says Fed Must Reestablish Its Inflation Credibility",
-   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPRkdUNWlhMGFRZG5rd2ZNZE1SUHgyYl9YUTZRbWZRYkFfNkc3ZWJxeEVuOW5VOGdjUFFOb191N3VYLUhvOTBtRHZYVS0wa0FwdXFzZnFPVmI3X3I3bE1sVlp6RS1Jdm5vRW4tcndnSl9IQ0FQUGd0ODhHRkpUMlB0akJ0akZpZTNNdlZXdk8wREY3bHZRTzdfcFFLQjRsancxWHBvSlNRZTdKaFNhMmQyOQ?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 20:55",
-   "source": "Decrypt",
-   "title": "Crypto Laundering a 'Material Risk' for UK Ahead of FATF Review: RUSI",
-   "url": "https://decrypt.co/383227/crypto-laundering-a-material-risk-for-uk-ahead-of-fatf-review-rusi"
-  },
-  {
-   "waktu": "2026-11-13 20:41",
-   "source": "Cointelegraph",
-   "title": "Arthur Hayes ‘flattered’ as Coinbase backs US stock perps",
-   "url": "https://cointelegraph.com/news/arthur-hayes-coinbase-us-stock-perps-cftc?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 20:40",
-   "source": "Makro & The Fed",
-   "title": "US Wholesale Inflation Remained Elevated in October",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcE0tUnMzeG95OWFMM29VYmF2S3lkTmZ0ODFqYmw0TVhzaXE5UE5OYkJVQzdGYlVka3U4aUNRZWIyY1JEUE1JNlo4LVFVb2tBLWVseFkySXNSS1JuZmJXS2pyVU80cE5hRDdYSHE5NWd5SGw2SFk0NlVOc2NtbFlzdHNhaHhPXzdXd2lUOVVBUjVqZWFqUkFwcWN3dHFleTE4VGZlVg?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 20:36",
-   "source": "Decrypt",
-   "title": "‘Roadmap is Complete,' Cardano Founder Charles Hoskinson Says",
-   "url": "https://decrypt.co/383221/roadmap-is-complete-cardano-founder-charles-hoskinson-says"
-  },
-  {
-   "waktu": "2026-11-13 20:34",
-   "source": "The Block",
-   "title": "From $6 to $6.9 million: Two dormant Bitcoin addresses wake up to move 100 BTC after more than 16 years",
-   "url": "https://www.theblock.co/news/markets/2026-11-13-from-6-to-6-9-million-two-dormant-bitcoin-addresses-wake-up-to-move-100-btc-after-more-than-16-years-439698"
-  },
-  {
-   "waktu": "2026-11-13 20:31",
-   "source": "Makro & The Fed",
-   "title": "Wholesale prices rose 0.3% in October, putting annual rate at 6.5%, the highest in nearly four years",
-   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA4X1hoQmRtbDM0TllqRXgydjN2cE9Gb2w4cmRDOWhBT2Z3SEhHOTMySDJrSDdVaU9HVFZhcWJRNm1tZS1kN25SQzRtU3JSdGpTMXh4MWFuaFBYbllQMGpGYUxHV2s3RVhFc2drd1NGWllJRWFqenVrREdB0gF_QVVfeXFMTUd3LWpmaHJxMWdUOWVSSmJrTFNqN0Y2UU8tRFJCcUIzelRvdTNKOFJNaDRkNGhYaThoMVBqR2dCalRkdDFxTXA1SWloZ2FxV2NxTTV4RnZ6Y0dxT0t5UWVvUUprOU9wSUd1bUtCaTdEcFA5UEhSQXBJRkdxcm9lUQ?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 20:04",
-   "source": "Cointelegraph",
-   "title": "Nakamoto shares fall 6% premarket after Q3 revenue turns negative",
-   "url": "https://cointelegraph.com/markets/nakamoto-shares-fall-after-negative-q3-revenue?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 20:04",
-   "source": "Cointelegraph",
-   "title": "Nakamoto shares fall 6% premarket after Q3 revenue turns negative",
-   "url": "https://cointelegraph.com/news/nakamoto-shares-fall-after-negative-q3-revenue?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 20:03",
-   "source": "Decrypt",
-   "title": "Morning Minute: Crypto Plummets as Jensen Huang Exits Nvidia",
-   "url": "https://decrypt.co/383222/morning-minute-crypto-plummets-as-jensen-huang-exits-nvidia"
-  },
-  {
-   "waktu": "2026-11-13 19:27",
-   "source": "The Block",
-   "title": "UK, Singapore, and Thailand central banks complete foreign exchange settlement trial linking traditional and tokenized systems",
-   "url": "https://www.theblock.co/news/regulation/2026-11-13-uk-singapore-and-thailand-central-banks-complete-foreign-exchange-settlement-trial-linking-traditional-and-tokenized-systems-439692"
-  },
-  {
-   "waktu": "2026-11-13 19:19",
-   "source": "Cointelegraph",
-   "title": "Israeli police arrest five in $5M WhatsApp crypto trading probe",
-   "url": "https://cointelegraph.com/news/israel-police-arrest-five-5m-whatsapp-crypto-scheme?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 19:15",
-   "source": "Makro & The Fed",
-   "title": "‘Everybody needs to prepare’: Market expert warns of December shock that puts Americans at high risk. Act by Dec. 8",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMHNuQmQ5eXJHTHlsSnJEUkFGaDFZT2tUNDRjTzI2Z3ZjdFJwUUo3eXktSEFvRWFER2hsUTZvWHc3M0RPRzdsbGJTelRYczU4RzVLNFJzTDFaenFmQ3piRDRsQnQwOG1EM21mVDBYYXZjN3d5aTFGdndUckVJUWNOclFwdExnb2JQSmpjdmUyaFY4M3JYQkFqSXZSNnp0TGFkN2Z1Yg?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 19:14",
-   "source": "CoinDesk",
-   "title": "Bitcoin's momentum gauge is turning red, could send prices back below $60,000",
-   "url": "https://www.coindesk.com/daybook-us/2026/11/13/bitcoin-s-momentum-gauge-is-turning-red-could-send-prices-back-below-usd60-000"
-  },
-  {
-   "waktu": "2026-11-13 19:00",
-   "source": "Makro & The Fed",
-   "title": "The US Job Market Narrative Shifts Toward Inflationary Risks",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUjU4Rkxkc2Y1a19LZy1GRW9Yb3BDblM4Um1Vd2tqVmc2RHgxaVRRZzlVemJkVzlLWXRLc0swbVFsWEkzbzZVM2hJYWpDVC1Yb3Utb25zWHhKWUpXTy0xN1VTYkNHU3pBRURzVWdGNlpEVnpmRl9wVlFUS3FBMFdRVG5oeGJ1TTZLMjlrOXFpUVU5aG5LUlRPcElEY3ZTd2xqU0htWlpiYWd6enc4dkNad3VFVVI?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 18:58",
-   "source": "Decrypt",
-   "title": "Nvidia Employees Push Board to Bring Back Jensen Huang: Report",
-   "url": "https://decrypt.co/383217/nvidia-employees-push-board-to-bring-back-jensen-huang-report"
-  },
-  {
-   "waktu": "2026-11-13 18:52",
-   "source": "CoinDesk",
-   "title": "Bitcoin hits 12-week low as dollar rallies on interest-rate outlook, liquidations top $1.6 billion",
-   "url": "https://www.coindesk.com/markets/2026/11/13/bitcoin-hits-12-week-low-as-dollar-rallies-on-interest-rate-outlook-liquidations-top-usd1-6-billion"
-  },
-  {
-   "waktu": "2026-11-13 18:32",
-   "source": "Makro & The Fed",
-   "title": "Most top Fed officials blame AI for fueling inflation. Not Trump’s Fed chief.",
-   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOYWx2S1gybU5lYjJCbEl5OXkyekl3YXdnd2RuWnJPQU9VODlSSnpLM1ZDeGVfT19LdEF4OThPMGZQM1NDNXloMzFGcjdmZDE4ZU90dDBuX2xsX2lUZTJjLU5HNEZCNnJJRFJQT0tmR2FwZVBXT1Q3cURtZHFTYTJtUDVOVHZESnNfWlBkZXdoT1pQXzNkYldpWklrdEZiRWxiVjJRaHNxOXpMVXhPOFR1ZERmc09uWXJEcWR1dUdKblUzQjdkTkM0?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 18:20",
-   "source": "Decrypt",
-   "title": "Bitcoin Drops to $69K On 'Concentrated Liquidation' and 'Weakening' Demand",
-   "url": "https://decrypt.co/383214/bitcoin-drops-to-69k-on-concentrated-liquidation-and-weakening-demand"
-  },
-  {
-   "waktu": "2026-11-13 17:57",
-   "source": "Makro & The Fed",
-   "title": "US Treasuries set for worst week since Trump’s ‘liberation day’",
-   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQb0FUTktDMERPRkR0VWQyeFdYUXZEZUpGYjFMdFlCekF4YTBVRkJNZzZFY1Fsc2VPeUgzekJnc3Z1XzhaVXZQRTRMWmNGUlJGeEFDNGZlMDc3d2syWDZNRndBeDl2RkY5MnpBM09sUjNSTkVHYWExNU9VSVBUQnhXWjFkaW4?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 17:55",
-   "source": "Decrypt",
-   "title": "Congress Summons Ex-Nvidia CEO Jensen Huang, Lutnick Over Chip Exports to China",
-   "url": "https://decrypt.co/383211/congress-summons-ex-nvidia-ceo-jensen-huang-lutnick-over-chip-exports-to-china"
-  },
-  {
-   "waktu": "2026-11-13 17:16",
-   "source": "The Block",
-   "title": "Thailand seeks $148,000 daily cap on certain stablecoin transfers to curb money laundering",
-   "url": "https://www.theblock.co/news/regulation/2026-11-13-thailand-seeks-daily-stablecoin-cap-439676"
-  },
-  {
-   "waktu": "2026-11-13 17:00",
-   "source": "Makro & The Fed",
-   "title": "The Fed expected rate cuts this year. Now it’s bracing for another inflation fight",
-   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOaTIzZHZCSGlfZTAwY0VGY1hwZ0stMC1fblpqQ1N1eC1tWHRFazYxeDMxcVIzdEs0NXNUMVRhVWdJTVhOc2ZQcmQwaUFkOVJMZDVJTG5kUlE2aWtNYnljaHlqU05HWjFIUzl0MTJ1UzZGYk11SU5mXzJuTmxwOWFqbHo1TnkwTXZpMFA00gGQAUFVX3lxTE9QZHhGMjFUYWFSaGRxQ2lrQXpWYkdUTzJ6QmRUNFcxV092Q2MzbzZyMm9paGp2eGpEVEVXUzhsdkRZZy1GOFYycFVXYXFTVmlfZmlvM1EzUGh0TkMtU1dlZlVyd0xYemFaeDNYR0RYc2lhdTk4UTNsVjNJM2hXS2hod3dBTzBfYlNnT0dmLUk5dw?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 16:59",
-   "source": "The Block",
-   "title": "JPMorgan reports 36% rise in Strategy share holdings and $540 million in BlackRock’s bitcoin ETF",
-   "url": "https://www.theblock.co/news/business/2026-11-13-jpmorgan-reports-36-rise-in-strategy-share-holdings-and-540-million-in-blackrocks-bitcoin-etf-439671"
-  },
-  {
-   "waktu": "2026-11-13 16:58",
-   "source": "Cointelegraph",
-   "title": "Unocoin keeps deposits and withdrawals halted over suspect transfers",
-   "url": "https://cointelegraph.com/news/unocoin-withdrawals-halted-bitgo-wallet-transfer-probe?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 16:39",
-   "source": "Cointelegraph",
-   "title": "Bitcoin returns to 200-week trend line as analyst sees risk of $57.7K next",
-   "url": "https://cointelegraph.com/markets/bitcoin-returns-200-week-trend-line-analyst-sees-risk-57k-next?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 16:32",
-   "source": "The Block",
-   "title": "DOJ, CFTC sue Arkansas to block state enforcement action against Kalshi",
-   "url": "https://www.theblock.co/news/regulation/2026-11-13-doj-cftc-sue-arkansas-to-block-state-enforcement-action-against-kalshi-439669"
-  },
-  {
-   "waktu": "2026-11-13 16:27",
-   "source": "Cointelegraph",
-   "title": "DOJ moves to seize $1.2B from Binance hack, disrupts FaceStealer scam",
-   "url": "https://cointelegraph.com/news/doj-12b-north-korean-crypto-seizure-400m-facestealer-scheme?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 16:16",
-   "source": "CoinDesk",
-   "title": "Live news: Bitcoin drops below 200-week moving average as dollar strength pressures risk assets",
-   "url": "https://www.coindesk.com/tech/2026/11/13/live-news-bitcoin-drops-below-200-week-moving-average-as-dollar-strength-pressures-risk-assets"
-  },
-  {
-   "waktu": "2026-11-13 16:05",
-   "source": "Cointelegraph",
-   "title": "Jane Street boosts Fidelity Bitcoin ETF holdings nearly 8x, trims IBIT",
-   "url": "https://cointelegraph.com/news/jane-street-add-fidelity-bitcoin-etf-ibit-cut-q3-2026?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 15:43",
-   "source": "Makro & The Fed",
-   "title": "Treasury yields rise as traders strengthen Fed rate hike bets",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1iVEhaNGZvZDlvWlBGMldrUE5jUlVpUXp2d0YwdEFzZU5ScmVUOTk0ZDdORVhuMjhvRWZTWVQtR0JXWUlWVWVGVHlfOG4wdWZiZVVQNGZXTzByQ2tCRU5LQmFGajY3VDdtVnZIam9MSdIBdEFVX3lxTE1HYkdxR2dlMXVleXNjckE4Nm4xS1JNU1lQMC1JMGtkQ1FwRU0zWXNsSU45UnpYRjNqeVZkZEVwbmxZYmdnLTlfQkVNRW9iV210ZWtPYjdvRGVUc0ZDSDFMNy1FY2JiLTVjTlJ2eEc1VUxpbGZu?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 15:36",
-   "source": "Makro & The Fed",
-   "title": "Asian Stocks Set for Cautious Open on Nvidia, Oil: Markets Wrap",
-   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTmVnUHB5bWw0Y052NTU5ZkNsOGdwUXVCWnIwczVnQWJKWmJiaUZta09PNGhNYVZWSENvOFVReWJIVldFcDJNcmlOQ3RyMWhHQThNcmtnU0FIZldHWHJ4NldqbkVrYUlseVNBN0xycmRrUjdFVWRQQll6MzhBUHNOS2NidGtDc01LeWlNd01WNGJxcm5E?oc=5"
-  },
-  {
-   "waktu": "2026-11-13 15:26",
-   "source": "Cointelegraph",
-   "title": "Microsoft 365 outage hits Outlook email and Teams calendars worldwide",
-   "url": "https://cointelegraph.com/news/microsoft-365-global-outage-outlook-teams-ai-services?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-  },
-  {
-   "waktu": "2026-11-13 14:20",
-   "source": "ECB",
-   "title": "Isabel Schnabel: Made in Europe",
-   "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261113~3883f1f187.en.html"
-  },
-  {
-   "waktu": "2026-11-13 14:05",
-   "source": "CoinDesk",
-   "title": "Ethereum treasury firm BTCS sold ether at a loss to keep $64 million Aave loan healthy",
-   "url": "https://www.coindesk.com/markets/2026/11/13/ethereum-treasury-firm-btcs-sold-ether-at-a-loss-to-keep-usd64-million-aave-loan-healthy"
   }
  ],
  "rezim": {
@@ -2195,7 +1829,7 @@
    "spx_vs_ma50_pct": -1.3797293659248533,
    "ust10y_chg_20d_bps": 5.000000000000071,
    "btc_vs_ma200_pct": -12.580861650837882,
-   "breadth_7d_pct": 11.428571428571429
+   "breadth_7d_pct": 11.764705882352942
   }
  },
  "sinyal": [
@@ -2207,8 +1841,8 @@
   },
   {
    "nama": "Funding BTC",
-   "status": "netral",
-   "catatan": "funding 0.0047%/8j (annual 5.1%), persentil 90h 38",
+   "status": "crowded short",
+   "catatan": "funding -0.0002%/8j (annual -0.3%), persentil 90h 7",
    "keyakinan": "tinggi"
   },
   {
@@ -2226,7 +1860,7 @@
   {
    "nama": "Breadth 7 hari",
    "status": "sempit",
-   "catatan": "4/35 aset positif 7h, median -14.2%",
+   "catatan": "4/34 aset positif 7h, median -14.5%",
    "keyakinan": "sedang"
   },
   {
