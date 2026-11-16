@@ -80,7 +80,15 @@ def bersihkan_state(s: dict, aktif_keys: set[str]) -> None:
 
 
 def step() -> list[dict]:
-    """Satu langkah harian untuk tiap strategi yang berstatus lolos."""
+    """Satu langkah harian untuk tiap strategi yang berstatus lolos.
+
+    Gate ``paper.enabled`` di config.json harus true. Default false: siklus lab
+    boleh pulih dan menjalankan eksperimen, tetapi tidak boleh menulis baris
+    paper sampai observasi disetujui. Gate ini juga menutup jalur fallback yang
+    memanggil paper.py langsung.
+    """
+    if not CONFIG["paper"].get("enabled", False):
+        return []
     st = load_state()
     hasil = []
     daftar = aktif()

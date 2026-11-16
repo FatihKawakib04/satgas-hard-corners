@@ -109,6 +109,14 @@ class TestFailedExperimentsAreNotRepeated(unittest.TestCase):
             self.assertNotIn({"lookback": 108, "pct_max": 42}, exp["grid"])
 
 
+class TestPaperGate(unittest.TestCase):
+    def test_step_is_a_noop_when_paper_is_disabled(self):
+        import paper
+        with mock.patch.dict(paper.CONFIG["paper"], {"enabled": False}):
+            self.assertEqual([], paper.step(),
+                             'paper.step() must not write while observation is off')
+
+
 class TestPaperStepOnFailure(unittest.TestCase):
     def test_paper_step_is_not_called_when_the_experiment_fails(self):
         exp = {"id": "E99", "strategi": "mom_vol", "status": "menunggu",
