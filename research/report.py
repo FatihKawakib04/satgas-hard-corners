@@ -22,7 +22,7 @@ import sys
 import time
 from datetime import datetime, timedelta, timezone
 
-sys.path.insert(0, "/root/x-scrape")
+sys.path.insert(0, "/root/llm")
 sys.path.insert(0, "/var/www/satgas-hard-corners/site/research")
 
 import analyze
