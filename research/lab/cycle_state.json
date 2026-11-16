@@ -1002,15 +1002,24 @@
    "oos": -3.13,
    "sharpe": 0.21,
    "bench": 64.59
+  },
+  {
+   "waktu": "2026-11-17T01:10:55.872253+07:00",
+   "exp": "E181",
+   "strategi": "pair_zscore",
+   "verdict": "gagal",
+   "oos": 29.5,
+   "sharpe": 0.34,
+   "bench": 64.59
   }
  ],
  "terakhir": {
-  "waktu": "2026-11-16T22:35:57.161159+07:00",
-  "exp": "E180",
-  "strategi": "rotasi_eth",
+  "waktu": "2026-11-17T01:10:55.872253+07:00",
+  "exp": "E181",
+  "strategi": "pair_zscore",
   "verdict": "gagal",
-  "oos": -3.13,
-  "sharpe": 0.21,
+  "oos": 29.5,
+  "sharpe": 0.34,
   "bench": 64.59
  }
 }
