@@ -41,6 +41,20 @@ MAKS_PER_STRATEGI = 3
 # Faktor pengali parameter untuk eksperimen turunan (grid pencarian di sekitar base).
 FAKTOR_GRID = (0.6, 0.8, 1.25, 1.6)
 
+# Rentang sah per parameter. Nilai di luar rentang bukan filter yang lebih longgar:
+# `pct_max=112` membuat `int(len(hist) * 112 / 100) - 1` menunjuk lewat ujung list
+# dan seluruh siklus mati dengan IndexError (kejadian 31 Okt - 16 Nov 2026).
+BATAS_PARAM = {"pct_max": (1, 100)}
+
+
+def _jepit_param(kunci: str, nilai):
+    """Jepit satu parameter ke rentang sahnya, kalau ada."""
+    batas = BATAS_PARAM.get(kunci)
+    if not batas:
+        return nilai
+    lo, hi = batas
+    return max(lo, min(hi, nilai))
+
 
 def _kunci_params(p: dict) -> str:
     """Kunci kanonik untuk satu kombinasi parameter (dipakai mendeteksi duplikasi)."""
@@ -64,6 +78,7 @@ def _grid_dari(base: dict, terpakai: set[str]) -> list[dict]:
                 p[k] = round(v * factor, 4)
             else:
                 p[k] = v
+        p = {k: _jepit_param(k, v) for k, v in p.items()}
         if _kunci_params(p) in terpakai:
             continue
         if p not in grid:
@@ -110,7 +125,9 @@ def turunan() -> dict | None:
         # ada di queue tapi tidak pernah masuk lab_exp) bisa dipakai dua kali.
         sudah = {r["id"] for r in con.execute("SELECT id FROM lab_exp")}
         sudah |= {r["exp_id"] for r in con.execute("SELECT DISTINCT exp_id FROM lab_runs")}
-        sudah |= {e.get("id") for e in (X.load_queue() or []) if e.get("id")}
+        antrean = X.load_queue() or []
+        gagal = [e for e in antrean if e.get("status") == "error"]
+        sudah |= {e.get("id") for e in antrean if e.get("id")}
         # Hanya strategi yang ada di S.KATALOG yang bisa diturunkan dari sini. Strategi
         # khusus (carry_funding, audit_*) dijalankan modul lain dan TIDAK ada di KATALOG;
         # tanpa filter ini carry_funding (wf_sharpe tertinggi) selalu terpilih, lalu
@@ -123,6 +140,13 @@ def turunan() -> dict | None:
         kandidat = [k for k in kandidat if k["strategi"] in S.KATALOG]
         hitung = {r["strategi"]: r["n"] for r in con.execute(
             "SELECT strategi, COUNT(*) n FROM lab_exp GROUP BY strategi")}
+        # Percobaan yang gagal tidak pernah masuk lab_exp, jadi tanpa ini keluarga
+        # yang rusak tetap dianggap "baru dicoba 2 kali" dan grid yang sama dibuat
+        # ulang selamanya (143 entri mom_vol, 31 Okt - 16 Nov 2026).
+        for e in gagal:
+            strat = e.get("strategi")
+            if strat:
+                hitung[strat] = hitung.get(strat, 0) + 1
         kandidat = [k for k in kandidat if hitung.get(k["strategi"], 0) < MAKS_PER_STRATEGI]
         if not kandidat:
             return None
@@ -144,6 +168,16 @@ def turunan() -> dict | None:
                     terpakai.add(_kunci_params(json.loads(r["params"])))
                 except (ValueError, TypeError):
                     continue
+            # Grid yang sudah pernah gagal untuk strategi ini juga dianggap terpakai,
+            # supaya percobaan berikutnya tidak menyalin grid yang sama persis.
+            for e in gagal:
+                if e.get("strategi") != strat:
+                    continue
+                for g in e.get("grid") or []:
+                    try:
+                        terpakai.add(_kunci_params(g))
+                    except (TypeError, ValueError):
+                        continue
             for row in rows:
                 try:
                     base = json.loads(row["params"])

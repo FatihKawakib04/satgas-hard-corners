@@ -193,6 +193,10 @@ def mom_vol(ctx, p):
     xs = ctx.prices["BTC"]
     r = daily_rets(xs)
     lb, pct_max = p["lookback"], p["pct_max"]
+    # A percentile outside 1..100 is not a wider filter, it is an index error:
+    # int(len(hist) * 112 / 100) - 1 points past the end of the list. Clamp here
+    # as a second line of defence; the generator also clamps its grid.
+    pct_max = max(1, min(100, pct_max))
     # hitung volatilitas sekali, bukan 365 kali per hari
     vols = [vol_n(r, 30, i) for i in range(len(xs))]
     out = []

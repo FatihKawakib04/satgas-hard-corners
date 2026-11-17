@@ -19,6 +19,7 @@ import time
 from datetime import datetime, timedelta, timezone
 
 import store
+import tvl
 
 WIB = timezone(timedelta(hours=7))
 OUT = "/var/www/satgas-hard-corners/site/research/out"
@@ -31,14 +32,26 @@ def pct(a, b):
     return (b / a - 1) * 100
 
 
+import datetime as _dt
+
 def chg(series: list[tuple[str, float]], n: int):
-    """Perubahan persen n observasi terakhir."""
+    """Perubahan persen n hari kalender terakhir (kanonis, cocok dengan validator).
+
+    Sebelumnya dihitung dari n observasi terakhir, yang bisa melenceng kalau ada
+    gap (libur akhir pekan, hari tanpa data). Sekarang memakai tanggal kalender
+    agar konsisten dengan validasi_angka._chg() dan baris DB.
+    """
     if len(series) < 2:
         return None
-    vals = [v for _, v in series]
-    if len(vals) <= n:
-        return pct(vals[0], vals[-1])
-    return pct(vals[-1 - n], vals[-1])
+    by_date = {d: v for d, v in series}
+    last_d = series[-1][0]
+    try:
+        target = (_dt.date.fromisoformat(last_d) - _dt.timedelta(days=n)).isoformat()
+    except ValueError:
+        return None
+    if target not in by_date:
+        return None
+    return pct(by_date[target], by_date[last_d])
 
 
 def returns(series: list[tuple[str, float]]) -> list[float]:
@@ -262,11 +275,28 @@ def build() -> dict:
                 "chg_7d": chg(stb, 7), "chg_30d": chg(stb, 30),
                 "n_titik": len(stb),
             }
-        tv = con.execute("SELECT d, tvl s FROM tvl WHERE chain='TOTAL' ORDER BY d").fetchall()
-        if tv:
-            ser = [(r["d"], r["s"]) for r in tv]
-            out["tvl"] = {"total_usd": ser[-1][1], "tanggal": ser[-1][0],
-                          "chg_7d": chg(ser, 7), "chg_30d": chg(ser, 30)}
+        # Aggregation lives in tvl.py: TOTAL wins, a missing TOTAL falls back to
+        # the chain sum and is flagged partial, and the date is the source date.
+        tv_rows = con.execute("SELECT d, chain, tvl FROM tvl ORDER BY d").fetchall()
+        points = tvl.aggregate([(r["d"], r["chain"], r["tvl"]) for r in tv_rows])
+        if points:
+            # Headline = newest day with a real TOTAL row. A chain-only day is a
+            # partial snapshot and must never be published as the total.
+            last = tvl.latest_complete(points)
+            newest = points[-1]
+            if last is not None:
+                out["tvl"] = {"total_usd": last.value, "tanggal": last.date,
+                              "chg_7d": tvl.change_pct(points, 7, end=last),
+                              "chg_30d": tvl.change_pct(points, 30, end=last),
+                              "source": last.source, "partial": last.partial,
+                              "chains": last.chains}
+                if newest.partial and newest.date != last.date:
+                    out["tvl"]["hari_terbaru"] = {
+                        "tanggal": newest.date, "partial": True,
+                        "source": newest.source, "chains": newest.chains,
+                        "nilai_chain_sum": newest.value,
+                        "catatan": "TOTAL belum tersedia; angka ini jumlah chain, bukan total",
+                    }
 
         # ---- korelasi & beta (60 & 20 hari)
         btc = store.series(con, "daily", "d", "close", "sym=?", ("BTC",))
@@ -460,6 +490,11 @@ def level_kunci(f: dict) -> dict:
     return out
 
 
+def _pct(v, fmt: str = "+.2f") -> str:
+    """Format persen yang boleh None (chg() kalender mengembalikan None saat tanggal acuan tidak ada)."""
+    return format(v, fmt) if v is not None else "n/a"
+
+
 def ringkas(f: dict) -> str:
     lines = [f"Rezim: {f['rezim']['label']} (skor {f['rezim']['skor']})"]
     g = f.get("global") or {}
@@ -469,13 +504,13 @@ def ringkas(f: dict) -> str:
     for s in ("BTC", "ETH", "SOL"):
         c = f["koin"].get(s)
         if c:
-            lines.append(f"{s}: ${c['harga']:,.2f} | 1d {c['chg_1d']:+.2f}% | "
-                         f"7d {c['chg_7d']:+.2f}% | 30d {c['chg_30d']:+.2f}% | "
+            lines.append(f"{s}: ${c['harga']:,.2f} | 1d {_pct(c['chg_1d'])}% | "
+                         f"7d {_pct(c['chg_7d'])}% | 30d {_pct(c['chg_30d'])}% | "
                          f"DD {c['drawdown_dari_puncak']:+.1f}%")
     for m in ("SPX", "VIX", "UST10Y", "GOLD", "EURUSD"):
         d = f["makro"].get(m)
         if d:
-            lines.append(f"{m}: {d['nilai']:,.2f} (20d {d['chg_20d']:+.2f}%)")
+            lines.append(f"{m}: {d['nilai']:,.2f} (20d {_pct(d['chg_20d'])}%)")
     br = f.get("breadth", {})
     if br.get("total_7d"):
         lines.append(f"Breadth 7h: {br['positif_7d']}/{br['total_7d']} positif, "

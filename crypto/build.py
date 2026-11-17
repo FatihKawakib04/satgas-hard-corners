@@ -25,8 +25,21 @@ import sys
 import time
 import urllib.request
 
-sys.path.insert(0, "/root/x-scrape")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# ``llm.py`` moved from /root/x-scrape to /root/llm on 2026-11-08. Resolve it by
+# looking for the module instead of hard-coding one directory, and fail loudly if
+# neither location has it: a silent ImportError here froze the dashboard for a
+# week because the cron wrapper reported success anyway.
+_LLM_DIRS = ("/root/llm", "/root/x-scrape")
+for _candidate in _LLM_DIRS:
+    if os.path.isfile(os.path.join(_candidate, "llm.py")):
+        sys.path.insert(0, _candidate)
+        break
+else:
+    raise SystemExit(
+        "build.py: llm.py not found in any of " + ", ".join(_LLM_DIRS) +
+        " -- refusing to build a dashboard without its summariser")
 
 import crypto as cg          # fetch_markets, fetch_global, fetch_fng, human, price_fmt
 import llm
@@ -147,6 +160,12 @@ def load_sent(allow_refresh, refresh_now, hours=4.0, model=None, log=print):
         if sent:
             sent["umur_menit"] = round((age_jam or 0) * 60)
             sent["stale"] = True
+            # Persist stale flag to cache file
+            try:
+                with open(SENT_JSON, "w") as f:
+                    json.dump(sent, f, ensure_ascii=False, indent=1)
+            except Exception:
+                pass
         return sent
 
 
@@ -614,7 +633,7 @@ def main():
                    "chg24": c.get("price_change_percentage_24h_in_currency"),
                    "chg7d": c.get("price_change_percentage_7d_in_currency"),
                    "mcap": c.get("market_cap"), "vol": c.get("total_volume")} for c in coins],
-        "sentimen": {k: sent.get(k) for k in ("mood", "score", "tema", "poin", "risiko", "umur_menit")} if sent else None,
+        "sentimen": {k: sent.get(k) for k in ("mood", "score", "tema", "poin", "risiko", "umur_menit", "stale")} if sent else None,
     }
     with open(os.path.join(OUT_DIR, "data.json"), "w") as f:
         json.dump(snapshot, f, ensure_ascii=False, indent=1, default=str)

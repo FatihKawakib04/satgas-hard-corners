@@ -25,6 +25,7 @@
   "paper": {
     "modal_usd": 10000,
     "maks_strategi": 2,
-    "maks_drawdown_hentikan_pct": -25
+    "maks_drawdown_hentikan_pct": -25,
+    "enabled": false
   }
 }

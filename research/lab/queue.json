@@ -724,5 +724,4055 @@
   "ringkas": "Return OOS +104.7%, Sharpe 0.63, DD -40.3%, BTC +86.9% (DD -61.8%). Sharpe penuh 1.03 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.131 (median Sharpe dunia sintetis +0.82). Tidak menonjol dibanding hasil pencarian parameter acak.",
   "keputusan": "kandidat",
   "selesai": "2026-10-31 10:51"
+ },
+ {
+  "id": "E37",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-01",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-01 13:12"
+ },
+ {
+  "id": "E38",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-01",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-01 15:46"
+ },
+ {
+  "id": "E39",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-01",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-01 18:21"
+ },
+ {
+  "id": "E40",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-01",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-01 20:56"
+ },
+ {
+  "id": "E41",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-01",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-01 23:32"
+ },
+ {
+  "id": "E42",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 02:07"
+ },
+ {
+  "id": "E43",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 04:42"
+ },
+ {
+  "id": "E44",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 07:17"
+ },
+ {
+  "id": "E45",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 09:52"
+ },
+ {
+  "id": "E46",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 12:27"
+ },
+ {
+  "id": "E47",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 15:02"
+ },
+ {
+  "id": "E48",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 17:37"
+ },
+ {
+  "id": "E49",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 20:12"
+ },
+ {
+  "id": "E50",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-02",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-02 22:46"
+ },
+ {
+  "id": "E51",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 01:21"
+ },
+ {
+  "id": "E52",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 03:56"
+ },
+ {
+  "id": "E53",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 06:31"
+ },
+ {
+  "id": "E54",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 09:06"
+ },
+ {
+  "id": "E55",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 11:41"
+ },
+ {
+  "id": "E56",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 14:16"
+ },
+ {
+  "id": "E57",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 16:51"
+ },
+ {
+  "id": "E58",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 19:26"
+ },
+ {
+  "id": "E59",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-03",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-03 22:01"
+ },
+ {
+  "id": "E60",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 00:36"
+ },
+ {
+  "id": "E61",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 03:11"
+ },
+ {
+  "id": "E62",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 05:46"
+ },
+ {
+  "id": "E63",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 08:21"
+ },
+ {
+  "id": "E64",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 10:56"
+ },
+ {
+  "id": "E65",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 13:31"
+ },
+ {
+  "id": "E66",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 16:06"
+ },
+ {
+  "id": "E67",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 18:41"
+ },
+ {
+  "id": "E68",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 21:16"
+ },
+ {
+  "id": "E69",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-04",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-04 23:51"
+ },
+ {
+  "id": "E70",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 02:26"
+ },
+ {
+  "id": "E71",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 05:01"
+ },
+ {
+  "id": "E72",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 07:36"
+ },
+ {
+  "id": "E73",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 10:11"
+ },
+ {
+  "id": "E74",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 12:46"
+ },
+ {
+  "id": "E75",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 15:21"
+ },
+ {
+  "id": "E76",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 17:56"
+ },
+ {
+  "id": "E77",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 20:31"
+ },
+ {
+  "id": "E78",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-05",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-05 23:06"
+ },
+ {
+  "id": "E79",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 01:41"
+ },
+ {
+  "id": "E80",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 04:16"
+ },
+ {
+  "id": "E81",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 06:50"
+ },
+ {
+  "id": "E82",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 09:25"
+ },
+ {
+  "id": "E83",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 12:01"
+ },
+ {
+  "id": "E84",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 14:35"
+ },
+ {
+  "id": "E85",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 17:10"
+ },
+ {
+  "id": "E86",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 19:46"
+ },
+ {
+  "id": "E87",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-06",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-06 22:21"
+ },
+ {
+  "id": "E88",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 00:55"
+ },
+ {
+  "id": "E89",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 03:31"
+ },
+ {
+  "id": "E90",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 06:05"
+ },
+ {
+  "id": "E91",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 08:41"
+ },
+ {
+  "id": "E92",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 11:16"
+ },
+ {
+  "id": "E93",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 13:50"
+ },
+ {
+  "id": "E94",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 16:26"
+ },
+ {
+  "id": "E95",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 19:01"
+ },
+ {
+  "id": "E96",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-07",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-07 21:36"
+ },
+ {
+  "id": "E97",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 00:10"
+ },
+ {
+  "id": "E98",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 02:46"
+ },
+ {
+  "id": "E99",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 05:20"
+ },
+ {
+  "id": "E100",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 07:55"
+ },
+ {
+  "id": "E101",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 10:31"
+ },
+ {
+  "id": "E102",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 13:05"
+ },
+ {
+  "id": "E103",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 15:40"
+ },
+ {
+  "id": "E104",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 18:16"
+ },
+ {
+  "id": "E105",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 20:50"
+ },
+ {
+  "id": "E106",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-08",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-08 23:25"
+ },
+ {
+  "id": "E107",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 02:01"
+ },
+ {
+  "id": "E108",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 04:35"
+ },
+ {
+  "id": "E109",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 07:10"
+ },
+ {
+  "id": "E110",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 09:46"
+ },
+ {
+  "id": "E111",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 12:21"
+ },
+ {
+  "id": "E112",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 14:55"
+ },
+ {
+  "id": "E113",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 17:31"
+ },
+ {
+  "id": "E114",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 20:05"
+ },
+ {
+  "id": "E115",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-09",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-09 22:40"
+ },
+ {
+  "id": "E116",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 01:16"
+ },
+ {
+  "id": "E117",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 03:50"
+ },
+ {
+  "id": "E118",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 06:25"
+ },
+ {
+  "id": "E119",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 09:01"
+ },
+ {
+  "id": "E120",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 11:35"
+ },
+ {
+  "id": "E121",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 14:10"
+ },
+ {
+  "id": "E122",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 16:46"
+ },
+ {
+  "id": "E123",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 19:21"
+ },
+ {
+  "id": "E124",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-10",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-10 21:55"
+ },
+ {
+  "id": "E125",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 00:31"
+ },
+ {
+  "id": "E126",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 03:05"
+ },
+ {
+  "id": "E127",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 05:40"
+ },
+ {
+  "id": "E128",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 08:16"
+ },
+ {
+  "id": "E129",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 10:50"
+ },
+ {
+  "id": "E130",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 13:25"
+ },
+ {
+  "id": "E131",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 16:01"
+ },
+ {
+  "id": "E132",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 18:35"
+ },
+ {
+  "id": "E133",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 21:10"
+ },
+ {
+  "id": "E134",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-11",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-11 23:46"
+ },
+ {
+  "id": "E135",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 02:20"
+ },
+ {
+  "id": "E136",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 04:55"
+ },
+ {
+  "id": "E137",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 07:31"
+ },
+ {
+  "id": "E138",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 10:05"
+ },
+ {
+  "id": "E139",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 12:40"
+ },
+ {
+  "id": "E140",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 15:16"
+ },
+ {
+  "id": "E141",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 17:50"
+ },
+ {
+  "id": "E142",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 20:25"
+ },
+ {
+  "id": "E143",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-12",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-12 23:01"
+ },
+ {
+  "id": "E144",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 01:35"
+ },
+ {
+  "id": "E145",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 04:10"
+ },
+ {
+  "id": "E146",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 06:45"
+ },
+ {
+  "id": "E147",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 09:20"
+ },
+ {
+  "id": "E148",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 11:55"
+ },
+ {
+  "id": "E149",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 14:31"
+ },
+ {
+  "id": "E150",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 17:05"
+ },
+ {
+  "id": "E151",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 19:40"
+ },
+ {
+  "id": "E152",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-13",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-13 22:15"
+ },
+ {
+  "id": "E153",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 00:50"
+ },
+ {
+  "id": "E154",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 03:25"
+ },
+ {
+  "id": "E155",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 06:01"
+ },
+ {
+  "id": "E156",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 08:35"
+ },
+ {
+  "id": "E157",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 11:10"
+ },
+ {
+  "id": "E158",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 13:46"
+ },
+ {
+  "id": "E159",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 16:20"
+ },
+ {
+  "id": "E160",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 18:55"
+ },
+ {
+  "id": "E161",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-14",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-14 21:31"
+ },
+ {
+  "id": "E162",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 00:05"
+ },
+ {
+  "id": "E163",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 02:41"
+ },
+ {
+  "id": "E164",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 05:16"
+ },
+ {
+  "id": "E165",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 07:50"
+ },
+ {
+  "id": "E166",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 10:25"
+ },
+ {
+  "id": "E167",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 13:01"
+ },
+ {
+  "id": "E168",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 15:35"
+ },
+ {
+  "id": "E169",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 18:10"
+ },
+ {
+  "id": "E170",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 20:46"
+ },
+ {
+  "id": "E171",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-15",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-15 23:21"
+ },
+ {
+  "id": "E172",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-16 01:55"
+ },
+ {
+  "id": "E173",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-16 04:31"
+ },
+ {
+  "id": "E174",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-16 07:05"
+ },
+ {
+  "id": "E175",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-16 09:41"
+ },
+ {
+  "id": "E176",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-16 12:16"
+ },
+ {
+  "id": "E177",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-16 14:50"
+ },
+ {
+  "id": "E178",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-16 17:26"
+ },
+ {
+  "id": "E179",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "error",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 108,
+    "pct_max": 42
+   },
+   {
+    "lookback": 144,
+    "pct_max": 56
+   },
+   {
+    "lookback": 225,
+    "pct_max": 88
+   },
+   {
+    "lookback": 288,
+    "pct_max": 112
+   }
+  ],
+  "ringkas": "eksekusi gagal",
+  "keputusan": "",
+  "selesai": "2026-11-16 20:01"
+ },
+ {
+  "id": "E180",
+  "strategi": "rotasi_eth",
+  "catatan": "Turunan dari E09: parameter di sekitar {'lookback': 38}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-16",
+  "grid": [
+   {
+    "lookback": 23
+   },
+   {
+    "lookback": 61
+   }
+  ],
+  "ringkas": "Return OOS -3.1%, Sharpe 0.21, DD -67.4%, BTC +64.6% (DD -61.0%). return OOS -3.1% tidak positif; Sharpe OOS 0.21 di bawah 0.5; drawdown -67.4% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+64.6%).",
+  "keputusan": "gagal",
+  "selesai": "2026-11-16 22:35"
+ },
+ {
+  "id": "E181",
+  "strategi": "pair_zscore",
+  "catatan": "Turunan dari E27: parameter di sekitar {'window': 192, 'z': 1.6}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-17",
+  "grid": [
+   {
+    "window": 115,
+    "z": 0.96
+   },
+   {
+    "window": 154,
+    "z": 1.28
+   },
+   {
+    "window": 240,
+    "z": 2.0
+   },
+   {
+    "window": 307,
+    "z": 2.56
+   }
+  ],
+  "ringkas": "Return OOS +29.5%, Sharpe 0.34, DD -57.6%, BTC +64.6% (DD -61.0%). Sharpe OOS 0.34 di bawah 0.5; drawdown -57.6% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+64.6%).",
+  "keputusan": "gagal",
+  "selesai": "2026-11-17 01:10"
  }
 ]
