@@ -1,0 +1,35 @@
+{
+ "session_id": "paper-2026-10-31-reconciled-4dc070c10cfc",
+ "created_at": "2026-11-17T09:34:28+07:00",
+ "status": "prepared_not_active",
+ "source_state": "lab/paper_state.json",
+ "source_state_sha256": "acd1a04b686bdcd2ef0826e96adfd1923abb615cd0d21d04c47cd51064833ad4",
+ "starting_equity": {
+  "E22:ma_cross_eth": 10000.0,
+  "E34:dd_buy": 9985.0
+ },
+ "positions": {
+  "E22:ma_cross_eth": {},
+  "E34:dd_buy": {
+   "BTC": 1.0
+  }
+ },
+ "bench0": {
+  "E22:ma_cross_eth": {
+   "BTC": 81194.01,
+   "ETH": 2356.83
+  },
+  "E34:dd_buy": {
+   "BTC": 76978.3
+  }
+ },
+ "contaminated_rows": [
+  {
+   "tanggal": "2026-11-16",
+   "strategi": "E34:dd_buy",
+   "audit_table": "lab_paper_audit",
+   "audit_id": 1
+  }
+ ],
+ "catatan": "Baseline observasi baru dari state 31 Okt. Belum aktif: paper.enabled=false dan paper.step() tidak dijalankan. Baris 16 Nov E34 tetap ada sebagai observasi terkontaminasi."
+}
