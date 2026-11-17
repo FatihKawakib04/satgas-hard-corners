@@ -95,6 +95,43 @@ def snapshot() -> int:
     return written
 
 
+def simpan_tvl() -> dict:
+    """Tulis riwayat TOTAL dan snapshot chain dengan tanggal sumber yang sama.
+
+    ``chains_tvl()`` hanya mengembalikan nilai saat ini, tanpa tanggal. Versi lama
+    memberinya label ``datetime.now(utc)``, sehingga setiap hari selalu lahir satu
+    tanggal yang punya baris chain tetapi tidak punya TOTAL. Agregasi lalu
+    menjumlahkan chain dan melaporkan angka sekitar setengah nilai sebenarnya.
+
+    Aturannya: baris chain hanya ditulis untuk tanggal TOTAL terbaru, dan hanya
+    kalau tanggal itu belum punya baris chain. Snapshot pertama untuk tanggal itu
+    yang dipertahankan; capture berikutnya tidak menimpa, karena TOTAL yang
+    menjadi nilai kanonis dan revisi chain tidak boleh mengubah histori.
+    """
+    hist = S.tvl_history()
+    if not hist:
+        return {"total": 0, "chains": 0, "tanggal": None, "chain_ditulis": False}
+    latest = hist[-1][0]
+    ditulis = 0
+    with store.db() as con:
+        con.executemany("INSERT INTO tvl(d,chain,tvl) VALUES (?,?,?) "
+                        "ON CONFLICT(d,chain) DO UPDATE SET tvl=excluded.tvl",
+                        [(d, "TOTAL", t) for d, t in hist])
+        ada = con.execute("SELECT COUNT(*) FROM tvl WHERE d=? AND chain!='TOTAL'",
+                          (latest,)).fetchone()[0]
+        if ada:
+            log(f"TVL: baris chain {latest} sudah ada, snapshot baru dilewati")
+        else:
+            chains = S.chains_tvl()[:15]
+            con.executemany("INSERT INTO tvl(d,chain,tvl) VALUES (?,?,?) "
+                            "ON CONFLICT(d,chain) DO UPDATE SET tvl=excluded.tvl",
+                            [(latest, c, t) for c, t in chains])
+            ditulis = len(chains)
+            log(f"TVL: {ditulis} baris chain untuk {latest}")
+    return {"total": len(hist), "chains": ditulis, "tanggal": latest,
+            "chain_ditulis": bool(ditulis)}
+
+
 def macro() -> int:
     """Tarik semua seri makro + likuiditas (cepat, tanpa loop koin)."""
     written = 0
@@ -164,17 +201,9 @@ def macro() -> int:
         log(f"PERINGATAN stablecoin gagal: {e}")
 
     try:
-        hist = S.tvl_history()
-        with store.db() as con:
-            con.executemany("INSERT INTO tvl(d,chain,tvl) VALUES (?,?,?) "
-                            "ON CONFLICT(d,chain) DO UPDATE SET tvl=excluded.tvl",
-                            [(d, "TOTAL", t) for d, t in hist])
-            con.executemany("INSERT INTO tvl(d,chain,tvl) VALUES (?,?,?) "
-                            "ON CONFLICT(d,chain) DO UPDATE SET tvl=excluded.tvl",
-                            [(datetime.now(timezone.utc).strftime("%Y-%m-%d"), c, t)
-                             for c, t in S.chains_tvl()[:15]])
-        written += len(hist)
-        log(f"TVL: {len(hist)} hari riwayat")
+        hasil = simpan_tvl()
+        written += hasil["total"]
+        log(f"TVL: {hasil['total']} hari riwayat")
     except Exception as e:
         log(f"PERINGATAN TVL gagal: {e}")
     return written
