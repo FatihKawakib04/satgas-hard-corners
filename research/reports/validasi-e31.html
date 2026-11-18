@@ -1,0 +1,121 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Validasi ma_cross · SATGAS Research</title>
+<meta name="theme-color" content="#eeebe4">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/crypto/assets/research.css?v=1bf869ea">
+<script src="/crypto/assets/theme.js?v=6"></script>
+</head><body>
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="brand" href="https://satgas.ai.id/"><span class="badge">SG</span><span class="word">SATGAS</span><span class="tag">crypto desk</span></a>
+    <nav class="main-nav" aria-label="Main"><a href="/crypto/">Desk</a><a href="/crypto/bounty/">Bounties</a><a href="/crypto/radar/">Radar</a><a href="/crypto/jasa/">Services</a><a href="/crypto/riset/" aria-current="page">Research</a><a href="/crypto/api/">API</a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+  <div class="shell subnav-in">
+    <nav class="sub-nav" aria-label="Research"><a href="" aria-current="page">Reports</a><a href="lab.html">Lab</a><a href="peluang.html">Opportunities</a><a href="hipotesis.html">Hypotheses</a><a href="metode.html">Methods</a><a href="ekonomi.html">Economy</a></nav>
+  </div>
+</header>
+<div class="wrap">
+<h1>Validasi ma_cross (E31)</h1>
+<p class="lead">Satu strategi lolos gerbang awal. Halaman ini menguji ulang dengan standar
+lebih keras: apakah ada informasi masa depan yang bocor, apakah hasilnya bertahan setelah
+biaya dinaikkan, apakah parameter dipilih terlalu pintar, dan apakah angkanya masih masuk
+akal setelah dikoreksi karena kita sudah mencoba banyak kombinasi.</p>
+
+<div class="panel"><h3>1. Uji look-ahead (prefix)</h3>
+<p>Sinyal dihitung ulang pada data yang dipotong di 40 titik acak. Kalau sinyal pada data
+terpotong berbeda dari sinyal data penuh, berarti ada informasi masa depan yang bocor.</p>
+<table><tbody><tr><td>Titik diuji</td><td class="n">40</td></tr>
+<tr><td>Sinyal berbeda</td><td class="n">0</td></tr>
+<tr><td>Putusan</td><td><span class="badge up">tidak ada kebocoran</span></td></tr>
+</tbody></table></div>
+
+<div class="panel"><h3>2. Sensitivitas biaya</h3>
+<table><thead><tr><th class="n">Biaya per transaksi</th><th class="n">Sharpe</th>
+<th class="n">Return</th><th class="n">CAGR</th><th class="n">Max DD</th></tr></thead>
+<tbody><tr><td class='n'>0 bps</td><td class='n'>1,01</td><td class='n'>605,3%</td><td class='n'>37,8%</td><td class='n'>-55,1%</td></tr><tr><td class='n'>5 bps</td><td class='n'>1,00</td><td class='n'>580,3%</td><td class='n'>37,0%</td><td class='n'>-55,4%</td></tr><tr><td class='n'>10 bps</td><td class='n'>0,98</td><td class='n'>556,3%</td><td class='n'>36,2%</td><td class='n'>-55,7%</td></tr><tr><td class='n'>15 bps</td><td class='n'>0,97</td><td class='n'>533,0%</td><td class='n'>35,4%</td><td class='n'>-55,9%</td></tr><tr><td class='n'>25 bps</td><td class='n'>0,94</td><td class='n'>489,0%</td><td class='n'>33,8%</td><td class='n'>-56,5%</td></tr><tr><td class='n'>40 bps</td><td class='n'>0,89</td><td class='n'>428,5%</td><td class='n'>31,4%</td><td class='n'>-57,2%</td></tr></tbody></table>
+<p class="meta">Biaya 15 bps adalah asumsi dasar (10 fee + 5 slippage). Kalau Sharpe runtuh
+di 25 bps, strategi ini rapuh terhadap kondisi eksekusi nyata.</p></div>
+
+<div class="panel"><h3>3. Seluruh parameter, bukan hanya pemenang</h3>
+<table><thead><tr><th>Parameter</th><th class="n">Sharpe</th><th class="n">Return</th>
+<th class="n">CAGR</th><th class="n">Max DD</th><th class="n">Eksposur</th></tr></thead>
+<tbody><tr><td>{"fast": 10, "slow": 50}</td><td class='n'>0,86</td><td class='n'>393,3%</td><td class='n'>29,9%</td><td class='n'>-54,4%</td><td class='n'>52%</td></tr><tr><td>{"fast": 20, "slow": 100}</td><td class='n'>0,55</td><td class='n'>133,0%</td><td class='n'>14,9%</td><td class='n'>-43,4%</td><td class='n'>51%</td></tr><tr><td>{"fast": 50, "slow": 200}</td><td class='n'>0,11</td><td class='n'>-15,9%</td><td class='n'>-2,8%</td><td class='n'>-53,5%</td><td class='n'>49%</td></tr><tr><td>{"fast": 100, "slow": 200}</td><td class='n'>-0,11</td><td class='n'>-48,5%</td><td class='n'>-10,3%</td><td class='n'>-68,6%</td><td class='n'>48%</td></tr></tbody></table>
+<p class="meta">Kalau hanya satu nilai yang bagus dan sisanya buruk, itu tanda overfit.
+Sebaran yang rapi di beberapa nilai lebih meyakinkan.</p></div>
+
+<div class="panel"><h3>4. Uji holdout 12 bulan terakhir</h3>
+<table><tbody>
+<tr><td>Parameter dibekukan dari data sebelum 2025-10-01</td><td>{"fast": 10, "slow": 50}</td></tr>
+<tr><td>Periode uji</td><td>412 hari</td></tr>
+<tr><td>Return strategi</td><td class="n">5,9%</td></tr>
+<tr><td>Return BTC pada periode sama</td><td class="n">-45,6%</td></tr>
+<tr><td>Sharpe strategi vs BTC</td><td class="n">0,34 vs -1,00</td></tr>
+<tr><td>Drawdown strategi</td><td class="n">-16,5%</td></tr>
+</tbody></table>
+<p class="meta">Parameter dipilih hanya dari data sebelum tanggal potong, jadi angka di sini
+belum pernah dipakai memilih apa pun. Ini uji paling dekat dengan kondisi nyata.</p></div>
+
+<div class="panel"><h3>5. Frekuensi data (bar mingguan)</h3>
+<table><tbody><tr><td>Sharpe mingguan</td><td class="n">0,48</td></tr>
+<tr><td>Return</td><td class="n">91,4%</td></tr>
+<tr><td>Drawdown</td><td class="n">-45,8%</td></tr>
+<tr><td>Jumlah bar</td><td class="n">318</td></tr></tbody></table>
+<p class="meta">Kalau efek hanya muncul pada bar harian tetapi hilang pada mingguan,
+kemungkinan besar itu noise mikro, bukan keunggulan ekonomi.</p></div>
+
+<div class="panel"><h3>6. Ketergantungan universe</h3>
+<table><thead><tr><th>Universe</th><th class="n">Sharpe</th><th class="n">Return</th>
+<th class="n">Max DD</th></tr></thead><tbody><tr><td>BTC, ETH</td><td class='n'>0,97</td><td class='n'>533,0%</td><td class='n'>-55,9%</td></tr><tr><td>BTC, ETH, SOL</td><td class='n'>0,97</td><td class='n'>533,0%</td><td class='n'>-55,9%</td></tr></tbody></table>
+<p class="meta">Universe memakai koin yang masih ada sampai hari ini. Koin yang mati tidak
+punya data di bursa, jadi hasilnya mengandung survivorship bias dan harus dibaca sebagai
+batas atas, bukan angka yang bisa diharapkan.</p></div>
+
+<div class="panel"><h3>7. Uji null dengan dua panjang blok</h3>
+<table><thead><tr><th class="n">Blok</th><th class="n">Sharpe asli</th>
+<th class="n">Median null</th><th class="n">p-value</th></tr></thead><tbody>
+<tr><td class="n">10 hari</td><td class="n">0,97</td>
+<td class="n">0,54</td><td class="n">0,062</td></tr>
+<tr><td class="n">30 hari</td><td class="n">0,97</td>
+<td class="n">0,78</td><td class="n">0,272</td></tr>
+</tbody></table>
+<p class="meta">Dua panjang blok dipakai untuk memastikan kesimpulan tidak bergantung pada
+satu pilihan parameter uji. p di bawah 0,05 berarti sulit dijelaskan oleh data acak.</p></div>
+
+<div class="panel"><h3>8. Deflated Sharpe Ratio</h3>
+<table><tbody>
+<tr><td>Sharpe harian</td><td class="n">0,0505</td></tr>
+<tr><td>Sharpe yang diharapkan dari keberuntungan (SR0)</td><td class="n">0,0851</td></tr>
+<tr><td>DSR (probabilitas keunggulan nyata)</td><td class="n">0,050</td></tr>
+<tr><td>Skew / kurtosis return</td><td class="n">0,54 / 14,22</td></tr>
+</tbody></table>
+<p class="meta">DSR mengoreksi Sharpe karena kita sudah menguji puluhan kombinasi parameter.
+Nilai di bawah 0,95 berarti klaim keunggulan belum cukup kuat untuk dianggap pasti.</p></div>
+
+
+
+<h2>Kesimpulan</h2>
+<div class="panel"><p>Look-ahead: bersih. Pada biaya 15 bps, Sharpe 0.97 dan CAGR 35.4%. Pada biaya 25 bps Sharpe 0.94. Holdout 12 bulan: strategi +5.9% vs BTC -45.6%. Uji null signifikan pada 0 dari 2 panjang blok. DSR 0.05 (perlu >= 0,95 untuk klaim kuat). Kesimpulan: bukti belum cukup untuk menganggap ini keunggulan yang bertahan.</p></div>
+<div class="note"><p>Diperbarui 17 Nov 2026 16:35 WIB. Semua angka dihitung
+dari data tersimpan di research/db. Tidak ada uang sungguhan, tidak ada order.</p></div>
+</div>
+<footer class="site-foot">
+  <div class="shell foot-in">
+    <div>
+      <p class="lbl">SATGAS crypto desk</p>
+      
+      <p>Riset otomatis untuk pembelajaran. Bukan rekomendasi investasi. Selalu
+      verifikasi angka ke sumber primer sebelum mengambil keputusan.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="/crypto/">Desk</a>
+      <a href="/crypto/riset/">Research</a>
+      <a href="/crypto/bounty/">Bounties</a>
+      <a href="/crypto/radar/">Radar</a>
+      <a href="/crypto/jasa/">Services</a>
+      <a href="/crypto/riset/data/fakta.json">Raw data</a>
+    </nav>
+  </div>
+</footer>
+</body></html>
