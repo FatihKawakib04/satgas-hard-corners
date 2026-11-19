@@ -1083,15 +1083,24 @@
    "oos": 149.34,
    "sharpe": 0.66,
    "bench": 55.71
+  },
+  {
+   "waktu": "2026-11-20T01:33:27.380114+07:00",
+   "exp": "E189",
+   "strategi": "vol_target",
+   "verdict": "kandidat",
+   "oos": 73.34,
+   "sharpe": 0.62,
+   "bench": 55.71
   }
  ],
  "terakhir": {
-  "waktu": "2026-11-19T22:58:02.161246+07:00",
-  "exp": "E188",
-  "strategi": "ma_cross_eth",
+  "waktu": "2026-11-20T01:33:27.380114+07:00",
+  "exp": "E189",
+  "strategi": "vol_target",
   "verdict": "kandidat",
-  "oos": 149.34,
-  "sharpe": 0.66,
+  "oos": 73.34,
+  "sharpe": 0.62,
   "bench": 55.71
  }
 }
