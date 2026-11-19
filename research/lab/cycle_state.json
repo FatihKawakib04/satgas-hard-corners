@@ -1065,15 +1065,24 @@
    "oos": 73.91,
    "sharpe": 0.57,
    "bench": 55.71
+  },
+  {
+   "waktu": "2026-11-19T20:22:52.256540+07:00",
+   "exp": "E187",
+   "strategi": "mom_vol",
+   "verdict": "kandidat",
+   "oos": 136.8,
+   "sharpe": 0.71,
+   "bench": 55.71
   }
  ],
  "terakhir": {
-  "waktu": "2026-11-19T17:47:11.835269+07:00",
-  "exp": "E186",
-  "strategi": "donchian",
+  "waktu": "2026-11-19T20:22:52.256540+07:00",
+  "exp": "E187",
+  "strategi": "mom_vol",
   "verdict": "kandidat",
-  "oos": 73.91,
-  "sharpe": 0.57,
+  "oos": 136.8,
+  "sharpe": 0.71,
   "bench": 55.71
  }
 }
