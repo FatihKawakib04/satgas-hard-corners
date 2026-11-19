@@ -65,11 +65,10 @@ rather than reported as live prices.
 | Plan | Price | Rate limit | Auth |
 | --- | --- | --- | --- |
 | Basic | $0 | 10 req/min per IP | none |
-| Pro | $9/mo | 100 req/min | `X-API-Key` |
+| Pro | $9/mo | 100 req/min | `X-API-Key` (email halo@satgas.ai.id for evaluation — no card, not self-serve yet) |
 | Enterprise | contact | custom | `X-API-Key` |
 
-Exceeding a limit returns `429`. Anonymous keys are not needed for the free tier; Pro keys are issued
-by request at halo@satgas.ai.id.
+Exceeding a limit returns `429`. Anonymous keys are not needed for the free tier; Pro keys are issued by request at halo@satgas.ai.id for evaluation. Payment infrastructure is disabled by default — no Stripe or crypto address configured.
 
 ## Known limits
 
