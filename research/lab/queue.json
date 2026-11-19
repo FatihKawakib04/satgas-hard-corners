@@ -4774,5 +4774,26 @@
   "ringkas": "Return OOS +29.5%, Sharpe 0.34, DD -57.6%, BTC +64.6% (DD -61.0%). Sharpe OOS 0.34 di bawah 0.5; drawdown -57.6% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+64.6%).",
   "keputusan": "gagal",
   "selesai": "2026-11-17 01:10"
+ },
+ {
+  "id": "E182",
+  "strategi": "ma_filter_breakout",
+  "catatan": "Turunan dari E28: parameter di sekitar {'entry': 69}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "entry": 41
+   },
+   {
+    "entry": 86
+   },
+   {
+    "entry": 110
+   }
+  ],
+  "ringkas": "Return OOS +53.1%, Sharpe 0.48, DD -31.0%, BTC +60.5% (DD -61.0%). Sharpe OOS 0.48 di bawah 0.5; kalah dari beli-dan-tahan BTC (+60.5%).",
+  "keputusan": "gagal",
+  "selesai": "2026-11-19 07:09"
  }
 ]
