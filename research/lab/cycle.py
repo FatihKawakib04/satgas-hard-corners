@@ -34,9 +34,12 @@ WIB = timezone(timedelta(hours=7))
 STATE = os.path.join(HERE, "cycle_state.json")
 
 # Batas percobaan per keluarga strategi sebelum generator berhenti menurunkan dari
-# keluarga itu. 13 strategi x 3 = 39 eksperimen; setelah itu generator berhenti
-# dengan tenang (return None) dan stall_check.py memberi peringatan.
-MAKS_PER_STRATEGI = 3
+# keluarga itu. 13 strategi x 4 = 52 eksperimen; setelah itu generator berhenti
+# dengan tenang (return None) dan stall_check.py memberi peringatan. Dinaikkan dari
+# 3 ke 4 pada 17 Nov 2026 karena seluruh 13 keluarga mencapai batas 3 dan siklus
+# berhenti produktif selama ~13 jam. Deduplikasi parameter sudah aktif, jadi
+# percobaan keempat memakai grid yang belum pernah diuji, bukan salinan.
+MAKS_PER_STRATEGI = 4
 
 # Faktor pengali parameter untuk eksperimen turunan (grid pencarian di sekitar base).
 FAKTOR_GRID = (0.6, 0.8, 1.25, 1.6)
