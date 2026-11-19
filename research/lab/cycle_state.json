@@ -1092,15 +1092,24 @@
    "oos": 73.34,
    "sharpe": 0.62,
    "bench": 55.71
+  },
+  {
+   "waktu": "2026-11-20T04:08:11.522419+07:00",
+   "exp": "E190",
+   "strategi": "tsmom",
+   "verdict": "kandidat",
+   "oos": 167.58,
+   "sharpe": 0.82,
+   "bench": 55.71
   }
  ],
  "terakhir": {
-  "waktu": "2026-11-20T01:33:27.380114+07:00",
-  "exp": "E189",
-  "strategi": "vol_target",
+  "waktu": "2026-11-20T04:08:11.522419+07:00",
+  "exp": "E190",
+  "strategi": "tsmom",
   "verdict": "kandidat",
-  "oos": 73.34,
-  "sharpe": 0.62,
+  "oos": 167.58,
+  "sharpe": 0.82,
   "bench": 55.71
  }
 }
