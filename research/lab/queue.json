@@ -4875,5 +4875,25 @@
   "ringkas": "Return OOS +85.7%, Sharpe 0.74, DD -33.9%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.32 mengalahkan 192 dari 200 sinyal acak. Uji null: p=0.984 (median Sharpe dunia sintetis +0.56). Tidak menonjol dibanding hasil pencarian parameter acak.",
   "keputusan": "kandidat",
   "selesai": "2026-11-19 15:12"
+ },
+ {
+  "id": "E186",
+  "strategi": "donchian",
+  "catatan": "Turunan dari E30: parameter di sekitar {'entry': 13, 'exit': 6}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "entry": 8,
+    "exit": 4
+   },
+   {
+    "entry": 21,
+    "exit": 10
+   }
+  ],
+  "ringkas": "Return OOS +73.9%, Sharpe 0.57, DD -36.2%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.82 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.541 (median Sharpe dunia sintetis +0.77). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 17:47"
  }
 ]

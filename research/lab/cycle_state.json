@@ -1056,15 +1056,24 @@
    "oos": 85.69,
    "sharpe": 0.74,
    "bench": 55.71
+  },
+  {
+   "waktu": "2026-11-19T17:47:11.835269+07:00",
+   "exp": "E186",
+   "strategi": "donchian",
+   "verdict": "kandidat",
+   "oos": 73.91,
+   "sharpe": 0.57,
+   "bench": 55.71
   }
  ],
  "terakhir": {
-  "waktu": "2026-11-19T15:12:14.012625+07:00",
-  "exp": "E185",
-  "strategi": "dd_buy",
+  "waktu": "2026-11-19T17:47:11.835269+07:00",
+  "exp": "E186",
+  "strategi": "donchian",
   "verdict": "kandidat",
-  "oos": 85.69,
-  "sharpe": 0.74,
+  "oos": 73.91,
+  "sharpe": 0.57,
   "bench": 55.71
  }
 }
