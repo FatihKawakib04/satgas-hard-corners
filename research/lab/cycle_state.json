@@ -1047,15 +1047,24 @@
    "oos": 71.75,
    "sharpe": 0.63,
    "bench": 55.71
+  },
+  {
+   "waktu": "2026-11-19T15:12:14.012625+07:00",
+   "exp": "E185",
+   "strategi": "dd_buy",
+   "verdict": "kandidat",
+   "oos": 85.69,
+   "sharpe": 0.74,
+   "bench": 55.71
   }
  ],
  "terakhir": {
-  "waktu": "2026-11-19T12:37:20.672546+07:00",
-  "exp": "E184",
-  "strategi": "breakout_stop",
+  "waktu": "2026-11-19T15:12:14.012625+07:00",
+  "exp": "E185",
+  "strategi": "dd_buy",
   "verdict": "kandidat",
-  "oos": 71.75,
-  "sharpe": 0.63,
+  "oos": 85.69,
+  "sharpe": 0.74,
   "bench": 55.71
  }
 }
