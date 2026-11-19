@@ -4819,5 +4819,33 @@
   "ringkas": "Return OOS +165.9%, Sharpe 0.81, DD -38.1%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.96 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.230 (median Sharpe dunia sintetis +0.73). Tidak menonjol dibanding hasil pencarian parameter acak.",
   "keputusan": "kandidat",
   "selesai": "2026-11-19 10:02"
+ },
+ {
+  "id": "E184",
+  "strategi": "breakout_stop",
+  "catatan": "Turunan dari E29: parameter di sekitar {'entry': 53, 'k': 2.88}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "entry": 32,
+    "k": 1.728
+   },
+   {
+    "entry": 42,
+    "k": 2.304
+   },
+   {
+    "entry": 66,
+    "k": 3.6
+   },
+   {
+    "entry": 85,
+    "k": 4.608
+   }
+  ],
+  "ringkas": "Return OOS +71.8%, Sharpe 0.63, DD -22.3%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.74 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.049 (median Sharpe dunia sintetis +0.51). Validasi ketat: status lemah (DSR 0.02), belum cukup bukti.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 12:37"
  }
 ]
