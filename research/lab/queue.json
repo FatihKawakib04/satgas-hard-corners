@@ -4911,5 +4911,37 @@
   "ringkas": "Return OOS +136.8%, Sharpe 0.71, DD -34.1%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.50 mengalahkan 198 dari 200 sinyal acak. Uji null: p=0.705 (median Sharpe dunia sintetis +0.56). Tidak menonjol dibanding hasil pencarian parameter acak.",
   "keputusan": "kandidat",
   "selesai": "2026-11-19 20:22"
+ },
+ {
+  "id": "E188",
+  "strategi": "ma_cross_eth",
+  "catatan": "Turunan dari E32: parameter di sekitar {'fast': 7, 'slow': 36, 'sym': 'ETH'}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "fast": 4,
+    "slow": 22,
+    "sym": "ETH"
+   },
+   {
+    "fast": 6,
+    "slow": 29,
+    "sym": "ETH"
+   },
+   {
+    "fast": 9,
+    "slow": 45,
+    "sym": "ETH"
+   },
+   {
+    "fast": 11,
+    "slow": 58,
+    "sym": "ETH"
+   }
+  ],
+  "ringkas": "Return OOS +149.3%, Sharpe 0.66, DD -46.1%, BTC +55.7% (DD -61.0%). Menang atas BTC tapi: drawdown -46.1% lebih buruk dari batas -45.0%. Sharpe penuh 1.08 mengalahkan 200 dari 200 sinyal acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 22:58"
  }
 ]
