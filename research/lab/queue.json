@@ -4795,5 +4795,29 @@
   "ringkas": "Return OOS +53.1%, Sharpe 0.48, DD -31.0%, BTC +60.5% (DD -61.0%). Sharpe OOS 0.48 di bawah 0.5; kalah dari beli-dan-tahan BTC (+60.5%).",
   "keputusan": "gagal",
   "selesai": "2026-11-19 07:09"
+ },
+ {
+  "id": "E183",
+  "strategi": "ma_cross",
+  "catatan": "Turunan dari E31: parameter di sekitar {'fast': 7, 'slow': 37}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "fast": 4,
+    "slow": 22
+   },
+   {
+    "fast": 9,
+    "slow": 46
+   },
+   {
+    "fast": 11,
+    "slow": 59
+   }
+  ],
+  "ringkas": "Return OOS +165.9%, Sharpe 0.81, DD -38.1%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.96 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.230 (median Sharpe dunia sintetis +0.73). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 10:02"
  }
 ]
