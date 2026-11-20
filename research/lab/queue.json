@@ -5019,5 +5019,25 @@
   "ringkas": "Return OOS -2.4%, Sharpe 0.36, DD -67.4%, BTC +55.7% (DD -61.0%). return OOS -2.4% tidak positif; Sharpe OOS 0.36 di bawah 0.5; drawdown -67.4% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+55.7%).",
   "keputusan": "gagal",
   "selesai": "2026-11-20 06:42"
+ },
+ {
+  "id": "E192",
+  "strategi": "pair_zscore",
+  "catatan": "Turunan dari E27: parameter di sekitar {'window': 150, 'z': 1.25}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-20",
+  "grid": [
+   {
+    "window": 90,
+    "z": 0.75
+   },
+   {
+    "window": 188,
+    "z": 1.5625
+   }
+  ],
+  "ringkas": "Return OOS -44.7%, Sharpe 0.03, DD -72.6%, BTC +53.4% (DD -61.0%). return OOS -44.7% tidak positif; Sharpe OOS 0.03 di bawah 0.5; drawdown -72.6% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+53.4%).",
+  "keputusan": "gagal",
+  "selesai": "2026-11-20 09:18"
  }
 ]
