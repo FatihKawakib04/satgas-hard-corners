@@ -1119,15 +1119,24 @@
    "oos": -44.71,
    "sharpe": 0.03,
    "bench": 53.37
+  },
+  {
+   "waktu": "2026-11-20T11:53:17.895795+07:00",
+   "exp": "E193",
+   "strategi": "rotasi_eth",
+   "verdict": "kandidat",
+   "oos": 81.4,
+   "sharpe": 0.51,
+   "bench": 53.37
   }
  ],
  "terakhir": {
-  "waktu": "2026-11-20T09:18:02.040062+07:00",
-  "exp": "E192",
-  "strategi": "pair_zscore",
-  "verdict": "gagal",
-  "oos": -44.71,
-  "sharpe": 0.03,
+  "waktu": "2026-11-20T11:53:17.895795+07:00",
+  "exp": "E193",
+  "strategi": "rotasi_eth",
+  "verdict": "kandidat",
+  "oos": 81.4,
+  "sharpe": 0.51,
   "bench": 53.37
  }
 }
