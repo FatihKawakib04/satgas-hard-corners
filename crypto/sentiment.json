@@ -1,46 +1,54 @@
 {
- "mood": "risk-on",
- "score": 1,
+ "mood": "risk-off",
+ "score": -1,
  "tema": [
-  "Bitcoin",
-  "target bullish",
-  "memecoin",
-  "mining dan AI",
-  "regulasi",
-  "keamanan data"
+  "US midterm elections",
+  "crypto regulation",
+  "Bitcoin price",
+  "security exploits"
  ],
  "poin": [
   {
-   "teks": "Fidelity’s Zack Wainwright bilang BTC bisa capai $200K lebih cepat setelah bertahan dekat $60K dan naik hampir 50% dari Juni.",
+   "teks": "Democrats retake House and Senate majorities, delivering rebuke to President Trump.",
+   "sumber": "@Reuters"
+  },
+  {
+   "teks": "Crypto-backed Republican Andy Barr wins Kentucky Senate race, supporting CLARITY and GENIUS Acts.",
    "sumber": "@Cointelegraph"
   },
   {
-   "teks": "@jvisserlabs menilai BTC bertahan di sekitar $60K meski ada hack cold wallet, peluang CLARITY Act turun, dan tekanan MicroStrategy.",
+   "teks": "Pro-crypto Republican Byron Donalds wins Florida governor race, backing Strategic Bitcoin Reserve.",
    "sumber": "@Cointelegraph"
   },
   {
-   "teks": "Pump fun menghasilkan $1,98 juta dalam 24 jam, sedikit di atas Hyperliquid $1,96 juta, indikasi aktivitas memecoin kembali meningkat.",
+   "teks": "Democrat Sherrod Brown, a crypto critic, wins Ohio Senate despite $63M industry funds.",
    "sumber": "@Cointelegraph"
   },
   {
-   "teks": "Tether mendapat dukungan 15 penambang Bitcoin besar termasuk Bitmain, MicroBT, Foundry untuk kit mining open-source yang diarahkan ke agen AI.",
+   "teks": "Bitcoin falls below $76,000.",
+   "sumber": "@coingecko"
+  },
+  {
+   "teks": "Binance hacker continues swapping stolen SOL for BTC via THORChain.",
+   "sumber": "@lookonchain"
+  },
+  {
+   "teks": "ZachXBT says French bank Crédit Mutuel Arkéa hit in $133M+ exploit.",
    "sumber": "@Cointelegraph"
   },
   {
-   "teks": "Bank sentral Israel menolak rencana Netanyahu memakai crypto untuk menghindari sanksi, sinyal risiko regulasi dan kepatuhan.",
-   "sumber": "@FT"
-  },
-  {
-   "teks": "Keystone mengonfirmasi data pelanggan terekspos setelah akses tidak sah ke situs resmi, insiden terdeteksi 20 Oktober.",
-   "sumber": "@WuBlockchain"
+   "teks": "XRP wallets with at least 1M tokens climb to 2,147, highest count of 2026.",
+   "sumber": "@Cointelegraph"
   }
  ],
  "risiko": [
-  "Regulasi crypto bisa diperketat jika narasi penghindaran sanksi menguat.",
-  "Kebocoran data vendor hardware wallet dapat menekan kepercayaan pengguna.",
-  "Unrest sosial dan geopolitik global dapat memicu volatilitas risk-off jangka pendek."
+  "Democratic Senate control could reshape CLARITY Act path and increase scrutiny of Trump crypto businesses",
+  "Ongoing Binance hacker laundering and large bank exploit raise security concerns",
+  "Bitcoin price drop below $76,000 signals market weakness"
  ],
- "dibuat_ms": 1792881085939,
- "jumlah_tweet": 48,
- "jumlah_akun": 9
+ "dibuat_ms": 1793772106172,
+ "jumlah_tweet": 157,
+ "jumlah_akun": 12,
+ "umur_menit": 22004,
+ "stale": true
 }

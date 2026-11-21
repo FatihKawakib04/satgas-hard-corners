@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Crypto Data API
   version: 1.0.0
-  description: "Real-time crypto market data. 12 coins with price, 24h/7d change, volume and market cap; global market stats (total market cap, 24h volume, BTC dominance); fear & greed index; sentiment digest. Free tier 10 req/min, no API key. Pro 100 req/min (X-API-Key). Data refreshed every 15 min. Stale data (>30 min) returns 503. Sources: Binance (prices, volume), CoinPaprika (market cap, global), alternative.me (fear & greed)."
+  description: "Crypto market data. 12 coins with price, 24h/7d change, volume and market cap; global market stats (total market cap, 24h volume, BTC dominance); fear & greed index; sentiment digest. Free tier 10 req/min, no API key. Pro 100 req/min (X-API-Key). Data refreshed every 15 min. Stale data (>30 min) returns 503. Sources: Binance (prices, volume), CoinPaprika (market cap, global), alternative.me (fear & greed)."
 servers:
   - url: https://satgas.ai.id/api
     description: Production

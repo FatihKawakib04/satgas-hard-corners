@@ -4819,5 +4819,243 @@
   "ringkas": "Return OOS +165.9%, Sharpe 0.81, DD -38.1%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.96 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.230 (median Sharpe dunia sintetis +0.73). Tidak menonjol dibanding hasil pencarian parameter acak.",
   "keputusan": "kandidat",
   "selesai": "2026-11-19 10:02"
+ },
+ {
+  "id": "E184",
+  "strategi": "breakout_stop",
+  "catatan": "Turunan dari E29: parameter di sekitar {'entry': 53, 'k': 2.88}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "entry": 32,
+    "k": 1.728
+   },
+   {
+    "entry": 42,
+    "k": 2.304
+   },
+   {
+    "entry": 66,
+    "k": 3.6
+   },
+   {
+    "entry": 85,
+    "k": 4.608
+   }
+  ],
+  "ringkas": "Return OOS +71.8%, Sharpe 0.63, DD -22.3%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.74 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.049 (median Sharpe dunia sintetis +0.51). Validasi ketat: status lemah (DSR 0.02), belum cukup bukti.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 12:37"
+ },
+ {
+  "id": "E185",
+  "strategi": "dd_buy",
+  "catatan": "Turunan dari E34: parameter di sekitar {'drawdown': 0.096, 'window': 173}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "drawdown": 0.0576,
+    "window": 104
+   },
+   {
+    "drawdown": 0.0768,
+    "window": 138
+   },
+   {
+    "drawdown": 0.12,
+    "window": 216
+   },
+   {
+    "drawdown": 0.1536,
+    "window": 277
+   }
+  ],
+  "ringkas": "Return OOS +85.7%, Sharpe 0.74, DD -33.9%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.32 mengalahkan 192 dari 200 sinyal acak. Uji null: p=0.984 (median Sharpe dunia sintetis +0.56). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 15:12"
+ },
+ {
+  "id": "E186",
+  "strategi": "donchian",
+  "catatan": "Turunan dari E30: parameter di sekitar {'entry': 13, 'exit': 6}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "entry": 8,
+    "exit": 4
+   },
+   {
+    "entry": 21,
+    "exit": 10
+   }
+  ],
+  "ringkas": "Return OOS +73.9%, Sharpe 0.57, DD -36.2%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.82 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.541 (median Sharpe dunia sintetis +0.77). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 17:47"
+ },
+ {
+  "id": "E187",
+  "strategi": "mom_vol",
+  "catatan": "Turunan dari E11: parameter di sekitar {'lookback': 180, 'pct_max': 70}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "lookback": 288,
+    "pct_max": 100
+   }
+  ],
+  "ringkas": "Return OOS +136.8%, Sharpe 0.71, DD -34.1%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.50 mengalahkan 198 dari 200 sinyal acak. Uji null: p=0.705 (median Sharpe dunia sintetis +0.56). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 20:22"
+ },
+ {
+  "id": "E188",
+  "strategi": "ma_cross_eth",
+  "catatan": "Turunan dari E32: parameter di sekitar {'fast': 7, 'slow': 36, 'sym': 'ETH'}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-19",
+  "grid": [
+   {
+    "fast": 4,
+    "slow": 22,
+    "sym": "ETH"
+   },
+   {
+    "fast": 6,
+    "slow": 29,
+    "sym": "ETH"
+   },
+   {
+    "fast": 9,
+    "slow": 45,
+    "sym": "ETH"
+   },
+   {
+    "fast": 11,
+    "slow": 58,
+    "sym": "ETH"
+   }
+  ],
+  "ringkas": "Return OOS +149.3%, Sharpe 0.66, DD -46.1%, BTC +55.7% (DD -61.0%). Menang atas BTC tapi: drawdown -46.1% lebih buruk dari batas -45.0%. Sharpe penuh 1.08 mengalahkan 200 dari 200 sinyal acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-19 22:58"
+ },
+ {
+  "id": "E189",
+  "strategi": "vol_target",
+  "catatan": "Turunan dari E04: parameter di sekitar {'lookback': 60, 'target_vol': 45}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-20",
+  "grid": [
+   {
+    "lookback": 36,
+    "target_vol": 27
+   },
+   {
+    "lookback": 48,
+    "target_vol": 36
+   },
+   {
+    "lookback": 75,
+    "target_vol": 56
+   },
+   {
+    "lookback": 96,
+    "target_vol": 72
+   }
+  ],
+  "ringkas": "Return OOS +73.3%, Sharpe 0.62, DD -32.8%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.93 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.377 (median Sharpe dunia sintetis +0.72). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-20 01:33"
+ },
+ {
+  "id": "E190",
+  "strategi": "tsmom",
+  "catatan": "Turunan dari E36: parameter di sekitar {'lookback': 75}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-20",
+  "grid": [
+   {
+    "lookback": 45
+   },
+   {
+    "lookback": 94
+   },
+   {
+    "lookback": 120
+   }
+  ],
+  "ringkas": "Return OOS +167.6%, Sharpe 0.82, DD -37.4%, BTC +55.7% (DD -61.0%). Sharpe penuh 0.90 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.131 (median Sharpe dunia sintetis +0.76). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-20 04:08"
+ },
+ {
+  "id": "E191",
+  "strategi": "xs_mom",
+  "catatan": "Turunan dari E35: parameter di sekitar {'k': 1, 'lookback': 68, 'rebal': 5}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-20",
+  "grid": [
+   {
+    "k": 1,
+    "lookback": 41,
+    "rebal": 3
+   },
+   {
+    "k": 1,
+    "lookback": 85,
+    "rebal": 6
+   },
+   {
+    "k": 2,
+    "lookback": 109,
+    "rebal": 8
+   }
+  ],
+  "ringkas": "Return OOS -2.4%, Sharpe 0.36, DD -67.4%, BTC +55.7% (DD -61.0%). return OOS -2.4% tidak positif; Sharpe OOS 0.36 di bawah 0.5; drawdown -67.4% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+55.7%).",
+  "keputusan": "gagal",
+  "selesai": "2026-11-20 06:42"
+ },
+ {
+  "id": "E192",
+  "strategi": "pair_zscore",
+  "catatan": "Turunan dari E27: parameter di sekitar {'window': 150, 'z': 1.25}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-20",
+  "grid": [
+   {
+    "window": 90,
+    "z": 0.75
+   },
+   {
+    "window": 188,
+    "z": 1.5625
+   }
+  ],
+  "ringkas": "Return OOS -44.7%, Sharpe 0.03, DD -72.6%, BTC +53.4% (DD -61.0%). return OOS -44.7% tidak positif; Sharpe OOS 0.03 di bawah 0.5; drawdown -72.6% lebih buruk dari batas -45.0%; kalah dari beli-dan-tahan BTC (+53.4%).",
+  "keputusan": "gagal",
+  "selesai": "2026-11-20 09:18"
+ },
+ {
+  "id": "E193",
+  "strategi": "rotasi_eth",
+  "catatan": "Turunan dari E09: parameter di sekitar {'lookback': 24}, karena keluarga ini paling dekat lolos gerbang",
+  "status": "selesai",
+  "dibuat": "2026-11-20",
+  "grid": [
+   {
+    "lookback": 14
+   },
+   {
+    "lookback": 19
+   }
+  ],
+  "ringkas": "Return OOS +81.4%, Sharpe 0.51, DD -43.2%, BTC +53.4% (DD -61.0%). Sharpe penuh 0.88 mengalahkan 200 dari 200 sinyal acak. Uji null: p=0.279 (median Sharpe dunia sintetis +0.74). Tidak menonjol dibanding hasil pencarian parameter acak.",
+  "keputusan": "kandidat",
+  "selesai": "2026-11-20 11:53"
  }
 ]
